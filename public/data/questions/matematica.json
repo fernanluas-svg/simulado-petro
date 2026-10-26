@@ -1,0 +1,192 @@
+[
+  {
+    "id": "mat-01",
+    "subjectId": "matematica",
+    "topic": "Porcentagem e juros simples e compostos",
+    "statement": "Um investimento de R$ 50.000,00 aplicado a juros compostos a uma taxa de 10% ao ano gerou um montante após 2 anos. Qual foi o valor dos juros acumulados nesse período?",
+    "alternatives": [
+      { "id": "A", "text": "R$ 10.000,00" },
+      { "id": "B", "text": "R$ 10.500,00" },
+      { "id": "C", "text": "R$ 11.000,00" },
+      { "id": "D", "text": "R$ 12.000,00" },
+      { "id": "E", "text": "R$ 12.500,00" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Montante M = C * (1 + i)^n = 50.000 * (1,10)^2 = 50.000 * 1,21 = R$ 60.500,00. Os juros J = M - C = 60.500 - 50.000 = R$ 10.500,00.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Matemática Financeira",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "mat-02",
+    "subjectId": "matematica",
+    "topic": "Razões e proporções",
+    "statement": "Em um terminal da Transpetro, a razão entre o número de técnicos de nível médio e o número de engenheiros é de 5 para 2. Sabendo que o total de profissionais nesses dois cargos é de 70, qual é o número de técnicos?",
+    "alternatives": [
+      { "id": "A", "text": "20" },
+      { "id": "B", "text": "30" },
+      { "id": "C", "text": "40" },
+      { "id": "D", "text": "50" },
+      { "id": "E", "text": "60" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Seja T o número de técnicos e E o número de engenheiros. T/E = 5/2 => T = 5k, E = 2k. 5k + 2k = 70 => 7k = 70 => k = 10. Logo, técnicos T = 5 * 10 = 50.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Razão e Proporção",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "mat-03",
+    "subjectId": "matematica",
+    "topic": "Regra de três simples e composta",
+    "statement": "Se 6 bombas idênticas operando simultaneamente durante 4 horas por dia conseguem esvaziar um reservatório em 5 dias, em quantos dias 4 dessas bombas, operando 6 horas por dia, conseguirão realizar o mesmo trabalho?",
+    "alternatives": [
+      { "id": "A", "text": "3 dias" },
+      { "id": "B", "text": "4 dias" },
+      { "id": "C", "text": "5 dias" },
+      { "id": "D", "text": "6 dias" },
+      { "id": "E", "text": "7 dias" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Analisando as grandezas em relação aos dias (D): Bombas (6 -> 4, inversamente proporcional), Horas/dia (4 -> 6, inversamente proporcional). D = 5 * (6/4) * (4/6) = 5 * (3/2) * (2/3) = 5 dias.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Regra de Três Composta",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "mat-04",
+    "subjectId": "matematica",
+    "topic": "Estatística básica: média, mediana e moda",
+    "statement": "As notas obtidas por 5 candidatos em um teste de aptidão operacional foram: 70, 80, 85, 70 e 95. A mediana e a média aritmética dessas notas são, respectivamente:",
+    "alternatives": [
+      { "id": "A", "text": "80 e 80" },
+      { "id": "B", "text": "80 e 78" },
+      { "id": "C", "text": "85 e 80" },
+      { "id": "D", "text": "75 e 80" },
+      { "id": "E", "text": "80 e 82" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ordenando as notas: 70, 70, 80, 85, 95. A mediana (termo central) é 80. A média aritmética = (70 + 70 + 80 + 85 + 95) / 5 = 400 / 5 = 80.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Estatística",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "mat-05",
+    "subjectId": "matematica",
+    "topic": "Equações e inequações de 1º e 2º graus",
+    "statement": "O lucro L (em milhares de reais) de uma operação logística da Transpetro é dado por L(x) = -x^2 + 10x - 9, onde x representa o volume movimentado em milhares de toneladas. Qual é o lucro máximo obtido?",
+    "alternatives": [
+      { "id": "A", "text": "R$ 10.000,00" },
+      { "id": "B", "text": "R$ 12.000,00" },
+      { "id": "C", "text": "R$ 15.000,00" },
+      { "id": "D", "text": "R$ 16.000,00" },
+      { "id": "E", "text": "R$ 25.000,00" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "O lucro máximo de uma função quadrática ocorre no vértice da parábola: y_v = -Delta / (4a). Delta = b^2 - 4ac = 100 - 4(-1)(-9) = 100 - 36 = 64. y_v = -64 / (4 * (-1)) = -64 / -4 = 16 (milhares de reais = R$ 16.000,00).",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Função Quadrática",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "mat-06",
+    "subjectId": "matematica",
+    "topic": "Análise combinatória e probabilidade",
+    "statement": "Para formar uma comissão de segurança com 3 membros escolhidos entre 6 analistas e 4 supervisores, deseja-se que exatamente 2 sejam analistas e 1 seja supervisor. De quantas maneiras distintas essa comissão pode ser formada?",
+    "alternatives": [
+      { "id": "A", "text": "40" },
+      { "id": "B", "text": "50" },
+      { "id": "C", "text": "60" },
+      { "id": "D", "text": "80" },
+      { "id": "E", "text": "120" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Escolher 2 analistas entre 6: C(6,2) = (6*5)/2 = 15. Escolher 1 supervisor entre 4: C(4,1) = 4. Total de combinações = 15 * 4 = 60.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Análise Combinatória",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "mat-07",
+    "subjectId": "matematica",
+    "topic": "Números inteiros e racionais",
+    "statement": "Uma tubulação de 48 metros de comprimento foi dividida em três partes diretamente proporcionais aos números 2, 3 e 7. Qual é o comprimento da maior parte?",
+    "alternatives": [
+      { "id": "A", "text": "8 metros" },
+      { "id": "B", "text": "12 metros" },
+      { "id": "C", "text": "24 metros" },
+      { "id": "D", "text": "28 metros" },
+      { "id": "E", "text": "32 metros" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Partes: 2k, 3k, 7k. Soma = 2k + 3k + 7k = 12k = 48 => k = 4. A maior parte é 7k = 7 * 4 = 28 metros.",
+    "source": "Autor / Estilo Cesgranrio",
+    "reference": "Edital Transpetro 2026 - Proporcionalidade",
+    "verified": false,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "mat-08",
+    "subjectId": "matematica",
+    "topic": "Porcentagem e juros simples e compostos",
+    "statement": "Um equipamento cujo preço de tabela era R$ 800,00 sofreu um desconto de 15% à vista. No pagamento com cartão de crédito, incidiu um acréscimo de 5% sobre o valor com desconto. Qual foi o preço final pago no cartão?",
+    "alternatives": [
+      { "id": "A", "text": "R$ 680,00" },
+      { "id": "B", "text": "R$ 714,00" },
+      { "id": "C", "text": "R$ 720,00" },
+      { "id": "D", "text": "R$ 740,00" },
+      { "id": "E", "text": "R$ 760,00" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Valor com desconto = 800 * 0,85 = R$ 680,00. Acréscimo de 5% no cartão = 680 * 1,05 = R$ 714,00.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Porcentagem Sucessiva",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "mat-09",
+    "subjectId": "matematica",
+    "topic": "Análise combinatória e probabilidade",
+    "statement": "Em uma urna há 5 bolas azuis e 3 bolas vermelhas. Retirando-se aleatoriamente duas bolas da urna, uma após a outra e sem reposição, qual é a probabilidade de que ambas sejam azuis?",
+    "alternatives": [
+      { "id": "A", "text": "5/14" },
+      { "id": "B", "text": "25/64" },
+      { "id": "C", "text": "10/28" },
+      { "id": "D", "text": "3/28" },
+      { "id": "E", "text": "1/2" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Probabilidade da 1ª azul = 5/8. Probabilidade da 2ª azul (sem reposição) = 4/7. Probabilidade conjunta = (5/8) * (4/7) = 20/56 = 5/14.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Probabilidade",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "mat-10",
+    "subjectId": "matematica",
+    "topic": "Funções afim e quadrática",
+    "statement": "O custo fixo mensal de operação de uma linha de transporte é de R$ 10.000,00 e o custo variável por tonelada transportada é de R$ 50,00. Se cada tonelada é faturada a R$ 150,00, qual é o ponto de equilíbrio (quantidade de toneladas em que a receita iguala o custo total)?",
+    "alternatives": [
+      { "id": "A", "text": "50 toneladas" },
+      { "id": "B", "text": "80 toneladas" },
+      { "id": "C", "text": "100 toneladas" },
+      { "id": "D", "text": "150 toneladas" },
+      { "id": "E", "text": "200 toneladas" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Custo total C(x) = 10.000 + 50x. Receita R(x) = 150x. Ponto de equilíbrio: R(x) = C(x) => 150x = 10.000 + 50x => 100x = 10.000 => x = 100 toneladas.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Ponto de Equilíbrio",
+    "verified": true,
+    "difficulty": "médio"
+  }
+]

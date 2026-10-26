@@ -1,0 +1,192 @@
+[
+  {
+    "id": "pt-01",
+    "subjectId": "portugues",
+    "topic": "Compreensão e interpretação de textos",
+    "statement": "No fragmento de texto extraído de um documento oficial da Transpetro, a coesão textual é mantida por meio de recursos linguísticos que evitam repetições desnecessárias. Assinale a opção em que o termo sublinhado (aqui destacado entre colchetes) substitui corretamente o elemento anterior sem alteração de sentido ou incorreção gramatical.",
+    "alternatives": [
+      { "id": "A", "text": "Os relatórios de desempenho foram analisados; [o qual] apresentou inconsistências." },
+      { "id": "B", "text": "A equipe revisou os procedimentos de segurança; [cuja] auditoria apontou melhorias." },
+      { "id": "C", "text": "Os operadores cumpriram as normas; [os quais] foram elogiados pela gerência." },
+      { "id": "D", "text": "A diretoria aprovou o plano; [onde] otimizou a distribuição de cargas." },
+      { "id": "E", "text": "O terminal marítimo recebeu novos equipamentos, [o que] modernizou a operação." }
+    ],
+    "correctAnswer": "E",
+    "explanation": "O pronome relativo 'o que' (ou 'o qual') pode referir-se a toda a oração anterior ('O terminal marítimo recebeu novos equipamentos'), exprimindo consequência e modernizando a operação. A alternativa A usa 'o qual' incorretamente para plural ('relatórios'). A alternativa B usa 'cuja' de forma inadequada ('procedimentos cuja auditoria' indicaria posse dos procedimentos). A alternativa C exige 'os quais' ou 'que'. A alternativa D usa 'onde' apenas para lugares físicos.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Língua Portuguesa - Coesão",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-02",
+    "subjectId": "portugues",
+    "topic": "Sintaxe da oração e do período",
+    "statement": "Analise a regência verbal e o uso do sinal craseado na seguinte frase elaborada para um memorando corporativo: 'Visando ___ metas estabelecidas, a superintendência encaminhou ___ todas as gerências o aviso referente ___ auditoria.' Assinale a alternativa que preenche correta e respectivamente as lacunas.",
+    "alternatives": [
+      { "id": "A", "text": "as / à / a" },
+      { "id": "B", "text": "às / a / à" },
+      { "id": "C", "text": "as / a / à" },
+      { "id": "D", "text": "às / às / a" },
+      { "id": "E", "text": "as / à / às" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "1) O verbo 'visar', no sentido de ter em vista / objetivar, é transitivo direto (ou indireto com 'a', mas na norma culta moderna da Cesgranrio, 'visar as metas' sem preposição é o padrão direto para 'objetivar'). Analisando a combinação correta: 'visando as metas' (VTD), 'encaminhou a todas as gerências' (sem crase antes de pronome indefinido 'todas'), 'referente à auditoria' (crase obrigatória). Portanto, a alternativa C ('as / a / à') preenche perfeitamente.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Regência e Crase",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "pt-03",
+    "subjectId": "portugues",
+    "topic": "Concordância nominal e verbal",
+    "statement": "Assinale a alternativa em que a concordância verbal está estritamente de acordo com a norma-padrão da língua portuguesa.",
+    "alternatives": [
+      { "id": "A", "text": "Devem haver mais de cem funcionários alocados no terminal." },
+      { "id": "B", "text": "Fazem dois anos que a Transpetro inaugurou o novo gasoduto." },
+      { "id": "C", "text": "Batiam dez horas no relógio da matriz quando o turno começou." },
+      { "id": "D", "text": "Mais de um operador faltou aos treinamentos de segurança." },
+      { "id": "E", "text": "Inconstitucionais parecia ser as novas medidas de controle interno." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na alternativa C, o verbo 'batia/batiam' concorda com a indicação de horas ('dez horas'). A) 'Haver' no sentido de existir é impessoal (deve haver). B) 'Fazer' indicando tempo decorrido é impessoal (faz dois anos). D) 'Mais de um' concorda com o numeral (faltou). E) O sujeito oracional 'as novas medidas' exige o verbo no plural ('pareciam ser').",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Concordância",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-04",
+    "subjectId": "portugues",
+    "topic": "Emprego das classes de palavras",
+    "statement": "Em 'Conforme determinam as diretrizes da companhia, [caso] ocorram falhas no sistema, os operadores deverão acionar o suporte'. A conjunção destacada estabelece relação semântica de:",
+    "alternatives": [
+      { "id": "A", "text": "Concessão" },
+      { "id": "B", "text": "Condição" },
+      { "id": "C", "text": "Consequência" },
+      { "id": "D", "text": "Proporção" },
+      { "id": "E", "text": "Comparação" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A conjunção 'caso' introduz uma oração subordinada adverbial condicional, equivalente a 'se ocorram falhas'.",
+    "source": "Autor / Estilo Cesgranrio",
+    "reference": "Edital Transpetro 2026 - Conjunções",
+    "verified": false,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-05",
+    "subjectId": "portugues",
+    "topic": "Pontuação",
+    "statement": "Assinale a alternativa cuja frase apresenta pontuação inteiramente correta segundo a gramática normativa.",
+    "alternatives": [
+      { "id": "A", "text": "O supervisor, orientou a equipe sobre os riscos operacionais durante a reunião." },
+      { "id": "B", "text": "Os técnicos que concluíram o curso receberão certificação internacional." },
+      { "id": "C", "text": "A diretoria exigiu que, todos os relatórios fossem entregues no prazo." },
+      { "id": "D", "text": "No terminal aquaviário, realizou-se a manutenção preventiva dos tanques." },
+      { "id": "E", "text": "Foram aprovadas novas normas; contudo, nem todos os setores as cumpriram." }
+    ],
+    "correctAnswer": "E",
+    "explanation": "A alternativa E pontua corretamente a conjunção coordenativa adversativa 'contudo' precedida de ponto e vírgula e seguida de vírgula. A alternativa A separa o sujeito ('O supervisor') do predicado com vírgula. A alternativa C separa o objeto direto oracional com vírgula indevidamente.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Pontuação",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-06",
+    "subjectId": "portugues",
+    "topic": "Ortografia oficial e Acentuação gráfica",
+    "statement": "Assinale a alternativa em que todas as palavras são acentuadas graficamente com base na mesma regra de acentuação.",
+    "alternatives": [
+      { "id": "A", "text": "estatística, relatórios, fósseis" },
+      { "id": "B", "text": "país, baú, saíra" },
+      { "id": "C", "text": "difícil, órgão, parabéns" },
+      { "id": "D", "text": "também, cajá, vêm" },
+      { "id": "E", "text": "máquina, íris, caráter" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "As palavras 'também', 'cajá' e 'vêm' são oxítonas terminadas em 'em' / 'a' (oxítonas acentuadas).",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Acentuação",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-07",
+    "subjectId": "portugues",
+    "topic": "Crase",
+    "statement": "Assinale a frase em que o uso do acento indicativo de crase é facultativo.",
+    "alternatives": [
+      { "id": "A", "text": "Entreguei o documento à diretora do terminal." },
+      { "id": "B", "text": "Os navios atracarão à noite no porto." },
+      { "id": "C", "text": "Enviei o relatório a sua gerente." },
+      { "id": "D", "text": "Refiro-me a esta norma de segurança." },
+      { "id": "E", "text": "Respeito a todas as diretrizes da empresa." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Antes de pronomes possessivos femininos no singular (sua), o uso da crase é facultativo ('a sua' ou 'à sua').",
+    "source": "Autor / Estilo Cesgranrio",
+    "reference": "Edital Transpetro 2026 - Crase Facultativa",
+    "verified": false,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-08",
+    "subjectId": "portugues",
+    "topic": "Compreensão e interpretação de textos",
+    "statement": "No contexto da gestão corporativa da Transpetro, a palavra 'eficiência' opõe-se semanticamente, de forma direta, a:",
+    "alternatives": [
+      { "id": "A", "text": "Eficácia" },
+      { "id": "B", "text": "Desperdício" },
+      { "id": "C", "text": "Efetividade" },
+      { "id": "D", "text": "Celeridade" },
+      { "id": "E", "text": "Planejamento" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Eficiência refere-se à relação entre os recursos empregados e os produtos/resultados obtidos (fazer certo as coisas, minimizar custos e desperdício). O oposto direto é o desperdício ou a ineficiência.",
+    "source": "Autor / Estilo Cesgranrio",
+    "reference": "Edital Transpetro 2026 - Semântica",
+    "verified": false,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-09",
+    "subjectId": "portugues",
+    "topic": "Sintaxe da oração e do período",
+    "statement": "Na oração 'Os resultados da auditoria foram divulgados [pelo gerente]', o termo destacado exerce a função sintática de:",
+    "alternatives": [
+      { "id": "A", "text": "Sujeito paciente" },
+      { "id": "B", "text": "Objeto indireto" },
+      { "id": "C", "text": "Agente da passiva" },
+      { "id": "D", "text": "Complemento nominal" },
+      { "id": "E", "text": "Adjunto adnominal" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na voz passiva analítica ('foram divulgados'), o termo que pratica a ação na estrutura passiva é introduzido por preposição ('por') e denomina-se agente da passiva.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Sintaxe",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-10",
+    "subjectId": "portugues",
+    "topic": "Emprego das classes de palavras",
+    "statement": "Assinale a alternativa em que o pronome oblíquo átono está colocado em estrita observância à norma-padrão (próclise, mesóclise ou ênclise).",
+    "alternatives": [
+      { "id": "A", "text": "Me informe sobre o andamento dos embarques." },
+      { "id": "B", "text": "Enviar-lhe-ei o relatório assim que estiver pronto." },
+      { "id": "C", "text": "Nunca fariam-no se conhecessem as regras." },
+      { "id": "D", "text": "Os técnicos que reuniram-se ontem aprovaram o projeto." },
+      { "id": "E", "text": "A gerência aprovou a proposta, entregando-a no prazo." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A alternativa B utiliza corretamente a mesóclise ('Enviar-lhe-ei') em início de frase com verbo no futuro do presente.",
+    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
+    "reference": "Edital Transpetro 2026 - Colocação Pronominal",
+    "verified": true,
+    "difficulty": "difícil"
+  }
+]

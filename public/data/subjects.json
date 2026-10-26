@@ -1,0 +1,44 @@
+[
+  {
+    "id": "portugues",
+    "name": "Língua Portuguesa",
+    "topics": [
+      "Compreensão e interpretação de textos",
+      "Ortografia oficial e Acentuação gráfica",
+      "Emprego das classes de palavras",
+      "Sintaxe da oração e do período",
+      "Concordância nominal e verbal",
+      "Regência nominal e verbal",
+      "Crase",
+      "Pontuação"
+    ]
+  },
+  {
+    "id": "matematica",
+    "name": "Matemática",
+    "topics": [
+      "Números inteiros e racionais",
+      "Razões e proporções",
+      "Regra de três simples e composta",
+      "Porcentagem e juros simples e compostos",
+      "Equações e inequações de 1º e 2º graus",
+      "Funções afim e quadrática",
+      "Estatística básica: média, mediana e moda",
+      "Análise combinatória e probabilidade"
+    ]
+  },
+  {
+    "id": "conhecimentos_especificos",
+    "name": "Conhecimentos Específicos (Administração e Controle)",
+    "topics": [
+      "Teoria Geral da Administração",
+      "Administração Financeira e Orçamentária",
+      "Administração de Materiais e Logística",
+      "Gestão de Pessoas",
+      "Arquivologia e Gestão Documental",
+      "Contabilidade Básica e Custos",
+      "Governança Corporativa e Compliance",
+      "Noções de Licitações e Contratos (Lei nº 14.133/2021)"
+    ]
+  }
+]

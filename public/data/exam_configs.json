@@ -1,0 +1,37 @@
+{
+  "id": "transpetro_2026_3_adm",
+  "title": "Simulado Oficial Transpetro 2026 - Administração e Controle",
+  "noticeNumber": "Edital nº 03 — TRANSPETRO/PSP/TERRA/NÍVEL MÉDIO — 2026.3",
+  "cargo": "Profissional Transpetro de Nível Médio Júnior - Administração e Controle",
+  "organizer": "Fundação Cesgranrio",
+  "totalQuestions": 60,
+  "durationMinutes": 240,
+  "subjects": [
+    {
+      "id": "portugues",
+      "name": "Língua Portuguesa",
+      "questionCount": 10,
+      "weight": 1.0,
+      "minCorrect": 0
+    },
+    {
+      "id": "matematica",
+      "name": "Matemática",
+      "questionCount": 10,
+      "weight": 1.0,
+      "minCorrect": 0
+    },
+    {
+      "id": "conhecimentos_especificos",
+      "name": "Conhecimentos Específicos (Administração e Controle)",
+      "questionCount": 40,
+      "weight": 1.0,
+      "minCorrect": 12
+    }
+  ],
+  "passingCriteria": {
+    "minGeneralScorePercent": 50,
+    "minSpecificScorePercent": 50,
+    "allowZeroInAnySubject": false
+  }
+}
