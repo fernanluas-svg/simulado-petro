@@ -63,16 +63,18 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const { config, allQuestionsBank } = get();
     if (!config) return;
 
-    // Select questions according to config distribution
+    // Select questions according to config distribution in strict order:
+    // 1. Português (1-10)
+    // 2. Matemática (11-20)
+    // 3. Conhecimentos Específicos (21-60)
     const selectedQuestions: Question[] = [];
     for (const subCfg of config.subjects) {
       const subQs = allQuestionsBank.filter((q) => q.subjectId === subCfg.id);
-      const shuffled = [...subQs].sort(() => Math.random() - 0.5);
-      const picked = shuffled.slice(0, subCfg.questionCount);
+      // Randomize within the subject block so questions vary each simulation
+      const shuffledSub = [...subQs].sort(() => Math.random() - 0.5);
+      const picked = shuffledSub.slice(0, subCfg.questionCount);
       selectedQuestions.push(...picked);
     }
-
-    const finalQuestions = selectedQuestions.sort(() => Math.random() - 0.5);
 
     const newAttempt: ExamAttempt = {
       id: 'attempt_' + Date.now(),
@@ -86,7 +88,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
     };
 
     set({
-      questions: finalQuestions,
+      questions: selectedQuestions,
       currentAttempt: newAttempt,
       currentQuestionIndex: 0,
       view: 'exam',
