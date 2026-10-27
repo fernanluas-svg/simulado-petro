@@ -22,6 +22,8 @@ interface ExamState {
   toggleMarkReview: (questionId: string) => void;
   setCurrentQuestionIndex: (index: number) => void;
   setImmediateCorrection: (enabled: boolean) => void;
+  pauseExam: () => void;
+  resumeExam: () => void;
   finishExam: () => void;
   loadHistory: () => Promise<void>;
   resumeAttempt: (attempt: ExamAttempt) => void;
@@ -51,7 +53,17 @@ export const useExamStore = create<ExamState>((set, get) => ({
       const config = await loadExamConfig();
       const allQuestionsBank = await loadAllQuestions();
       const history = await getAttempts();
-      set({ config, allQuestionsBank, history, isLoading: false });
+      
+      // Check if there is an uncompleted (paused or active) attempt in history
+      const activeOrPaused = history.find((h) => !h.isCompleted);
+
+      set({
+        config,
+        allQuestionsBank,
+        history,
+        currentAttempt: activeOrPaused || null,
+        isLoading: false,
+      });
     } catch (err: any) {
       set({ error: err.message || 'Erro ao inicializar aplicativo.', isLoading: false });
     }
@@ -63,10 +75,6 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const { config, allQuestionsBank } = get();
     if (!config) return;
 
-    // Strict subject order enforcement:
-    // 1. portugues
-    // 2. matematica
-    // 3. conhecimentos_especificos
     const selectedQuestions: Question[] = [];
     for (const subCfg of config.subjects) {
       const subQs = allQuestionsBank.filter((q) => q.subjectId === subCfg.id);
@@ -84,7 +92,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
       markedForReview: {},
       immediateCorrection,
       isCompleted: false,
+      isPaused: false,
     };
+
+    saveAttempt(newAttempt);
 
     set({
       questions: selectedQuestions,
@@ -96,15 +107,13 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
   setAnswer: (questionId, alternativeId) => {
     const { currentAttempt } = get();
-    if (!currentAttempt || currentAttempt.isCompleted) return;
+    if (!currentAttempt || currentAttempt.isCompleted || currentAttempt.isPaused) return;
 
     const updatedAnswers = { ...currentAttempt.answers, [questionId]: alternativeId };
-    set({
-      currentAttempt: {
-        ...currentAttempt,
-        answers: updatedAnswers,
-      },
-    });
+    const updatedAttempt = { ...currentAttempt, answers: updatedAnswers };
+    saveAttempt(updatedAttempt);
+
+    set({ currentAttempt: updatedAttempt });
   },
 
   toggleMarkReview: (questionId) => {
@@ -113,12 +122,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
     const currentMarked = currentAttempt.markedForReview[questionId] || false;
     const updatedMarked = { ...currentAttempt.markedForReview, [questionId]: !currentMarked };
-    set({
-      currentAttempt: {
-        ...currentAttempt,
-        markedForReview: updatedMarked,
-      },
-    });
+    const updatedAttempt = { ...currentAttempt, markedForReview: updatedMarked };
+    saveAttempt(updatedAttempt);
+
+    set({ currentAttempt: updatedAttempt });
   },
 
   setCurrentQuestionIndex: (index) => set({ currentQuestionIndex: index }),
@@ -126,12 +133,33 @@ export const useExamStore = create<ExamState>((set, get) => ({
   setImmediateCorrection: (enabled) => {
     const { currentAttempt } = get();
     if (!currentAttempt) return;
-    set({
-      currentAttempt: {
-        ...currentAttempt,
-        immediateCorrection: enabled,
-      },
-    });
+    const updatedAttempt = { ...currentAttempt, immediateCorrection: enabled };
+    saveAttempt(updatedAttempt);
+    set({ currentAttempt: updatedAttempt });
+  },
+
+  pauseExam: () => {
+    const { currentAttempt } = get();
+    if (!currentAttempt || currentAttempt.isCompleted) return;
+
+    const pausedAttempt: ExamAttempt = {
+      ...currentAttempt,
+      isPaused: true,
+    };
+    saveAttempt(pausedAttempt);
+    set({ currentAttempt: pausedAttempt });
+  },
+
+  resumeExam: () => {
+    const { currentAttempt } = get();
+    if (!currentAttempt || currentAttempt.isCompleted) return;
+
+    const resumedAttempt: ExamAttempt = {
+      ...currentAttempt,
+      isPaused: false,
+    };
+    saveAttempt(resumedAttempt);
+    set({ currentAttempt: resumedAttempt });
   },
 
   finishExam: () => {
@@ -229,6 +257,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       endTime,
       timeSpentSeconds,
       isCompleted: true,
+      isPaused: false,
       scoreData: result,
     };
 
@@ -246,9 +275,28 @@ export const useExamStore = create<ExamState>((set, get) => ({
     set({ history });
   },
 
-  resumeAttempt: () => {
-    const { config } = get();
+  resumeAttempt: (attempt) => {
+    const { allQuestionsBank, config } = get();
     if (!config) return;
+
+    const examQs: Question[] = [];
+    for (const subCfg of config.subjects) {
+      const subQs = allQuestionsBank.filter((q) => q.subjectId === subCfg.id);
+      examQs.push(...subQs.slice(0, subCfg.questionCount));
+    }
+
+    const resumed: ExamAttempt = {
+      ...attempt,
+      isPaused: false,
+    };
+    saveAttempt(resumed);
+
+    set({
+      questions: examQs,
+      currentAttempt: resumed,
+      currentQuestionIndex: 0,
+      view: 'exam',
+    });
   },
 
   updateSettings: (newSettings) => {

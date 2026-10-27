@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useExamStore } from '../store/useExamStore';
-import { Clock, Flag, CheckCircle, XCircle, ChevronLeft, ChevronRight, AlertTriangle, Send, Eye, EyeOff } from 'lucide-react';
+import { Clock, Flag, CheckCircle, XCircle, ChevronLeft, ChevronRight, AlertTriangle, Send, Eye, EyeOff, Pause, Play } from 'lucide-react';
 
 export const ExamScreen: React.FC = () => {
   const {
@@ -11,6 +11,8 @@ export const ExamScreen: React.FC = () => {
     setAnswer,
     toggleMarkReview,
     setImmediateCorrection,
+    pauseExam,
+    resumeExam,
     finishExam,
     setView,
   } = useExamStore();
@@ -18,8 +20,10 @@ export const ExamScreen: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<number>(240 * 60); // default 4 hours
   const [showConfirmSubmit, setShowConfirmSubmit] = useState<boolean>(false);
 
+  const isPaused = currentAttempt?.isPaused || false;
+
   useEffect(() => {
-    if (!currentAttempt) return;
+    if (!currentAttempt || isPaused) return;
     const elapsed = Math.floor((Date.now() - currentAttempt.startTime) / 1000);
     const totalSecs = 240 * 60; // 4 hours reference
     const remaining = Math.max(0, totalSecs - elapsed);
@@ -37,7 +41,7 @@ export const ExamScreen: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [currentAttempt]);
+  }, [currentAttempt, isPaused]);
 
   if (!currentAttempt || questions.length === 0) {
     return (
@@ -68,7 +72,7 @@ export const ExamScreen: React.FC = () => {
   const isMarked = currentAttempt.markedForReview[currentQ.id] || false;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 space-y-6 text-left">
+    <div className="max-w-6xl mx-auto px-4 py-6 space-y-6 text-left relative">
       {/* Top Header Bar */}
       <div className="bg-[#1c2541]/80 border border-[#3a506b]/50 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
         <div className="flex items-center gap-3">
@@ -81,9 +85,18 @@ export const ExamScreen: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* Pause Button */}
+          <button
+            onClick={pauseExam}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition-all"
+          >
+            <Pause className="w-3.5 h-3.5" />
+            <span>Pausar Simulado</span>
+          </button>
+
           {/* Immediate correction toggle */}
           <div className="flex items-center gap-2 bg-[#0b132b]/60 px-3 py-1.5 rounded-xl border border-[#3a506b]/40">
-            <span className="text-xs text-slate-300 font-medium">Correção Imediata:</span>
+            <span className="text-xs text-slate-300 font-medium">Correção:</span>
             <button
               onClick={() => setImmediateCorrection(!currentAttempt.immediateCorrection)}
               className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
@@ -140,7 +153,6 @@ export const ExamScreen: React.FC = () => {
                   altStyle = 'border-cyan-500 bg-cyan-500/10 text-white shadow-md shadow-cyan-500/10';
                 }
 
-                // Immediate correction styling (ONLY if immediateCorrection is true and question is answered)
                 if (currentAttempt.immediateCorrection && selectedAlt) {
                   if (alt.id === currentQ.correctAnswer) {
                     altStyle = 'border-emerald-500 bg-emerald-500/20 text-emerald-100 font-semibold';
@@ -166,7 +178,7 @@ export const ExamScreen: React.FC = () => {
               })}
             </div>
 
-            {/* Immediate explanation reveal if enabled and answered */}
+            {/* Immediate explanation reveal */}
             {currentAttempt.immediateCorrection && selectedAlt && (
               <div className="mt-4 p-4 rounded-xl bg-[#0b132b]/90 border border-[#3a506b]/60 space-y-2">
                 <div className="flex items-center gap-2">
@@ -246,21 +258,6 @@ export const ExamScreen: React.FC = () => {
               })}
             </div>
 
-            <div className="pt-2 border-t border-[#3a506b]/40 space-y-2 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded bg-cyan-600/30 border border-cyan-500/50" />
-                <span>Respondida</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded bg-[#0b132b] border border-[#3a506b]" />
-                <span>Não respondida</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded bg-amber-400" />
-                <span>Marcada para revisão</span>
-              </div>
-            </div>
-
             <button
               onClick={() => setShowConfirmSubmit(true)}
               className="w-full mt-4 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold py-3 px-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all"
@@ -271,6 +268,40 @@ export const ExamScreen: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Pause Modal Overlay */}
+      {isPaused && (
+        <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4 rounded-2xl">
+          <div className="bg-[#1c2541] border border-[#3a506b] rounded-2xl p-8 max-w-md w-full space-y-6 shadow-2xl text-center">
+            <div className="w-16 h-16 bg-amber-500/20 rounded-2xl border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto">
+              <Pause className="w-8 h-8" />
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-white">Simulado Pausado</h3>
+              <p className="text-sm text-slate-300">
+                Seu progresso, respostas e cronômetro foram salvos. Você pode retornar de onde parou a qualquer momento.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 pt-2">
+              <button
+                onClick={resumeExam}
+                className="flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg transition-all"
+              >
+                <Play className="w-5 h-5 fill-current" />
+                <span>Continuar Simulado</span>
+              </button>
+              <button
+                onClick={() => setView('home')}
+                className="bg-[#0b132b] hover:bg-[#161d31] text-slate-300 font-medium py-3 rounded-xl border border-[#3a506b] transition-all text-sm"
+              >
+                Ir para a Página Inicial
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Confirmation Modal */}
       {showConfirmSubmit && (
@@ -284,9 +315,6 @@ export const ExamScreen: React.FC = () => {
               <h3 className="text-xl font-bold text-white">Deseja finalizar o simulado?</h3>
               <p className="text-sm text-slate-300">
                 Você respondeu <strong className="text-cyan-400">{answeredCount}</strong> de <strong className="text-white">{totalQCount}</strong> questões.
-                {totalQCount - answeredCount > 0 && (
-                  <span className="block text-amber-400 pt-1">Atenção: Existem {totalQCount - answeredCount} questões em branco!</span>
-                )}
               </p>
             </div>
 

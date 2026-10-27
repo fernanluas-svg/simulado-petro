@@ -1,9 +1,9 @@
 import React from 'react';
 import { useExamStore } from '../store/useExamStore';
-import { Play, Award, Clock, BookOpen, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { Play, Award, Clock, BookOpen, CheckCircle2, AlertTriangle, FastForward, Pause } from 'lucide-react';
 
 export const Home: React.FC = () => {
-  const { config, history, setView, startExam, settings, allQuestionsBank } = useExamStore();
+  const { config, history, setView, startExam, settings, allQuestionsBank, currentAttempt } = useExamStore();
 
   const bestScore = history.length > 0
     ? Math.max(...history.filter(h => h.isCompleted && h.scoreData).map(h => h.scoreData!.percentage))
@@ -18,8 +18,34 @@ export const Home: React.FC = () => {
     });
   };
 
+  const hasActiveExam = currentAttempt && !currentAttempt.isCompleted;
+
   return (
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-8 text-left">
+      {/* Active Exam Resume Banner */}
+      {hasActiveExam && (
+        <div className="bg-gradient-to-r from-amber-950/70 via-[#1c2541] to-[#0b132b] border border-amber-500/50 rounded-2xl p-6 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="bg-amber-500/20 p-3.5 rounded-2xl border border-amber-500/40 text-amber-400">
+              <Pause className="w-8 h-8" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-lg font-bold text-white">Simulado em Andamento</h3>
+              <p className="text-sm text-amber-200/80">
+                Você possui um simulado pausado ou em andamento. Retome agora de onde parou!
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setView('exam')}
+            className="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all whitespace-nowrap"
+          >
+            <FastForward className="w-5 h-5 fill-current" />
+            <span>Retomar Simulado</span>
+          </button>
+        </div>
+      )}
+
       {/* Hero Banner */}
       <div className="bg-gradient-to-br from-[#1c2541] to-[#0b132b] border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
         <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -41,7 +67,7 @@ export const Home: React.FC = () => {
               className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <Play className="w-5 h-5 fill-current" />
-              <span>Iniciar Simulado Oficial (60 Questões)</span>
+              <span>Iniciar Novo Simulado (60 Questões)</span>
             </button>
             <button
               onClick={() => setView('setup')}
@@ -141,10 +167,10 @@ export const Home: React.FC = () => {
           <span>Critérios do Edital Transpetro 2026</span>
         </h3>
         <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
-          <li>Simulado completo com exatamente 60 questões objetivas (10 Português, 10 Matemática, 40 Específicos).</li>
+          <li>Simulado completo com exatamente 60 questões objetivas (10 Português, 12 Matemática, 38 Específicos).</li>
           <li>Cinco alternativas por questão (A a E) com uma única resposta correta.</li>
-          <li>Critérios de eliminação: exigência de aproveitamento mínimo em Conhecimentos Gerais e Específicos, sem zerar disciplinas.</li>
-          <li>Correção configurável: você pode ativar a correção imediata durante a prova ou realizá-la somente ao concluir.</li>
+          <li>Modo Pausa: pause seu simulado a qualquer momento e retome exatamente de onde parou.</li>
+          <li>Critérios de eliminação: aproveitamento mínimo em Conhecimentos Gerais e Específicos, sem zerar disciplinas.</li>
         </ul>
       </div>
     </div>

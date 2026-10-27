@@ -53,6 +53,7 @@ export interface ExamAttempt {
   markedForReview: Record<string, boolean>; // questionId -> boolean
   immediateCorrection: boolean;
   isCompleted: boolean;
+  isPaused?: boolean;
   scoreData?: ExamResult;
 }
 
