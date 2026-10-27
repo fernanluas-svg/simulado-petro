@@ -8,9 +8,16 @@ describe('Exam Store & Scoring Logic', () => {
     expect(state.currentAttempt).toBeNull();
   });
 
-  it('should calculate passing score correctly according to edital criteria', () => {
+  it('should have correct default settings', () => {
     const store = useExamStore.getState();
-    // Test helper or direct logic verification
     expect(store.settings.defaultDurationMinutes).toBe(240);
+  });
+
+  it('should handle view transitions correctly', () => {
+    const store = useExamStore.getState();
+    store.setView('history');
+    expect(useExamStore.getState().view).toBe('history');
+    store.setView('home');
+    expect(useExamStore.getState().view).toBe('home');
   });
 });
