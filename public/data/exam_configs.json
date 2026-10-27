@@ -17,14 +17,14 @@
     {
       "id": "matematica",
       "name": "Matemática",
-      "questionCount": 10,
+      "questionCount": 12,
       "weight": 1.0,
       "minCorrect": 0
     },
     {
       "id": "conhecimentos_especificos",
       "name": "Conhecimentos Específicos (Administração e Controle)",
-      "questionCount": 40,
+      "questionCount": 38,
       "weight": 1.0,
       "minCorrect": 12
     }
