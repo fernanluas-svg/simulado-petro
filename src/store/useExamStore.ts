@@ -63,14 +63,13 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const { config, allQuestionsBank } = get();
     if (!config) return;
 
-    // Select questions according to config distribution in strict order:
-    // 1. Português (1-10)
-    // 2. Matemática (11-20)
-    // 3. Conhecimentos Específicos (21-60)
+    // Strict subject order enforcement:
+    // 1. portugues
+    // 2. matematica
+    // 3. conhecimentos_especificos
     const selectedQuestions: Question[] = [];
     for (const subCfg of config.subjects) {
       const subQs = allQuestionsBank.filter((q) => q.subjectId === subCfg.id);
-      // Randomize within the subject block so questions vary each simulation
       const shuffledSub = [...subQs].sort(() => Math.random() - 0.5);
       const picked = shuffledSub.slice(0, subCfg.questionCount);
       selectedQuestions.push(...picked);
