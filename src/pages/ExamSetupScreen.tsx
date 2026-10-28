@@ -1,16 +1,47 @@
 import React, { useState } from 'react';
 import { useExamStore } from '../store/useExamStore';
-import { Clock, CheckSquare, ArrowLeft, Play } from 'lucide-react';
+import { Clock, CheckSquare, Square, ArrowLeft, Play, AlertCircle } from 'lucide-react';
 
 export const ExamSetupScreen: React.FC = () => {
-  const { config, startExam, setView, settings } = useExamStore();
+  const { config, startExam, setView, settings, allQuestionsBank } = useExamStore();
+  
+  const allSubjectIds = config?.subjects.map(s => s.id) || [];
+  const [selectedSubjects, setSelectedSubjects] = useState<string[]>(allSubjectIds);
   const [immediateCorrection, setImmediateCorrection] = useState(settings.defaultImmediateCorrection);
   const [durationMinutes, setDurationMinutes] = useState(settings.defaultDurationMinutes);
 
+  const isAllSelected = allSubjectIds.length > 0 && selectedSubjects.length === allSubjectIds.length;
+
+  const handleToggleSelectAll = () => {
+    if (isAllSelected) {
+      setSelectedSubjects([]);
+    } else {
+      setSelectedSubjects(allSubjectIds);
+    }
+  };
+
+  const handleToggleSubject = (subId: string) => {
+    if (selectedSubjects.includes(subId)) {
+      setSelectedSubjects(selectedSubjects.filter(id => id !== subId));
+    } else {
+      setSelectedSubjects([...selectedSubjects, subId]);
+    }
+  };
+
+  // Calculate total questions available for selected subjects
+  const totalSelectedQuestions = config?.subjects
+    .filter(sub => selectedSubjects.includes(sub.id))
+    .reduce((acc, sub) => {
+      const available = allQuestionsBank.filter(q => q.subjectId === sub.id).length;
+      return acc + Math.min(sub.questionCount, available);
+    }, 0) || 0;
+
   const handleStart = () => {
+    if (selectedSubjects.length === 0) return;
     startExam({
       immediateCorrection,
       durationMinutes,
+      selectedSubjectIds: selectedSubjects,
     });
   };
 
@@ -29,37 +60,62 @@ export const ExamSetupScreen: React.FC = () => {
 
       <div className="bg-[#1c2541]/60 border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-white">Estrutura Oficial da Prova</h3>
+          <h3 className="text-lg font-semibold text-white">Seleção de Matérias</h3>
           <p className="text-sm text-slate-300">
-            {config?.title || 'Simulado Oficial Transpetro 2026'} ({config?.noticeNumber || 'Edital nº 03/2026.3'})
+            Escolha o simulado completo (todas as matérias) ou selecione disciplinas específicas para focar seus estudos.
           </p>
         </div>
 
-        {/* Breakdown table */}
-        <div className="border border-[#3a506b]/40 rounded-xl overflow-hidden bg-[#0b132b]/50">
-          <table className="w-full text-left border-collapse text-sm">
-            <thead>
-              <tr className="bg-[#1c2541] text-slate-300 border-b border-[#3a506b]">
-                <th className="p-3.5 font-semibold">Matéria</th>
-                <th className="p-3.5 font-semibold text-center">Questões</th>
-                <th className="p-3.5 font-semibold text-center">Peso</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#3a506b]/30">
-              {config?.subjects.map((sub) => (
-                <tr key={sub.id} className="hover:bg-[#1c2541]/30">
-                  <td className="p-3.5 text-slate-200 font-medium">{sub.name}</td>
-                  <td className="p-3.5 text-center text-cyan-400 font-bold">{sub.questionCount}</td>
-                  <td className="p-3.5 text-center text-slate-300">{sub.weight}</td>
-                </tr>
-              ))}
-              <tr className="bg-[#1c2541]/40 font-bold text-white">
-                <td className="p-3.5">Total Geral</td>
-                <td className="p-3.5 text-center text-cyan-400">{config?.totalQuestions || 60}</td>
-                <td className="p-3.5 text-center">-</td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Select All & Subject Checkboxes */}
+        <div className="space-y-3 bg-[#0b132b]/60 p-4 rounded-xl border border-[#3a506b]/40">
+          <div className="flex items-center justify-between pb-3 border-b border-[#3a506b]/40">
+            <button
+              onClick={handleToggleSelectAll}
+              className="flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              {isAllSelected ? <CheckSquare className="w-5 h-5" /> : <Square className="w-5 h-5" />}
+              <span>Selecionar / Desmarcar Todas</span>
+            </button>
+            <span className="text-xs text-slate-400">
+              Total Selecionado: <strong className="text-white">{totalSelectedQuestions} questões</strong>
+            </span>
+          </div>
+
+          <div className="space-y-2 pt-2">
+            {config?.subjects.map((sub) => {
+              const isChecked = selectedSubjects.includes(sub.id);
+              const availableCount = allQuestionsBank.filter(q => q.subjectId === sub.id).length;
+
+              return (
+                <div
+                  key={sub.id}
+                  onClick={() => handleToggleSubject(sub.id)}
+                  className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition-all ${
+                    isChecked
+                      ? 'bg-cyan-600/10 border-cyan-500/40 text-white'
+                      : 'bg-[#1c2541]/40 border-[#3a506b]/30 text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    {isChecked ? <CheckSquare className="w-5 h-5 text-cyan-400" /> : <Square className="w-5 h-5 text-slate-500" />}
+                    <div>
+                      <p className="text-sm font-medium text-slate-100">{sub.name}</p>
+                      <p className="text-xs text-slate-400">Peso: {sub.weight} • Padrão: {sub.questionCount} questões</p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-bold text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-lg border border-cyan-500/20">
+                    {availableCount} disp.
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {selectedSubjects.length === 0 && (
+            <p className="text-xs text-rose-400 flex items-center gap-1.5 pt-1">
+              <AlertCircle className="w-4 h-4" /> Selecione pelo menos uma matéria para iniciar o simulado.
+            </p>
+          )}
         </div>
 
         {/* Options */}
@@ -87,9 +143,6 @@ export const ExamSetupScreen: React.FC = () => {
               <Clock className="w-4 h-4 text-cyan-400" />
               <span>Tempo Limite (Minutos)</span>
             </label>
-            <p className="text-xs text-slate-400">
-              Referência padrão do edital: 240 minutos (4 horas). Você pode ajustar se preferir um treino mais rápido.
-            </p>
             <select
               value={durationMinutes}
               onChange={(e) => setDurationMinutes(Number(e.target.value))}
@@ -107,10 +160,11 @@ export const ExamSetupScreen: React.FC = () => {
         <div className="pt-4 flex justify-end">
           <button
             onClick={handleStart}
-            className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5"
+            disabled={selectedSubjects.length === 0}
+            className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none"
           >
             <Play className="w-5 h-5 fill-current" />
-            <span>Iniciar Simulado Agora</span>
+            <span>Iniciar Simulado ({totalSelectedQuestions} Questões)</span>
           </button>
         </div>
       </div>

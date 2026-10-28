@@ -17,7 +17,7 @@ interface ExamState {
   // Actions
   initApp: () => Promise<void>;
   setView: (view: ExamState['view']) => void;
-  startExam: (options: { immediateCorrection: boolean; durationMinutes?: number }) => void;
+  startExam: (options: { immediateCorrection: boolean; durationMinutes?: number; selectedSubjectIds?: string[] }) => void;
   setAnswer: (questionId: string, alternativeId: string) => void;
   toggleMarkReview: (questionId: string) => void;
   setCurrentQuestionIndex: (index: number) => void;
@@ -54,7 +54,6 @@ export const useExamStore = create<ExamState>((set, get) => ({
       const allQuestionsBank = await loadAllQuestions();
       const history = await getAttempts();
       
-      // Check if there is an uncompleted (paused or active) attempt in history
       const activeOrPaused = history.find((h) => !h.isCompleted);
 
       set({
@@ -71,16 +70,35 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
   setView: (view) => set({ view }),
 
-  startExam: ({ immediateCorrection }) => {
+  startExam: ({ immediateCorrection, selectedSubjectIds }) => {
     const { config, allQuestionsBank } = get();
     if (!config) return;
 
+    const subjectsToUse = selectedSubjectIds && selectedSubjectIds.length > 0
+      ? selectedSubjectIds
+      : config.subjects.map(s => s.id);
+
+    // Filter and shuffle questions based on selected subjects
     const selectedQuestions: Question[] = [];
-    for (const subCfg of config.subjects) {
-      const subQs = allQuestionsBank.filter((q) => q.subjectId === subCfg.id);
+    for (const subId of subjectsToUse) {
+      const subQs = allQuestionsBank.filter((q) => q.subjectId === subId);
       const shuffledSub = [...subQs].sort(() => Math.random() - 0.5);
-      const picked = shuffledSub.slice(0, subCfg.questionCount);
+      // If full exam, respect config question count per subject if available, otherwise take all available
+      const subCfg = config.subjects.find(s => s.id === subId);
+      const count = subCfg ? Math.min(subCfg.questionCount, shuffledSub.length) : shuffledSub.length;
+      const picked = shuffledSub.slice(0, count);
       selectedQuestions.push(...picked);
+    }
+
+    // Shuffle the final combined list of questions so they appear interleaved or keep subject order if desired.
+    // Keeping subject order (Portuguese -> Math -> Specific) as requested earlier:
+    // Let's sort selectedQuestions by the order of subjects in config.subjects
+    const orderedQuestions: Question[] = [];
+    for (const subCfg of config.subjects) {
+      if (subjectsToUse.includes(subCfg.id)) {
+        const subFiltered = selectedQuestions.filter(q => q.subjectId === subCfg.id);
+        orderedQuestions.push(...subFiltered);
+      }
     }
 
     const newAttempt: ExamAttempt = {
@@ -98,7 +116,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
     saveAttempt(newAttempt);
 
     set({
-      questions: selectedQuestions,
+      questions: orderedQuestions,
       currentAttempt: newAttempt,
       currentQuestionIndex: 0,
       view: 'exam',
@@ -180,12 +198,17 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const subjectPerformance: Record<string, { correct: number; total: number; percentage: number }> = {};
 
     for (const sub of config.subjects) {
-      subjectPerformance[sub.id] = { correct: 0, total: sub.questionCount, percentage: 0 };
+      subjectPerformance[sub.id] = { correct: 0, total: 0, percentage: 0 };
     }
 
     for (const q of questions) {
-      const userAns = currentAttempt.answers[q.id];
       const subId = q.subjectId;
+      if (!subjectPerformance[subId]) {
+        subjectPerformance[subId] = { correct: 0, total: 0, percentage: 0 };
+      }
+      subjectPerformance[subId].total++;
+
+      const userAns = currentAttempt.answers[q.id];
       const isGeneral = subId === 'portugues' || subId === 'matematica';
 
       if (isGeneral) {
@@ -200,7 +223,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
         correctCount++;
         if (isGeneral) generalCorrect++;
         else specificCorrect++;
-        if (subjectPerformance[subId]) subjectPerformance[subId].correct++;
+        subjectPerformance[subId].correct++;
       } else {
         incorrectCount++;
       }
@@ -211,7 +234,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       sp.percentage = sp.total > 0 ? Math.round((sp.correct / sp.total) * 10000) / 100 : 0;
     }
 
-    const percentage = Math.round((correctCount / questions.length) * 10000) / 100;
+    const percentage = questions.length > 0 ? Math.round((correctCount / questions.length) * 10000) / 100 : 0;
 
     const pc = config.passingCriteria;
     let passed = true;
@@ -220,20 +243,12 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const generalPct = generalTotal > 0 ? (generalCorrect / generalTotal) * 100 : 0;
     const specificPct = specificTotal > 0 ? (specificCorrect / specificTotal) * 100 : 0;
 
-    if (pc.minGeneralScorePercent && generalPct < pc.minGeneralScorePercent) {
+    if (pc.minGeneralScorePercent && generalTotal > 0 && generalPct < pc.minGeneralScorePercent) {
       passed = false;
       failureReason = `Reprovado por aproveitamento em Conhecimentos Gerais abaixo do mínimo (${generalPct.toFixed(1)}% < ${pc.minGeneralScorePercent}%).`;
-    } else if (pc.minSpecificScorePercent && specificPct < pc.minSpecificScorePercent) {
+    } else if (pc.minSpecificScorePercent && specificTotal > 0 && specificPct < pc.minSpecificScorePercent) {
       passed = false;
       failureReason = `Reprovado por aproveitamento em Conhecimentos Específicos abaixo do mínimo (${specificPct.toFixed(1)}% < ${pc.minSpecificScorePercent}%).`;
-    } else if (!pc.allowZeroInAnySubject) {
-      for (const subId in subjectPerformance) {
-        if (subjectPerformance[subId].correct === 0 && subjectPerformance[subId].total > 0) {
-          passed = false;
-          failureReason = `Reprovado por zerar a matéria ${subId}.`;
-          break;
-        }
-      }
     }
 
     const result: ExamResult = {
