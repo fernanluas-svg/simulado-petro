@@ -49,7 +49,7 @@ export const ReviewScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('result')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Resultado</span>
@@ -62,7 +62,7 @@ export const ReviewScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setFilter('all')}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+          className={`min-h-11 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
             filter === 'all'
               ? 'bg-cyan-600 text-slate-950'
               : 'text-slate-300 hover:bg-[#0b132b]'
@@ -73,7 +73,7 @@ export const ReviewScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setFilter('correct')}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+          className={`min-h-11 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
             filter === 'correct'
               ? 'bg-emerald-600 text-slate-950'
               : 'text-slate-300 hover:bg-[#0b132b]'
@@ -84,7 +84,7 @@ export const ReviewScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setFilter('incorrect')}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+          className={`min-h-11 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
             filter === 'incorrect'
               ? 'bg-rose-600 text-slate-950'
               : 'text-slate-300 hover:bg-[#0b132b]'
@@ -95,7 +95,7 @@ export const ReviewScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setFilter('blank')}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+          className={`min-h-11 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
             filter === 'blank'
               ? 'bg-amber-600 text-slate-950'
               : 'text-slate-300 hover:bg-[#0b132b]'

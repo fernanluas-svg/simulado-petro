@@ -26,7 +26,7 @@ export const QuestionBankScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('home')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Início</span>
@@ -44,14 +44,14 @@ export const QuestionBankScreen: React.FC = () => {
               placeholder="Buscar no enunciado ou assunto..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-[#0b132b]/80 border border-[#3a506b] rounded-xl pl-10 pr-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+              className="w-full bg-[#0b132b]/80 border border-[#3a506b] rounded-xl pl-10 pr-4 py-3 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-500"
             />
           </div>
 
           <select
             value={selectedSubject}
             onChange={(e) => setSelectedSubject(e.target.value)}
-            className="bg-[#0b132b]/80 border border-[#3a506b] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+            className="bg-[#0b132b]/80 border border-[#3a506b] rounded-xl px-4 py-3 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-500"
           >
             <option value="all">Todas as Matérias</option>
             {config?.subjects.map((sub) => (
@@ -62,7 +62,7 @@ export const QuestionBankScreen: React.FC = () => {
           <select
             value={difficultyFilter}
             onChange={(e) => setDifficultyFilter(e.target.value)}
-            className="bg-[#0b132b]/80 border border-[#3a506b] rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+            className="bg-[#0b132b]/80 border border-[#3a506b] rounded-xl px-4 py-3 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-500"
           >
             <option value="all">Todas as Dificuldades</option>
             <option value="fácil">Fácil</option>

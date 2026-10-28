@@ -11,14 +11,14 @@ import {
 } from 'lucide-react';
 
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
-  `flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
+  `flex items-center justify-center gap-1.5 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
     isActive
       ? 'bg-cyan-600/20 text-cyan-400 border-cyan-500/30 shadow-sm'
       : 'text-slate-300 hover:bg-[#1c2541] hover:text-white border-transparent'
   }`;
 
 const resultItemClass = ({ isActive }: { isActive: boolean }) =>
-  `flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
+  `flex items-center justify-center gap-1.5 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
     isActive
       ? 'bg-emerald-600/20 text-emerald-400 border-emerald-500/30 shadow-sm'
       : 'text-emerald-300 hover:bg-[#1c2541] hover:text-emerald-200 border-transparent'

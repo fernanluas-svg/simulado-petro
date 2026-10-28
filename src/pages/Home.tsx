@@ -252,7 +252,7 @@ export const Home: React.FC = () => {
             <button
               type="button"
               onClick={() => resumeAttempt(lastResult)}
-              className="text-sm font-medium text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+              className="text-sm font-medium text-cyan-400 hover:text-cyan-300 flex items-center gap-1 min-h-11"
             >
               <span>Ver detalhes e gabarito comentado &rarr;</span>
             </button>

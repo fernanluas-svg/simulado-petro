@@ -56,7 +56,7 @@ export const HistoryScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('home')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Início</span>
@@ -122,7 +122,7 @@ export const HistoryScreen: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => resumeAttempt(item)}
-                      className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm transition-all"
+                      className="min-h-11 flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm transition-all"
                     >
                       <Play className="w-4 h-4 fill-current" />
                       Retomar
@@ -139,7 +139,7 @@ export const HistoryScreen: React.FC = () => {
                         await discardAttempt(item.id);
                       }
                     }}
-                    className="flex items-center gap-1.5 bg-[#0b132b]/70 hover:bg-rose-500/20 text-rose-200 border border-rose-500/30 px-4 py-2.5 rounded-xl text-sm transition-all"
+                    className="min-h-11 flex items-center gap-1.5 bg-[#0b132b]/70 hover:bg-rose-500/20 text-rose-200 border border-rose-500/30 px-4 py-2.5 rounded-xl text-sm transition-all"
                   >
                     <Trash2 className="w-4 h-4" />
                     Descartar
@@ -221,7 +221,7 @@ export const HistoryScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => resumeAttempt(item)}
-                  className="bg-[#0b132b] hover:bg-[#161d31] text-cyan-400 border border-cyan-500/30 font-medium px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap"
+                  className="min-h-11 bg-[#0b132b] hover:bg-[#161d31] text-cyan-400 border border-cyan-500/30 font-medium px-5 py-2.5 rounded-xl text-sm transition-all whitespace-nowrap"
                 >
                   Ver Detalhes
                 </button>

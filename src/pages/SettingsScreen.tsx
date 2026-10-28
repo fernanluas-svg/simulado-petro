@@ -29,7 +29,7 @@ export const SettingsScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('home')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Início</span>
@@ -64,7 +64,7 @@ export const SettingsScreen: React.FC = () => {
               onChange={(event) =>
                 updateSettings({ defaultImmediateCorrection: event.target.checked })
               }
-              className="w-5 h-5 accent-cyan-500 rounded cursor-pointer shrink-0"
+              className="w-6 h-6 accent-cyan-500 rounded cursor-pointer shrink-0"
             />
           </div>
 
@@ -82,7 +82,7 @@ export const SettingsScreen: React.FC = () => {
               onChange={(event) =>
                 updateSettings({ defaultDurationMinutes: Number(event.target.value) })
               }
-              className="w-full bg-[#1c2541] border border-[#3a506b] rounded-lg p-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+              className="w-full bg-[#1c2541] border border-[#3a506b] rounded-lg p-3 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-500"
             >
               {!DURATION_OPTIONS.includes(settings.defaultDurationMinutes) && (
                 <option value={settings.defaultDurationMinutes}>

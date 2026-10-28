@@ -127,7 +127,7 @@ export const ExamScreen: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 space-y-6 text-left relative">
+    <div className="max-w-6xl mx-auto px-4 pt-6 pb-28 lg:pb-6 space-y-6 text-left relative">
       {/* Top Header Bar */}
       <div className="bg-[#1c2541]/80 border border-[#3a506b]/50 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg">
         <div className="flex items-center gap-3">
@@ -145,7 +145,7 @@ export const ExamScreen: React.FC = () => {
           <button
             type="button"
             onClick={handlePause}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition-all"
+            className="hidden lg:flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition-all"
           >
             <Pause className="w-3.5 h-3.5" />
             <span>Pausar Simulado</span>
@@ -158,7 +158,7 @@ export const ExamScreen: React.FC = () => {
               type="button"
               onClick={() => setImmediateCorrection(!currentAttempt.immediateCorrection)}
               aria-pressed={currentAttempt.immediateCorrection}
-              className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
+              className={`min-h-11 px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
                 currentAttempt.immediateCorrection
                   ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
                   : 'bg-[#1c2541] text-slate-400 hover:text-white'
@@ -202,7 +202,7 @@ export const ExamScreen: React.FC = () => {
                 type="button"
                 onClick={() => toggleMarkReview(currentQ.id)}
                 aria-pressed={isMarked}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                className={`flex items-center gap-1.5 min-h-11 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                   isMarked
                     ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
                     : 'bg-[#0b132b]/60 text-slate-400 hover:text-white border border-[#3a506b]/40'
@@ -290,7 +290,7 @@ export const ExamScreen: React.FC = () => {
                 type="button"
                 onClick={() => setCurrentQuestionIndex(Math.max(0, safeIndex - 1))}
                 disabled={safeIndex === 0}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#0b132b] border border-[#3a506b] text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed font-medium text-sm transition-all"
+                className="flex items-center gap-1.5 min-h-11 px-4 py-2.5 rounded-xl bg-[#0b132b] border border-[#3a506b] text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed font-medium text-sm transition-all"
               >
                 <ChevronLeft className="w-4 h-4" />
                 <span>Anterior</span>
@@ -302,7 +302,7 @@ export const ExamScreen: React.FC = () => {
                   setCurrentQuestionIndex(Math.min(totalQCount - 1, safeIndex + 1))
                 }
                 disabled={safeIndex === totalQCount - 1}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-1.5 min-h-11 px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <span>Próxima</span>
                 <ChevronRight className="w-4 h-4" />
@@ -345,7 +345,7 @@ export const ExamScreen: React.FC = () => {
                       isAnswered ? ', respondida' : ''
                     }${isMarkedReview ? ', marcada para revisão' : ''}`}
                     aria-current={isCurrent ? 'true' : undefined}
-                    className={`h-10 rounded-xl border text-xs font-bold transition-all relative flex items-center justify-center ${btnBg}`}
+                    className={`h-11 sm:h-10 rounded-xl border text-xs font-bold transition-all relative flex items-center justify-center ${btnBg}`}
                   >
                     <span>{index + 1}</span>
                     {isMarkedReview && (
@@ -368,6 +368,37 @@ export const ExamScreen: React.FC = () => {
         </div>
       </div>
 
+      {/* Barra de ações fixa no mobile */}
+      <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden border-t border-[#3a506b]/60 bg-[#0b132b]/95 backdrop-blur-md px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+        <div className="max-w-6xl mx-auto flex items-center gap-3">
+          <div className="shrink-0 text-left">
+            <div className="flex items-center gap-1.5 text-cyan-400 font-mono font-bold text-sm">
+              <Clock className="w-3.5 h-3.5" />
+              <span>{formatSeconds(timeLeft)}</span>
+            </div>
+            <p className="text-[11px] text-slate-400">
+              {answeredCount}/{totalQCount} respondidas
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handlePause}
+            className="flex-1 min-h-11 flex items-center justify-center gap-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold active:scale-[0.98] transition-transform"
+          >
+            <Pause className="w-4 h-4" />
+            <span>Pausar</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowConfirmSubmit(true)}
+            className="flex-1 min-h-11 flex items-center justify-center gap-1.5 rounded-xl bg-emerald-600 text-slate-950 text-xs font-bold active:scale-[0.98] transition-transform"
+          >
+            <Send className="w-4 h-4" />
+            <span>Finalizar</span>
+          </button>
+        </div>
+      </div>
+
       {/* Pause Modal Overlay */}
       {isPaused && (
         <div
@@ -376,7 +407,7 @@ export const ExamScreen: React.FC = () => {
           aria-labelledby="pause-title"
           className="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center p-4"
         >
-          <div className="bg-[#1c2541] border border-[#3a506b] rounded-2xl p-8 max-w-md w-full space-y-6 shadow-2xl text-center">
+          <div className="bg-[#1c2541] border border-[#3a506b] rounded-2xl p-6 sm:p-8 max-w-md w-full max-h-[90vh] overflow-y-auto space-y-6 shadow-2xl text-center">
             <div className="w-16 h-16 bg-amber-500/20 rounded-2xl border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto">
               <Pause className="w-8 h-8" />
             </div>
@@ -436,7 +467,7 @@ export const ExamScreen: React.FC = () => {
           aria-labelledby="submit-title"
           className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         >
-          <div className="bg-[#1c2541] border border-[#3a506b] rounded-2xl p-6 sm:p-8 max-w-md w-full space-y-6 shadow-2xl text-center">
+          <div className="bg-[#1c2541] border border-[#3a506b] rounded-2xl p-6 sm:p-8 max-w-md w-full max-h-[90vh] overflow-y-auto space-y-6 shadow-2xl text-center">
             <div className="w-14 h-14 bg-amber-500/20 rounded-2xl border border-amber-500/40 text-amber-400 flex items-center justify-center mx-auto">
               <AlertTriangle className="w-8 h-8" />
             </div>

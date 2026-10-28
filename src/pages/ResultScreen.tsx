@@ -43,7 +43,7 @@ export const ResultScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('home')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Início</span>

@@ -50,6 +50,7 @@ O simulado completo padrão possui exatamente **60 questões objetivas** distrib
 - Banco de questões pesquisável por enunciado, assunto, matéria e dificuldade.
 - Limpeza completa dos dados locais nas configurações.
 - Navegação acessível com foco visível, rótulos ARIA e modais identificados.
+- **Layout mobile-first**: barra fixa com cronômetro, pausa e finalização durante a prova, alvos de toque de pelo menos 44px, campos com 16px (sem zoom automático no iOS) e modais roláveis em telas baixas.
 
 ---
 

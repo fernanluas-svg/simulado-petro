@@ -83,7 +83,7 @@ export const ExamSetupScreen: React.FC = () => {
         <button
           type="button"
           onClick={() => setView('home')}
-          className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-1.5 min-h-11 py-1 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Início</span>
@@ -126,7 +126,7 @@ export const ExamSetupScreen: React.FC = () => {
             <button
               type="button"
               onClick={handleToggleSelectAll}
-              className="flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="flex items-center gap-2 min-h-11 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               {isAllSelected ? (
                 <CheckSquare className="w-5 h-5" />
@@ -212,7 +212,7 @@ export const ExamSetupScreen: React.FC = () => {
               type="checkbox"
               checked={immediateCorrection}
               onChange={(event) => setImmediateCorrection(event.target.checked)}
-              className="w-5 h-5 accent-cyan-500 rounded cursor-pointer shrink-0"
+              className="w-6 h-6 accent-cyan-500 rounded cursor-pointer shrink-0"
             />
           </div>
 
@@ -228,7 +228,7 @@ export const ExamSetupScreen: React.FC = () => {
               id="exam-duration"
               value={durationMinutes}
               onChange={(event) => setDurationMinutes(Number(event.target.value))}
-              className="w-full bg-[#1c2541] border border-[#3a506b] rounded-lg p-3 text-white text-sm focus:outline-none focus:border-cyan-500"
+              className="w-full bg-[#1c2541] border border-[#3a506b] rounded-lg p-3 text-white text-base sm:text-sm focus:outline-none focus:border-cyan-500"
             >
               {!DURATION_OPTIONS.includes(durationMinutes) && (
                 <option value={durationMinutes}>{durationMinutes} minutos</option>
