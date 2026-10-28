@@ -1,37 +1,53 @@
 import React, { useState } from 'react';
-import { useExamStore } from '../store/useExamStore';
+import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
 
 export const ReviewScreen: React.FC = () => {
-  const { questions, currentAttempt, setView } = useExamStore();
+  const { questions, currentAttempt, config, setView } = useExamStore();
   const [filter, setFilter] = useState<'all' | 'correct' | 'incorrect' | 'blank'>('all');
 
-  if (!currentAttempt) {
+  if (!currentAttempt || !currentAttempt.scoreData || questions.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 py-16 text-center space-y-4">
-        <p className="text-slate-300">Nenhum simulado para revisar.</p>
+        <p className="text-slate-300">
+          {currentAttempt?.scoreData
+            ? 'As questões deste simulado não estão mais disponíveis para revisão.'
+            : 'Nenhum simulado finalizado para revisar.'}
+        </p>
         <button
-          onClick={() => setView('home')}
+          type="button"
+          onClick={() => setView(currentAttempt?.scoreData ? 'result' : 'home')}
           className="bg-cyan-600 text-white px-5 py-2.5 rounded-xl font-medium"
         >
-          Voltar ao Início
+          {currentAttempt?.scoreData ? 'Voltar ao Resultado' : 'Voltar ao Início'}
         </button>
       </div>
     );
   }
 
-  const filteredQuestions = questions.filter((q) => {
-    const userAns = currentAttempt.answers[q.id];
-    if (filter === 'correct') return userAns === q.correctAnswer;
-    if (filter === 'incorrect') return userAns && userAns !== q.correctAnswer;
-    if (filter === 'blank') return !userAns;
+  const filteredQuestions = questions.filter((question) => {
+    const userAnswer = currentAttempt.answers[question.id];
+    if (filter === 'correct') return userAnswer === question.correctAnswer;
+    if (filter === 'incorrect') return Boolean(userAnswer) && userAnswer !== question.correctAnswer;
+    if (filter === 'blank') return !userAnswer;
     return true;
   });
+
+  const counts = {
+    all: questions.length,
+    correct: questions.filter((q) => currentAttempt.answers[q.id] === q.correctAnswer).length,
+    incorrect: questions.filter((q) => {
+      const answer = currentAttempt.answers[q.id];
+      return Boolean(answer) && answer !== q.correctAnswer;
+    }).length,
+    blank: questions.filter((q) => !currentAttempt.answers[q.id]).length,
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 space-y-6 text-left">
       <div className="flex items-center justify-between">
         <button
+          type="button"
           onClick={() => setView('result')}
           className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
@@ -44,54 +60,76 @@ export const ReviewScreen: React.FC = () => {
       {/* Filter Tabs */}
       <div className="flex flex-wrap gap-2 bg-[#1c2541]/60 p-2 rounded-xl border border-[#3a506b]/40">
         <button
+          type="button"
           onClick={() => setFilter('all')}
           className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            filter === 'all' ? 'bg-cyan-600 text-slate-950' : 'text-slate-300 hover:bg-[#0b132b]'
+            filter === 'all'
+              ? 'bg-cyan-600 text-slate-950'
+              : 'text-slate-300 hover:bg-[#0b132b]'
           }`}
         >
-          Todas ({questions.length})
+          Todas ({counts.all})
         </button>
         <button
+          type="button"
           onClick={() => setFilter('correct')}
           className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            filter === 'correct' ? 'bg-emerald-600 text-slate-950' : 'text-slate-300 hover:bg-[#0b132b]'
+            filter === 'correct'
+              ? 'bg-emerald-600 text-slate-950'
+              : 'text-slate-300 hover:bg-[#0b132b]'
           }`}
         >
-          Acertadas
+          Acertadas ({counts.correct})
         </button>
         <button
+          type="button"
           onClick={() => setFilter('incorrect')}
           className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            filter === 'incorrect' ? 'bg-rose-600 text-slate-950' : 'text-slate-300 hover:bg-[#0b132b]'
+            filter === 'incorrect'
+              ? 'bg-rose-600 text-slate-950'
+              : 'text-slate-300 hover:bg-[#0b132b]'
           }`}
         >
-          Erradas
+          Erradas ({counts.incorrect})
         </button>
         <button
+          type="button"
           onClick={() => setFilter('blank')}
           className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            filter === 'blank' ? 'bg-amber-600 text-slate-950' : 'text-slate-300 hover:bg-[#0b132b]'
+            filter === 'blank'
+              ? 'bg-amber-600 text-slate-950'
+              : 'text-slate-300 hover:bg-[#0b132b]'
           }`}
         >
-          Em Branco
+          Em Branco ({counts.blank})
         </button>
       </div>
 
       {/* Questions list */}
       <div className="space-y-6">
-        {filteredQuestions.map((q) => {
-          const userAns = currentAttempt.answers[q.id];
-          const isCorrect = userAns === q.correctAnswer;
+        {filteredQuestions.length === 0 && (
+          <p className="text-sm text-slate-400 bg-[#1c2541]/40 border border-[#3a506b]/40 rounded-xl p-6 text-center">
+            Nenhuma questão neste filtro.
+          </p>
+        )}
+
+        {filteredQuestions.map((question) => {
+          const userAnswer = currentAttempt.answers[question.id];
+          const isCorrect = userAnswer === question.correctAnswer;
 
           return (
-            <div key={q.id} className="bg-[#1c2541]/60 border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
-              <div className="flex items-center justify-between">
+            <div
+              key={question.id}
+              className="bg-[#1c2541]/60 border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
-                  Questão {questions.findIndex(item => item.id === q.id) + 1} • {q.subjectId}
+                  Questão {questions.findIndex((item) => item.id === question.id) + 1} •{' '}
+                  {getSubjectName(config, question.subjectId)}
                 </span>
 
                 <div className="flex items-center gap-2">
-                  {!userAns ? (
+                  {!userAnswer ? (
                     <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">
                       Não Respondida
                     </span>
@@ -108,27 +146,31 @@ export const ReviewScreen: React.FC = () => {
               </div>
 
               <div className="text-slate-100 text-base leading-relaxed font-medium">
-                {q.statement}
+                {question.statement}
               </div>
 
               <div className="space-y-2 pt-2">
-                {q.alternatives.map((alt) => {
-                  const isUserSelection = userAns === alt.id;
-                  const isTheCorrect = alt.id === q.correctAnswer;
+                {question.alternatives.map((alternative) => {
+                  const isUserSelection = userAnswer === alternative.id;
+                  const isTheCorrect = alternative.id === question.correctAnswer;
 
                   let style = 'bg-[#0b132b]/60 border-[#3a506b]/40 text-slate-300';
                   if (isTheCorrect) {
-                    style = 'bg-emerald-500/20 border-emerald-500/50 text-emerald-100 font-semibold';
+                    style =
+                      'bg-emerald-500/20 border-emerald-500/50 text-emerald-100 font-semibold';
                   } else if (isUserSelection && !isCorrect) {
                     style = 'bg-rose-500/20 border-rose-500/50 text-rose-100';
                   }
 
                   return (
-                    <div key={alt.id} className={`p-3.5 rounded-xl border flex items-start gap-3 ${style}`}>
+                    <div
+                      key={alternative.id}
+                      className={`p-3.5 rounded-xl border flex items-start gap-3 ${style}`}
+                    >
                       <span className="w-6 h-6 rounded bg-[#1c2541] flex items-center justify-center font-bold text-xs shrink-0">
-                        {alt.id}
+                        {alternative.id}
                       </span>
-                      <span className="text-sm leading-relaxed">{alt.text}</span>
+                      <span className="text-sm leading-relaxed">{alternative.text}</span>
                     </div>
                   );
                 })}
@@ -136,12 +178,12 @@ export const ReviewScreen: React.FC = () => {
 
               {/* Explanation Box */}
               <div className="mt-4 p-5 rounded-xl bg-[#0b132b]/90 border border-[#3a506b]/60 space-y-2">
-                <div className="flex items-center justify-between text-xs font-semibold text-cyan-400">
-                  <span>Gabarito Oficial: ({q.correctAnswer})</span>
-                  <span>{q.source}</span>
+                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-cyan-400">
+                  <span>Gabarito Oficial: ({question.correctAnswer})</span>
+                  <span>{question.source}</span>
                 </div>
                 <p className="text-sm text-slate-300 leading-relaxed pt-1">
-                  <strong>Explicação Comentada:</strong> {q.explanation}
+                  <strong>Explicação Comentada:</strong> {question.explanation}
                 </p>
               </div>
             </div>

@@ -193,7 +193,6 @@
     "id": "mat-11",
     "subjectId": "matematica",
     "topic": "Progressão Aritmética e Geométrica",
-    4: "A produção de barris de petróleo em um campo secundário cresceu em Progressão Aritmética (PA). No 2º mês produziu 1.200 barris e no 5º mês produziu 2.100 barris. Qual foi a produção no 1º mês?",
     "statement": "A produção de barris de petróleo em um campo secundário cresceu em Progressão Aritmética (PA). No 2º mês produziu 1.200 barris e no 5º mês produziu 2.100 barris. Qual foi a produção no 1º mês?",
     "alternatives": [
       { "id": "A", "text": "900 barris" },

@@ -707,7 +707,7 @@
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Pessoas",
     "statement": "A teoria da motivação de Maslow organiza as necessidades humanas em uma pirâmide hierárquica. No topo dessa pirâmide encontram-se as necessidades de:",
-    alternatives": [
+    "alternatives": [
       { "id": "A", "text": "Fisiológicas (fome, sede, abrigo)" },
       { "id": "B", "text": "Segurança e proteção física" },
       { "id": "C", "text": "Sociais e de associação" },

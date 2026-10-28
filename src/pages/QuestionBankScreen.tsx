@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useExamStore } from '../store/useExamStore';
+import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { Search, ShieldCheck, ArrowLeft } from 'lucide-react';
 
 export const QuestionBankScreen: React.FC = () => {
@@ -24,6 +24,7 @@ export const QuestionBankScreen: React.FC = () => {
     <div className="max-w-5xl mx-auto px-4 py-8 space-y-6 text-left">
       <div className="flex items-center justify-between">
         <button
+          type="button"
           onClick={() => setView('home')}
           className="flex items-center gap-1.5 text-slate-400 hover:text-white text-sm font-medium transition-colors"
         >
@@ -77,11 +78,17 @@ export const QuestionBankScreen: React.FC = () => {
           Mostrando <strong className="text-cyan-400">{filteredQuestions.length}</strong> de <strong className="text-white">{allQuestionsBank.length}</strong> questões cadastradas.
         </p>
 
+        {filteredQuestions.length === 0 && (
+          <p className="text-sm text-slate-400 bg-[#1c2541]/40 border border-[#3a506b]/40 rounded-xl p-6 text-center">
+            Nenhuma questão encontrada com os filtros atuais.
+          </p>
+        )}
+
         {filteredQuestions.map((q) => (
           <div key={q.id} className="bg-[#1c2541]/60 border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase">
-                {q.subjectId} • {q.topic}
+                {getSubjectName(config, q.subjectId)} • {q.topic}
               </span>
               <div className="flex items-center gap-2">
                 <span className={`px-2.5 py-0.5 rounded text-xs font-semibold uppercase ${

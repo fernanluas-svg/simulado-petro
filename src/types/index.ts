@@ -55,6 +55,13 @@ export interface ExamAttempt {
   isCompleted: boolean;
   isPaused?: boolean;
   scoreData?: ExamResult;
+
+  // Sessão persistida (campos opcionais para compatibilidade com tentativas antigas)
+  questionIds?: string[]; // ordem exata das questões sorteadas
+  durationMinutes?: number; // tempo limite escolhido
+  timeRemainingSeconds?: number; // saldo congelado no início/pausa
+  lastResumedAt?: number; // timestamp em que o relógio voltou a correr
+  lastQuestionIndex?: number; // última questão aberta
 }
 
 export interface ExamResult {
