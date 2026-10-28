@@ -12,6 +12,27 @@
       content="Simulado oficial do Processo Seletivo Transpetro 2026.3 — Administração e Controle, com 60 questões, pausa, correção e histórico."
     />
     <meta name="theme-color" content="#0b132b" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('transpetro_theme');
+          if (theme === 'branco' || theme === 'preto' || theme === 'atual') {
+            var root = document.documentElement;
+            root.dataset.theme = theme;
+            root.style.colorScheme = theme === 'branco' ? 'light' : 'dark';
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) {
+              meta.setAttribute(
+                'content',
+                theme === 'branco' ? '#eef2f7' : theme === 'preto' ? '#000000' : '#0b132b',
+              );
+            }
+          }
+        } catch (error) {
+          /* localStorage indisponível: usa o tema padrão */
+        }
+      })();
+    </script>
     <title>Transpetro Simulados 2026 — Administração e Controle</title>
   </head>
   <body>

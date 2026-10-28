@@ -11,6 +11,7 @@ describe('Exam Store & Scoring Logic', () => {
   it('should have correct default settings', () => {
     const store = useExamStore.getState();
     expect(store.settings.defaultDurationMinutes).toBe(240);
+    expect(store.settings.theme).toBe('atual');
   });
 
   it('should handle view transitions correctly', () => {

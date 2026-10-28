@@ -1,4 +1,5 @@
 import type { ExamConfig, SubjectConfig, Question, ExamAttempt, UserSettings } from '../types';
+import { THEME_STORAGE_KEY } from './theme';
 
 const DB_NAME = 'TranspetroSimuladosDB';
 const DB_VERSION = 1;
@@ -198,6 +199,7 @@ export async function clearAllData(): Promise<void> {
   try {
     localStorage.removeItem(LOCAL_ATTEMPTS_KEY);
     localStorage.removeItem(LOCAL_SETTINGS_KEY);
+    localStorage.removeItem(THEME_STORAGE_KEY);
   } catch (error) {
     console.error('Não foi possível limpar o localStorage.', error);
   }

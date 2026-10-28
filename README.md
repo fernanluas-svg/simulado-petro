@@ -7,7 +7,7 @@ Aplicativo web progressivo (PWA) de alto desempenho desenvolvido para preparaç�
 ## 🚀 Tecnologias Utilizadas
 
 - **React 19 + Vite + TypeScript**
-- **Tailwind CSS v4** (Interface responsiva, moderna e mobile-first)
+- **Tailwind CSS v4** (interface responsiva, mobile-first e tokens de cor para os temas Atual, Branco e Preto)
 - **React Router (HashRouter)** — rotas compartilháveis e navegação com voltar/avançar do navegador
 - **Zustand** (estado global do simulado, cronômetro e preferências)
 - **IndexedDB** com fallback para `localStorage` (persistência de tentativas, respostas, sessão e preferências)
@@ -45,11 +45,13 @@ O simulado completo padrão possui exatamente **60 questões objetivas** distrib
 - **Retomada e descarte** de simulados em andamento na tela inicial e no histórico.
 - Finalização automática quando o prazo vence (inclusive com o app fechado).
 - **Histórico ordenado** do mais recente para o mais antigo, com resultado, aproveitamento e tempo gasto.
-- **Preferências persistidas** (correção imediata padrão, duração padrão e som).
+- **Preferências persistidas** (tema, correção imediata padrão e duração padrão).
+- **Três temas**: **Atual** (azul-marinho original), **Branco** (claro) e **Preto** (fundo puro para OLED), trocáveis em Ajustes e aplicados na hora.
 - Resultado detalhado por matéria, critérios de reprovação e revisão comentada com filtros.
 - Banco de questões pesquisável por enunciado, assunto, matéria e dificuldade.
 - Limpeza completa dos dados locais nas configurações.
 - Navegação acessível com foco visível, rótulos ARIA e modais identificados.
+- **Grade de questões com feedback**: com a correção imediata ativa, cada número respondido fica verde (acerto) ou vermelho (erro); sem ela, a grade sinaliza apenas "respondida" para não revelar o gabarito.
 - **Layout mobile-first**: barra fixa com cronômetro, pausa e finalização durante a prova, alvos de toque de pelo menos 44px, campos com 16px (sem zoom automático no iOS) e modais roláveis em telas baixas.
 
 ---
@@ -95,7 +97,7 @@ npm run build
 npm run lint
 ```
 
-A suíte cobre cálculo de tempo/pausa, pontuação e critérios de aprovação, início de simulado, restauração de sessão, ordenação do histórico, descarte e integridade dos bancos JSON.
+A suíte cobre cálculo de tempo/pausa, pontuação e critérios de aprovação, início de simulado, restauração de sessão, ordenação do histórico, descarte, integridade dos bancos JSON, troca/persistência de temas e as cores de acerto/erro da grade de questões.
 
 ---
 

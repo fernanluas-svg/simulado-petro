@@ -1,23 +1,114 @@
 @import "tailwindcss";
 
+/*
+ * Tokens semânticos de cor. Cada tema redefine apenas as variáveis `--theme-*`,
+ * então todos os utilitários (bg-base, text-ink, border-line, text-success...)
+ * trocam de valor automaticamente.
+ */
+@theme inline {
+  --color-base: var(--theme-base);
+  --color-surface: var(--theme-surface);
+  --color-surface-hover: var(--theme-surface-hover);
+  --color-line: var(--theme-line);
+
+  --color-ink: var(--theme-ink);
+  --color-ink-soft: var(--theme-ink-soft);
+  --color-ink-muted: var(--theme-ink-muted);
+
+  --color-accent: var(--theme-accent);
+  --color-success: var(--theme-success);
+  --color-danger: var(--theme-danger);
+  --color-warning: var(--theme-warning);
+}
+
+/* Tema "Atual" (padrão): azul-marinho original */
+:root,
+[data-theme="atual"] {
+  color-scheme: dark;
+  --theme-base: #0b132b;
+  --theme-surface: #1c2541;
+  --theme-surface-hover: #24304f;
+  --theme-line: #3a506b;
+  --theme-ink: #f8fafc;
+  --theme-ink-soft: #cbd5e1;
+  --theme-ink-muted: #94a3b8;
+  --theme-accent: #22d3ee;
+  --theme-success: #34d399;
+  --theme-danger: #fb7185;
+  --theme-warning: #fbbf24;
+  --theme-scrollbar-track: #0b132b;
+  --theme-scrollbar-thumb: #1c2541;
+  --theme-scrollbar-thumb-hover: #3a506b;
+}
+
+/* Tema "Branco": claro, com painéis brancos */
+[data-theme="branco"] {
+  color-scheme: light;
+  --theme-base: #eef2f7;
+  --theme-surface: #ffffff;
+  --theme-surface-hover: #e2e8f0;
+  --theme-line: #cbd5e1;
+  --theme-ink: #0f172a;
+  --theme-ink-soft: #334155;
+  --theme-ink-muted: #64748b;
+  --theme-accent: #0e7490;
+  --theme-success: #047857;
+  --theme-danger: #be123c;
+  --theme-warning: #b45309;
+  --theme-scrollbar-track: #eef2f7;
+  --theme-scrollbar-thumb: #cbd5e1;
+  --theme-scrollbar-thumb-hover: #94a3b8;
+}
+
+/* Tema "Preto": fundo puro para telas OLED */
+[data-theme="preto"] {
+  color-scheme: dark;
+  --theme-base: #000000;
+  --theme-surface: #0d0d0d;
+  --theme-surface-hover: #1a1a1a;
+  --theme-line: #333333;
+  --theme-ink: #fafafa;
+  --theme-ink-soft: #d4d4d4;
+  --theme-ink-muted: #a3a3a3;
+  --theme-accent: #22d3ee;
+  --theme-success: #4ade80;
+  --theme-danger: #fb7185;
+  --theme-warning: #fbbf24;
+  --theme-scrollbar-track: #000000;
+  --theme-scrollbar-thumb: #1f1f1f;
+  --theme-scrollbar-thumb-hover: #3a3a3a;
+}
+
 @layer base {
+  html {
+    background-color: var(--theme-base);
+  }
+
   body {
-    @apply bg-[#0b132b] text-slate-100 font-sans antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950;
+    @apply font-sans antialiased min-h-screen;
+    background-color: var(--theme-base);
+    color: var(--theme-ink);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
   }
 }
 
-/* Custom scrollbar and smooth transitions */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0b132b;
+  background: var(--theme-scrollbar-track);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #1c2541;
+  background: var(--theme-scrollbar-thumb);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a506b;
+  background: var(--theme-scrollbar-thumb-hover);
 }

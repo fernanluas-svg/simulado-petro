@@ -21,6 +21,7 @@ import {
   getRemainingSeconds,
   getTotalSeconds,
 } from '../services/timer';
+import { getStoredTheme, normalizeTheme } from '../services/theme';
 
 export type ExamView =
   | 'home'
@@ -33,7 +34,7 @@ export type ExamView =
   | 'settings';
 
 export const DEFAULT_SETTINGS: UserSettings = {
-  theme: 'dark',
+  theme: 'atual',
   defaultImmediateCorrection: false,
   defaultDurationMinutes: 240,
   soundEnabled: true,
@@ -41,7 +42,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
 
 function normalizeSettings(settings?: Partial<UserSettings> | null): UserSettings {
   return {
-    theme: settings?.theme === 'light' ? 'light' : 'dark',
+    theme: normalizeTheme(settings?.theme),
     defaultImmediateCorrection: Boolean(
       settings?.defaultImmediateCorrection ?? DEFAULT_SETTINGS.defaultImmediateCorrection,
     ),
@@ -130,7 +131,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
   startError: null,
   view: 'home',
   currentQuestionIndex: 0,
-  settings: DEFAULT_SETTINGS,
+  settings: { ...DEFAULT_SETTINGS, theme: getStoredTheme() ?? DEFAULT_SETTINGS.theme },
 
   initApp: async () => {
     set({ isLoading: true, error: null });

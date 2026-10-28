@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
       {startError && (
         <div
           role="alert"
-          className="bg-rose-500/10 border border-rose-500/30 text-rose-200 rounded-xl p-4 flex items-start justify-between gap-4 text-sm"
+          className="bg-rose-500/10 border border-rose-500/30 text-danger rounded-xl p-4 flex items-start justify-between gap-4 text-sm"
         >
           <span className="flex items-start gap-2">
             <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
           <button
             type="button"
             onClick={clearStartError}
-            className="text-rose-300 hover:text-white font-bold"
+            className="text-danger hover:text-ink font-bold"
             aria-label="Fechar aviso"
           >
             ×
@@ -79,17 +79,17 @@ export const Home: React.FC = () => {
 
       {/* Active Exam Resume Banner */}
       {hasActiveExam && currentAttempt && (
-        <div className="bg-gradient-to-r from-amber-950/70 via-[#1c2541] to-[#0b132b] border border-amber-500/50 rounded-2xl p-6 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="bg-gradient-to-r from-warning/20 via-surface to-base border border-amber-500/50 rounded-2xl p-6 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="bg-amber-500/20 p-3.5 rounded-2xl border border-amber-500/40 text-amber-400">
+            <div className="bg-amber-500/20 p-3.5 rounded-2xl border border-amber-500/40 text-warning">
               <Pause className="w-8 h-8" />
             </div>
             <div className="space-y-1">
-              <h3 className="text-lg font-bold text-white">
+              <h3 className="text-lg font-bold text-ink">
                 Simulado em Andamento
                 {currentAttempt.isPaused ? ' (Pausado)' : ''}
               </h3>
-              <p className="text-sm text-amber-200/80">
+              <p className="text-sm text-warning/80">
                 {canResume
                   ? 'Seu progresso está salvo. Retome de onde parou quando quiser.'
                   : 'Não foi possível restaurar as questões desta tentativa antiga. Descarte-a para liberar um novo simulado.'}
@@ -118,7 +118,7 @@ export const Home: React.FC = () => {
                   await discardAttempt(currentAttempt.id);
                 }
               }}
-              className="flex items-center gap-2 bg-[#0b132b]/70 hover:bg-rose-500/20 text-rose-200 border border-rose-500/30 font-medium px-4 py-3.5 rounded-xl transition-all whitespace-nowrap text-sm"
+              className="flex items-center gap-2 bg-base/70 hover:bg-rose-500/20 text-danger border border-rose-500/30 font-medium px-4 py-3.5 rounded-xl transition-all whitespace-nowrap text-sm"
             >
               <Trash2 className="w-4 h-4" />
               <span>Descartar</span>
@@ -128,16 +128,16 @@ export const Home: React.FC = () => {
       )}
 
       {/* Hero Banner */}
-      <div className="bg-gradient-to-br from-[#1c2541] to-[#0b132b] border border-[#3a506b]/50 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-surface to-base border border-line/50 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
         <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-accent text-xs font-semibold uppercase tracking-wider">
             {config?.noticeNumber || 'Edital nº 03 / 2026.3'}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-ink tracking-tight">
             {config?.title || 'Simulado Oficial Transpetro 2026'}
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+          <p className="text-ink-soft text-sm sm:text-base max-w-2xl leading-relaxed">
             {config?.cargo ||
               'Profissional Transpetro de Nível Médio Júnior - Administração e Controle'}{' '}
             (Banca: {config?.organizer || 'Fundação Cesgranrio'}). Prepare-se com questões
@@ -158,9 +158,9 @@ export const Home: React.FC = () => {
             <button
               type="button"
               onClick={() => setView('setup')}
-              className="flex items-center gap-2 bg-[#1c2541] hover:bg-[#3a506b] text-slate-200 border border-[#3a506b] font-medium px-5 py-3.5 rounded-xl transition-all"
+              className="flex items-center gap-2 bg-surface hover:bg-surface-hover text-ink-soft border border-line font-medium px-5 py-3.5 rounded-xl transition-all"
             >
-              <Clock className="w-5 h-5 text-cyan-400" />
+              <Clock className="w-5 h-5 text-accent" />
               <span>Configurar Simulado</span>
             </button>
           </div>
@@ -169,33 +169,33 @@ export const Home: React.FC = () => {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-[#1c2541]/60 border border-[#3a506b]/40 rounded-xl p-5 flex items-center gap-4">
-          <div className="bg-cyan-500/10 p-3 rounded-xl text-cyan-400">
+        <div className="bg-surface/60 border border-line/40 rounded-xl p-5 flex items-center gap-4">
+          <div className="bg-cyan-500/10 p-3 rounded-xl text-accent">
             <Award className="w-7 h-7" />
           </div>
           <div>
-            <p className="text-xs text-slate-400 font-medium">Melhor Nota</p>
-            <p className="text-2xl font-bold text-white">{bestScore.toFixed(1)}%</p>
+            <p className="text-xs text-ink-muted font-medium">Melhor Nota</p>
+            <p className="text-2xl font-bold text-ink">{bestScore.toFixed(1)}%</p>
           </div>
         </div>
 
-        <div className="bg-[#1c2541]/60 border border-[#3a506b]/40 rounded-xl p-5 flex items-center gap-4">
-          <div className="bg-emerald-500/10 p-3 rounded-xl text-emerald-400">
+        <div className="bg-surface/60 border border-line/40 rounded-xl p-5 flex items-center gap-4">
+          <div className="bg-emerald-500/10 p-3 rounded-xl text-success">
             <CheckCircle2 className="w-7 h-7" />
           </div>
           <div>
-            <p className="text-xs text-slate-400 font-medium">Simulados Realizados</p>
-            <p className="text-2xl font-bold text-white">{completedAttempts.length}</p>
+            <p className="text-xs text-ink-muted font-medium">Simulados Realizados</p>
+            <p className="text-2xl font-bold text-ink">{completedAttempts.length}</p>
           </div>
         </div>
 
-        <div className="bg-[#1c2541]/60 border border-[#3a506b]/40 rounded-xl p-5 flex items-center gap-4">
+        <div className="bg-surface/60 border border-line/40 rounded-xl p-5 flex items-center gap-4">
           <div className="bg-purple-500/10 p-3 rounded-xl text-purple-400">
             <BookOpen className="w-7 h-7" />
           </div>
           <div>
-            <p className="text-xs text-slate-400 font-medium">Banco de Questões</p>
-            <p className="text-2xl font-bold text-white">
+            <p className="text-xs text-ink-muted font-medium">Banco de Questões</p>
+            <p className="text-2xl font-bold text-ink">
               {allQuestionsBank.length} Disponíveis
             </p>
           </div>
@@ -204,17 +204,17 @@ export const Home: React.FC = () => {
 
       {/* Last Result Preview if available */}
       {lastResult && lastResult.scoreData && (
-        <div className="bg-[#1c2541]/40 border border-[#3a506b]/40 rounded-2xl p-6 space-y-4">
+        <div className="bg-surface/40 border border-line/40 rounded-2xl p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-              <Award className="w-5 h-5 text-cyan-400" />
+            <h3 className="text-lg font-semibold text-ink flex items-center gap-2">
+              <Award className="w-5 h-5 text-accent" />
               <span>Último Resultado Obtido</span>
             </h3>
             <span
               className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${
                 lastResult.scoreData.passed
-                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                  : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+                  ? 'bg-emerald-500/20 text-success border border-emerald-500/30'
+                  : 'bg-rose-500/20 text-danger border border-rose-500/30'
               }`}
             >
               {lastResult.scoreData.passed ? 'Aprovado' : 'Reprovado'}
@@ -222,27 +222,27 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-            <div className="bg-[#0b132b]/60 p-3.5 rounded-xl border border-[#3a506b]/30">
-              <p className="text-xs text-slate-400">Nota Geral</p>
-              <p className="text-xl font-bold text-white">
+            <div className="bg-base/60 p-3.5 rounded-xl border border-line/30">
+              <p className="text-xs text-ink-muted">Nota Geral</p>
+              <p className="text-xl font-bold text-ink">
                 {lastResult.scoreData.percentage.toFixed(1)}%
               </p>
             </div>
-            <div className="bg-[#0b132b]/60 p-3.5 rounded-xl border border-[#3a506b]/30">
-              <p className="text-xs text-slate-400">Acertos</p>
-              <p className="text-xl font-bold text-emerald-400">
+            <div className="bg-base/60 p-3.5 rounded-xl border border-line/30">
+              <p className="text-xs text-ink-muted">Acertos</p>
+              <p className="text-xl font-bold text-success">
                 {lastResult.scoreData.correctCount} / {lastResult.scoreData.totalQuestions}
               </p>
             </div>
-            <div className="bg-[#0b132b]/60 p-3.5 rounded-xl border border-[#3a506b]/30">
-              <p className="text-xs text-slate-400">Específicos</p>
-              <p className="text-xl font-bold text-cyan-400">
+            <div className="bg-base/60 p-3.5 rounded-xl border border-line/30">
+              <p className="text-xs text-ink-muted">Específicos</p>
+              <p className="text-xl font-bold text-accent">
                 {lastResult.scoreData.specificCorrect} / {lastResult.scoreData.specificTotal}
               </p>
             </div>
-            <div className="bg-[#0b132b]/60 p-3.5 rounded-xl border border-[#3a506b]/30">
-              <p className="text-xs text-slate-400">Tempo Utilizado</p>
-              <p className="text-xl font-bold text-slate-200">
+            <div className="bg-base/60 p-3.5 rounded-xl border border-line/30">
+              <p className="text-xs text-ink-muted">Tempo Utilizado</p>
+              <p className="text-xl font-bold text-ink-soft">
                 {Math.floor(lastResult.scoreData.timeSpentSeconds / 60)} min
               </p>
             </div>
@@ -252,7 +252,7 @@ export const Home: React.FC = () => {
             <button
               type="button"
               onClick={() => resumeAttempt(lastResult)}
-              className="text-sm font-medium text-cyan-400 hover:text-cyan-300 flex items-center gap-1 min-h-11"
+              className="text-sm font-medium text-accent hover:text-accent flex items-center gap-1 min-h-11"
             >
               <span>Ver detalhes e gabarito comentado &rarr;</span>
             </button>
@@ -261,12 +261,12 @@ export const Home: React.FC = () => {
       )}
 
       {/* Edital Rules Summary */}
-      <div className="bg-[#1c2541]/30 border border-[#3a506b]/30 rounded-2xl p-6 space-y-3">
-        <h3 className="text-base font-semibold text-white flex items-center gap-2">
-          <AlertTriangle className="w-5 h-5 text-amber-400" />
+      <div className="bg-surface/30 border border-line/30 rounded-2xl p-6 space-y-3">
+        <h3 className="text-base font-semibold text-ink flex items-center gap-2">
+          <AlertTriangle className="w-5 h-5 text-warning" />
           <span>Critérios do Edital Transpetro 2026</span>
         </h3>
-        <ul className="text-sm text-slate-300 space-y-2 list-disc list-inside">
+        <ul className="text-sm text-ink-soft space-y-2 list-disc list-inside">
           <li>
             Simulado completo com exatamente 60 questões objetivas (10 Português, 12
             Matemática, 38 Específicos).

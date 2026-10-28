@@ -13,22 +13,22 @@ import {
 const navItemClass = ({ isActive }: { isActive: boolean }) =>
   `flex items-center justify-center gap-1.5 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
     isActive
-      ? 'bg-cyan-600/20 text-cyan-400 border-cyan-500/30 shadow-sm'
-      : 'text-slate-300 hover:bg-[#1c2541] hover:text-white border-transparent'
+      ? 'bg-cyan-600/20 text-accent border-cyan-500/30 shadow-sm'
+      : 'text-ink-soft hover:bg-surface hover:text-ink border-transparent'
   }`;
 
 const resultItemClass = ({ isActive }: { isActive: boolean }) =>
   `flex items-center justify-center gap-1.5 min-h-11 px-3 py-2 rounded-lg text-sm font-medium transition-all border ${
     isActive
-      ? 'bg-emerald-600/20 text-emerald-400 border-emerald-500/30 shadow-sm'
-      : 'text-emerald-300 hover:bg-[#1c2541] hover:text-emerald-200 border-transparent'
+      ? 'bg-emerald-600/20 text-success border-emerald-500/30 shadow-sm'
+      : 'text-success hover:bg-surface hover:text-success border-transparent'
   }`;
 
 export const Navbar: React.FC = () => {
   const { currentAttempt } = useExamStore();
 
   return (
-    <header className="bg-[#0b132b]/90 backdrop-blur-md border-b border-[#1c2541] sticky top-0 z-50 px-4 py-3">
+    <header className="bg-base/90 backdrop-blur-md border-b border-line sticky top-0 z-50 px-4 py-3">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
         <NavLink
           to="/"
@@ -40,10 +40,10 @@ export const Navbar: React.FC = () => {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight text-slate-100 m-0">
+            <h1 className="text-lg font-bold tracking-tight text-ink m-0">
               Transpetro Simulados 2026
             </h1>
-            <p className="text-xs text-cyan-400 font-medium">
+            <p className="text-xs text-accent font-medium">
               Administração e Controle • Edital nº 03/2026.3
             </p>
           </div>

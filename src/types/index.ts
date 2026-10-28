@@ -80,8 +80,10 @@ export interface ExamResult {
   timeSpentSeconds: number;
 }
 
+export type ThemeName = 'atual' | 'branco' | 'preto';
+
 export interface UserSettings {
-  theme: 'dark' | 'light';
+  theme: ThemeName;
   defaultImmediateCorrection: boolean;
   defaultDurationMinutes: number;
   soundEnabled: boolean;
