@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useExamStore } from '../store/useExamStore';
-import { ArrowLeft, Check, CheckSquare, Clock, Palette, Trash2 } from 'lucide-react';
+import { ArrowLeft, Check, CheckSquare, Clock, Info, Palette, Trash2, X } from 'lucide-react';
 import { clearAllData } from '../services/storage';
 import { THEME_OPTIONS } from '../services/theme';
 
 const DURATION_OPTIONS = [60, 120, 180, 240, 300];
 
 export const SettingsScreen: React.FC = () => {
-  const { settings, updateSettings, setView } = useExamStore();
+  const { settings, updateSettings, setView, config } = useExamStore();
   const [isClearing, setIsClearing] = useState(false);
+  const [showApprovalInfo, setShowApprovalInfo] = useState(false);
 
   const handleResetData = async () => {
     if (
@@ -163,6 +164,27 @@ export const SettingsScreen: React.FC = () => {
             </select>
           </div>
 
+          <div className="p-4 bg-base/60 rounded-xl border border-line/30 space-y-3">
+            <div className="flex items-center gap-2">
+              <Info className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-ink">
+                Critérios de Aprovação
+              </span>
+            </div>
+            <p className="text-xs text-ink-muted">
+              Entenda como o resultado do simulado é considerado aprovado ou
+              reprovado e qual percentual de acertos é necessário.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowApprovalInfo(true)}
+              className="min-h-11 flex items-center gap-2 bg-cyan-600/10 hover:bg-cyan-600/20 text-accent border border-cyan-500/30 px-4 py-2.5 rounded-xl text-sm font-medium transition-all"
+            >
+              <Info className="w-4 h-4" />
+              <span>Ver explicação</span>
+            </button>
+          </div>
+
           <div className="pt-4 border-t border-line/40 flex items-center justify-between gap-4">
             <div className="space-y-0.5">
               <span className="text-sm font-medium text-danger">
@@ -184,6 +206,93 @@ export const SettingsScreen: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {showApprovalInfo && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="approval-title"
+          className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        >
+          <div className="bg-surface border border-line rounded-2xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto space-y-5 shadow-2xl text-left">
+            <div className="flex items-start justify-between gap-4">
+              <h3
+                id="approval-title"
+                className="text-xl font-bold text-ink flex items-center gap-2"
+              >
+                <Info className="w-5 h-5 text-accent" />
+                Como funciona a aprovação
+              </h3>
+              <button
+                type="button"
+                onClick={() => setShowApprovalInfo(false)}
+                aria-label="Fechar"
+                className="text-ink-muted hover:text-ink"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <p className="text-sm text-ink-soft">
+              Para ser aprovado, o candidato precisa atender a todos os
+              critérios abaixo ao mesmo tempo. Um único critério não cumprido
+              resulta em reprovação.
+            </p>
+
+            <ul className="space-y-2 text-sm text-ink-soft list-disc list-inside">
+              <li>
+                <strong className="text-ink">Conhecimentos Gerais</strong>{' '}
+                (Português + Matemática): mínimo de{' '}
+                {config?.passingCriteria?.minGeneralScorePercent ?? 50}% de
+                aproveitamento.
+              </li>
+              <li>
+                <strong className="text-ink">Conhecimentos Específicos</strong>:
+                mínimo de{' '}
+                {config?.passingCriteria?.minSpecificScorePercent ?? 50}% de
+                aproveitamento e pelo menos{' '}
+                {config?.subjects.find((s) => s.id === 'conhecimentos_especificos')
+                  ?.minCorrect ?? 12}{' '}
+                acertos.
+              </li>
+              <li>
+                <strong className="text-ink">Cada matéria</strong>: mínimo de{' '}
+                {config?.passingCriteria?.minSubjectScorePercent ?? 50}% de
+                aproveitamento.
+              </li>
+              <li>
+                <strong className="text-ink">Não zerar</strong> nenhuma matéria.
+              </li>
+            </ul>
+
+            <div className="bg-base/60 border border-line/40 rounded-xl p-4 space-y-2">
+              <p className="text-xs font-semibold text-accent">
+                Pontuação ponderada (nota final)
+              </p>
+              <p className="text-xs text-ink-soft">
+                A nota final é calculada com pesos: Português{' '}
+                {config?.subjects.find((s) => s.id === 'portugues')?.weight ?? 1}x,
+                Matemática{' '}
+                {config?.subjects.find((s) => s.id === 'matematica')?.weight ?? 1}x
+                e Conhecimentos Específicos{' '}
+                {config?.subjects.find((s) => s.id === 'conhecimentos_especificos')
+                  ?.weight ?? 2}x. Por isso, acertar questões de
+                Conhecimentos Específicos tem impacto maior na nota final.
+              </p>
+            </div>
+
+            <div className="flex justify-end pt-2">
+              <button
+                type="button"
+                onClick={() => setShowApprovalInfo(false)}
+                className="bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm"
+              >
+                Entendi
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
