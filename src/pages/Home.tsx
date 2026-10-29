@@ -137,7 +137,7 @@ export const Home: React.FC = () => {
           <h2 className="text-2xl sm:text-4xl font-extrabold text-ink tracking-tight">
             {config?.title || 'Simulado Oficial Transpetro 2026'}
           </h2>
-          <p className="text-ink-soft text-sm sm:text-base max-w-2xl leading-relaxed">
+          <p className="text-ink text-sm sm:text-base max-w-2xl leading-relaxed opacity-90">
             {config?.cargo ||
               'Profissional Transpetro de Nível Médio Júnior - Administração e Controle'}{' '}
             (Banca: {config?.organizer || 'Fundação Cesgranrio'}). Prepare-se com questões
