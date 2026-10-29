@@ -269,20 +269,23 @@ export async function clearAllData(): Promise<void> {
   }
 }
 
+const dataUrl = (path: string): string =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 export async function loadExamConfig(): Promise<ExamConfig> {
-  const res = await fetch('/data/exam_configs.json');
+  const res = await fetch(dataUrl('/data/exam_configs.json'));
   if (!res.ok) throw new Error('Falha ao carregar configuração do edital.');
   return (await res.json()) as ExamConfig;
 }
 
 export async function loadSubjects(): Promise<SubjectConfig[]> {
-  const res = await fetch('/data/subjects.json');
+  const res = await fetch(dataUrl('/data/subjects.json'));
   if (!res.ok) throw new Error('Falha ao carregar matérias.');
   return (await res.json()) as SubjectConfig[];
 }
 
 export async function loadQuestions(subjectId: string): Promise<Question[]> {
-  const res = await fetch(`/data/questions/${subjectId}.json`);
+  const res = await fetch(dataUrl(`/data/questions/${subjectId}.json`));
   if (!res.ok) throw new Error(`Falha ao carregar questões de ${subjectId}.`);
   const data = (await res.json()) as unknown;
   if (!Array.isArray(data)) {

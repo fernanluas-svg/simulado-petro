@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: './',
   plugins: [
     react(),
     tailwindcss(),
@@ -15,14 +16,16 @@ export default defineConfig({
         name: 'Transpetro Simulados 2026',
         short_name: 'Simulados Transpetro',
         description: 'Aplicativo PWA oficial para preparação do Processo Seletivo Público Transpetro 2026 - Administração e Controle',
+        lang: 'pt-BR',
         theme_color: '#0b132b',
         background_color: '#0b132b',
         display: 'standalone',
         orientation: 'portrait-primary',
-        start_url: '/',
+        start_url: './',
+        scope: './',
         icons: [
           {
-            src: '/favicon.svg',
+            src: './favicon.svg',
             sizes: '192x192 512x512',
             type: 'image/svg+xml',
             purpose: 'any maskable'
@@ -30,7 +33,10 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
       }
     })
   ],
