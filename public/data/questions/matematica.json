@@ -3,7 +3,7 @@
     "id": "mat-01",
     "subjectId": "matematica",
     "topic": "Porcentagem e juros simples e compostos",
-    "statement": "Um investimento de R$ 50.000,00 aplicado a juros compostos a uma taxa de 10% ao ano gerou um montante após 2 anos. Qual foi o valor dos juros acumulados nesse período?",
+    "statement": "Um investimento de R$ 50.000,00 aplicado a juros compostos a uma taxa de 10% ao ano resultou em um montante após 2 anos. Qual foi o valor dos juros acumulados nesse período?",
     "alternatives": [
       { "id": "A", "text": "R$ 10.000,00" },
       { "id": "B", "text": "R$ 10.500,00" },
@@ -79,7 +79,7 @@
     "id": "mat-05",
     "subjectId": "matematica",
     "topic": "Equações e inequações de 1º e 2º graus",
-    "statement": "O lucro L (em milhares de reais) de uma operação logística da Transpetro é dado por L(x) = -x^2 + 10x - 9, onde x representa o volume movimentado em milhares de toneladas. Qual é o lucro máximo obtido?",
+    "statement": "O lucro L (em milhares de reais) de uma operação logística da Transpetro é dado por L(x) = -x^2 + 10x - 9, em que x representa o volume movimentado em milhares de toneladas. Qual é o lucro máximo obtido?",
     "alternatives": [
       { "id": "A", "text": "R$ 10.000,00" },
       { "id": "B", "text": "R$ 12.000,00" },
@@ -136,7 +136,7 @@
     "id": "mat-08",
     "subjectId": "matematica",
     "topic": "Porcentagem e juros simples e compostos",
-    "statement": "Um equipamento cujo preço de tabela era R$ 800,00 sofreu um desconto de 15% à vista. No pagamento com cartão de crédito, incidiu um acréscimo de 5% sobre o valor com desconto. Qual foi o preço final pago no cartão?",
+    "statement": "Um equipamento cujo preço de tabela era R$ 800,00 sofreu um desconto de 15% à vista. No pagamento com cartão de crédito, houve um acréscimo de 5% sobre o valor com desconto. Qual foi o preço final pago no cartão?",
     "alternatives": [
       { "id": "A", "text": "R$ 680,00" },
       { "id": "B", "text": "R$ 714,00" },
@@ -159,7 +159,7 @@
     "alternatives": [
       { "id": "A", "text": "5/14" },
       { "id": "B", "text": "25/64" },
-      { "id": "C", "text": "10/28" },
+      { "id": "C", "text": "10/56" },
       { "id": "D", "text": "3/28" },
       { "id": "E", "text": "1/2" }
     ],
@@ -174,7 +174,7 @@
     "id": "mat-10",
     "subjectId": "matematica",
     "topic": "Funções afim e quadrática",
-    "statement": "O custo fixo mensal de operação de uma linha de transporte é de R$ 10.000,00 e o custo variável por tonelada transportada é de R$ 50,00. If each ton is billed at R$ 150,00, qual é o ponto de equilíbrio (quantidade de toneladas em que a receita iguala o custo total)?",
+    "statement": "O custo fixo mensal de operação de uma linha de transporte é de R$ 10.000,00 e o custo variável por tonelada transportada é de R$ 50,00. Se cada tonelada for cobrada a R$ 150,00, qual é o ponto de equilíbrio (quantidade de toneladas em que a receita iguala o custo total)?",
     "alternatives": [
       { "id": "A", "text": "50 toneladas" },
       { "id": "B", "text": "80 toneladas" },
@@ -193,7 +193,7 @@
     "id": "mat-11",
     "subjectId": "matematica",
     "topic": "Progressão Aritmética e Geométrica",
-    "statement": "A produção de barris de petróleo em um campo secundário cresceu em Progressão Aritmética (PA). No 2º mês produziu 1.200 barris e no 5º mês produziu 2.100 barris. Qual foi a produção no 1º mês?",
+    "statement": "A produção de barris de petróleo em um campo secundário cresceu em Progressão Aritmética (PA). No 2º mês, a produção foi de 1.200 barris, e no 5º mês, de 2.100 barris. Qual foi a produção no 1º mês?",
     "alternatives": [
       { "id": "A", "text": "900 barris" },
       { "id": "B", "text": "1.000 barris" },

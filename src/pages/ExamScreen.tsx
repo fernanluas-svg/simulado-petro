@@ -9,6 +9,7 @@ import {
   Eye,
   EyeOff,
   Flag,
+  Loader2,
   Pause,
   Play,
   Send,
@@ -33,6 +34,7 @@ export const ExamScreen: React.FC = () => {
     finishExam,
     discardAttempt,
     setView,
+    isPausingExam,
   } = useExamStore();
 
   const [timeLeft, setTimeLeft] = useState<number>(() =>
@@ -119,8 +121,8 @@ export const ExamScreen: React.FC = () => {
   const selectedAlt = currentAttempt.answers[currentQ.id];
   const isMarked = currentAttempt.markedForReview[currentQ.id] || false;
 
-  const handlePause = () => {
-    pauseExam();
+  const handlePause = async () => {
+    await pauseExam();
     const state = useExamStore.getState();
     setTimeLeft(
       getRemainingSeconds(state.currentAttempt, state.config?.durationMinutes),
@@ -145,11 +147,17 @@ export const ExamScreen: React.FC = () => {
           {/* Pause Button */}
           <button
             type="button"
-            onClick={handlePause}
-            className="hidden lg:flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-warning border border-amber-500/40 text-xs font-bold transition-all"
+            onClick={() => void handlePause()}
+            disabled={isPausingExam}
+            aria-busy={isPausingExam}
+            className="hidden lg:flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-warning border border-amber-500/40 text-xs font-bold transition-all disabled:opacity-60 disabled:cursor-wait"
           >
-            <Pause className="w-3.5 h-3.5" />
-            <span>Pausar Simulado</span>
+            {isPausingExam ? (
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+            ) : (
+              <Pause className="w-3.5 h-3.5" />
+            )}
+            <span>{isPausingExam ? 'Salvando pausa...' : 'Pausar Simulado'}</span>
           </button>
 
           {/* Immediate correction toggle */}
@@ -440,11 +448,17 @@ export const ExamScreen: React.FC = () => {
           </div>
           <button
             type="button"
-            onClick={handlePause}
-            className="flex-1 min-h-11 flex items-center justify-center gap-1.5 rounded-xl bg-amber-500/20 text-warning border border-amber-500/40 text-xs font-bold active:scale-[0.98] transition-transform"
+            onClick={() => void handlePause()}
+            disabled={isPausingExam}
+            aria-busy={isPausingExam}
+            className="flex-1 min-h-11 flex items-center justify-center gap-1.5 rounded-xl bg-amber-500/20 text-warning border border-amber-500/40 text-xs font-bold active:scale-[0.98] transition-transform disabled:opacity-60 disabled:cursor-wait"
           >
-            <Pause className="w-4 h-4" />
-            <span>Pausar</span>
+            {isPausingExam ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              <Pause className="w-4 h-4" />
+            )}
+            <span>{isPausingExam ? 'Salvando...' : 'Pausar'}</span>
           </button>
           <button
             type="button"

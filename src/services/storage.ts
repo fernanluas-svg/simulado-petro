@@ -75,6 +75,35 @@ function removeLocalAttempt(id: string): void {
   }
 }
 
+/**
+ * Atualiza no localStorage as tentativas que também existem no fallback local.
+ * Usado pela migração para que registros antigos fiquem no schema novo nas
+ * duas camadas de armazenamento (IndexedDB e localStorage).
+ */
+export function syncAttemptsToLocalStorage(attempts: ExamAttempt[]): void {
+  if (attempts.length === 0) return;
+
+  try {
+    const local = getLocalAttempts();
+    if (local.length === 0) return;
+
+    const byId = new Map(local.map((attempt) => [attempt.id, attempt]));
+    let changed = false;
+    for (const attempt of attempts) {
+      if (byId.has(attempt.id)) {
+        byId.set(attempt.id, attempt);
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      localStorage.setItem(LOCAL_ATTEMPTS_KEY, JSON.stringify([...byId.values()]));
+    }
+  } catch (error) {
+    console.error('Não foi possível sincronizar as tentativas migradas no localStorage.', error);
+  }
+}
+
 export async function saveAttempt(attempt: ExamAttempt): Promise<void> {
   try {
     const db = await openDB();
@@ -98,18 +127,45 @@ export async function saveAttempt(attempt: ExamAttempt): Promise<void> {
 }
 
 export async function getAttempts(): Promise<ExamAttempt[]> {
+  const localAttempts = getLocalAttempts();
+
   try {
     const db = await openDB();
     try {
       const transaction = db.transaction(STORE_ATTEMPTS, 'readonly');
       const result = await requestToPromise(transaction.objectStore(STORE_ATTEMPTS).getAll());
-      return Array.isArray(result) ? (result as ExamAttempt[]) : [];
+      const indexedAttempts = Array.isArray(result) ? (result as ExamAttempt[]) : [];
+
+      if (localAttempts.length === 0) return indexedAttempts;
+
+      // Mescla tentativas do IndexedDB com possíveis sobras do fallback em
+      // localStorage (versões antigas ou sessões em que o IndexedDB falhou).
+      // Em caso de conflito, a versão do IndexedDB prevalece.
+      const byId = new Map<string, ExamAttempt>();
+      for (const attempt of localAttempts) byId.set(attempt.id, attempt);
+      for (const attempt of indexedAttempts) byId.set(attempt.id, attempt);
+
+      const indexedIds = new Set(indexedAttempts.map((attempt) => attempt.id));
+      const merged = [...byId.values()];
+      const missingInIndexedDB = merged.filter((attempt) => !indexedIds.has(attempt.id));
+
+      if (missingInIndexedDB.length > 0) {
+        await Promise.all(
+          missingInIndexedDB.map((attempt) =>
+            saveAttempt(attempt).catch((error) => {
+              console.error('Falha ao migrar tentativa do localStorage.', error);
+            }),
+          ),
+        );
+      }
+
+      return merged;
     } finally {
       closeDB(db);
     }
   } catch (error) {
     console.error('IndexedDB indisponível; lendo tentativas do localStorage.', error);
-    return getLocalAttempts();
+    return localAttempts;
   }
 }
 
@@ -143,7 +199,15 @@ export async function loadUserSettings(): Promise<Partial<UserSettings> | null> 
       const result = await requestToPromise(
         transaction.objectStore(STORE_SETTINGS).get(SETTINGS_RECORD_KEY),
       );
-      return (result as Partial<UserSettings> | undefined) ?? null;
+      if (result) return result as Partial<UserSettings>;
+
+      // Recupera preferências que tenham ficado no fallback do localStorage.
+      try {
+        const local = localStorage.getItem(LOCAL_SETTINGS_KEY);
+        return local ? (JSON.parse(local) as Partial<UserSettings>) : null;
+      } catch {
+        return null;
+      }
     } finally {
       closeDB(db);
     }

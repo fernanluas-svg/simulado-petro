@@ -15,6 +15,7 @@ export interface Question {
   reference: string;
   verified: boolean; // true = official verified, false = authorial/exemplary
   difficulty: 'fácil' | 'médio' | 'difícil';
+  weight?: number; // peso individual opcional; se ausente, usa o peso da matéria
 }
 
 export interface SubjectConfig {
@@ -39,8 +40,21 @@ export interface ExamConfig {
     minSpecificScorePercent?: number;
     minGeneralCorrect?: number;
     minSpecificCorrect?: number;
+    minSubjectScorePercent?: number;
     allowZeroInAnySubject: boolean;
   };
+}
+
+export type ExamStatus = 'APROVADO' | 'REPROVADO';
+
+export interface SubjectBreakdown {
+  correct: number;
+  total: number;
+  percentage: number;
+  weight: number;
+  scoreTotal: number;
+  maxScore: number;
+  eliminated: boolean;
 }
 
 export interface ExamAttempt {
@@ -55,6 +69,15 @@ export interface ExamAttempt {
   isCompleted: boolean;
   isPaused?: boolean;
   scoreData?: ExamResult;
+
+  // Resultado no formato novo (schema 2), gravado também no topo do registro
+  // para facilitar a leitura por versões antigas e pela tela de histórico.
+  schemaVersion?: number;
+  scoreTotal?: number;
+  maxScore?: number;
+  percentage?: number;
+  status?: ExamStatus;
+  subjectBreakdown?: Record<string, SubjectBreakdown>;
 
   // Sessão persistida (campos opcionais para compatibilidade com tentativas antigas)
   questionIds?: string[]; // ordem exata das questões sorteadas
@@ -78,6 +101,13 @@ export interface ExamResult {
   passed: boolean;
   failureReason?: string;
   timeSpentSeconds: number;
+
+  // Campos da nova regra de pontuação (schema 2)
+  scoreTotal?: number;
+  maxScore?: number;
+  subjectBreakdown?: Record<string, SubjectBreakdown>;
+  eliminatedSubjects?: string[];
+  status?: ExamStatus;
 }
 
 export type ThemeName = 'atual' | 'branco' | 'preto';

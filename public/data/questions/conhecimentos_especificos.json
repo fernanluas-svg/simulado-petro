@@ -22,7 +22,7 @@
     "id": "ce-02",
     "subjectId": "conhecimentos_especificos",
     "topic": "Administração Financeira e Orçamentária",
-    "statement": "No âmbito da Administração Financeira e Orçamentária (AFO) no setor público brasileiro, o princípio orçamentário que veda a vinculação de receita de impostos a órgãos, fundo ou despesa, ressalvadas as exceções previstas na Constituição Federal, é conhecido como:",
+    "statement": "No âmbito da Administração Financeira e Orçamentária (AFO) no setor público brasileiro, o princípio orçamentário que veda a vinculação de receita de impostos a órgão, fundo ou despesa, ressalvadas as exceções previstas na Constituição Federal, é conhecido como:",
     "alternatives": [
       { "id": "A", "text": "Princípio da Unidade" },
       { "id": "B", "text": "Princípio da Anualidade" },
@@ -31,7 +31,7 @@
       { "id": "E", "text": "Princípio do Equilíbrio Orçamentário" }
     ],
     "correctAnswer": "C",
-    "explanation": "O princípio da não afetação (ou não vinculação) de receitas estipula que nenhum tributo (especificamente impostos) pode ser consignado para atender a determinado órgão ou despesa, salvo as exceções constitucionais (como saúde, educação e manutenção do ensino).",
+    "explanation": "O princípio da não afetação (ou não vinculação) de receitas estipula que nenhum imposto pode ser consignado para atender a determinado órgão ou despesa, salvo as exceções constitucionais (como saúde, educação e manutenção do ensino).",
     "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
     "reference": "Edital Transpetro 2026 - AFO",
     "verified": true,
@@ -43,7 +43,7 @@
     "topic": "Administração de Materiais e Logística",
     "statement": "Na gestão de estoques, a Curva ABC (análise de Pareto) é uma ferramenta que classifica os itens armazenados de acordo com sua importância financeira e consumo. Na classe A, típica de um almoxarifado corporativo, encontram-se:",
     "alternatives": [
-      { "id": "A", "text": "Grande quantidade de itens, mas que representam baixo valor monetário total." },
+      { "id": "A", "text": "Grande quantidade de itens que representam baixo valor monetário total." },
       { "id": "B", "text": "Pequena quantidade de itens que representam o maior valor monetário investido no estoque." },
       { "id": "C", "text": "Itens de obsolescência programada e baixo giro operacional." },
       { "id": "D", "text": "Itens de uso contínuo com valor unitário insignificante e alto volume físico." },
@@ -60,7 +60,7 @@
     "id": "ce-04",
     "subjectId": "conhecimentos_especificos",
     "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), a modalidade de licitação obrigatória para a aquisição de bens e serviços comuns, cujo critério de julgamento possa ser o de menor preço ou o de maior desconto, é o(a):",
+    "statement": "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), a modalidade de licitação obrigatória para a aquisição de bens e serviços comuns, cujo critério de julgamento possa ser o de menor preço ou o de maior desconto, é:",
     "alternatives": [
       { "id": "A", "text": "Concorrência" },
       { "id": "B", "text": "Tomada de Preços" },
@@ -136,7 +136,7 @@
     "id": "ce-08",
     "subjectId": "conhecimentos_especificos",
     "topic": "Governança Corporativa e Compliance",
-    "statement": "A Governança Corporativa baseia-se em princípios fundamentais que asseguram a transparência, a equidade, a prestação de contas (accountability) e a responsabilidade corporativa. O princípio que garante o tratamento justo e igualitário de todos os sócios e partes interessadas (stakeholders) é o(a):",
+    "statement": "A Governança Corporativa baseia-se em princípios fundamentais que asseguram a transparência, a equidade, a prestação de contas (accountability) e a responsabilidade corporativa. O princípio que garante o tratamento justo e igualitário de todos os sócios e partes interessadas (stakeholders) é:",
     "alternatives": [
       { "id": "A", "text": "Compliance" },
       { "id": "B", "text": "Equidade (Fairness)" },
@@ -158,7 +158,7 @@
     "statement": "A Teoria da Burocracia de Max Weber destaca características fundamentais das organizações formais eficientes. Qual das alternativas abaixo representa uma característica burocrática weberiana?",
     "alternatives": [
       { "id": "A", "text": "Decisões baseadas no carisma e nas relações informais." },
-      { "id": "B", "text": "Impesessoalidade nas relações e nas normas escritas." },
+      { "id": "B", "text": "Impessoalidade nas relações e nas normas escritas." },
       { "id": "C", "text": "Flexibilidade extrema na contratação sem exigência de qualificação." },
       { "id": "D", "text": "Descentralização total da autoridade para os níveis operacionais." },
       { "id": "E", "text": "Substituição de regras formais por liderança situacional." }
@@ -288,7 +288,7 @@
     "id": "ce-16",
     "subjectId": "conhecimentos_especificos",
     "topic": "Teoria Geral da Administração",
-    "statement": "A Teoria das Relações Humanas, desenvolvida por Elton Mayo após os estudos de Hawthorne, inmpulsionou a administração ao enfatizar:",
+    "statement": "A Teoria das Relações Humanas, desenvolvida por Elton Mayo após os estudos de Hawthorne, impulsionou a administração ao enfatizar:",
     "alternatives": [
       { "id": "A", "text": "A estrita formalidade das normas e a engenharia de métodos de trabalho." },
       { "id": "B", "text": "A importância das pessoas, dos grupos informais e da psicologia nas organizações." },
@@ -307,16 +307,16 @@
     "id": "ce-17",
     "subjectId": "conhecimentos_especificos",
     "topic": "Arquivologia e Gestão Documental",
-    "statement": "O princípio arquivístico segundo o qual os arquivos originários de uma instituição ou pessoa devem ser mantidos na sua ordem original, sem dispersão ou mistura com outros fundos, é denominado:",
+    "statement": "O princípio arquivístico segundo o qual os arquivos originários de uma instituição ou pessoa devem ser mantidos sem dispersão ou mistura com outros fundos é denominado:",
     "alternatives": [
       { "id": "A", "text": "Princípio da Territorialidade" },
       { "id": "B", "text": "Princípio da Organicidade" },
-      { "id": "C", "text": "Princípio da Provenância (ou Respeito aos Fundos)" },
+      { "id": "C", "text": "Princípio da Proveniência (ou Respeito aos Fundos)" },
       { "id": "D", "text": "Princípio da Redundância Documental" },
-      { "id": "E", "text": "Princípio da Apertura Cronológica" }
+      { "id": "E", "text": "Princípio da Abertura Cronológica" }
     ],
     "correctAnswer": "C",
-    "explanation": "O Princípio da Provenância determina que os arquivos gerados por uma entidade produtora não devem ser misturados aos de outras entidades.",
+    "explanation": "O Princípio da Proveniência determina que os arquivos gerados por uma entidade produtora não devem ser misturados aos de outras entidades.",
     "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
     "reference": "Edital Transpetro 2026 - Arquivologia",
     "verified": true,
@@ -554,7 +554,7 @@
     "id": "ce-30",
     "subjectId": "conhecimentos_especificos",
     "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "Nos termos da Lei nº 14.133/2021, a alienação de bens imóveis da Administração Pública depende de autorização legislativa para órgãos da administração direta e exige, como regra geral para bens em geral, a realização de licitação na modalidade:",
+    "statement": "Nos termos da Lei nº 14.133/2021, a alienação de bens imóveis da Administração Pública depende de autorização legislativa para órgãos da administração direta e exige, como regra geral, a realização de licitação na modalidade:",
     "alternatives": [
       { "id": "A", "text": "Pregão Eletrônico" },
       { "id": "B", "text": "Concorrência ou Leilão" },
@@ -630,7 +630,7 @@
     "id": "ce-34",
     "subjectId": "conhecimentos_especificos",
     "topic": "Administração Financeira e Orçamentária",
-    "statement": "No orçamento público, os créditos adicionais destinados a despesas urgentes e imprevistas, como em caso de guerra, calamidade pública ou grave perturbação da ordem, são os créditos:",
+    "statement": "No orçamento público, os créditos adicionais destinados a despesas urgentes e imprevistas, como nos casos de guerra, calamidade pública ou grave perturbação da ordem, são os créditos:",
     "alternatives": [
       { "id": "A", "text": "Suplementares" },
       { "id": "B", "text": "Especiais" },
@@ -746,7 +746,7 @@
     "topic": "Teoria Geral da Administração",
     "statement": "O Balanced Scorecard (BSC), ferramenta de medição e gestão estratégica desenvolvida por Kaplan e Norton, traduz a estratégia em objetivos organizacionais medidos por meio de quatro perspectivas equilibradas:",
     "alternatives": [
-      { "id": "A", "text": "Financeira, Clientes, Processos Internos, e Aprendizado e Crescimento." },
+      { "id": "A", "text": "Financeira, Clientes, Processos Internos e Aprendizado e Crescimento." },
       { "id": "B", "text": "Produção, Vendas, Contabilidade e Jurídico." },
       { "id": "C", "text": "Curto Prazo, Médio Prazo, Longo Prazo e Contingência." },
       { "id": "D", "text": "Governo, Sociedade, Acionistas e Fornecedores." },

@@ -12,12 +12,14 @@ const storageMock = vi.hoisted(() => ({
   ),
   saveUserSettings: vi.fn(async () => undefined),
   clearAllData: vi.fn(async () => undefined),
+  syncAttemptsToLocalStorage: vi.fn(),
 }));
 
 vi.mock('../services/storage', () => storageMock);
 
 import { DEFAULT_SETTINGS, useExamStore } from '../store/useExamStore';
 import { getRemainingSeconds } from '../services/timer';
+import { calculateExamResult } from '../services/scoring';
 
 const baseTime = new Date('2026-03-01T12:00:00Z').getTime();
 
@@ -89,6 +91,8 @@ function resetStore(): void {
     view: 'home',
     currentQuestionIndex: 0,
     settings: DEFAULT_SETTINGS,
+    isPausingExam: false,
+    regradeSummary: null,
   });
 }
 
@@ -157,11 +161,11 @@ describe('Sessão do simulado', () => {
     expect(state.currentAttempt?.durationMinutes).toBe(30);
   });
 
-  it('congela o cronômetro ao pausar e continua de onde parou', () => {
+  it('congela o cronômetro ao pausar e continua de onde parou', async () => {
     startExam();
     vi.advanceTimersByTime(60_000);
 
-    useExamStore.getState().pauseExam();
+    await useExamStore.getState().pauseExam();
     let state = useExamStore.getState();
     expect(state.currentAttempt?.isPaused).toBe(true);
     expect(state.currentAttempt?.lastResumedAt).toBeUndefined();
@@ -170,7 +174,7 @@ describe('Sessão do simulado', () => {
 
     // Pausar novamente não pode alterar o saldo congelado.
     vi.advanceTimersByTime(300_000);
-    useExamStore.getState().pauseExam();
+    await useExamStore.getState().pauseExam();
     state = useExamStore.getState();
     expect(getRemainingSeconds(state.currentAttempt, 30)).toBe(1740);
 
@@ -178,15 +182,73 @@ describe('Sessão do simulado', () => {
     expect(useExamStore.getState().currentAttempt?.isPaused).toBe(false);
 
     vi.advanceTimersByTime(30_000);
-    useExamStore.getState().pauseExam();
+    await useExamStore.getState().pauseExam();
     expect(getRemainingSeconds(useExamStore.getState().currentAttempt, 30)).toBe(1710);
   });
 
-  it('bloqueia respostas e marcações enquanto pausado', () => {
+  it('mantém a pausa e o tempo congelado após recarregar a página', async () => {
+    startExam();
+    vi.advanceTimersByTime(90_000);
+    await useExamStore.getState().pauseExam();
+
+    const savedCalls = storageMock.saveAttempt.mock.calls as unknown as Array<
+      [ExamAttempt]
+    >;
+    const persisted = savedCalls.at(-1)?.[0] as ExamAttempt;
+    expect(persisted.isPaused).toBe(true);
+    expect(persisted.lastResumedAt).toBeUndefined();
+    expect(persisted.timeRemainingSeconds).toBe(1710);
+
+    // Simula um recarregamento: o store nasce em "home" e reidrata do storage.
+    useExamStore.setState({ view: 'home' });
+    storageMock.getAttempts.mockResolvedValue([persisted]);
+    vi.advanceTimersByTime(600_000); // tempo com a página fechada/atualizada
+    await useExamStore.getState().initApp();
+
+    const restored = useExamStore.getState().currentAttempt;
+    expect(restored?.isPaused).toBe(true);
+    expect(restored?.isCompleted).toBe(false);
+    expect(getRemainingSeconds(restored, 30)).toBe(1710);
+    expect(useExamStore.getState().questions).toHaveLength(7);
+    expect(useExamStore.getState().view).toBe('home');
+
+    // Ao continuar, o relógio retoma do saldo congelado.
+    useExamStore.getState().resumeExam();
+    vi.advanceTimersByTime(30_000);
+    expect(getRemainingSeconds(useExamStore.getState().currentAttempt, 30)).toBe(1680);
+  });
+
+  it('só conclui a pausa após gravar e ignora cliques repetidos', async () => {
+    startExam();
+
+    let finishSave: (() => void) | undefined;
+    storageMock.saveAttempt.mockImplementationOnce(
+      () =>
+        new Promise<undefined>((resolve) => {
+          finishSave = () => resolve(undefined);
+        }),
+    );
+
+    const firstPause = useExamStore.getState().pauseExam();
+    expect(useExamStore.getState().isPausingExam).toBe(true);
+    expect(useExamStore.getState().currentAttempt?.isPaused).toBe(false);
+
+    // Um segundo clique enquanto a gravação está em curso não inicia outra.
+    await useExamStore.getState().pauseExam();
+    expect(useExamStore.getState().isPausingExam).toBe(true);
+
+    finishSave?.();
+    await firstPause;
+
+    expect(useExamStore.getState().isPausingExam).toBe(false);
+    expect(useExamStore.getState().currentAttempt?.isPaused).toBe(true);
+  });
+
+  it('bloqueia respostas e marcações enquanto pausado', async () => {
     startExam();
     const questionId = useExamStore.getState().questions[0].id;
 
-    useExamStore.getState().pauseExam();
+    await useExamStore.getState().pauseExam();
     useExamStore.getState().setAnswer(questionId, 'B');
     useExamStore.getState().toggleMarkReview(questionId);
 
@@ -330,6 +392,165 @@ describe('Inicialização e restauração', () => {
       'newer',
       'older',
     ]);
+  });
+
+  it('recalcula a nota de tentativas concluídas com o gabarito corrigido', async () => {
+    const attempt: ExamAttempt = {
+      id: 'regrade_me',
+      configId: config.id,
+      startTime: baseTime - 60_000,
+      endTime: baseTime - 30_000,
+      timeSpentSeconds: 60,
+      answers: {
+        pt_1: 'B',
+        pt_2: 'A',
+        mt_1: 'A',
+        mt_2: 'A',
+        es_1: 'A',
+        es_2: 'A',
+        es_3: 'A',
+      },
+      markedForReview: {},
+      immediateCorrection: false,
+      isCompleted: true,
+      questionIds: bank.map((question) => question.id),
+      durationMinutes: 30,
+      timeRemainingSeconds: 1740,
+      lastQuestionIndex: 0,
+    };
+
+    // Nota antiga: pt_1 tinha gabarito A, então a resposta B era considerada erro.
+    const oldScore = calculateExamResult(attempt, bank, config, 60);
+    storageMock.getAttempts.mockResolvedValue([{ ...attempt, scoreData: oldScore }]);
+    storageMock.loadAllQuestions.mockResolvedValue(
+      bank.map((question) =>
+        question.id === 'pt_1' ? { ...question, correctAnswer: 'B' } : question,
+      ),
+    );
+
+    await useExamStore.getState().initApp();
+    const state = useExamStore.getState();
+
+    expect(state.regradeSummary?.count).toBe(1);
+    expect(state.regradeSummary?.changes[0]).toMatchObject({
+      attemptId: 'regrade_me',
+      previousPercentage: oldScore.percentage,
+      newPercentage: 100,
+    });
+    expect(state.history[0].scoreData?.correctCount).toBe(7);
+    expect(state.history[0].scoreData?.percentage).toBe(100);
+    expect(state.history[0].schemaVersion).toBe(2);
+    expect(state.history[0].status).toBe('APROVADO');
+    expect(state.history[0].scoreTotal).toBeDefined();
+    expect(storageMock.saveAttempt).toHaveBeenCalledWith(
+      expect.objectContaining({
+        id: 'regrade_me',
+        schemaVersion: 2,
+        scoreData: expect.objectContaining({ percentage: 100, correctCount: 7 }),
+      }),
+    );
+  });
+
+  it('migra tentativa antiga sem questionIds usando o scoreData salvo', async () => {
+    const fixture = expiredAttemptFixture('legacy_migrated', baseTime - 10_000);
+    const legacy: ExamAttempt = {
+      ...fixture,
+      questionIds: undefined,
+      scoreData: {
+        ...fixture.scoreData!,
+        correctCount: 4,
+        incorrectCount: 0,
+        blankCount: 3,
+        generalCorrect: 2,
+        specificCorrect: 2,
+        subjectPerformance: {
+          portugues: { correct: 2, total: 2, percentage: 100 },
+          matematica: { correct: 0, total: 2, percentage: 0 },
+          conhecimentos_especificos: { correct: 2, total: 3, percentage: 66.67 },
+        },
+        percentage: 100,
+        passed: true,
+        failureReason: '',
+      },
+    };
+
+    storageMock.getAttempts.mockResolvedValue([legacy]);
+    await useExamStore.getState().initApp();
+    const state = useExamStore.getState();
+    const migrated = state.history[0];
+
+    expect(migrated.schemaVersion).toBe(2);
+    expect(migrated.status).toBe('REPROVADO');
+    expect(migrated.percentage).toBe(57.14);
+    expect(migrated.scoreTotal).toBe(4);
+    expect(migrated.maxScore).toBe(7);
+    expect(migrated.subjectBreakdown?.matematica.eliminated).toBe(true);
+    expect(migrated.subjectBreakdown?.portugues.eliminated).toBe(false);
+    expect(state.regradeSummary?.migratedCount).toBe(1);
+    expect(state.regradeSummary?.changes[0]).toMatchObject({
+      attemptId: 'legacy_migrated',
+      previousPercentage: 100,
+      newPercentage: 57.14,
+      previousPassed: true,
+      newPassed: false,
+      migrated: true,
+    });
+    expect(storageMock.saveAttempt).toHaveBeenCalledWith(
+      expect.objectContaining({
+        id: 'legacy_migrated',
+        schemaVersion: 2,
+        status: 'REPROVADO',
+      }),
+    );
+  });
+
+  it('migra o histórico quando a tela de histórico é aberta', async () => {
+    const fixture = expiredAttemptFixture('legacy_on_history', baseTime - 20_000);
+    const legacy: ExamAttempt = {
+      ...fixture,
+      questionIds: undefined,
+      scoreData: {
+        ...fixture.scoreData!,
+        subjectPerformance: {
+          portugues: { correct: 2, total: 2, percentage: 100 },
+          matematica: { correct: 2, total: 2, percentage: 100 },
+          conhecimentos_especificos: { correct: 3, total: 3, percentage: 100 },
+        },
+        correctCount: 7,
+        blankCount: 0,
+        generalCorrect: 4,
+        specificCorrect: 3,
+        percentage: 100,
+        passed: true,
+        failureReason: '',
+      },
+    };
+
+    storageMock.getAttempts.mockResolvedValue([legacy]);
+    await useExamStore.getState().recalculateHistory();
+
+    const state = useExamStore.getState();
+    expect(state.history[0].schemaVersion).toBe(2);
+    expect(state.history[0].status).toBe('APROVADO');
+    expect(state.regradeSummary?.migratedCount).toBe(1);
+    expect(storageMock.saveAttempt).toHaveBeenCalledWith(
+      expect.objectContaining({ id: 'legacy_on_history', schemaVersion: 2 }),
+    );
+  });
+
+  it('não migra tentativa antiga sem dados suficientes', async () => {
+    const legacy = {
+      ...expiredAttemptFixture('legacy_regrade', baseTime - 10_000),
+      questionIds: undefined,
+    };
+
+    storageMock.getAttempts.mockResolvedValue([legacy]);
+    await useExamStore.getState().initApp();
+
+    expect(useExamStore.getState().regradeSummary).toBeNull();
+    expect(useExamStore.getState().history[0].scoreData?.percentage).toBe(0);
+    expect(useExamStore.getState().history[0].schemaVersion).toBeUndefined();
+    expect(storageMock.saveAttempt).not.toHaveBeenCalled();
   });
 });
 

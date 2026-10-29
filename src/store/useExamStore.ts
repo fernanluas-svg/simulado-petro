@@ -3,7 +3,6 @@ import type {
   ExamConfig,
   Question,
   ExamAttempt,
-  ExamResult,
   UserSettings,
   SubjectConfig,
 } from '../types';
@@ -22,6 +21,13 @@ import {
   getTotalSeconds,
 } from '../services/timer';
 import { getStoredTheme, normalizeTheme } from '../services/theme';
+import {
+  applyResultToAttempt,
+  calculateExamResult,
+  restoreQuestions,
+  type RegradeSummary,
+} from '../services/scoring';
+import { recalculateHistoricalExams } from '../services/migration';
 
 export type ExamView =
   | 'home'
@@ -66,14 +72,6 @@ function shuffle<T>(items: T[]): T[] {
   return copy;
 }
 
-function restoreQuestions(attempt: ExamAttempt, bank: Question[]): Question[] {
-  if (!attempt.questionIds?.length) return [];
-  const byId = new Map(bank.map((question) => [question.id, question]));
-  return attempt.questionIds
-    .map((id) => byId.get(id))
-    .filter((question): question is Question => Boolean(question));
-}
-
 function clampIndex(index: number, length: number): number {
   if (length <= 0) return 0;
   return Math.min(Math.max(0, index), length - 1);
@@ -97,6 +95,8 @@ interface ExamState {
   view: ExamView;
   currentQuestionIndex: number;
   settings: UserSettings;
+  isPausingExam: boolean;
+  regradeSummary: RegradeSummary | null;
 
   // Actions
   initApp: () => Promise<void>;
@@ -110,10 +110,11 @@ interface ExamState {
   toggleMarkReview: (questionId: string) => void;
   setCurrentQuestionIndex: (index: number) => void;
   setImmediateCorrection: (enabled: boolean) => void;
-  pauseExam: () => void;
+  pauseExam: () => Promise<void>;
   resumeExam: () => void;
   finishExam: () => void;
   loadHistory: () => Promise<void>;
+  recalculateHistory: () => Promise<void>;
   resumeAttempt: (attempt: ExamAttempt) => boolean;
   discardAttempt: (attemptId?: string) => Promise<void>;
   updateSettings: (newSettings: Partial<UserSettings>) => void;
@@ -132,6 +133,8 @@ export const useExamStore = create<ExamState>((set, get) => ({
   view: 'home',
   currentQuestionIndex: 0,
   settings: { ...DEFAULT_SETTINGS, theme: getStoredTheme() ?? DEFAULT_SETTINGS.theme },
+  isPausingExam: false,
+  regradeSummary: null,
 
   initApp: async () => {
     set({ isLoading: true, error: null });
@@ -152,7 +155,16 @@ export const useExamStore = create<ExamState>((set, get) => ({
         }
       }
 
-      const history = sortAttempts(storedHistory);
+      // Migra/recalcula as tentativas concluídas para o schema 2 (pontuação
+      // ponderada + eliminação por matéria). A migração é idempotente e
+      // também cobre registros antigos sem `questionIds`.
+      const migration = await recalculateHistoricalExams(
+        config,
+        allQuestionsBank,
+        storedHistory,
+      );
+
+      const history = sortAttempts(migration.history);
       const activeAttempt = history.find((attempt) => !attempt.isCompleted) ?? null;
       const latestCompleted = history.find((attempt) => attempt.isCompleted) ?? null;
       const attemptToOpen = activeAttempt ?? latestCompleted;
@@ -177,6 +189,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
         currentQuestionIndex: index,
         isLoading: false,
         startError: null,
+        regradeSummary: migration.summary,
       });
 
       // Se o prazo venceu enquanto o app estava fechado, corrige imediatamente.
@@ -332,9 +345,18 @@ export const useExamStore = create<ExamState>((set, get) => ({
     set({ currentAttempt: updatedAttempt });
   },
 
-  pauseExam: () => {
-    const { currentAttempt, config, currentQuestionIndex } = get();
-    if (!currentAttempt || currentAttempt.isCompleted || currentAttempt.isPaused) return;
+  pauseExam: async () => {
+    const { currentAttempt, config, currentQuestionIndex, isPausingExam } = get();
+    if (
+      !currentAttempt ||
+      currentAttempt.isCompleted ||
+      currentAttempt.isPaused ||
+      isPausingExam
+    ) {
+      return;
+    }
+
+    set({ isPausingExam: true });
 
     const pausedAttempt: ExamAttempt = {
       ...currentAttempt,
@@ -343,8 +365,16 @@ export const useExamStore = create<ExamState>((set, get) => ({
       lastResumedAt: undefined,
       lastQuestionIndex: currentQuestionIndex,
     };
-    persistAttempt(pausedAttempt);
-    set({ currentAttempt: pausedAttempt });
+
+    // Aguarda a gravação terminar antes de concluir a pausa. Assim, mesmo um
+    // F5 imediatamente após clicar em "Pausar" preserva o estado congelado.
+    try {
+      await saveAttempt(pausedAttempt);
+    } catch (error) {
+      console.error('Falha ao persistir a pausa.', error);
+    }
+
+    set({ currentAttempt: pausedAttempt, isPausingExam: false });
   },
 
   resumeExam: () => {
@@ -371,158 +401,26 @@ export const useExamStore = create<ExamState>((set, get) => ({
     const remainingSeconds = getRemainingSeconds(currentAttempt, config.durationMinutes);
     const endTime = Date.now();
     const timeSpentSeconds = Math.max(0, totalSeconds - remainingSeconds);
-    const subjectConfigById = new Map(
-      config.subjects.map((subject) => [subject.id, subject] as const),
+    const result = calculateExamResult(
+      currentAttempt,
+      questions,
+      config,
+      timeSpentSeconds,
     );
 
-    let correctCount = 0;
-    let incorrectCount = 0;
-    let blankCount = 0;
-    let generalCorrect = 0;
-    let generalTotal = 0;
-    let specificCorrect = 0;
-    let specificTotal = 0;
-    let weightedCorrect = 0;
-    let weightedTotal = 0;
-
-    const subjectPerformance: ExamResult['subjectPerformance'] = {};
-
-    for (const question of questions) {
-      const subjectId = question.subjectId;
-      if (!subjectPerformance[subjectId]) {
-        subjectPerformance[subjectId] = { correct: 0, total: 0, percentage: 0 };
-      }
-
-      const subjectConfig = subjectConfigById.get(subjectId);
-      const weight = subjectConfig?.weight ?? 1;
-      const isGeneral = subjectId === 'portugues' || subjectId === 'matematica';
-      const userAnswer = currentAttempt.answers[question.id];
-
-      subjectPerformance[subjectId].total += 1;
-      weightedTotal += weight;
-
-      if (isGeneral) generalTotal += 1;
-      else specificTotal += 1;
-
-      if (!userAnswer) {
-        blankCount += 1;
-      } else if (userAnswer === question.correctAnswer) {
-        correctCount += 1;
-        subjectPerformance[subjectId].correct += 1;
-        weightedCorrect += weight;
-        if (isGeneral) generalCorrect += 1;
-        else specificCorrect += 1;
-      } else {
-        incorrectCount += 1;
-      }
-    }
-
-    for (const subjectId of Object.keys(subjectPerformance)) {
-      const performance = subjectPerformance[subjectId];
-      performance.percentage =
-        performance.total > 0
-          ? Math.round((performance.correct / performance.total) * 10000) / 100
-          : 0;
-    }
-
-    const percentage =
-      weightedTotal > 0
-        ? Math.round((weightedCorrect / weightedTotal) * 10000) / 100
-        : 0;
-
-    const generalPct = generalTotal > 0 ? (generalCorrect / generalTotal) * 100 : null;
-    const specificPct = specificTotal > 0 ? (specificCorrect / specificTotal) * 100 : null;
-    const criteria = config.passingCriteria;
-    const failureReasons: string[] = [];
-
-    if (generalPct !== null) {
-      if (
-        criteria.minGeneralScorePercent !== undefined &&
-        generalPct < criteria.minGeneralScorePercent
-      ) {
-        failureReasons.push(
-          `Conhecimentos Gerais abaixo do mínimo (${generalPct.toFixed(1)}% < ${criteria.minGeneralScorePercent}%).`,
-        );
-      }
-      if (
-        criteria.minGeneralCorrect !== undefined &&
-        generalCorrect < criteria.minGeneralCorrect
-      ) {
-        failureReasons.push(
-          `Conhecimentos Gerais com menos de ${criteria.minGeneralCorrect} acertos (${generalCorrect}).`,
-        );
-      }
-    }
-
-    if (specificPct !== null) {
-      if (
-        criteria.minSpecificScorePercent !== undefined &&
-        specificPct < criteria.minSpecificScorePercent
-      ) {
-        failureReasons.push(
-          `Conhecimentos Específicos abaixo do mínimo (${specificPct.toFixed(1)}% < ${criteria.minSpecificScorePercent}%).`,
-        );
-      }
-      if (
-        criteria.minSpecificCorrect !== undefined &&
-        specificCorrect < criteria.minSpecificCorrect
-      ) {
-        failureReasons.push(
-          `Conhecimentos Específicos com menos de ${criteria.minSpecificCorrect} acertos (${specificCorrect}).`,
-        );
-      }
-    }
-
-    for (const [subjectId, performance] of Object.entries(subjectPerformance)) {
-      const subjectConfig = subjectConfigById.get(subjectId);
-      if (!subjectConfig) continue;
-
-      if (
-        subjectConfig.minCorrect !== undefined &&
-        performance.correct < subjectConfig.minCorrect
-      ) {
-        failureReasons.push(
-          `${subjectConfig.name}: mínimo de ${subjectConfig.minCorrect} acertos (obteve ${performance.correct}).`,
-        );
-      }
-
-      if (
-        !criteria.allowZeroInAnySubject &&
-        performance.total > 0 &&
-        performance.correct === 0
-      ) {
-        failureReasons.push(`Zerou ${subjectConfig.name}.`);
-      }
-    }
-
-    const passed = failureReasons.length === 0;
-    const result: ExamResult = {
-      totalQuestions: questions.length,
-      correctCount,
-      incorrectCount,
-      blankCount,
-      generalCorrect,
-      generalTotal,
-      specificCorrect,
-      specificTotal,
-      subjectPerformance,
-      percentage,
-      passed,
-      failureReason: failureReasons.join(' '),
-      timeSpentSeconds,
-    };
-
-    const completedAttempt: ExamAttempt = {
-      ...currentAttempt,
-      endTime,
-      timeSpentSeconds,
-      isCompleted: true,
-      isPaused: false,
-      lastResumedAt: undefined,
-      timeRemainingSeconds: remainingSeconds,
-      lastQuestionIndex: currentQuestionIndex,
-      scoreData: result,
-    };
+    const completedAttempt: ExamAttempt = applyResultToAttempt(
+      {
+        ...currentAttempt,
+        endTime,
+        timeSpentSeconds,
+        isCompleted: true,
+        isPaused: false,
+        lastResumedAt: undefined,
+        timeRemainingSeconds: remainingSeconds,
+        lastQuestionIndex: currentQuestionIndex,
+      },
+      result,
+    );
 
     persistAttempt(completedAttempt);
 
@@ -540,6 +438,29 @@ export const useExamStore = create<ExamState>((set, get) => ({
   loadHistory: async () => {
     const history = sortAttempts(await getAttempts());
     set({ history });
+  },
+
+  recalculateHistory: async () => {
+    const { config, allQuestionsBank } = get();
+    const storedAttempts = await getAttempts();
+
+    if (!config) {
+      set({ history: sortAttempts(storedAttempts) });
+      return;
+    }
+
+    const migration = await recalculateHistoricalExams(
+      config,
+      allQuestionsBank,
+      storedAttempts,
+    );
+
+    set((state) => ({
+      history: sortAttempts(migration.history),
+      // Preserva o aviso da migração feita no initApp; ele só é substituído
+      // quando esta chamada encontra novas tentativas para migrar.
+      regradeSummary: migration.summary ?? state.regradeSummary,
+    }));
   },
 
   resumeAttempt: (attempt) => {

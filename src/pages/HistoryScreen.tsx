@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useExamStore } from '../store/useExamStore';
+import { getSubjectName, useExamStore } from '../store/useExamStore';
 import {
   AlertTriangle,
   ArrowLeft,
@@ -8,6 +8,8 @@ import {
   Clock,
   History as HistoryIcon,
   Play,
+  RefreshCw,
+  ShieldAlert,
   Trash2,
   XCircle,
 } from 'lucide-react';
@@ -28,21 +30,25 @@ export const HistoryScreen: React.FC = () => {
     config,
     history,
     allQuestionsBank,
-    loadHistory,
+    recalculateHistory,
     setView,
     resumeAttempt,
     discardAttempt,
     startError,
     clearStartError,
+    regradeSummary,
   } = useExamStore();
 
   useEffect(() => {
-    void loadHistory();
-  }, [loadHistory]);
+    void recalculateHistory();
+  }, [recalculateHistory]);
 
   const activeHistory = history.filter((item) => !item.isCompleted);
   const completedHistory = history.filter((item) => item.isCompleted && item.scoreData);
   const availableQuestionIds = new Set(allQuestionsBank.map((question) => question.id));
+  const regradeById = new Map(
+    (regradeSummary?.changes ?? []).map((change) => [change.attemptId, change]),
+  );
 
   const canRestore = (item: (typeof history)[number]) =>
     Boolean(
@@ -81,6 +87,80 @@ export const HistoryScreen: React.FC = () => {
           >
             ×
           </button>
+        </div>
+      )}
+
+      {regradeSummary && (
+        <div
+          role="status"
+          className="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-4 space-y-2 text-sm"
+        >
+          <p className="flex items-start gap-2 text-accent font-semibold">
+            <RefreshCw className="w-4 h-4 mt-0.5 shrink-0" />
+            <span>
+              {regradeSummary.migratedCount > 0
+                ? `${regradeSummary.migratedCount} ${
+                    regradeSummary.migratedCount === 1
+                      ? 'simulado do histórico foi migrado'
+                      : 'simulados do histórico foram migrados'
+                  } para a regra ponderada da Cesgranrio`
+                : `${regradeSummary.count} ${
+                    regradeSummary.count === 1
+                      ? 'simulado foi recalculado'
+                      : 'simulados foram recalculados'
+                  } com o gabarito corrigido`}
+              {regradeSummary.count !== regradeSummary.migratedCount &&
+                regradeSummary.migratedCount > 0 && (
+                  <>
+                    {' '}
+                    e {regradeSummary.count - regradeSummary.migratedCount}{' '}
+                    {regradeSummary.count - regradeSummary.migratedCount === 1
+                      ? 'recalculado'
+                      : 'recalculados'}{' '}
+                    com o gabarito atual
+                  </>
+                )}
+              .
+            </span>
+          </p>
+          <ul className="space-y-1 pl-6 text-ink-soft">
+            {regradeSummary.changes.map((change) => {
+              const attempt = history.find((item) => item.id === change.attemptId);
+              return (
+                <li key={change.attemptId} className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-ink-muted">
+                    {attempt ? formatDate(attempt.startTime) : change.attemptId}:
+                  </span>
+                  {change.previousPercentage !== undefined && (
+                    <>
+                      <span>{change.previousPercentage.toFixed(1)}%</span>
+                      <span aria-hidden="true">→</span>
+                    </>
+                  )}
+                  <strong className="text-accent">
+                    {change.newPercentage.toFixed(1)}%
+                  </strong>
+                  {change.previousPassed !== undefined &&
+                    change.previousPassed !== change.newPassed && (
+                      <span
+                        className={
+                          change.newPassed
+                            ? 'text-success font-medium'
+                            : 'text-danger font-medium'
+                        }
+                      >
+                        ({change.newPassed ? 'passou a aprovado' : 'passou a reprovado'})
+                      </span>
+                    )}
+                  {change.migrated && (
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-accent border border-cyan-500/30">
+                      migrado
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       )}
 
@@ -172,6 +252,11 @@ export const HistoryScreen: React.FC = () => {
           </h3>
           {completedHistory.map((item) => {
             const result = item.scoreData!;
+            const regrade = regradeById.get(item.id);
+            const status =
+              item.status ?? result.status ?? (result.passed ? 'APROVADO' : 'REPROVADO');
+            const approved = status === 'APROVADO';
+            const eliminated = result.eliminatedSubjects ?? [];
             return (
               <div
                 key={item.id}
@@ -181,17 +266,17 @@ export const HistoryScreen: React.FC = () => {
                   <div className="flex flex-wrap items-center gap-3">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-1 ${
-                        result.passed
+                        approved
                           ? 'bg-emerald-500/20 text-success border border-emerald-500/30'
                           : 'bg-rose-500/20 text-danger border border-rose-500/30'
                       }`}
                     >
-                      {result.passed ? (
+                      {approved ? (
                         <CheckCircle2 className="w-3.5 h-3.5" />
                       ) : (
                         <XCircle className="w-3.5 h-3.5" />
                       )}
-                      <span>{result.passed ? 'Aprovado' : 'Reprovado'}</span>
+                      <span>{approved ? 'Aprovado' : 'Reprovado'}</span>
                     </span>
                     <span className="text-xs text-ink-muted flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" /> {formatDate(item.startTime)}
@@ -200,11 +285,19 @@ export const HistoryScreen: React.FC = () => {
 
                   <div className="flex flex-wrap gap-4 text-sm pt-1">
                     <span className="text-ink-soft">
-                      Nota:{' '}
+                      Aproveitamento:{' '}
                       <strong className="text-accent text-base">
                         {result.percentage.toFixed(1)}%
                       </strong>
                     </span>
+                    {result.scoreTotal !== undefined && result.maxScore !== undefined && (
+                      <span className="text-ink-soft">
+                        Pontos:{' '}
+                        <strong className="text-ink">
+                          {result.scoreTotal.toFixed(1)} / {result.maxScore.toFixed(1)}
+                        </strong>
+                      </span>
+                    )}
                     <span className="text-ink-soft">
                       Acertos:{' '}
                       <strong className="text-success">
@@ -216,6 +309,36 @@ export const HistoryScreen: React.FC = () => {
                       {Math.floor(result.timeSpentSeconds / 60)} min
                     </span>
                   </div>
+
+                  {eliminated.length > 0 && (
+                    <p className="text-xs text-danger flex items-start gap-1.5">
+                      <ShieldAlert className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                      <span>
+                        Eliminado por aproveitamento insuficiente em:{' '}
+                        {eliminated
+                          .map((subjectId) => getSubjectName(config, subjectId))
+                          .join(', ')}
+                        .
+                      </span>
+                    </p>
+                  )}
+
+                  {regrade && (
+                    <p className="text-xs text-accent flex items-center gap-1">
+                      <RefreshCw className="w-3 h-3" />
+                      {regrade.previousPercentage !== undefined ? (
+                        <>
+                          Nota anterior: {regrade.previousPercentage.toFixed(1)}% →{' '}
+                          <strong>{regrade.newPercentage.toFixed(1)}%</strong>
+                        </>
+                      ) : (
+                        <>
+                          Migrado para a regra ponderada:{' '}
+                          <strong>{regrade.newPercentage.toFixed(1)}%</strong>
+                        </>
+                      )}
+                    </p>
+                  )}
                 </div>
 
                 <button

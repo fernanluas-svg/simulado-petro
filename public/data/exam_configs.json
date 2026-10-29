@@ -25,13 +25,14 @@
       "id": "conhecimentos_especificos",
       "name": "Conhecimentos Específicos (Administração e Controle)",
       "questionCount": 38,
-      "weight": 1.0,
+      "weight": 2.0,
       "minCorrect": 12
     }
   ],
   "passingCriteria": {
     "minGeneralScorePercent": 50,
     "minSpecificScorePercent": 50,
+    "minSubjectScorePercent": 50,
     "allowZeroInAnySubject": false
   }
 }
