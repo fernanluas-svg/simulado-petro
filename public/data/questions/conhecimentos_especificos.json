@@ -1,764 +1,306 @@
 [
-
-  
   {
     "id": "ce-01",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "A Teoria Neoclássica da Administração caracteriza-se principalmente pela ênfase nas funções do administrador, sintetizadas no processo administrativo. Quais são os componentes clássicos desse processo?",
+    "topic": "Segurança do Trabalho",
+    "statement": "O Equipamento de Proteção Individual (EPI) é obrigatório em diversas atividades operacionais na Transpetro. Qual dos itens abaixo é classificado como EPI para proteção respiratória?",
     "alternatives": [
-      { "id": "A", "text": "Planejamento, Organização, Liderança, Comunicação e Controle." },
-      { "id": "B", "text": "Planejamento, Organização, Direção e Controle." },
-      { "id": "C", "text": "Diagnóstico, Estratégia, Execução, Avaliação e Feedback." },
-      { "id": "D", "text": "Comando, Coordenação, Organização e Controle." },
-      { "id": "E", "text": "Autoridade, Hierarquia, Disciplina e Centralização." }
+      { "id": "A", "text": "Protetor facial" },
+      { "id": "B", "text": "Luvas de raspa" },
+      { "id": "C", "text": "Máscara de fuga (ou respirador)" },
+      { "id": "D", "text": "Botas de segurança" },
+      { "id": "E", "text": "Colete refletivo" }
     ],
-    "correctAnswer": "B",
-    "explanation": "O processo administrativo clássico (teoria neoclássica) é composto por quatro funções fundamentais: Planejamento, Organização, Direção e Controle (PODC).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - TGA",
+    "correctAnswer": "C",
+    "explanation": "A máscara de fuga ou respirador (PFF, autônomo, etc.) tem a função específica de proteger as vias respiratórias contra contaminantes.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - EPI",
     "verified": true,
     "difficulty": "fácil"
   },
   {
     "id": "ce-02",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Administração Financeira e Orçamentária",
-    "statement": "No âmbito da Administração Financeira e Orçamentária (AFO) no setor público brasileiro, o princípio orçamentário que veda a vinculação de receita de impostos a órgão, fundo ou despesa, ressalvadas as exceções previstas na Constituição Federal, é conhecido como:",
+    "topic": "Logística e Operações",
+    "statement": "No transporte de derivados de petróleo, a operação de 'pigging' (uso de PIG) tem como objetivo principal:",
     "alternatives": [
-      { "id": "A", "text": "Princípio da Unidade" },
-      { "id": "B", "text": "Princípio da Anualidade" },
-      { "id": "C", "text": "Princípio da Não Afetação (ou Não Vinculação) de Receitas" },
-      { "id": "D", "text": "Princípio da Universalidade" },
-      { "id": "E", "text": "Princípio do Equilíbrio Orçamentário" }
+      { "id": "A", "text": "Aumentar a pressão do duto." },
+      { "id": "B", "text": "Limpeza, inspeção e separação de produtos." },
+      { "id": "C", "text": "Aquecer o produto transportado." },
+      { "id": "D", "text": "Realizar a soldagem subaquática." },
+      { "id": "E", "text": "Bombear o óleo para navios." }
     ],
-    "correctAnswer": "C",
-    "explanation": "O princípio da não afetação (ou não vinculação) de receitas estipula que nenhum imposto pode ser consignado para atender a determinado órgão ou despesa, salvo as exceções constitucionais (como saúde, educação e manutenção do ensino).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - AFO",
+    "correctAnswer": "B",
+    "explanation": "PIG (Pipeline Inspection Gauge) é usado para limpeza interna, inspeção de integridade ou separação de lotes (produtos diferentes) no duto.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Dutos",
     "verified": true,
     "difficulty": "médio"
   },
   {
     "id": "ce-03",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "Na gestão de estoques, a Curva ABC (análise de Pareto) é uma ferramenta que classifica os itens armazenados de acordo com sua importância financeira e consumo. Na classe A, típica de um almoxarifado corporativo, encontram-se:",
+    "topic": "Meio Ambiente",
+    "statement": "Em caso de vazamento de óleo no solo, a medida imediata de controle, antes da remediação, consiste em:",
     "alternatives": [
-      { "id": "A", "text": "Grande quantidade de itens que representam baixo valor monetário total." },
-      { "id": "B", "text": "Pequena quantidade de itens que representam o maior valor monetário investido no estoque." },
-      { "id": "C", "text": "Itens de obsolescência programada e baixo giro operacional." },
-      { "id": "D", "text": "Itens de uso contínuo com valor unitário insignificante e alto volume físico." },
-      { "id": "E", "text": "Equipamentos de segurança e EPIs de reposição obrigatória." }
+      { "id": "A", "text": "Incinerar o solo no local." },
+      { "id": "B", "text": "Isolar a área e conter o espalhamento." },
+      { "id": "C", "text": "Aumentar a vazão de bombeamento." },
+      { "id": "D", "text": "Substituir todo o terreno da bacia." },
+      { "id": "E", "text": "Nada fazer, pois o sol evaporará o óleo." }
     ],
     "correctAnswer": "B",
-    "explanation": "A Curva ABC agrupa os itens: Classe A (poucos itens, alto valor - aprox. 70-80% do valor total); Classe B (quantidade intermediária, valor intermediário - 15-20%); Classe C (muitos itens, baixo valor - 5-10%).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Administração de Materiais",
+    "explanation": "A resposta a emergências ambientais começa pelo isolamento da área e contenção (barreiras) para evitar que o óleo atinja corpos hídricos ou se espalhe.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Meio Ambiente - Emergências",
     "verified": true,
     "difficulty": "fácil"
   },
   {
     "id": "ce-04",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "De acordo com a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), a modalidade de licitação obrigatória para a aquisição de bens e serviços comuns, cujo critério de julgamento possa ser o de menor preço ou o de maior desconto, é:",
+    "topic": "Segurança do Trabalho",
+    "statement": "A norma técnica que regulamenta a Permissão de Trabalho (PT) para atividades de risco é fundamental para:",
     "alternatives": [
-      { "id": "A", "text": "Concorrência" },
-      { "id": "B", "text": "Tomada de Preços" },
-      { "id": "C", "text": "Pregão" },
-      { "id": "D", "text": "Convite" },
-      { "id": "E", "text": "Leilão" }
+      { "id": "A", "text": "Aumentar a burocracia do setor." },
+      { "id": "B", "text": "Garantir que a atividade seja realizada com riscos controlados." },
+      { "id": "C", "text": "Eliminar a necessidade de treinamento." },
+      { "id": "D", "text": "Substituir o uso de EPIs." },
+      { "id": "E", "text": "Aprovar horas extras para os técnicos." }
     ],
-    "correctAnswer": "C",
-    "explanation": "O Pregão é a modalidade de licitação obrigatória para aquisição de bens e serviços comuns (cujos padrões de desempenho e qualidade possam ser objetivamente definidos pelo edital). Tomada de preços e convite foram extintos pela Lei 14.133/2021.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Lei 14.133/2021",
+    "correctAnswer": "B",
+    "explanation": "A PT é um documento de controle que garante que, antes da execução de um trabalho de risco (espaço confinado, quente, etc.), todas as medidas de segurança estejam em vigor.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - PT",
     "verified": true,
     "difficulty": "médio"
   },
   {
     "id": "ce-05",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Gestão de Pessoas",
-    "statement": "A avaliação de desempenho é um instrumento fundamental na Gestão de Pessoas. O método que avalia o desempenho do colaborador a partir de diferentes fontes (superiores, subordinados, colegas, clientes e autoavaliação) é conhecido como:",
+    "topic": "Logística e Operações",
+    "statement": "Qual o significado de 'terminal aquaviário' no contexto da Transpetro?",
     "alternatives": [
-      { "id": "A", "text": "Escalas Gráficas" },
-      { "id": "B", "text": "Pesquisa de Campo" },
-      { "id": "C", "text": "Avaliação 360 Graus" },
-      { "id": "D", "text": "Incidentes Críticos" },
-      { "id": "E", "text": "Listas de Verificação" }
+      { "id": "A", "text": "Local exclusivo para reparos de aeronaves." },
+      { "id": "B", "text": "Estrutura para carga/descarga de navios em terminais marítimos." },
+      { "id": "C", "text": "Armazenamento exclusivo de gás natural seco." },
+      { "id": "D", "text": "Instalação para transporte ferroviário de combustíveis." },
+      { "id": "E", "text": "Escritório administrativo na sede." }
     ],
-    "correctAnswer": "C",
-    "explanation": "A Avaliação 360 Graus é o método multifonte que envolve todos os círculos de relacionamento do avaliado, proporcionando uma visão ampla e sistêmica.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Gestão de Pessoas",
+    "correctAnswer": "B",
+    "explanation": "Terminais aquaviários são instalações costeiras onde navios petroleiros atracam para realizar o transbordo (carregamento/descarregamento) de líquidos a granel.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Terminais",
     "verified": true,
     "difficulty": "fácil"
   },
   {
     "id": "ce-06",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Arquivologia e Gestão Documental",
-    "statement": "Na arquivologia, os documentos passam por um ciclo de vida composto por idades. O arquivo que abriga documentos correntes, de uso frequente pelas unidades organizacionais na condução de suas atividades, é classificado como:",
+    "topic": "Conceitos de Qualidade",
+    "statement": "O que caracteriza um processo de 'melhoria contínua' na gestão operacional?",
     "alternatives": [
-      { "id": "A", "text": "Arquivo Permanente ou Histórico" },
-      { "id": "B", "text": "Arquivo Intermediário ou de Segunda Idade" },
-      { "id": "C", "text": "Arquivo Corrente ou de Primeira Idade" },
-      { "id": "D", "text": "Arquivo Setorial Definitivo" },
-      { "id": "E", "text": "Arquivo de Guarda Permanente" }
+      { "id": "A", "text": "Manter os métodos sem alteração por décadas." },
+      { "id": "B", "text": "Buscar falhas sistemáticas para aumentar a eficiência." },
+      { "id": "C", "text": "Aumentar apenas a produção, ignorando a segurança." },
+      { "id": "D", "text": "Reduzir o número de funcionários contratados." },
+      { "id": "E", "text": "Centralizar todas as decisões no nível estratégico." }
     ],
-    "correctAnswer": "C",
-    "explanation": "O arquivo corrente (primeira idade) é composto por documentos em curso ou de uso frequente, necessários ao cumprimento das funções operacionais.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Arquivologia",
+    "correctAnswer": "B",
+    "explanation": "Melhoria contínua (ex: ciclo PDCA) foca em identificar falhas, analisar causas e implementar melhorias para tornar o processo mais eficiente e seguro.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Qualidade - Gestão",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-07",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Contabilidade Básica e Custos",
-    "statement": "Na contabilidade gerencial e de custos, os custos que variam proporcionalmente ao volume de produção ou de atividade (como matéria-prima e embalagens) são denominados:",
+    "topic": "Segurança do Trabalho",
+    "statement": "O mapa de risco tem como função:",
     "alternatives": [
-      { "id": "A", "text": "Custos Fixos" },
-      { "id": "B", "text": "Custos Variáveis" },
-      { "id": "C", "text": "Despesas Administrativas" },
-      { "id": "D", "text": "Custos Indiretos Fixos" },
-      { "id": "E", "text": "Gastos Primários Irrelevantes" }
+      { "id": "A", "text": "Indicar o caminho de fuga em caso de incêndio." },
+      { "id": "B", "text": "Expor os riscos existentes nos locais de trabalho." },
+      { "id": "C", "text": "Listar os nomes de todos os funcionários." },
+      { "id": "D", "text": "Definir o salário de cada cargo." },
+      { "id": "E", "text": "Controlar o estoque de EPIs." }
     ],
     "correctAnswer": "B",
-    "explanation": "Custos variáveis são aqueles cujo montante total varia em proporção direta ao volume de produção ou de vendas (ex: matéria-prima, insumos diretos).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Contabilidade de Custos",
+    "explanation": "O mapa de risco é uma representação gráfica dos riscos à saúde/segurança em um ambiente, utilizando cores para indicar o tipo de risco.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - Mapa de Risco",
     "verified": true,
     "difficulty": "fácil"
   },
   {
     "id": "ce-08",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Governança Corporativa e Compliance",
-    "statement": "A Governança Corporativa baseia-se em princípios fundamentais que asseguram a transparência, a equidade, a prestação de contas (accountability) e a responsabilidade corporativa. O princípio que garante o tratamento justo e igualitário de todos os sócios e partes interessadas (stakeholders) é:",
+    "topic": "Operações Técnicas",
+    "statement": "A 'medificação' ou medição de tanques em terminais tem a finalidade de:",
     "alternatives": [
-      { "id": "A", "text": "Compliance" },
-      { "id": "B", "text": "Equidade (Fairness)" },
-      { "id": "C", "text": "Disclosure" },
-      { "id": "D", "text": "Auditoria Independente" },
-      { "id": "E", "text": "Segregação de Funções" }
+      { "id": "A", "text": "Conhecer o volume estocado de produto." },
+      { "id": "B", "text": "Verificar a cor do produto." },
+      { "id": "C", "text": "Limpar o fundo do tanque." },
+      { "id": "D", "text": "Soldar novas placas de aço." },
+      { "id": "E", "text": "Testar a rede elétrica do terminal." }
     ],
-    "correctAnswer": "B",
-    "explanation": "A equidade caracteriza-se pelo tratamento justo e isonômico de todos os acionistas e demais partes interessadas, considerando seus direitos e deveres.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Governança",
+    "correctAnswer": "A",
+    "explanation": "A medição (medificação) é essencial para controle de inventário, balanço de perdas e monitoramento do nível de produto nos tanques de armazenamento.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Medição",
     "verified": true,
     "difficulty": "médio"
   },
   {
     "id": "ce-09",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "A Teoria da Burocracia de Max Weber destaca características fundamentais das organizações formais eficientes. Qual das alternativas abaixo representa uma característica burocrática weberiana?",
+    "topic": "Segurança do Trabalho",
+    "statement": "Qual o significado da sigla EPC?",
     "alternatives": [
-      { "id": "A", "text": "Decisões baseadas no carisma e nas relações informais." },
-      { "id": "B", "text": "Impessoalidade nas relações e nas normas escritas." },
-      { "id": "C", "text": "Flexibilidade extrema na contratação sem exigência de qualificação." },
-      { "id": "D", "text": "Descentralização total da autoridade para os níveis operacionais." },
-      { "id": "E", "text": "Substituição de regras formais por liderança situacional." }
+      { "id": "A", "text": "Equipamento de Proteção Coletiva." },
+      { "id": "B", "text": "Equipe de Planejamento de Cargas." },
+      { "id": "C", "text": "Estratégia de Proteção de Computadores." },
+      { "id": "D", "text": "Empresa de Prevenção de Corrosão." },
+      { "id": "E", "text": "Estação de Processamento de Combustível." }
     ],
-    "correctAnswer": "B",
-    "explanation": "A burocracia weberiana baseia-se na formalização de normas, impessoalidade, hierarquia de autoridade e competência técnica.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Burocracia",
+    "correctAnswer": "A",
+    "explanation": "EPC significa Equipamento de Proteção Coletiva (ex: corrimões, exaustores, isolamentos de área).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - Conceitos",
     "verified": true,
     "difficulty": "fácil"
   },
   {
     "id": "ce-10",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "Segundo a Lei nº 14.133/2021, a contratação direta por inexigibilidade de licitação ocorre quando há inviabilidade de competição. Um exemplo clássico que configura inexigibilidade é a contratação de:",
+    "topic": "Logística",
+    "statement": "O que é o 'despacho' de uma mercadoria?",
     "alternatives": [
-      { "id": "A", "text": "Serviços técnicos especializados com profissionais de notória especialização." },
-      { "id": "B", "text": "Gêneros perecíveis em caso de emergência com prazo de 30 dias." },
-      { "id": "C", "text": "Obras de engenharia de pequeno valor até R$ 100.000,00." },
-      { "id": "D", "text": "Bens fornecidos por único produtor sem similares no mercado (exclusividade)." },
-      { "id": "E", "text": "Ambas as alternativas A e D." }
+      { "id": "A", "text": "A fase em que a mercadoria é armazenada." },
+      { "id": "B", "text": "A fase de liberação da mercadoria para transporte/saída." },
+      { "id": "C", "text": "A etapa de fabricação do produto." },
+      { "id": "D", "text": "A vistoria final do produto para descarte." },
+      { "id": "E", "text": "O pagamento dos funcionários." }
     ],
-    "correctAnswer": "E",
-    "explanation": "A Lei 14.133/2021 prevê a inexigibilidade de licitação nos casos de inviabilidade de competição, destacando expressamente a contratação de serviços técnicos especializados com profissionais de notória especialização (art. 74, III) e aquisição de materiais, equipamentos ou gêneros que só possam ser fornecidos por produtor, empresa ou representante comercial exclusivo (art. 74, I).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Inexigibilidade Lei 14.133",
+    "correctAnswer": "B",
+    "explanation": "Despacho é o ato de liberar a carga para seu destino final, após verificações e emissão de documentação.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Logística - Conceitos",
     "verified": true,
-    "difficulty": "difícil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-11",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "O sistema de gestão de estoques Just in Time (JIT), amplamente aplicado na logística empresarial moderna, tem como objetivo central:",
+    "topic": "Operações Técnicas",
+    "statement": "A 'estanqueidade' de um sistema refere-se à:",
     "alternatives": [
-      { "id": "A", "text": "Manter estoques de segurança elevados para evitar rupturas de produção." },
-      { "id": "B", "text": "Produzir e entregar materiais apenas no momento exato em que são necessários, eliminando estoques e desperdícios." },
-      { "id": "C", "text": "Centralizar a armazenagem em depósitos regionais distantes das unidades operacionais." },
-      { "id": "D", "text": "Adquirir lotes gigantescos para obter descontos máximos por escala." },
-      { "id": "E", "text": "Incentivar a obsolescência planejada de peças de reposição." }
+      { "id": "A", "text": "Capacidade de suportar alta temperatura." },
+      { "id": "B", "text": "Ausência de vazamentos (vedação perfeita)." },
+      { "id": "C", "text": "Facilidade de transporte do produto." },
+      { "id": "D", "text": "Dureza do material metálico." },
+      { "id": "E", "text": "Velocidade de processamento." }
     ],
     "correctAnswer": "B",
-    "explanation": "O Just in Time busca eliminar desperdícios e estoques desnecessários, produzindo ou entregando exatamente a quantidade necessária no momento oportuno.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Logística JIT",
+    "explanation": "Diz-se que um sistema é estanque quando está hermeticamente fechado, sem vazamentos.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Estanqueidade",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-12",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Gestão de Pessoas",
-    "statement": "O processo de recrutamento de pessoal pode ser realizado de forma interna ou externa. Vantagens do recrutamento interno incluem:",
+    "topic": "Segurança do Trabalho",
+    "statement": "Em caso de incêndio em equipamentos elétricos energizados, qual é o agente extintor mais adequado?",
     "alternatives": [
-      { "id": "A", "text": "Inovação radical de ideias e introdução de novas culturas na empresa." },
-      { "id": "B", "text": "Economia de custos operacionais de anúncio e maior rapidez no preenchimento da vaga." },
-      { "id": "C", "text": "Aumento imediato do número total de colaboradores na força de trabalho." },
-      { "id": "D", "text": "Eliminação completa da necessidade de programas de treinamento." },
-      { "id": "E", "text": "Impedimento de conflitos de interesse entre os funcionários antigos." }
+      { "id": "A", "text": "Água." },
+      { "id": "B", "text": "Espuma mecânica." },
+      { "id": "C", "text": "Pó químico ou CO2." },
+      { "id": "D", "text": "Areia úmida." },
+      { "id": "E", "text": "Álcool." }
     ],
-    "correctAnswer": "B",
-    "explanation": "O recrutamento interno aproveita talentos já existentes, sendo mais econômico, rápido e gerando forte motivação para o plano de carreira.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Recrutamento",
+    "correctAnswer": "C",
+    "explanation": "Para fogo classe C (elétrico), deve-se usar agentes não condutores de eletricidade, como CO2 ou pó químico.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - Incêndio",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-13",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Contabilidade Básica e Custos",
-    "statement": "No Balanço Patrimonial de uma empresa, o Passivo Circulante agrupa as obrigações exigíveis que vencem:",
+    "topic": "Operações",
+    "statement": "O que é um produto inflamável?",
     "alternatives": [
-      { "id": "A", "text": "A longo prazo, após o término do exercício social seguinte." },
-      { "id": "B", "text": "Até o final do exercício social subsequente (ou ciclo operacional)." },
-      { "id": "C", "text": "Exclusivamente no mesmo mês em que foram contraídas." },
-      { "id": "D", "text": "Sem prazo de vencimento determinado." },
-      { "id": "E", "text": "Sob a forma de capital social subscrito e não integralizado." }
+      { "id": "A", "text": "Líquido que só queima acima de 200°C." },
+      { "id": "B", "text": "Líquido que libera vapores inflamáveis abaixo de certas temperaturas." },
+      { "id": "C", "text": "Substância que não reage com o oxigênio." },
+      { "id": "D", "text": "Material sólido incombustível." },
+      { "id": "E", "text": "Gás que apaga incêndios." }
     ],
     "correctAnswer": "B",
-    "explanation": "O Passivo Circulante compreende as obrigações da entidade com vencimento no exercício social subsequente ou durante o ciclo operacional da empresa.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Contabilidade Básica",
+    "explanation": "Inflamáveis são substâncias que, à temperatura ambiente ou um pouco acima, liberam vapores em quantidade suficiente para formar misturas inflamáveis com o ar.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Inflamáveis",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-14",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Governança Corporativa e Compliance",
-    "statement": "O programa de integridade (compliance) em empresas estatais e sociedades de economia mista, como a Transpetro, tem como pilar fundamental a prevenção, detecção e remediação de:",
+    "topic": "Segurança do Trabalho",
+    "statement": "O que significa 'trabalho em altura' conforme as normas de segurança atuais?",
     "alternatives": [
-      { "id": "A", "text": "Flutuações cambiais desfavoráveis no mercado internacional." },
-      { "id": "B", "text": "Atos de corrupção, fraudes, irregularidades e desvios éticos." },
-      { "id": "C", "text": "Greves sindicais setoriais de trabalhadores marítimos." },
-      { "id": "D", "text": "Concorrência desleal de empresas privadas estrangeiras." },
-      { "id": "E", "text": "Insolvência fiscal decorrente de alta carga tributária." }
+      { "id": "A", "text": "Qualquer trabalho acima de 50 cm do chão." },
+      { "id": "B", "text": "Qualquer trabalho acima de 2 metros do nível inferior, onde há risco de queda." },
+      { "id": "C", "text": "Trabalho realizado apenas em torres acima de 100 metros." },
+      { "id": "D", "text": "Trabalho em escadas de até 1 metro." },
+      { "id": "E", "text": "Trabalho sentado em escritório." }
     ],
     "correctAnswer": "B",
-    "explanation": "Compliance e programas de integridade visam garantir o cumprimento de leis e regulamentos internos e externos, com foco na prevenção e combate a fraudes e corrupção.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Compliance",
+    "explanation": "Conforme a NR-35, trabalho em altura é toda atividade executada acima de 2,00 metros do nível inferior, onde haja risco de queda.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Segurança - NR 35",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-15",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Administração Financeira e Orçamentária",
-    "statement": "No ciclo orçamentário brasileiro, a elaboração da proposta do Orçamento Anual (LOA) e do Plano Plurianual (PPA) compete originariamente ao Poder:",
+    "topic": "Logística",
+    "statement": "A 'intermodalidade' no transporte de cargas refere-se a:",
     "alternatives": [
-      { "id": "A", "text": "Legislativo" },
-      { "id": "B", "text": "Judiciário" },
-      { "id": "C", "text": "Executivo" },
-      { "id": "D", "text": "Tribunal de Contas da União" },
-      { "id": "E", "text": "Conselho Monetário Nacional" }
+      { "id": "A", "text": "Uso de apenas um tipo de veículo." },
+      { "id": "B", "text": "Uso de dois ou mais modos de transporte para a mesma carga." },
+      { "id": "C", "text": "Transporte feito apenas por aviões." },
+      { "id": "D", "text": "Armazenamento em silos verticais." },
+      { "id": "E", "text": "Uso de bicicletas para entregas internas." }
     ],
-    "correctAnswer": "C",
-    "explanation": "A iniciativa e elaboração dos projetos de lei orçamentária (PPA, LDO, LOA) competem privativamente ao Chefe do Poder Executivo.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Orçamento Público",
+    "correctAnswer": "B",
+    "explanation": "Intermodalidade é o uso combinado de diferentes meios de transporte (ex: navio + trem) para realizar a entrega de uma carga.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Logística - Modais",
     "verified": true,
-    "difficulty": "fácil"
+    "difficulty": "médio"
   },
   {
     "id": "ce-16",
     "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "A Teoria das Relações Humanas, desenvolvida por Elton Mayo após os estudos de Hawthorne, impulsionou a administração ao enfatizar:",
+    "topic": "Operações",
+    "statement": "A corrosão em dutos metálicos é um problema grave que pode ser mitigado por:",
     "alternatives": [
-      { "id": "A", "text": "A estrita formalidade das normas e a engenharia de métodos de trabalho." },
-      { "id": "B", "text": "A importância das pessoas, dos grupos informais e da psicologia nas organizações." },
-      { "id": "C", "text": "A centralização total do controle na figura do capataz técnico." },
-      { "id": "D", "text": "A maximização da eficiência mecânica através de tempos e movimentos." },
-      { "id": "E", "text": "A subordinação exclusiva dos objetivos individuais aos lucros acionários." }
+      { "id": "A", "text": "Pintura simples a cada 10 anos." },
+      { "id": "B", "text": "Sistema de proteção catódica." },
+      { "id": "C", "text": "Aumento do atrito interno." },
+      { "id": "D", "text": "Remoção de todas as proteções externas." },
+      { "id": "E", "text": "Uso de dutos de vidro." }
     ],
     "correctAnswer": "B",
-    "explanation": "A Teoria das Relações Humanas deslocou o foco das tarefas e da estrutura formal para as pessoas, destacando a organização informal e a motivação humana.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Relações Humanas",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-17",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Arquivologia e Gestão Documental",
-    "statement": "O princípio arquivístico segundo o qual os arquivos originários de uma instituição ou pessoa devem ser mantidos sem dispersão ou mistura com outros fundos é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Princípio da Territorialidade" },
-      { "id": "B", "text": "Princípio da Organicidade" },
-      { "id": "C", "text": "Princípio da Proveniência (ou Respeito aos Fundos)" },
-      { "id": "D", "text": "Princípio da Redundância Documental" },
-      { "id": "E", "text": "Princípio da Abertura Cronológica" }
-    ],
-    "correctAnswer": "C",
-    "explanation": "O Princípio da Proveniência determina que os arquivos gerados por uma entidade produtora não devem ser misturados aos de outras entidades.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Arquivologia",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-18",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "Conforme a Lei nº 14.133/2021, o controle da execução dos contratos administrativos será exercido por representante da Administração designado pela autoridade competente. Esse representante é conhecido na prática administrativa como:",
-    "alternatives": [
-      { "id": "A", "text": "Auditor Geral da República" },
-      { "id": "B", "text": "Fiscal ou Gestor do Contrato" },
-      { "id": "C", "text": "Pregoeiro Titular" },
-      { "id": "D", "text": "Procurador Jurídico Executivo" },
-      { "id": "E", "text": "Ouvidor Corporativo Setorial" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A execução do contrato deverá ser acompanhada e fiscalizada por 1 (um) ou mais fiscais do contrato (ou comissão de fiscalização), representantes da Administração.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Fiscalização de Contratos",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-19",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "O documento emitido pelo setor de controle de estoques que autoriza a saída de materiais do almoxarifado para atendimento às unidades requisitantes internas é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Nota de Empenho" },
-      { "id": "B", "text": "Requisição de Material (ou Vale-Material)" },
-      { "id": "C", "text": "Ordem de Compra Internacional" },
-      { "id": "D", "text": "Fatura Comercial Consolidada" },
-      { "id": "E", "text": "Inventário Físico Anual" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A Requisição de Material é o documento interno pelo qual os setores solicitam materiais ao almoxarifado.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Almoxarifado",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-20",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Contabilidade Básica e Custos",
-    "statement": "O método de custeio que atribui aos produtos apenas os custos variáveis de fabricação, tratando os custos fixos como despesas do período (reconhecidas diretamente no resultado), é chamado de:",
-    "alternatives": [
-      { "id": "A", "text": "Custeio por Absorção" },
-      { "id": "B", "text": "Custeio Variável (ou Direto)" },
-      { "id": "C", "text": "Custeio Baseado em Atividades (ABC)" },
-      { "id": "D", "text": "Custeio Histórico Corrigido" },
-      { "id": "E", "text": "Custeio Pleno Integral" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "No custeio variável (ou direto), apenas os custos variáveis são alocados aos produtos. Os custos fixos são baixados diretamente contra o resultado do exercício.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Custeio Variável",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-21",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "A Administração por Objetivos (APO), popularizada por Peter Drucker, é um modelo participativo de planejamento e avaliação em que:",
-    "alternatives": [
-      { "id": "A", "text": "Os chefes ditam ordens centralizadas sem consulta aos subordinados." },
-      { "id": "B", "text": "Supervisores e subordinados definem conjuntamente metas comuns e mensuráveis." },
-      { "id": "C", "text": "A ênfase é estritamente colocada na burocracia de papéis e carimbos." },
-      { "id": "D", "text": "O foco reside exclusivamente na rotina diária de fabricação sem prazos." },
-      { "id": "E", "text": "O planejamento estratégico de longo prazo é proibido." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A APO é um processo participativo em que gerentes e subordinados identificam metas comuns, definem áreas de responsabilidade e usam essas medidas como guia.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - APO",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-22",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Gestão de Pessoas",
-    "statement": "O processo de treinamento e desenvolvimento (T&D) nas organizações visa alinhar as competências dos colaboradores às necessidades estratégicas da empresa. A etapa inicial desse processo consiste em:",
-    "alternatives": [
-      { "id": "A", "text": "Aplicação imediata de testes de desligamento." },
-      { "id": "B", "text": "Levantamento das Necessidades de Treinamento (LNT)." },
-      { "id": "C", "text": "Contratação de consultoria internacional sem diagnóstico prévio." },
-      { "id": "D", "text": "Elaboração da folha de pagamento de gratificações." },
-      { "id": "E", "text": "Homologação sindical de acordos coletivos." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O Levantamento das Necessidades de Treinamento (LNT) é a primeira etapa do ciclo de T&D, diagnosticando lacunas de competências que precisam ser supridas.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Treinamento e Desenvolvimento",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-23",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração Financeira e Orçamentária",
-    "statement": "No orçamento público brasileiro, a Lei de Diretrizes Orçamentárias (LDO) tem como uma de suas principais funções constitucionais:",
-    "alternatives": [
-      { "id": "A", "text": "Fixar o planejamento estratégico global para os próximos 20 anos." },
-      { "id": "B", "text": "Elaborar as metas e prioridades para o exercício financeiro seguinte e orientar a elaboração da LOA." },
-      { "id": "C", "text": "Realizar o balanço contábil e financeiro do ano anterior encerrado." },
-      { "id": "D", "text": "Julgar as contas prestadas anualmente pelo Presidente da República." },
-      { "id": "E", "text": "Autorizar a emissão de moeda fiduciária pelo Banco Central." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A LDO estabelece as metas e prioridades da administração pública para o ano seguinte, orienta a elaboração da LOA, dispõe sobre alterações na legislação tributária, entre outras atribuições.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - LDO",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-24",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "De acordo com a Lei nº 14.133/2021, o diálogo competitivo é uma modalidade de licitação inovadora no direito brasileiro, aplicada a contratações em que a Administração visa:",
-    "alternatives": [
-      { "id": "A", "text": "Comprar gêneros alimentícios perecíveis em feiras livres locais." },
-      { "id": "B", "text": "Desenvolver uma ou mais alternativas capazes de atender às suas necessidades, realizando diálogos prévios com licitantes qualificados." },
-      { "id": "C", "text": "Contratar serviços comuns de limpeza e vigilância com menor preço automático." },
-      { "id": "D", "text": "Alienar bens públicos inservíveis por meio de leilão eletrônico." },
-      { "id": "E", "text": "Realizar pequenas compras de pronto pagamento por suprimento de fundos." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O diálogo competitivo é restrito a contratações em que a Administração municipal, estadual ou federal visa desenvolver soluções inovadoras ou complexas, conversando previamente com licitantes selecionados.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Diálogo Competitivo",
+    "explanation": "A proteção catódica é uma técnica eletroquímica amplamente utilizada para evitar a corrosão em estruturas metálicas enterradas ou submersas (dutos).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Operações - Proteção",
     "verified": true,
     "difficulty": "difícil"
-  },
-  {
-    "id": "ce-25",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "O indicador logístico que mede a porcentagem de pedidos entregues aos clientes no prazo correto, com a quantidade exata e sem avarias é amplamente conhecido no meio corporativo como:",
-    "alternatives": [
-      { "id": "A", "text": "Giro de Estoque" },
-      { "id": "B", "text": "OTIF (On-Time In-Full)" },
-      { "id": "C", "text": "Ponto de Pedido" },
-      { "id": "D", "text": "Lead Time Global" },
-      { "id": "E", "text": "Custo de Oportunidade Logística" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "OTIF (On-Time In-Full) mede a eficácia da entrega: no prazo correto (On-Time) e com o pedido completo e sem defeitos (In-Full).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Indicadores Logísticos",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-26",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Arquivologia e Gestão Documental",
-    "statement": "O instrumento de arquivologia que define os prazos de guarda (temporalidade) e a destinação final (eliminação ou guarda permanente) dos documentos de um órgão é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Plano de Classificação de Documentos" },
-      { "id": "B", "text": "Tabela de Temporalidade de Documentos (TTD)" },
-      { "id": "C", "text": "Manual de Identidade Visual Corporativa" },
-      { "id": "D", "text": "Regulamento Interno de Licitações" },
-      { "id": "E", "text": "Guia de Remessa de Arquivo Intermediário" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A Tabela de Temporalidade de Documentos (TTD) estabelece os prazos de retenção nas fases corrente e intermediária e a destinação final (eliminação ou recolhimento permanente).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Tabela de Temporalidade",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-27",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Contabilidade Básica e Custos",
-    "statement": "No regime de competência, adotado pela contabilidade financeira, as receitas e as despesas são reconhecidas no resultado do período em que:",
-    "alternatives": [
-      { "id": "A", "text": "Ocorre efetivamente o recebimento em dinheiro ou o pagamento da fatura." },
-      { "id": "B", "text": "Os fatos geradores acontecem, independentemente de terem sido pagos ou recebidos." },
-      { "id": "C", "text": "A diretoria financeira aprova o fluxo de caixa projetado." },
-      { "id": "D", "text": "O auditor independente emite o parecer sem ressalvas." },
-      { "id": "E", "text": "O imposto de renda trimestral é recolhido aos cofres públicos." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "Pelo regime de competência, as receitas e despesas são computadas no resultado do período em que ocorrem os fatos geradores, independentemente do fluxo financeiro.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Regime de Competência",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-28",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Governança Corporativa e Compliance",
-    "statement": "O órgão de governança societária encarregado de fiscalizar os atos dos administradores, examinar as demonstrações financeiras e emitir parecer para a assembleia geral é o(a):",
-    "alternatives": [
-      { "id": "A", "text": "Conselho de Administração" },
-      { "id": "B", "text": "Diretoria Executiva" },
-      { "id": "C", "text": "Conselho Fiscal" },
-      { "id": "D", "text": "Comitê de Ética Corporativa" },
-      { "id": "E", "text": "Auditoria Interna Operacional" }
-    ],
-    "correctAnswer": "C",
-    "explanation": "O Conselho Fiscal é o órgão corporativo independente que tem por atribuição primordial fiscalizar a gestão dos administradores e examinar as contas da sociedade.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Conselho Fiscal",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-29",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "O planejamento estratégico diferencia-se do planejamento tático e operacional por abranger:",
-    "alternatives": [
-      { "id": "A", "text": "Ações diárias de curta duração em cada posto de trabalho." },
-      { "id": "B", "text": "A organização como um todo, visão de longo prazo e relacionamento com o ambiente externo." },
-      { "id": "C", "text": "Departamentos específicos isolados com foco em prazos inferiores a um mês." },
-      { "id": "D", "text": "Estritamente a contabilidade de custos e folha de pagamento." },
-      { "id": "E", "text": "Normas técnicas de segurança operacional de máquinas." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O planejamento estratégico é de longo prazo, envolve a organização como um todo e foca nas interações com o ambiente competitivo externo.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Planejamento Estratégico",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-30",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "Nos termos da Lei nº 14.133/2021, a alienação de bens imóveis da Administração Pública depende de autorização legislativa para órgãos da administração direta e exige, como regra geral, a realização de licitação na modalidade:",
-    "alternatives": [
-      { "id": "A", "text": "Pregão Eletrônico" },
-      { "id": "B", "text": "Concorrência ou Leilão" },
-      { "id": "C", "text": "Diálogo Competitivo" },
-      { "id": "D", "text": "Concurso" },
-      { "id": "E", "text": "Tomada de Preços" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "Para a alienação de bens, a Lei 14.133/2021 prevê o Leilão (para bens móveis inservíveis e imóveis adquiridos por dação em pagamento ou execução judicial) e a Concorrência (para bens imóveis em geral e móveis de grande valor).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Alienação Lei 14.133",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-31",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Gestão de Pessoas",
-    "statement": "O estilo de liderança em que o líder envolve a equipe no processo decisório, ouvindo sugestões e descentralizando decisões, mas mantendo a responsabilidade final, é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Liderança Autocrática" },
-      { "id": "B", "text": "Liderança Democrática (ou Participativa)" },
-      { "id": "C", "text": "Liderança Liberal (Laisser-faire)" },
-      { "id": "D", "text": "Liderança Coercitiva" },
-      { "id": "E", "text": "Liderança Burocrática Estrita" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "Na liderança democrática, o líder estimula a participação dos subordinados nas decisões e na condução das diretrizes de trabalho.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Estilos de Liderança",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-32",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "O ponto de pedido (reorder point) na gestão de estoques é o nível de estoque que, ao ser atingido, aciona:",
-    "alternatives": [
-      { "id": "A", "text": "A liquidação imediata de todos os produtos." },
-      { "id": "B", "text": "A emissão de um novo pedido de compra para reposição, considerando o tempo de entrega (lead time)." },
-      { "id": "C", "text": "O descarte automático de materiais vencidos." },
-      { "id": "D", "text": "A interrupção total das atividades operacionais." },
-      { "id": "E", "text": "O aumento artificial do preço de venda." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O ponto de pedido é o momento (nível de estoque) em que se deve emitir um novo pedido de compra, de modo que o material chegue antes que o estoque de segurança seja esgotado.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Ponto de Pedido",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-33",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Contabilidade Básica e Custos",
-    "statement": "O documento contábil que evidencia, em um determinado momento, a situação patrimonial e financeira da entidade, estruturado em Ativo, Passivo e Patrimônio Líquido, é o:",
-    "alternatives": [
-      { "id": "A", "text": "Demonstração do Resultado do Exercício (DRE)" },
-      { "id": "B", "text": "Balanço Patrimonial" },
-      { "id": "C", "text": "Demonstração dos Fluxos de Caixa" },
-      { "id": "D", "text": "Demonstração do Valor Adicionado" },
-      { "id": "E", "text": "Orçamento Operacional Anual" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O Balanço Patrimonial é a demonstração contábil estática que apresenta os bens e direitos (Ativo), as obrigações (Passivo) e o capital próprio (Patrimônio Líquido).",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Balanço Patrimonial",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-34",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração Financeira e Orçamentária",
-    "statement": "No orçamento público, os créditos adicionais destinados a despesas urgentes e imprevistas, como nos casos de guerra, calamidade pública ou grave perturbação da ordem, são os créditos:",
-    "alternatives": [
-      { "id": "A", "text": "Suplementares" },
-      { "id": "B", "text": "Especiais" },
-      { "id": "C", "text": "Extraordinários" },
-      { "id": "D", "text": "Ordinários Permanentes" },
-      { "id": "E", "text": "Provisórios Globais" }
-    ],
-    "correctAnswer": "C",
-    "explanation": "Créditos extraordinários destinam-se a despesas urgentes e imprevisíveis, sendo abertos por medida provisória (na esfera federal), sem necessidade de autorização legislativa prévia.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Créditos Adicionais",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-35",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Governança Corporativa e Compliance",
-    "statement": "O mecanismo de controle interno que consiste na separação de atribuições de modo que nenhuma pessoa execute, sozinha, todas as etapas de um processo sensível (como aprovar pagamento e emitir ordem bancária) é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Auditoria de Gestão Externa" },
-      { "id": "B", "text": "Segregação de Funções" },
-      { "id": "C", "text": "Accountability Financeira" },
-      { "id": "D", "text": "Disclosure Voluntário" },
-      { "id": "E", "text": "Compliance Reativo" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A segregação de funções é um princípio fundamental de controle interno que evita que um único operador detenha o controle total de uma transação, reduzindo riscos de fraudes.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Segregação de Funções",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-36",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Arquivologia e Gestão Documental",
-    "statement": "O documento digital que possui garantia de autenticidade, integridade e validade jurídica por meio de certificação digital padrão ICP-Brasil é frequentemente gerenciado em sistemas informatizados de gestão arquivística de documentos conhecidos pela sigla:",
-    "alternatives": [
-      { "id": "A", "text": "SIGAD" },
-      { "id": "B", "text": "ERP" },
-      { "id": "C", "text": "CRM" },
-      { "id": "D", "text": "SCM" },
-      { "id": "E", "text": "BI" }
-    ],
-    "correctAnswer": "A",
-    "explanation": "SIGAD (Sistema Informatizado de Gestão Arquivística de Documentos) é o software projetado para gerenciar documentos digitais com segurança e validade arquivística.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - SIGAD",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-37",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Noções de Licitações e Contratos (Lei nº 14.133/2021)",
-    "statement": "Nos termos da Lei nº 14.133/2021, o contrato administrativo poderá ser alterado unilateralmente pela Administração, com as devidas justificativas, para:",
-    "alternatives": [
-      { "id": "A", "text": "Aumentar ou diminuir o valor contratual em qualquer porcentagem desejada pelo fiscal." },
-      { "id": "B", "text": "Modificação do projeto ou das especificações, para melhor adequação técnica aos objetivos da contratação." },
-      { "id": "C", "text": "Ajustar o lucro da empresa contratada em caso de inflação baixa." },
-      { "id": "D", "text": "Substituir o objeto contratado por outro completamente diferente." },
-      { "id": "E", "text": "Prorrogar prazos indefinidamente sem limite legal." }
-    ],
-    "correctAnswer": "B",
-    "explanation": "A Administração possui a prerrogativa de alterar unilateralmente os contratos para modificação do projeto ou das especificações para melhor adequação técnica.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Alteração Contratual Lei 14.133",
-    "verified": true,
-    "difficulty": "difícil"
-  },
-  {
-    "id": "ce-38",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Gestão de Pessoas",
-    "statement": "A teoria da motivação de Maslow organiza as necessidades humanas em uma pirâmide hierárquica. No topo dessa pirâmide encontram-se as necessidades de:",
-    "alternatives": [
-      { "id": "A", "text": "Fisiológicas (fome, sede, abrigo)" },
-      { "id": "B", "text": "Segurança e proteção física" },
-      { "id": "C", "text": "Sociais e de associação" },
-      { "id": "D", "text": "Estima e reconhecimento" },
-      { "id": "E", "text": "Autoatualização (desenvolvimento do potencial máximo)" }
-    ],
-    "correctAnswer": "E",
-    "explanation": "A pirâmide de Maslow coloca as necessidades de autoatualização (realização pessoal e crescimento) no topo da hierarquia.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Teoria de Maslow",
-    "verified": true,
-    "difficulty": "fácil"
-  },
-  {
-    "id": "ce-39",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Administração de Materiais e Logística",
-    "statement": "O inventário físico periódico realizado em datas específicas ao longo do ano para contagem de parte dos itens do estoque, de forma rotativa, é denominado:",
-    "alternatives": [
-      { "id": "A", "text": "Inventário Geral Anual" },
-      { "id": "B", "text": "Inventário Rotativo (ou Cíclico)" },
-      { "id": "C", "text": "Inventário de Balanço Patrimonial Exclusivo" },
-      { "id": "D", "text": "Inventário de Obsolescência Definitiva" },
-      { "id": "E", "text": "Auditoria de Estoque Zero" }
-    ],
-    "correctAnswer": "B",
-    "explanation": "O inventário rotativo (ou cíclico) consiste em contar continuamente grupos de itens ao longo do ano, conferindo acuracidade sem paralisar o almoxarifado.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Inventário Rotativo",
-    "verified": true,
-    "difficulty": "médio"
-  },
-  {
-    "id": "ce-40",
-    "subjectId": "conhecimentos_especificos",
-    "topic": "Teoria Geral da Administração",
-    "statement": "O Balanced Scorecard (BSC), ferramenta de medição e gestão estratégica desenvolvida por Kaplan e Norton, traduz a estratégia em objetivos organizacionais medidos por meio de quatro perspectivas equilibradas:",
-    "alternatives": [
-      { "id": "A", "text": "Financeira, Clientes, Processos Internos e Aprendizado e Crescimento." },
-      { "id": "B", "text": "Produção, Vendas, Contabilidade e Jurídico." },
-      { "id": "C", "text": "Curto Prazo, Médio Prazo, Longo Prazo e Contingência." },
-      { "id": "D", "text": "Governo, Sociedade, Acionistas e Fornecedores." },
-      { "id": "E", "text": "Hierarquia, Centralização, Burocracia e Carisma." }
-    ],
-    "correctAnswer": "A",
-    "explanation": "O BSC estrutura o desempenho estratégico em quatro perspectivas: Financeira, dos Clientes, dos Processos Internos e de Aprendizado e Crescimento.",
-    "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
-    "reference": "Edital Transpetro 2026 - Balanced Scorecard",
-    "verified": true,
-    "difficulty": "fácil"
   }
 ]

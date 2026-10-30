@@ -473,5 +473,309 @@
     "reference": "Edital Transpetro 2026 - Semântica",
     "verified": false,
     "difficulty": "fácil"
+  },
+  {
+    "id": "pt-26",
+    "subjectId": "portugues",
+    "topic": "Coesão textual",
+    "statement": "No trecho 'Os operadores revisaram os dutos; no entanto, eles não encontraram vazamentos', a conjunção destacada introduz uma relação de:",
+    "alternatives": [
+      { "id": "A", "text": "Adição" },
+      { "id": "B", "text": "Adversidade" },
+      { "id": "C", "text": "Conclusão" },
+      { "id": "D", "text": "Explicação" },
+      { "id": "E", "text": "Condição" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "'No entanto' é uma conjunção adversativa, indicando oposição ao que foi dito anteriormente.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Conectivos",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-27",
+    "subjectId": "portugues",
+    "topic": "Crase",
+    "statement": "Assinale a alternativa que completa corretamente a frase: 'O técnico dirigiu-se ___ sala de controle para realizar ___ manutenção ___ bomba principal.'",
+    "alternatives": [
+      { "id": "A", "text": "à / a / à" },
+      { "id": "B", "text": "a / a / a" },
+      { "id": "C", "text": "à / à / a" },
+      { "id": "D", "text": "a / à / à" },
+      { "id": "E", "text": "à / à / à" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Dirigiu-se à sala (a+a); realizar a manutenção (artigo apenas); manutenção da bomba (de+a). A crase ocorre apenas no primeiro caso.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Crase",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-28",
+    "subjectId": "portugues",
+    "topic": "Concordância Verbal",
+    "statement": "Assinale a alternativa em que a concordância verbal está correta segundo a norma-padrão.",
+    "alternatives": [
+      { "id": "A", "text": "Fazem dez anos que trabalho na Transpetro." },
+      { "id": "B", "text": "Deve haver soluções para o problema logístico." },
+      { "id": "C", "text": "Mais de um funcionário participaram do curso." },
+      { "id": "D", "text": "Aluga-se casas para operadores do terminal." },
+      { "id": "E", "text": "Haverão novos concursos para técnicos." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Deve haver' (verbo haver impessoal mantém o auxiliar no singular). 'Fazem' (indica tempo, deve ser 'Faz'); 'participaram' (com 'mais de um', o verbo deve ficar no singular); 'Aluga-se casas' (o certo é 'Alugam-se casas'); 'Haverão' (haver impessoal não vai para o plural).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Concordância",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-29",
+    "subjectId": "portugues",
+    "topic": "Sintaxe",
+    "statement": "Na frase 'A segurança operacional é prioridade da empresa', o termo 'da empresa' exerce a função de:",
+    "alternatives": [
+      { "id": "A", "text": "Objeto direto" },
+      { "id": "B", "text": "Objeto indireto" },
+      { "id": "C", "text": "Adjunto adnominal" },
+      { "id": "D", "text": "Complemento nominal" },
+      { "id": "E", "text": "Agente da passiva" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O termo 'da empresa' (de + a) tem valor possessivo, caracterizando o substantivo 'prioridade', funcionando como adjunto adnominal.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Sintaxe",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-30",
+    "subjectId": "portugues",
+    "topic": "Pontuação",
+    "statement": "Assinale a frase pontuada corretamente.",
+    "alternatives": [
+      { "id": "A", "text": "Os engenheiros, que chegaram cedo, iniciaram o projeto." },
+      { "id": "B", "text": "Os engenheiros que chegaram cedo, iniciaram o projeto." },
+      { "id": "C", "text": "Os engenheiros que chegaram cedo iniciaram, o projeto." },
+      { "id": "D", "text": "Os engenheiros que chegaram cedo iniciaram o projeto,." },
+      { "id": "E", "text": "Os engenheiros, que chegaram cedo iniciaram o projeto." }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A oração 'que chegaram cedo' é explicativa e deve estar entre vírgulas.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Pontuação",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-31",
+    "subjectId": "portugues",
+    "topic": "Significação das palavras",
+    "statement": "A palavra 'infringir' significa:",
+    "alternatives": [
+      { "id": "A", "text": "Impor (lei ou castigo)" },
+      { "id": "B", "text": "Violar (lei ou norma)" },
+      { "id": "C", "text": "Aprovar algo" },
+      { "id": "D", "text": "Aumentar um valor" },
+      { "id": "E", "text": "Corrigir um erro" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Infringir é violar, transgredir. 'Infligir' (com L) é aplicar ou impor.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Parônimos",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-32",
+    "subjectId": "portugues",
+    "topic": "Emprego dos pronomes",
+    "statement": "Assinale a opção com o uso correto do pronome relativo.",
+    "alternatives": [
+      { "id": "A", "text": "Este é o terminal que trabalho." },
+      { "id": "B", "text": "Este é o terminal onde trabalho." },
+      { "id": "C", "text": "Este é o terminal quem trabalho." },
+      { "id": "D", "text": "Este é o terminal qual trabalho." },
+      { "id": "E", "text": "Este é o terminal o qual trabalho." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O termo 'onde' é o relativo correto para retomar lugar físico.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Pronomes",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-33",
+    "subjectId": "portugues",
+    "topic": "Verbos",
+    "statement": "Assinale a frase em que o verbo está corretamente flexionado.",
+    "alternatives": [
+      { "id": "A", "text": "Se eles verem o relatório, assinarão." },
+      { "id": "B", "text": "Se eles virem o relatório, assinarão." },
+      { "id": "C", "text": "Se eles vir o relatório, assinarão." },
+      { "id": "D", "text": "Se eles viram o relatório, assinarão." },
+      { "id": "E", "text": "Se eles viam o relatório, assinarão." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O futuro do subjuntivo do verbo ver é 'vir' (quando eu vir, quando eles virem).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Verbos",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "pt-34",
+    "subjectId": "portugues",
+    "topic": "Ortografia",
+    "statement": "Assinale a alternativa em que todas as palavras estão grafadas corretamente.",
+    "alternatives": [
+      { "id": "A", "text": "Exceção, cessão, ascenção" },
+      { "id": "B", "text": "Exceção, cessão, ascensão" },
+      { "id": "C", "text": "Essessão, seção, ascensão" },
+      { "id": "D", "text": "Exceção, seção, ascenção" },
+      { "id": "E", "text": "Exceção, sessao, ascensão" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Exceção (com X e Ç), cessão (ceder), ascensão (subir).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Ortografia",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "pt-35",
+    "subjectId": "portugues",
+    "topic": "Regência",
+    "statement": "O verbo 'assistir', com sentido de 'ver/presenciar', exige qual preposição?",
+    "alternatives": [
+      { "id": "A", "text": "Não exige preposição." },
+      { "id": "B", "text": "Exige 'a'." },
+      { "id": "C", "text": "Exige 'de'." },
+      { "id": "D", "text": "Exige 'para'." },
+      { "id": "E", "text": "Exige 'em'." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No sentido de ver, o verbo assistir é transitivo indireto e exige a preposição 'a' (Assisti ao filme).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Regência",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-36",
+    "subjectId": "portugues",
+    "topic": "Semântica",
+    "statement": "Em 'A medida é urgente', o antônimo de 'urgente' é:",
+    "alternatives": [
+      { "id": "A", "text": "Imediata" },
+      { "id": "B", "text": "Inadiável" },
+      { "id": "C", "text": "Demorada" },
+      { "id": "D", "text": "Rápida" },
+      { "id": "E", "text": "Necessária" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Algo urgente requer rapidez; algo demorado é o seu oposto.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Semântica",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-37",
+    "subjectId": "portugues",
+    "topic": "Sintaxe",
+    "statement": "Na oração 'Os dados foram analisados pelo gerente', o termo 'pelo gerente' é:",
+    "alternatives": [
+      { "id": "A", "text": "Objeto direto" },
+      { "id": "B", "text": "Agente da passiva" },
+      { "id": "C", "text": "Sujeito" },
+      { "id": "D", "text": "Predicativo" },
+      { "id": "E", "text": "Adjunto adverbial" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Na voz passiva, quem pratica a ação introduzido por 'por' é o agente da passiva.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Vozes verbais",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-38",
+    "subjectId": "portugues",
+    "topic": "Conjunções",
+    "statement": "Na frase 'Estudei muito, logo serei aprovado', a conjunção 'logo' indica:",
+    "alternatives": [
+      { "id": "A", "text": "Oposição" },
+      { "id": "B", "text": "Causa" },
+      { "id": "C", "text": "Conclusão" },
+      { "id": "D", "text": "Finalidade" },
+      { "id": "E", "text": "Tempo" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "'Logo' é conjunção conclusiva.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Conjunções",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "pt-39",
+    "subjectId": "portugues",
+    "topic": "Crase",
+    "statement": "Assinale a frase com erro de crase.",
+    "alternatives": [
+      { "id": "A", "text": "Fui à escola." },
+      { "id": "B", "text": "Entreguei o livro à aluna." },
+      { "id": "C", "text": "Vou à Brasília." },
+      { "id": "D", "text": "Ele se refere àquela situação." },
+      { "id": "E", "text": "Ficamos face à face." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Quem vai a Brasília, volta de Brasília (não usa artigo, logo não há crase).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Crase",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "pt-40",
+    "subjectId": "portugues",
+    "topic": "Sintaxe",
+    "statement": "Qual dos termos abaixo é um exemplo de objeto indireto?",
+    "alternatives": [
+      { "id": "A", "text": "Comprei um carro." },
+      { "id": "B", "text": "Vi o filme." },
+      { "id": "C", "text": "Preciso de ajuda." },
+      { "id": "D", "text": "Fiz a lição." },
+      { "id": "E", "text": "O dia está lindo." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Quem precisa, precisa DE algo (verbo transitivo indireto).",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Sintaxe",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "pt-41",
+    "subjectId": "portugues",
+    "topic": "Interpretação",
+    "statement": "Assinale a opção que resume o conceito de 'texto injuntivo'.",
+    "alternatives": [
+      { "id": "A", "text": "Narração de fatos." },
+      { "id": "B", "text": "Descrição de ambientes." },
+      { "id": "C", "text": "Instruções ou comandos." },
+      { "id": "D", "text": "Argumentação lógica." },
+      { "id": "E", "text": "Exposição de teorias." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O texto injuntivo é caracterizado por verbos no imperativo, servindo para dar instruções, receitas ou manuais.",
+    "source": "Estilo Cesgranrio",
+    "reference": "Transpetro 2018 - Tipologia textual",
+    "verified": true,
+    "difficulty": "médio"
   }
 ]
