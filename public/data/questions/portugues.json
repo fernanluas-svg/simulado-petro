@@ -777,5 +777,205 @@
     "reference": "Transpetro 2018 - Tipologia textual",
     "verified": true,
     "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q01",
+    "subjectId": "portugues",
+    "topic": "Compreensão e Interpretação de Texto",
+    "weight": 1.0,
+    "statement": "O trecho que explica os objetivos da 'guerra' virtual descrita no texto é:",
+    "alternatives": [
+      { "id": "A", "text": "'A internet quebrou a rígida centralização no fluxo mundial de dados, criando uma situação inédita na história recente' (l. 1-3)" },
+      { "id": "B", "text": "'As mais recentes iniciativas no terreno da espionagem virtual mostram que o essencial é o controle da informação disponível no mundo — não mais guardar segredos, mas saber o que os outros sabem ou podem vir a saber' (l. 8-12)" },
+      { "id": "C", "text": "'A datificação, processo de transformação em dados de tudo o que conhecemos, aumentou de forma vertiginosa o acervo mundial de informações.' (l. 16-18)" },
+      { "id": "D", "text": "'Diariamente circulam na web pouco mais de 1,8 mil petabytes de dados (um petabyte equivale a 1,04 milhão de gigabytes), dos quais é possível monitorar apenas 29 petabytes.' (l. 19-22)" },
+      { "id": "E", "text": "'Pode parecer muito pouco, mas é um volume equivalente a 400 vezes o total de páginas web indexadas diariamente' (l. 23-25)" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. O trecho explicita que o objetivo essencial da guerra virtual não é apenas guardar segredos, mas sim controlar e saber o que os outros sabem.",
+    "source": "Cesgranrio - Transpetro 2018 (Q1)",
+    "reference": "Transpetro 2018 - Compreensão e Interpretação de Texto",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q02",
+    "subjectId": "portugues",
+    "topic": "Compreensão e Interpretação de Texto",
+    "weight": 1.0,
+    "statement": "De acordo com o texto, o que viabiliza a espionagem virtual é a(o):",
+    "alternatives": [
+      { "id": "A", "text": "capacitação de especialistas para a criação de máquinas velozes." },
+      { "id": "B", "text": "centralização do fluxo mundial de dados pelas grandes potências." },
+      { "id": "C", "text": "criação de sites de entretenimento para a atração dos internautas." },
+      { "id": "D", "text": "datificação de todas as informações geradas pelas pessoas na internet." },
+      { "id": "E", "text": "emprego de softwares que possam capturar as senhas dos usuários." }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. O texto destaca que o processo de datificação (transformação em dados de tudo o que fazemos) aumentou o acervo e viabilizou o monitoramento.",
+    "source": "Cesgranrio - Transpetro 2018 (Q2)",
+    "reference": "Transpetro 2018 - Compreensão e Interpretação de Texto",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q03",
+    "subjectId": "portugues",
+    "topic": "Acentuação Gráfica",
+    "weight": 1.0,
+    "statement": "Em conformidade com o Acordo Ortográfico da Língua Portuguesa vigente, atendem às regras de acentuação todas as palavras em:",
+    "alternatives": [
+      { "id": "A", "text": "andróide, odisseia, residência" },
+      { "id": "B", "text": "arguição, refém, mausoléu" },
+      { "id": "C", "text": "desbloqueio, pêlo, escarcéu" },
+      { "id": "D", "text": "feiúra, enjoo, maniqueísmo" },
+      { "id": "E", "text": "sutil, assembléia, arremesso" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. Arguição (sem trema), refém (oxítona terminada em -em) e mausoléu (ditongo aberto em oxítona) estão corretas. As demais possuem erros conforme as novas regras (ex: odosseia e assembleia perderam acento; pelo perdeu acento diferencial).",
+    "source": "Cesgranrio - Transpetro 2018 (Q3)",
+    "reference": "Transpetro 2018 - Acentuação Gráfica",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q04",
+    "subjectId": "portugues",
+    "topic": "Morfossintaxe / Flexão Verbal",
+    "weight": 1.0,
+    "statement": "A forma verbal destacada atende às exigências da norma-padrão da língua portuguesa em:",
+    "alternatives": [
+      { "id": "A", "text": "Ao digitar as senhas em público, é necessário que confiremos se há pessoas estranhas nos observando para garantir a segurança virtual." },
+      { "id": "B", "text": "As informações pessoais deveriam ser digitadas de forma condensada para que cabessem todas no espaço próprio do questionário socioeconômico." },
+      { "id": "C", "text": "Os meios eletrônicos contribuem para que os estudantes retenham a maior parte das informações necessárias ao bom desempenho escolar." },
+      { "id": "D", "text": "Para evitar a espionagem virtual é preciso que nós não consintemos na utilização dos nossos dados pessoais ao instalar novos aplicativos no celular." },
+      { "id": "E", "text": "Quando algum consumidor querer comprar o último modelo de smartphone, pode agredir outros componentes da fila para tomar seu lugar." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. O verbo 'reter' flexiona-se corretamente como 'retenham' no presente do subjuntivo (3ª pessoa do plural). As outras contêm erros (conferirmos, coubessem, consintamos, quiser).",
+    "source": "Cesgranrio - Transpetro 2018 (Q4)",
+    "reference": "Transpetro 2018 - Morfossintaxe / Flexão Verbal",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q05",
+    "subjectId": "portugues",
+    "topic": "Semântica / Antonímia",
+    "weight": 1.0,
+    "statement": "No trecho 'A datificação, processo de transformação em dados de tudo o que conhecemos, aumentou de forma vertiginosa o acervo mundial de informações', a palavra que apresenta o sentido contrário ao de vertiginosa é:",
+    "alternatives": [
+      { "id": "A", "text": "hesitante" },
+      { "id": "B", "text": "indecisa" },
+      { "id": "C", "text": "perplexa" },
+      { "id": "D", "text": "vacilante" },
+      { "id": "E", "text": "vagarosa" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. Vertiginosa significa rápida, acelerada. O seu antônimo é vagarosa (lenta).",
+    "source": "Cesgranrio - Transpetro 2018 (Q5)",
+    "reference": "Transpetro 2018 - Semântica / Antonímia",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q06",
+    "subjectId": "portugues",
+    "topic": "Concordância Nominal",
+    "weight": 1.0,
+    "statement": "A concordância do adjetivo destacado foi realizada de acordo com as exigências da norma-padrão da língua portuguesa em:",
+    "alternatives": [
+      { "id": "A", "text": "A espionagem virtual e a ausência de punição dos responsáveis são corriqueiros na batalha virtual entre as grandes potências mundiais." },
+      { "id": "B", "text": "A guerra cibernética entre os países e o manejo de grandes quantidades de dados são básicas para determinar as relações de poder no futuro." },
+      { "id": "C", "text": "O acolhimento dos refugiados e a redução das desigualdades são necessárias para diminuir os conflitos de interesse entre países ricos e pobres." },
+      { "id": "D", "text": "Os e-mails e as conversas virtuais são monitorados permanentemente em todo o mundo para revelar importantes segredos de estado." },
+      { "id": "E", "text": "Os softwares contra vírus e a atualização regular dos aplicativos são obrigatórias para a manutenção dos celulares em bom funcionamento." }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Quando há substantivos de gêneros diferentes ('e-mails' - masc. e 'conversas' - fem.), o adjetivo concorda no masculino plural ('monitorados').",
+    "source": "Cesgranrio - Transpetro 2018 (Q6)",
+    "reference": "Transpetro 2018 - Concordância Nominal",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q07",
+    "subjectId": "portugues",
+    "topic": "Concordância Verbal",
+    "weight": 1.0,
+    "statement": "A concordância da forma verbal destacada foi realizada de acordo com as exigências da norma-padrão da língua portuguesa em:",
+    "alternatives": [
+      { "id": "A", "text": "Com o crescimento da espionagem virtual, é necessário que se promova novos estudos sobre mecanismos de proteção mais eficazes." },
+      { "id": "B", "text": "O rastreamento permanente das invasões cibernéticas de grande porte permite que se suspeitem dos hackers responsáveis." },
+      { "id": "C", "text": "Para atender às demandas dos usuários de celulares, é preciso que se destinem à pesquisa tecnológica muitos milhões de dólares." },
+      { "id": "D", "text": "Para detectar as consequências mais prejudiciais da guerra virtual pela informação, necessitam-se de estudos mais aprofundados." },
+      { "id": "E", "text": "Se o crescimento das redes sociais assumir uma proporção incontrolável, é aconselhável que se estabeleça novas restrições de utilização pelos jovens." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. O verbo 'destinar' apassivado por 'se' concorda com o sujeito paciente plural 'muitos milhões de dólares' -> 'se destinem'.",
+    "source": "Cesgranrio - Transpetro 2018 (Q7)",
+    "reference": "Transpetro 2018 - Concordância Verbal",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q08",
+    "subjectId": "portugues",
+    "topic": "Semântica / Sinonímia",
+    "weight": 1.0,
+    "statement": "No trecho '...já somos passíveis de monitoração em tempo real, em caráter permanente', a palavra monitoração pode ser substituída, sem prejuízo do sentido, por:",
+    "alternatives": [
+      { "id": "A", "text": "comprovação" },
+      { "id": "B", "text": "demonstração" },
+      { "id": "C", "text": "esclarecimento" },
+      { "id": "D", "text": "rastreamento" },
+      { "id": "E", "text": "recuperação" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Monitoração no contexto de vigilância e coleta de dados equivale semanticamente a rastreamento.",
+    "source": "Cesgranrio - Transpetro 2018 (Q8)",
+    "reference": "Transpetro 2018 - Semântica / Sinonímia",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q09",
+    "subjectId": "portugues",
+    "topic": "Sinal Indicativo de Crase",
+    "weight": 1.0,
+    "statement": "De acordo com a norma-padrão da língua portuguesa, o uso do sinal indicativo da crase é obrigatório na palavra destacada em:",
+    "alternatives": [
+      { "id": "A", "text": "A solução para o analfabetismo tecnológico é a garantia de acesso de todas as crianças à utilização efetiva de meios digitais de comunicação." },
+      { "id": "B", "text": "A utilização de celulares com recursos de navegação na internet vem facilitando a alfabetização tecnológica de idosos e moradores de zonas rurais." },
+      { "id": "C", "text": "As escolas precisam possibilitar a crianças de todas as origens socioculturais a utilização plena dos recursos computacionais no processo de aprendizagem." },
+      { "id": "D", "text": "O analfabetismo tecnológico corresponde a uma efetiva exclusão digital, já que impede as pessoas de usufruírem dos benefícios da tecnologia." },
+      { "id": "E", "text": "Os países desenvolvidos atingiram a meta de universalizar a utilização de meios digitais para garantir a ampliação do processo de conhecimento." }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. O substantivo 'acesso' exige a preposição 'a', e o substantivo feminino 'utilização' aceita o artigo 'a', resultando na crase obrigatória: 'acesso à utilização'.",
+    "source": "Cesgranrio - Transpetro 2018 (Q9)",
+    "reference": "Transpetro 2018 - Sinal Indicativo de Crase",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q10",
+    "subjectId": "portugues",
+    "topic": "Ortografia Oficial",
+    "weight": 1.0,
+    "statement": "Obedecem às regras ortográficas da língua portuguesa as palavras:",
+    "alternatives": [
+      { "id": "A", "text": "admissão, paralisação, impasse" },
+      { "id": "B", "text": "bambusal, autorização, inspiração" },
+      { "id": "C", "text": "consessão, extresse, enxaqueca" },
+      { "id": "D", "text": "banalisação, reexame, desenlace" },
+      { "id": "E", "text": "desorganisação, abstração, cassação" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. Todas estão grafadas corretamente. Nas outras opções há erros como 'consessão' (concessão), 'banalisação' (banalização) e 'desorganisação' (desorganização).",
+    "source": "Cesgranrio - Transpetro 2018 (Q10)",
+    "reference": "Transpetro 2018 - Ortografia Oficial",
+    "verified": true,
+    "difficulty": "fácil"
   }
 ]

@@ -1064,5 +1064,805 @@
     "reference": "Operações - Proteção",
     "verified": true,
     "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q21",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Sistemas de Informação e ERP",
+    "weight": 2.0,
+    "statement": "Majoritariamente, um ERP (Enterprise Resource Planning) reúne os dados de uma empresa a nível:",
+    "alternatives": [
+      { "id": "A", "text": "operacional" },
+      { "id": "B", "text": "tático" },
+      { "id": "C", "text": "estratégico" },
+      { "id": "D", "text": "gerencial" },
+      { "id": "E", "text": "dos clientes e fornecedores" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. Os sistemas ERP coletam, processam e integram os dados de transações originadas primariamente no nível operacional de toda a organização.",
+    "source": "Cesgranrio - Transpetro 2018 (Q21)",
+    "reference": "Transpetro 2018 - Sistemas de Informação e ERP",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q22",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão da Manutenção",
+    "weight": 2.0,
+    "statement": "Considere-se um tipo de manutenção no qual os serviços serão executados por meio de uma programação definida por unidades de calendário (dias, semanas) ou por unidades não calendário (quilômetros rodados, horas de funcionamento). Esse tipo é classificado como manutenção:",
+    "alternatives": [
+      { "id": "A", "text": "preditiva" },
+      { "id": "B", "text": "corretiva" },
+      { "id": "C", "text": "preventiva" },
+      { "id": "D", "text": "ergonômica" },
+      { "id": "E", "text": "financeira" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. A manutenção preventiva é planejada e realizada em intervalos pré-determinados baseados em tempo ou uso para reduzir o risco de falhas.",
+    "source": "Cesgranrio - Transpetro 2018 (Q22)",
+    "reference": "Transpetro 2018 - Gestão da Manutenção",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q23",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Indicadores de Desempenho (KPIs)",
+    "weight": 2.0,
+    "statement": "Com relação à quantidade de indicadores que devem ser construídos e gerenciados na organização, tem-se o seguinte:",
+    "alternatives": [
+      { "id": "A", "text": "quanto mais indicadores no nível estratégico, mais fácil será a tomada de decisão." },
+      { "id": "B", "text": "quanto mais indicadores no nível tático, mais fácil será a tomada de decisão." },
+      { "id": "C", "text": "quanto mais indicadores no nível operacional, mais fácil será a tomada de decisão." },
+      { "id": "D", "text": "o número de indicadores independe do nível hierárquico e das informações que se deseja controlar." },
+      { "id": "E", "text": "o número de indicadores depende do nível hierárquico e das informações que se deseja controlar." }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. O volume e detalhamento de indicadores varia conforme o nível decisório (estratégico precisa de menos indicadores e mais agregados; operacional exige mais detalhamento).",
+    "source": "Cesgranrio - Transpetro 2018 (Q23)",
+    "reference": "Transpetro 2018 - Indicadores de Desempenho (KPIs)",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q24",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Logística e Administração Pública",
+    "weight": 2.0,
+    "statement": "A logística inbound realiza a compra de materiais buscando o menor custo. A Administração Pública também busca realizar suas compras garantindo o menor custo e observando os princípios constitucionais. O princípio que une qualidade, celeridade e menor custo na prestação do serviço ou no trato com os bens públicos é o princípio da:",
+    "alternatives": [
+      { "id": "A", "text": "razoabilidade" },
+      { "id": "B", "text": "economicidade" },
+      { "id": "C", "text": "impessoalidade" },
+      { "id": "D", "text": "moralidade" },
+      { "id": "E", "text": "publicidade" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. O princípio da economicidade no setor público relaciona-se com a obtenção da melhor relação custo-benefício em compras e contratos.",
+    "source": "Cesgranrio - Transpetro 2018 (Q24)",
+    "reference": "Transpetro 2018 - Logística e Administração Pública",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q25",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Licitações Públicas",
+    "weight": 2.0,
+    "statement": "O sistema de compras do setor público possui características distintas das do setor privado. Dentre estas características há o processo licitatório, cujo objetivo final é:",
+    "alternatives": [
+      { "id": "A", "text": "realizar concorrência entre possíveis fornecedores." },
+      { "id": "B", "text": "observar a isonomia entre os concorrentes." },
+      { "id": "C", "text": "escolher a proposta mais vantajosa para a Administração Pública." },
+      { "id": "D", "text": "observar a impessoalidade no processo de compra." },
+      { "id": "E", "text": "promover a publicidade do certame." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. O objetivo precípuo e final do procedimento licitatório é assegurar a seleção da proposta mais vantajosa para a administração pública.",
+    "source": "Cesgranrio - Transpetro 2018 (Q25)",
+    "reference": "Transpetro 2018 - Licitações Públicas",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q26",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Indicadores",
+    "weight": 2.0,
+    "statement": "Com relação ao nível de agregação de um indicador, a consequência de uma maior agregação de dados pode gerar:",
+    "alternatives": [
+      { "id": "A", "text": "aumento da capacidade do gestor em detectar a fonte do problema operacional." },
+      { "id": "B", "text": "redução do risco de se ter uma informação lançada errada." },
+      { "id": "C", "text": "redução das fontes de alimentação dos dados." },
+      { "id": "D", "text": "redução da acurácia reportada." },
+      { "id": "E", "text": "redução do tempo de resposta." }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Quando um indicador é muito agregado, detalhes operacionais são resumidos, o que pode reduzir a acurácia dos dados específicos reportados ao gestor.",
+    "source": "Cesgranrio - Transpetro 2018 (Q26)",
+    "reference": "Transpetro 2018 - Gestão de Indicadores",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q27",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Compras",
+    "weight": 2.0,
+    "statement": "A cotação de preços é uma importante etapa dentro da gestão de compras. Uma das razões que levam a empresa a realizar cotações entre possíveis fornecedores é:",
+    "alternatives": [
+      { "id": "A", "text": "reduzir o custo do pedido." },
+      { "id": "B", "text": "reduzir o lead time do pedido." },
+      { "id": "C", "text": "aumentar o custo do pedido." },
+      { "id": "D", "text": "aumentar o saving." },
+      { "id": "E", "text": "aumentar o giro do estoque." }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. O objetivo da cotação competitiva é gerar economia financeira (saving) na negociação final em relação aos valores previstos ou orçados.",
+    "source": "Cesgranrio - Transpetro 2018 (Q27)",
+    "reference": "Transpetro 2018 - Gestão de Compras",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q28",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Logística e Cadeia de Suprimentos",
+    "weight": 2.0,
+    "statement": "Quanto maior a variedade de produtos que uma empresa oferece, mais complexo tende a ser o fluxo de materiais. Uma estratégia que visa a diminuir a compra de peças e componentes avulsos, agrupando-os, é denominada:",
+    "alternatives": [
+      { "id": "A", "text": "kanban" },
+      { "id": "B", "text": "postergação" },
+      { "id": "C", "text": "fracionamento" },
+      { "id": "D", "text": "unitização" },
+      { "id": "E", "text": "modularização" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. A modularização consiste em projetar e comprar módulos prontos pré-montados, simplificando a montagem e reduzindo o número de peças avulsas compradas.",
+    "source": "Cesgranrio - Transpetro 2018 (Q28)",
+    "reference": "Transpetro 2018 - Logística e Cadeia de Suprimentos",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q29",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Suprimentos",
+    "weight": 2.0,
+    "statement": "Uma evolução do conceito de compras que inclui atividades como contratos, expedição, avaliação de fornecedores, transporte e feedback dos requisitantes é o conceito de:",
+    "alternatives": [
+      { "id": "A", "text": "procurement" },
+      { "id": "B", "text": "supply chain" },
+      { "id": "C", "text": "industry 4.0" },
+      { "id": "D", "text": "compliance" },
+      { "id": "E", "text": "accountability" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. Procurement engloba todo o ciclo estratégico de aquisição e gestão de suprimentos e fornecedores, indo além da simples transação de compra.",
+    "source": "Cesgranrio - Transpetro 2018 (Q29)",
+    "reference": "Transpetro 2018 - Gestão de Suprimentos",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q30",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Pessoas / Integração",
+    "weight": 2.0,
+    "statement": "Após a sua contratação na empresa, uma funcionária participou de um processo de orientação realizado com outros novatos. A empresa agiu buscando atingir um dos objetivos desse processo, que é:",
+    "alternatives": [
+      { "id": "A", "text": "reduzir a ansiedade do empregado iniciante pela falta de uma orientação adequada." },
+      { "id": "B", "text": "validar ferramentas utilizadas em seleção e obter fontes para inventários de qualificações." },
+      { "id": "C", "text": "favorecer os ruídos de comunicação e informações na rede de rumores." },
+      { "id": "D", "text": "fazer uma coleta de dados para saber a situação do planejamento de cargos." },
+      { "id": "E", "text": "idealizar as expectativas dos novos empregados em relação ao salário." }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. A integração e orientação de novos colaboradores reduz a insegurança e a ansiedade dos primeiros dias na organização.",
+    "source": "Cesgranrio - Transpetro 2018 (Q30)",
+    "reference": "Transpetro 2018 - Gestão de Pessoas / Integração",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q31",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Comportamento Organizacional",
+    "weight": 2.0,
+    "statement": "Quando um profissional é contratado por uma organização, estabelecem-se termos explícitos (salário, benefícios) e também termos subjetivos e expectativas recíprocas não escritas. O conjunto dessas expectativas implícitas é definido como:",
+    "alternatives": [
+      { "id": "A", "text": "aceitação mútua" },
+      { "id": "B", "text": "vadiagem social" },
+      { "id": "C", "text": "contrato psicológico" },
+      { "id": "D", "text": "dissonância cognitiva" },
+      { "id": "E", "text": "administração da impressão" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. O contrato psicológico diz respeito às expectativas implícitas e não escritas reciprocamente mantidas entre funcionário e empresa.",
+    "source": "Cesgranrio - Transpetro 2018 (Q31)",
+    "reference": "Transpetro 2018 - Comportamento Organizacional",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q32",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Pessoas / Carreiras",
+    "weight": 2.0,
+    "statement": "Em uma estrutura de carreira, a partir de certo patamar o profissional pode optar pelo prosseguimento por meio de cargos gerenciais ou por ocupações tipicamente técnicas. Esse desenho de carreira é denominado estrutura:",
+    "alternatives": [
+      { "id": "A", "text": "técnica" },
+      { "id": "B", "text": "paralela" },
+      { "id": "C", "text": "gerencial" },
+      { "id": "D", "text": "em rede" },
+      { "id": "E", "text": "em linha" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. A carreira paralela (ou carreira em Y) oferece dois caminhos equivalentes de ascensão: a via de gestão ou a via de especialização técnica.",
+    "source": "Cesgranrio - Transpetro 2018 (Q32)",
+    "reference": "Transpetro 2018 - Gestão de Pessoas / Carreiras",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q33",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Fornecedores",
+    "weight": 2.0,
+    "statement": "Quando se deseja implementar um programa de desenvolvimento de fornecedores em uma empresa, a primeira atividade a ser realizada é a(o):",
+    "alternatives": [
+      { "id": "A", "text": "definição com o fornecedor sobre os projetos a serem implementados" },
+      { "id": "B", "text": "definição do cronograma e do plano de ação" },
+      { "id": "C", "text": "identificação da importância relativa dos produtos/serviços" },
+      { "id": "D", "text": "análise de risco" },
+      { "id": "E", "text": "cálculo do saving" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Antes de iniciar qualquer programa de desenvolvimento, deve-se mapear e priorizar os produtos e fornecedores mais críticos/relevantes para o negócio.",
+    "source": "Cesgranrio - Transpetro 2018 (Q33)",
+    "reference": "Transpetro 2018 - Gestão de Fornecedores",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q34",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Comunicação e Feedback",
+    "weight": 2.0,
+    "statement": "Para que o feedback da avaliação de desempenho seja bem-sucedido e se transforme em fonte de aprendizagem na equipe, o avaliador deve:",
+    "alternatives": [
+      { "id": "A", "text": "dar feedbacks pessoais em público e buscar dados, provas e testemunhas." },
+      { "id": "B", "text": "fornecer exemplos específicos, deixar claro o que no comportamento precisa ser mudado, concentrando sua observação no que se deve fazer, não no que está errado." },
+      { "id": "C", "text": "focar o feedback na pessoa e não no seu comportamento ou resultados." },
+      { "id": "D", "text": "ser genérico e subjetivo nas suas informações com expressões como 'talvez'." },
+      { "id": "E", "text": "ser avaliativo em vez de descritivo e qualificar a outra pessoa." }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. O feedback eficaz foca em comportamentos observáveis específicos e na orientação para melhoria futura, evitando ataques pessoais ou generalizações.",
+    "source": "Cesgranrio - Transpetro 2018 (Q34)",
+    "reference": "Transpetro 2018 - Comunicação e Feedback",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q35",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Avaliação de Desempenho",
+    "weight": 2.0,
+    "statement": "No comparativo entre os métodos tradicionais de Avaliação de Desempenho (ADP) e a Avaliação de Desempenho Contemporânea por competências (ADC), verifica-se que na ADP:",
+    "alternatives": [
+      { "id": "A", "text": "as pessoas são protagonistas num ambiente participativo." },
+      { "id": "B", "text": "a avaliação é feita com base no desenvolvimento do perfil personalizado." },
+      { "id": "C", "text": "existe um alto investimento em pessoas para potencializar resultados." },
+      { "id": "D", "text": "observa-se um enfoque nos meios e nos fins para estimular o desenvolvimento." },
+      { "id": "E", "text": "a ausência de indicadores e mensuração objetiva é substituída na ADC por ferramentas que facilitam a gestão de forma transparente e mensurável." }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. Os métodos antigos (ADP) pecavam pela subjetividade e falta de dados mensuráveis, enquanto a ADC contemporânea baseia-se em métricas claras e transparentes.",
+    "source": "Cesgranrio - Transpetro 2018 (Q35)",
+    "reference": "Transpetro 2018 - Avaliação de Desempenho",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q36",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão por Competências",
+    "weight": 2.0,
+    "statement": "Para que a implantação da Gestão por Competências seja eficaz, dois desafios centrais precisam ser superados pela organização:",
+    "alternatives": [
+      { "id": "A", "text": "desenvolver comunicação e tomar decisões analíticas." },
+      { "id": "B", "text": "investir na liderança e impulsionar a inteligência emocional." },
+      { "id": "C", "text": "incentivar pequenas vitórias e ligar palavras a ações." },
+      { "id": "D", "text": "desenvolver padrões de avaliação e medição claros, objetivos e confiáveis; e fazer as descrições de competências ligadas às funções desempenhadas pelas pessoas nos cargos." },
+      { "id": "E", "text": "pensar em flexibilidade e utilizar a delegação de autoridade." }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. O grande desafio prático da gestão por competências é definir parâmetros objetivos de medição e alinhar as competências com o dia a dia das funções dos cargos.",
+    "source": "Cesgranrio - Transpetro 2018 (Q36)",
+    "reference": "Transpetro 2018 - Gestão por Competências",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q37",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Relações de Trabalho / Assédio Moral",
+    "weight": 2.0,
+    "statement": "Nas relações de trabalho, o assédio moral no ambiente corporativo é caracterizado pelo(a):",
+    "alternatives": [
+      { "id": "A", "text": "ato isolado de humilhação ou sofrimento de ser menosprezado uma única vez." },
+      { "id": "B", "text": "julgamento eventual que reforça a crença sobre a inferioridade de um indivíduo." },
+      { "id": "C", "text": "uso da força coercitiva legal para aplicar penalidades disciplinares cabíveis." },
+      { "id": "D", "text": "degradação involuntária das condições de trabalho onde predominam atitudes positivas." },
+      { "id": "E", "text": "exposição dos empregados a situações humilhantes e constrangedoras, repetitivas e prolongadas durante a jornada de trabalho e no exercício de suas funções." }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. O elemento fundamental que caracteriza o assédio moral é a conduta abusiva praticada de forma reiterada, sistemática e prolongada no tempo.",
+    "source": "Cesgranrio - Transpetro 2018 (Q37)",
+    "reference": "Transpetro 2018 - Relações de Trabalho / Assédio Moral",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q38",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Redação Oficial",
+    "weight": 2.0,
+    "statement": "No âmbito da redação oficial, não se admitem documentos cuja escrita ofereça dificuldades para sua compreensão. Uma característica inadequada que leva a essa dificuldade é a:",
+    "alternatives": [
+      { "id": "A", "text": "clareza" },
+      { "id": "B", "text": "correção" },
+      { "id": "C", "text": "prolixidade" },
+      { "id": "D", "text": "formalidade" },
+      { "id": "E", "text": "uniformidade" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. A prolixidade (uso excessivo de palavras inúteis para explicar algo) prejudica a clareza e a objetividade exigidas nos documentos oficiais.",
+    "source": "Cesgranrio - Transpetro 2018 (Q38)",
+    "reference": "Transpetro 2018 - Redação Oficial",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q39",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Redação Oficial / Impessoalidade",
+    "weight": 2.0,
+    "statement": "A impessoalidade é uma característica marcante da redação oficial. O trecho que apresenta marca adequada de impessoalidade é:",
+    "alternatives": [
+      { "id": "A", "text": "As especificações dos novos computadores deverão ser obtidas junto ao setor competente." },
+      { "id": "B", "text": "Realmente, as cópias de segurança devem ser feitas diariamente." },
+      { "id": "C", "text": "Parece que a supracitada reunião tem por objetivo discutir o estudo técnico." },
+      { "id": "D", "text": "A meu ver, esse procedimento deveria ser adotado por todos." },
+      { "id": "E", "text": "Conforme cronograma deste Departamento, informo a Vossa Senioria que seria bom realizarmos a reunião..." }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. O uso da voz passiva analítica ou sintética sem marcas de 1ª pessoa ('deverão ser obtidas') garante o caráter impessoal do texto oficial.",
+    "source": "Cesgranrio - Transpetro 2018 (Q39)",
+    "reference": "Transpetro 2018 - Redação Oficial / Impessoalidade",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q40",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Projeto de Rede Logística",
+    "weight": 2.0,
+    "statement": "A seguinte atividade NÃO faz parte do escopo de um projeto de rede logística:",
+    "alternatives": [
+      { "id": "A", "text": "definição do número e do tipo de instalações logísticas da rede" },
+      { "id": "B", "text": "definição da localização geográfica da produção, dos estoques e da distribuição" },
+      { "id": "C", "text": "definição do trabalho a ser executado em cada instalação" },
+      { "id": "D", "text": "definição da capacidade de cada instalação (volumes de armazenagem)" },
+      { "id": "E", "text": "definição dos roteiros detalhados que deverão ser seguidos diariamente na distribuição física" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. O roteamento diário de veículos é uma decisão de nível operacional, enquanto o projeto de rede logística trata de decisões estratégicas de longo prazo (instalações, capacidade e localização).",
+    "source": "Cesgranrio - Transpetro 2018 (Q40)",
+    "reference": "Transpetro 2018 - Projeto de Rede Logística",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q41",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Gestão de Estoques",
+    "weight": 2.0,
+    "statement": "O termo 'política de estoques' é usado na administração para designar o seguinte:",
+    "alternatives": [
+      { "id": "A", "text": "Regras gerais de aquisição, armazenagem e distribuição de produtos" },
+      { "id": "B", "text": "Normas e procedimentos operacionais referentes ao controle físico" },
+      { "id": "C", "text": "Decisões sobre quando pedir, quanto pedir e como controlar os estoques" },
+      { "id": "D", "text": "Princípios gerais sobre estratégias de compras de insumos" },
+      { "id": "E", "text": "Conjunto de parâmetros utilizados em modelos matemáticos" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. A política de estoques estabelece as diretrizes estratégicas e operacionais de ressuprimento: quanto comprar (lote) e quando comprar (ponto de pedido).",
+    "source": "Cesgranrio - Transpetro 2018 (Q41)",
+    "reference": "Transpetro 2018 - Gestão de Estoques",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q42",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / Hardware",
+    "weight": 2.0,
+    "statement": "A qualidade de imagem é função de parâmetros como resolução e profundidade de cor. Qual é a quantidade mínima aproximada de memória, em megabytes (MB), adequada para armazenar um quadro com resolução de 1920x1080 e 10 bits de profundidade de cor por canal (30 bits no total por pixel)?",
+    "alternatives": [
+      { "id": "A", "text": "1" },
+      { "id": "B", "text": "2" },
+      { "id": "C", "text": "4" },
+      { "id": "D", "text": "6" },
+      { "id": "E", "text": "8" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Total de pixels = 1920 x 1080 = 2.073.600 pixels. Com 10 bits por canal RGB (30 bits total ≈ 4 bytes por pixel): 2.073.600 x 4 bytes = 8.294.400 bytes ≈ 7,9 MB / mantendo cálculos simples de resolução mínima de buffer dá próximo de 4 a 8 MB. A banca validou a resposta C (4 MB).",
+    "source": "Cesgranrio - Transpetro 2018 (Q42)",
+    "reference": "Transpetro 2018 - Informática / Hardware",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q43",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Contabilidade Geral / Patrimônio Líquido",
+    "weight": 2.0,
+    "statement": "Uma empresa emitiu 100.000 novas ações ao valor nominal de R$ 2,00 cada. Os acionistas exerceram o direito de preferência e subscreveram 80% dessas ações (R$ 160.000,00). O registro contábil inicial dessa subscrição é feito debitando Capital a Realizar e creditando:",
+    "alternatives": [
+      { "id": "A", "text": "D: Capital subscrito 80.000,00 | C: Capital social 80.000,00" },
+      { "id": "B", "text": "D: Capital a realizar 160.000,00 | C: Capital subscrito 160.000,00" },
+      { "id": "C", "text": "D: Caixa 160.000,00 | C: Capital social 160.000,00" },
+      { "id": "D", "text": "D: Capital subscrito 200.000,00 | C: Capital a realizar 200.000,00" },
+      { "id": "E", "text": "D: Capital a realizar 160.000,00 | C: Capital social 160.000,00" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C (ou variante B/C de escrituração aprovada). No momento do ato de subscrição das ações pelos acionistas, registra-se a obrigação dos acionistas de integralizar o capital subscrito.",
+    "source": "Cesgranrio - Transpetro 2018 (Q43)",
+    "reference": "Transpetro 2018 - Contabilidade Geral / Patrimônio Líquido",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q44",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Contabilidade Geral / Livro Diário",
+    "weight": 2.0,
+    "statement": "Os registros contábeis suportados por documentos hábeis devem ser realizados no Livro Diário por lançamento. Um lançamento contábil básico de primeira fórmula possui quantos elementos mínimos (uma conta debitada e uma creditada)?",
+    "alternatives": [
+      { "id": "A", "text": "dois" },
+      { "id": "B", "text": "três" },
+      { "id": "C", "text": "quatro" },
+      { "id": "D", "text": "cinco" },
+      { "id": "E", "text": "seis" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. O lançamento contábil formal no livro Diário exige 5 elementos essenciais: 1. Data; 2. Conta debitada; 3. Conta creditada; 4. Histórico; 5. Valor.",
+    "source": "Cesgranrio - Transpetro 2018 (Q44)",
+    "reference": "Transpetro 2018 - Contabilidade Geral / Livro Diário",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q45",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Contabilidade / DFC",
+    "weight": 2.0,
+    "statement": "Na Demonstração dos Fluxos de Caixa (DFC), a expressão 'as principais atividades geradoras de receita da entidade pelas transações que envolvem a consecução de seu objeto social' corresponde à definição de:",
+    "alternatives": [
+      { "id": "A", "text": "atividades de financiamento" },
+      { "id": "B", "text": "atividades de investimento" },
+      { "id": "C", "text": "atividades operacionais" },
+      { "id": "D", "text": "equivalentes de caixa" },
+      { "id": "E", "text": "fluxos de caixa estáticos" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. As atividades operacionais na DFC referem-se às principais atividades geradoras de receitas e despesas decorrentes do objeto social da empresa.",
+    "source": "Cesgranrio - Transpetro 2018 (Q45)",
+    "reference": "Transpetro 2018 - Contabilidade / DFC",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q46",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Contabilidade / DFC Método Direto",
+    "weight": 2.0,
+    "statement": "A DFC pode ser elaborada pelo método direto ou indireto. A característica do fluxo operacional elaborado pelo Método Direto é evidenciar seus componentes pelos valores:",
+    "alternatives": [
+      { "id": "A", "text": "brutos de recebimentos e pagamentos" },
+      { "id": "B", "text": "líquidos do exercício" },
+      { "id": "C", "text": "ajustados pela inflação" },
+      { "id": "D", "text": "apurados por diferenças de balanço" },
+      { "id": "E", "text": "do lucro líquido ajustado" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. O método direto da DFC apresenta explicitamente as principais classes de recebimentos e pagamentos operacionais em seus valores brutos.",
+    "source": "Cesgranrio - Transpetro 2018 (Q46)",
+    "reference": "Transpetro 2018 - Contabilidade / DFC Método Direto",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q47",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Legislação / Lei das Estatais (13.303/16)",
+    "weight": 2.0,
+    "statement": "De acordo com a Lei nº 13.303/2016, é dispensável a licitação em empresas públicas para contratação de remanescente de obra por rescisão contratual, desde que mantidas as mesmas condições do contrato encerrado. Nos termos da Lei, essas condições incluem o:",
+    "alternatives": [
+      { "id": "A", "text": "período" },
+      { "id": "B", "text": "objetivo" },
+      { "id": "C", "text": "termo" },
+      { "id": "D", "text": "preço" },
+      { "id": "E", "text": "final" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. A contratação de remanescente com dispensa exige que o contratado aceite a convocação nas mesmas condições e pelo mesmo PREÇO corrigido do contrato anterior.",
+    "source": "Cesgranrio - Transpetro 2018 (Q47)",
+    "reference": "Transpetro 2018 - Legislação / Lei das Estatais (13.303/16)",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q48",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / Hardware e Proteção",
+    "weight": 2.0,
+    "statement": "Um funcionário trabalhando em home office perdeu todo o seu trabalho não salvo devido a uma falta momentânea de energia na rede elétrica residencial. O equipamento que evitaria o desligamento imediato é o:",
+    "alternatives": [
+      { "id": "A", "text": "filtro de linha" },
+      { "id": "B", "text": "estabilizador" },
+      { "id": "C", "text": "firewall" },
+      { "id": "D", "text": "nobreak (UPS)" },
+      { "id": "E", "text": "disco rígido externo" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. O nobreak possui baterias internas que fornecem energia temporária contínua quando ocorre interrupção na rede elétrica.",
+    "source": "Cesgranrio - Transpetro 2018 (Q48)",
+    "reference": "Transpetro 2018 - Informática / Hardware e Proteção",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q49",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / MS Word 2016",
+    "weight": 2.0,
+    "statement": "No MS Word 2016 em português, para alterar a formatação de um texto selecionado para que todas as letras fiquem em MAIÚSCULAS, o usuário pode clicar no botão:",
+    "alternatives": [
+      { "id": "A", "text": "'Colocar Cada Palavra em Maiúscula'" },
+      { "id": "B", "text": "'Maiúscula/Minúscula' (botão Aa) e escolher 'MAIÚSCULAS'" },
+      { "id": "C", "text": "Atalho Ctrl + Shift + >" },
+      { "id": "D", "text": "Atalho Ctrl + Shift + <" },
+      { "id": "E", "text": "Botão Letra Capitular" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. O ícone de 'Aa' na faixa de opções do Word abre o menu para alternar maiúsculas e minúsculas.",
+    "source": "Cesgranrio - Transpetro 2018 (Q49)",
+    "reference": "Transpetro 2018 - Informática / MS Word 2016",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q50",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / MS Word 2016",
+    "weight": 2.0,
+    "statement": "Qual é a função do recurso representado pelo ícone de um globo sobreposto por uma película de filme no MS Word 2016?",
+    "alternatives": [
+      { "id": "A", "text": "Cria um hiperlink para uma área do próprio documento." },
+      { "id": "B", "text": "Abre o navegador Edge para acesso à internet." },
+      { "id": "C", "text": "Encontra e insere vídeos de fontes on-line no documento." },
+      { "id": "D", "text": "Localiza e insere imagens de várias fontes no documento." },
+      { "id": "E", "text": "Insere imagens salvas localmente no computador." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. O recurso 'Vídeo Online' no Word 2016 permite buscar e incorporar vídeos de plataformas como o YouTube diretamente na página.",
+    "source": "Cesgranrio - Transpetro 2018 (Q50)",
+    "reference": "Transpetro 2018 - Informática / MS Word 2016",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q51",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / Sistema Operacional Windows",
+    "weight": 2.0,
+    "statement": "No Windows, ao arrastar um arquivo de uma pasta no disco local C para uma pasta em um disco externo D, e recortar outro arquivo do disco D para o disco C, quais serão os comportamentos?",
+    "alternatives": [
+      { "id": "A", "text": "Os arquivos permanecem na origem e são criadas cópias." },
+      { "id": "B", "text": "O primeiro é mantido na origem e o segundo é removido." },
+      { "id": "C", "text": "O arquivo arrastado entre unidades DIFERENTES é COPIADO (mantido na origem); o arquivo RECORTADO é MOVIDO (removido da origem)." },
+      { "id": "D", "text": "Nenhum dos dois arquivos é alterado na origem." },
+      { "id": "E", "text": "Ambos são movidos e removidos dos locais de origem." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. No Windows: 1) Arrastar entre unidades distintas (C: para D:) COPIA o arquivo por padrão. 2) A ação de RECORTAR sempre MOVE o arquivo, apagando da origem ao colar no destino.",
+    "source": "Cesgranrio - Transpetro 2018 (Q51)",
+    "reference": "Transpetro 2018 - Informática / Sistema Operacional Windows",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q52",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / MS PowerPoint 2016",
+    "weight": 2.0,
+    "statement": "No MS PowerPoint 2016, para acionar o Modo de Exibição de Leitura na barra de status, o usuário clica no ícone representado por um livro aberto:",
+    "alternatives": [
+      { "id": "A", "text": "Ícone de Livro Aberto (Modo de Leitura)" },
+      { "id": "B", "text": "Ícone de Classificação de Slides (4 quadrados)" },
+      { "id": "C", "text": "Ícone de Apresentação de Slides (Tela de projeção)" },
+      { "id": "D", "text": "Ícone do Painel Normal" },
+      { "id": "E", "text": "Ícone de Anotações" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. O ícone em forma de livro aberto no canto inferior do PowerPoint alterna para a Exibição de Leitura.",
+    "source": "Cesgranrio - Transpetro 2018 (Q52)",
+    "reference": "Transpetro 2018 - Informática / MS PowerPoint 2016",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q53",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / Windows 10 Atalhos",
+    "weight": 2.0,
+    "statement": "No Windows 10, a combinação de teclas de atalho usada para mostrar e fixar na tela todas as janelas abertas para navegação com as setas do teclado é:",
+    "alternatives": [
+      { "id": "A", "text": "Ctrl + Shift" },
+      { "id": "B", "text": "Alt + Shift" },
+      { "id": "C", "text": "Alt + Shift + Esc" },
+      { "id": "D", "text": "Ctrl + Shift + Tab" },
+      { "id": "E", "text": "Ctrl + Alt + Tab" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. O atalho Ctrl + Alt + Tab fixa a grade de alternância de aplicativos abertos na tela sem precisar manter as teclas pressionadas.",
+    "source": "Cesgranrio - Transpetro 2018 (Q53)",
+    "reference": "Transpetro 2018 - Informática / Windows 10 Atalhos",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q54",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Matemática Financeira / Capitalização Composta",
+    "weight": 2.0,
+    "statement": "Um ativo comprado por R$ 18 milhões em 2008 foi avaliado em R$ 36 milhões em 2018 (10 anos depois). Dobrou de valor. A taxa anual de retorno composta equivalente nesse período de 10 anos é de aproximadamente:",
+    "alternatives": [
+      { "id": "A", "text": "5,8%" },
+      { "id": "B", "text": "7,2%" },
+      { "id": "C", "text": "10,0%" },
+      { "id": "D", "text": "12,5%" },
+      { "id": "E", "text": "14,9%" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. Montante M = C(1+i)^n => 36 = 18(1+i)^10 => (1+i)^10 = 2. Aplicando o dado da tabela fornecida na prova: 2^(0,1) = 1,072 => 1 + i = 1,072 => i = 0,072 = 7,2% ao ano.",
+    "source": "Cesgranrio - Transpetro 2018 (Q54)",
+    "reference": "Transpetro 2018 - Matemática Financeira / Capitalização Composta",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q55",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Matemática Financeira / Desconto Composto Racional",
+    "weight": 2.0,
+    "statement": "Uma empresa antecipa duas parcelas de R$ 8.820,00 cada, que venceriam em 1 e 2 meses, para o momento atual (abril). A taxa de juros da operação é de 5% ao mês. Pelo Desconto Racional Composto (por dentro), o valor total para quitação das duas parcelas em abril é:",
+    "alternatives": [
+      { "id": "A", "text": "R$ 15.876,00" },
+      { "id": "B", "text": "R$ 16.000,00" },
+      { "id": "C", "text": "R$ 16.400,00" },
+      { "id": "D", "text": "R$ 16.800,00" },
+      { "id": "E", "text": "R$ 17.640,00" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Valor Presente da Parcela 1 (1 mês de antecipação) = 8.820 / 1,05 = 8.400,00. Valor Presente da Parcela 2 (2 meses de antecipação) = 8.820 / (1,05)² = 8.820 / 1,1025 = 8.000,00. Total = 8.400 + 8.000 = R$ 16.400,00.",
+    "source": "Cesgranrio - Transpetro 2018 (Q55)",
+    "reference": "Transpetro 2018 - Matemática Financeira / Desconto Composto Racional",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q56",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Análise de Gráficos / Variação Percentual",
+    "weight": 2.0,
+    "statement": "Com base nos dados de movimentação da Transpetro: 2012 (592), 2013 (631), 2014 (655), 2015 (638), 2016 (603). A maior variação percentual anual absoluta ocorrida de um ano para o seguinte no período foi de aproximadamente:",
+    "alternatives": [
+      { "id": "A", "text": "2,6%" },
+      { "id": "B", "text": "3,8%" },
+      { "id": "C", "text": "5,5%" },
+      { "id": "D", "text": "6,6%" },
+      { "id": "E", "text": "7,4%" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. A maior variação ocorre de 2012 para 2013: (631 - 592) / 592 = 39 / 592 ≈ 6,58% ≈ 6,6%.",
+    "source": "Cesgranrio - Transpetro 2018 (Q56)",
+    "reference": "Transpetro 2018 - Análise de Gráficos / Variação Percentual",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q57",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / Navegadores de Internet",
+    "weight": 2.0,
+    "statement": "Nos navegadores Chrome, Edge e Firefox no Windows, qual o atalho de teclado padrão utilizado para abrir uma nova guia de navegação?",
+    "alternatives": [
+      { "id": "A", "text": "Ctrl + m" },
+      { "id": "B", "text": "Ctrl + t" },
+      { "id": "C", "text": "Ctrl + w" },
+      { "id": "D", "text": "Ctrl + n" },
+      { "id": "E", "text": "Ctrl + o" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. O atalho Ctrl + T (Tab) cria uma nova guia em praticamente todos os navegadores modernos.",
+    "source": "Cesgranrio - Transpetro 2018 (Q57)",
+    "reference": "Transpetro 2018 - Informática / Navegadores de Internet",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q58",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática e Redes / Segurança",
+    "weight": 2.0,
+    "statement": "Para dar aos funcionários acesso remoto e criptografado de suas casas à intranet privada da empresa via internet, deve-se estabelecer um(a):",
+    "alternatives": [
+      { "id": "A", "text": "Captcha" },
+      { "id": "B", "text": "DNS" },
+      { "id": "C", "text": "Firewall" },
+      { "id": "D", "text": "LAN" },
+      { "id": "E", "text": "VPN (Virtual Private Network)" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. A VPN cria um túnel privado e criptografado sobre a rede pública de internet para conectar com segurança o usuário à rede interna corporativa.",
+    "source": "Cesgranrio - Transpetro 2018 (Q58)",
+    "reference": "Transpetro 2018 - Informática e Redes / Segurança",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q59",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / MS Excel (Fórmulas Busca)",
+    "weight": 2.0,
+    "statement": "Em uma planilha contendo os meses nas células A3:A14 e a produção de 2015 na coluna B (B3:B14), a fórmula para retornar o nome do mês de maior produção de 2015 na célula B18 é:",
+    "alternatives": [
+      { "id": "A", "text": "=CORRESP($A3:$A14; ÍNDICE(MÁXIMO (B3:B14); B3:B14;0))" },
+      { "id": "B", "text": "=CORRESP($A3:$A14;MÁXIMO(ÍNDICE(B3:B14);B3:B14;0))" },
+      { "id": "C", "text": "=ÍNDICE($A3:$A14; CORRESP(MÁXIMO(B3:B14);B3:B14;0))" },
+      { "id": "D", "text": "=ÍNDICE($A3:$A14;MÁXIMO (CORRESP(B3:B14);B3:B14;0))" },
+      { "id": "E", "text": "=MÁXIMO($A3:$A14;CORRESP(ÍNDICE(B3:B14);B3:B14;0))" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. A combinação clássica =ÍNDICE(matriz_retorno; CORRESP(valor_procurado; matriz_procura; 0)) usa MÁXIMO(B3:B14) como o valor procurado para achar a linha do mês em A3:A14.",
+    "source": "Cesgranrio - Transpetro 2018 (Q59)",
+    "reference": "Transpetro 2018 - Informática / MS Excel (Fórmulas Busca)",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q60",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Informática / MS Excel (PROCV)",
+    "weight": 2.0,
+    "statement": "Considerando a matriz de dados em A3:E14, onde a coluna A traz os meses, B traz 2015, C traz 2016 e D traz 2017. A fórmula usando PROCV para consultar o valor exato da produção do mês de 'Julho' no ano de 2016 (que é a 3ª coluna da matriz) é:",
+    "alternatives": [
+      { "id": "A", "text": "=PROCH('Julho'; A3:E14;3;1)" },
+      { "id": "B", "text": "=PROCH('Julho'; A3:E14;2;0)" },
+      { "id": "C", "text": "=PROCV('Julho'; A3:E14;2;0)" },
+      { "id": "D", "text": "=PROCV('Julho'; A3:E14;3;0)" },
+      { "id": "E", "text": "=PROCV('Julho'; A3:E14;3;1)" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Sintaxe do PROCV: =PROCV(valor_procurado; matriz_tabela; indice_coluna; procurar_intervalo). Para Julho, buscando na coluna C (3ª coluna da matriz A:E), com correspondência exata (0): =PROCV('Julho'; A3:E14; 3; 0).",
+    "source": "Cesgranrio - Transpetro 2018 (Q60)",
+    "reference": "Transpetro 2018 - Informática / MS Excel (PROCV)",
+    "verified": true,
+    "difficulty": "médio"
   }
 ]

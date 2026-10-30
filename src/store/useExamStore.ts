@@ -28,6 +28,7 @@ import {
   type RegradeSummary,
 } from '../services/scoring';
 import { recalculateHistoricalExams } from '../services/migration';
+import { shuffle } from '../services/shuffle';
 
 export type ExamView =
   | 'home'
@@ -61,15 +62,6 @@ function normalizeSettings(settings?: Partial<UserSettings> | null): UserSetting
 
 function sortAttempts(attempts: ExamAttempt[]): ExamAttempt[] {
   return [...attempts].sort((a, b) => b.startTime - a.startTime);
-}
-
-function shuffle<T>(items: T[]): T[] {
-  const copy = [...items];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
 }
 
 function clampIndex(index: number, length: number): number {
@@ -237,6 +229,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
       return false;
     }
 
+    // Sorteia a cota de cada matéria (definida pelo edital) e reúne tudo em um
+    // único pool. O pool final passa por um novo Fisher-Yates para que questões
+    // de matérias e anos diferentes fiquem profundamente misturadas, sem blocos
+    // por ordem de cadastro.
     const selectedQuestions: Question[] = [];
     for (const subjectId of subjectsToUse) {
       const subjectConfig = config.subjects.find((subject) => subject.id === subjectId);
@@ -249,13 +245,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       selectedQuestions.push(...shuffle(available).slice(0, count));
     }
 
-    const orderedQuestions: Question[] = [];
-    for (const subjectConfig of config.subjects) {
-      if (!subjectsToUse.includes(subjectConfig.id)) continue;
-      orderedQuestions.push(
-        ...selectedQuestions.filter((question) => question.subjectId === subjectConfig.id),
-      );
-    }
+    const orderedQuestions = shuffle(selectedQuestions);
 
     if (orderedQuestions.length === 0) {
       set({ startError: 'Não há questões disponíveis para as matérias selecionadas.' });

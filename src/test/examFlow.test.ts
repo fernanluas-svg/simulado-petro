@@ -123,30 +123,81 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.useRealTimers();
+  vi.restoreAllMocks();
   resetStore();
 });
 
 describe('Sessão do simulado', () => {
-  it('inicia o simulado com questões ordenadas e sessão persistida', () => {
+  it('inicia o simulado com questões de todas as matérias profundamente embaralhadas', () => {
+    // Com o gerador fixo em 0, o Fisher-Yates produz uma ordem determinística.
+    // O importante é que a ordem final não fique agrupada por matéria.
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
     const attempt = startExam();
     const state = useExamStore.getState();
 
     expect(state.view).toBe('exam');
     expect(state.questions).toHaveLength(7);
-    expect(state.questions.map((question) => question.subjectId)).toEqual([
-      'portugues',
-      'portugues',
-      'matematica',
-      'matematica',
-      'conhecimentos_especificos',
-      'conhecimentos_especificos',
-      'conhecimentos_especificos',
+    expect(state.questions.map((question) => question.id)).toEqual([
+      'pt_1',
+      'mt_2',
+      'mt_1',
+      'es_2',
+      'es_3',
+      'es_1',
+      'pt_2',
     ]);
+    expect(state.questions.filter((q) => q.subjectId === 'portugues')).toHaveLength(2);
+    expect(state.questions.filter((q) => q.subjectId === 'matematica')).toHaveLength(2);
+    expect(
+      state.questions.filter((q) => q.subjectId === 'conhecimentos_especificos'),
+    ).toHaveLength(3);
     expect(attempt.questionIds).toHaveLength(7);
     expect(attempt.durationMinutes).toBe(30);
     expect(attempt.timeRemainingSeconds).toBe(1800);
     expect(attempt.isPaused).toBe(false);
     expect(storageMock.saveAttempt).toHaveBeenCalled();
+  });
+
+  it('sorteia um subconjunto aleatório quando o banco tem mais questões que o edital', () => {
+    const largerBank: Question[] = [
+      ...bank,
+      makeQuestion('pt_3', 'portugues'),
+      makeQuestion('pt_4', 'portugues'),
+      makeQuestion('mt_3', 'matematica'),
+      makeQuestion('mt_4', 'matematica'),
+      makeQuestion('es_4', 'conhecimentos_especificos'),
+      makeQuestion('es_5', 'conhecimentos_especificos'),
+    ];
+    useExamStore.setState({ allQuestionsBank: largerBank });
+
+    startExam();
+    const state = useExamStore.getState();
+
+    expect(state.questions).toHaveLength(7);
+    expect(new Set(state.questions.map((q) => q.id)).size).toBe(7);
+    expect(state.questions.filter((q) => q.subjectId === 'portugues')).toHaveLength(2);
+    expect(state.questions.filter((q) => q.subjectId === 'matematica')).toHaveLength(2);
+    expect(
+      state.questions.filter((q) => q.subjectId === 'conhecimentos_especificos'),
+    ).toHaveLength(3);
+    expect(state.questions.length).toBeLessThan(largerBank.length);
+  });
+
+  it('filtra e embaralha apenas as questões da matéria selecionada', () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const started = useExamStore.getState().startExam({
+      immediateCorrection: false,
+      durationMinutes: 30,
+      selectedSubjectIds: ['portugues'],
+    });
+    const state = useExamStore.getState();
+
+    expect(started).toBe(true);
+    expect(state.questions).toHaveLength(2);
+    expect(state.questions.every((q) => q.subjectId === 'portugues')).toBe(true);
+    expect(state.questions.map((q) => q.id)).toEqual(['pt_1', 'pt_2']);
   });
 
   it('recusa iniciar outro simulado enquanto um está em andamento', () => {

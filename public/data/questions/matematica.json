@@ -815,5 +815,205 @@
     "reference": "Transpetro 2018 - Equações",
     "verified": true,
     "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q11",
+    "subjectId": "matematica",
+    "topic": "Progressão Aritmética (PA)",
+    "weight": 1.0,
+    "statement": "O quarto, o quinto e o sexto termos de uma progressão aritmética são expressos por x + 1, x² + 4 e 2x² + 3, respectivamente. A soma dos dez primeiros termos dessa progressão aritmética é igual a:",
+    "alternatives": [
+      { "id": "A", "text": "260" },
+      { "id": "B", "text": "265" },
+      { "id": "C", "text": "270" },
+      { "id": "D", "text": "275" },
+      { "id": "E", "text": "280" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Pela propriedade do termo médio de uma PA: 2(x² + 4) = (x + 1) + (2x² + 3) => 2x² + 8 = 2x² + x + 4 => x = 4. Termos: a4=5, a5=20, a6=35 (razão r=15). a1 = 5 - 3(15) = -40. a10 = -40 + 9(15) = 95. Soma S10 = 10 * (-40 + 95) / 2 = 275.",
+    "source": "Cesgranrio - Transpetro 2018 (Q11)",
+    "reference": "Transpetro 2018 - Progressão Aritmética (PA)",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q12",
+    "subjectId": "matematica",
+    "topic": "Raciocínio Lógico / Contagem de Tempo",
+    "weight": 1.0,
+    "statement": "Às 5 da tarde de sexta-feira, Aldo desligou seu computador, que já estava ligado há 100 horas. A que horas de que dia Aldo havia ligado o computador anteriormente?",
+    "alternatives": [
+      { "id": "A", "text": "1 da tarde de segunda-feira" },
+      { "id": "B", "text": "9 da noite de segunda-feira" },
+      { "id": "C", "text": "1 da tarde de terça-feira" },
+      { "id": "D", "text": "2 da tarde de terça-feira" },
+      { "id": "E", "text": "9 da noite de quarta-feira" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. 100 horas = 4 dias (96 horas) + 4 horas. Voltando 4 dias a partir de sexta-feira às 17h, chegamos a segunda-feira às 17h. Subtraindo mais 4 horas, obtemos segunda-feira às 13h (1 da tarde).",
+    "source": "Cesgranrio - Transpetro 2018 (Q12)",
+    "reference": "Transpetro 2018 - Raciocínio Lógico / Contagem de Tempo",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q13",
+    "subjectId": "matematica",
+    "topic": "Probabilidade",
+    "weight": 1.0,
+    "statement": "Considere 2 urnas: na primeira urna há 1 bola branca e 1 bola preta; na segunda urna, há 1 bola branca e 2 pretas. Uma bola é selecionada aleatoriamente da urna 1 e colocada na urna 2. Em seguida, uma bola é selecionada, também aleatoriamente, da urna 2. Qual a probabilidade de que a bola selecionada na urna 2 seja branca?",
+    "alternatives": [
+      { "id": "A", "text": "12,5%" },
+      { "id": "B", "text": "25%" },
+      { "id": "C", "text": "37,5%" },
+      { "id": "D", "text": "50%" },
+      { "id": "E", "text": "62,5%" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Caso 1: Tirar branca da Urna 1 (prob 1/2). Urna 2 fica com 2B e 2P. Prob de tirar B da Urna 2 = 2/4 = 1/2. Total Caso 1 = 1/2 * 1/2 = 1/4. Caso 2: Tirar preta da Urna 1 (prob 1/2). Urna 2 fica com 1B e 3P. Prob de tirar B = 1/4. Total Caso 2 = 1/2 * 1/4 = 1/8. Probabilidade Total = 1/4 + 1/8 = 3/8 = 0,375 (37,5%).",
+    "source": "Cesgranrio - Transpetro 2018 (Q13)",
+    "reference": "Transpetro 2018 - Probabilidade",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q14",
+    "subjectId": "matematica",
+    "topic": "Análise de Gráficos / Porcentagem",
+    "weight": 1.0,
+    "statement": "Um gráfico de setor mostra a preferência de lanche de 200 entrevistados: Pizza representa 30%, Fritas representa 35%, Hamburguer tem um ângulo de 90° (25%) e Cachorro-quente representa o restante. O número de entrevistados que preferem cachorro-quente é:",
+    "alternatives": [
+      { "id": "A", "text": "20" },
+      { "id": "B", "text": "30" },
+      { "id": "C", "text": "50" },
+      { "id": "D", "text": "60" },
+      { "id": "E", "text": "70" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Gabarito Oficial A. Hambúrguer tem ângulo reto (90°), correspondendo a 25%. A soma de Pizza (30%) + Fritas (35%) + Hambúrguer (25%) = 90%. Logo, Cachorro-quente = 100% - 90% = 10%. 10% de 200 pessoas = 20 entrevistados.",
+    "source": "Cesgranrio - Transpetro 2018 (Q14)",
+    "reference": "Transpetro 2018 - Análise de Gráficos / Porcentagem",
+    "verified": true,
+    "difficulty": "fácil"
+  },
+  {
+    "id": "transpetro-2018-q15",
+    "subjectId": "matematica",
+    "topic": "Geometria Espacial",
+    "weight": 1.0,
+    "statement": "Em um prisma triangular regular reto inscreve-se um cilindro reto de modo que a base do cilindro seja um círculo inscrito na base do prisma. Se a área lateral do prisma é X, e a área lateral do cilindro é Y, a razão Y/X é igual a:",
+    "alternatives": [
+      { "id": "A", "text": "(π√3)/6" },
+      { "id": "B", "text": "(π√3)/3" },
+      { "id": "C", "text": "(π√3)/9" },
+      { "id": "D", "text": "π/√3" },
+      { "id": "E", "text": "(9π)/√3" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Seja L o lado do triângulo equilátero da base do prisma e h a altura. Área lateral do prisma X = 3Lh. O raio r do círculo inscrito na base é r = (L√3)/6. Área lateral do cilindro Y = 2πrh = 2π(L√3/6)h = (πLh√3)/3. Razão Y/X = [(πLh√3)/3] / [3Lh] = (π√3)/9.",
+    "source": "Cesgranrio - Transpetro 2018 (Q15)",
+    "reference": "Transpetro 2018 - Geometria Espacial",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q16",
+    "subjectId": "matematica",
+    "topic": "Matemática Financeira / Porcentagem",
+    "weight": 1.0,
+    "statement": "Um artesão vende suas pulseiras com 60% de lucro sobre o seu custo. Normalmente, seus fregueses pedem descontos na hora da compra. Qual o maior percentual de desconto sobre o preço de venda que ele pode oferecer para não ter prejuízo?",
+    "alternatives": [
+      { "id": "A", "text": "22,5%" },
+      { "id": "B", "text": "37,5%" },
+      { "id": "C", "text": "10%" },
+      { "id": "D", "text": "40%" },
+      { "id": "E", "text": "60%" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Gabarito Oficial B. Seja Custo = 100. Preço de Venda = 160. Para não ter prejuízo, o menor preço é 100. O desconto máximo é 60 reais. Percentual de desconto sobre a venda = 60 / 160 = 0,375 = 37,5%.",
+    "source": "Cesgranrio - Transpetro 2018 (Q16)",
+    "reference": "Transpetro 2018 - Matemática Financeira / Porcentagem",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q17",
+    "subjectId": "matematica",
+    "topic": "Função Quadrática",
+    "weight": 1.0,
+    "statement": "O gráfico de uma função quadrática intersecta o eixo y no ponto (0,9), e o eixo x, nos pontos (-2, 0) e (13, 0). Se o ponto P(11,k) é um ponto da parábola, o valor de k será:",
+    "alternatives": [
+      { "id": "A", "text": "5,5" },
+      { "id": "B", "text": "6,5" },
+      { "id": "C", "text": "7" },
+      { "id": "D", "text": "7,5" },
+      { "id": "E", "text": "9" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. Forma fatorada: f(x) = a(x + 2)(x - 13). Ponto (0,9) -> 9 = a(2)(-13) => -26a = 9 => a = -9/26. f(11) = (-9/26) * (11 + 2) * (11 - 13) = (-9/26) * (13) * (-2) = (-9/26) * (-26) = 9.",
+    "source": "Cesgranrio - Transpetro 2018 (Q17)",
+    "reference": "Transpetro 2018 - Função Quadrática",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q18",
+    "subjectId": "matematica",
+    "topic": "Geometria Plana / Áreas",
+    "weight": 1.0,
+    "statement": "Em um retângulo PQRS de lados PQ = 12 cm e QR = 9 cm, os pontos T e U dividem a diagonal PR em três segmentos iguais. A área do quadrilátero STQU, em cm², é igual a:",
+    "alternatives": [
+      { "id": "A", "text": "108" },
+      { "id": "B", "text": "72" },
+      { "id": "C", "text": "54" },
+      { "id": "D", "text": "48" },
+      { "id": "E", "text": "36" }
+    ],
+    "correctAnswer": "E",
+    "explanation": "Gabarito Oficial E. Área total do retângulo = 12 * 9 = 108. A diagonal PR divide o retângulo em 2 triângulos de área 54. Como T e U dividem a diagonal em 3 partes iguais, a área de cada sub-triângulo formado a partir dos vértices opostos é 54/3 = 18. O quadrilátero STQU é a soma de dois desses triângulos = 18 + 18 = 36 cm².",
+    "source": "Cesgranrio - Transpetro 2018 (Q18)",
+    "reference": "Transpetro 2018 - Geometria Plana / Áreas",
+    "verified": true,
+    "difficulty": "médio"
+  },
+  {
+    "id": "transpetro-2018-q19",
+    "subjectId": "matematica",
+    "topic": "Análise Combinatória",
+    "weight": 1.0,
+    "statement": "Num conjunto há 5 elementos positivos e 5 elementos negativos. Escolhem-se 5 números desse conjunto e se efetua a multiplicação desses 5 números escolhidos. Em quantos casos tal multiplicação terá resultado negativo?",
+    "alternatives": [
+      { "id": "A", "text": "25" },
+      { "id": "B", "text": "120" },
+      { "id": "C", "text": "125" },
+      { "id": "D", "text": "126" },
+      { "id": "E", "text": "128" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Gabarito Oficial D. Para o produto ser negativo, o número de elementos negativos escolhidos deve ser ímpar: 1, 3 ou 5 negativos. Caso 1 (1 neg, 4 pos): C(5,1)*C(5,4) = 5*5 = 25. Caso 2 (3 neg, 2 pos): C(5,3)*C(5,2) = 10*10 = 100. Caso 3 (5 neg, 0 pos): C(5,5)*C(5,0) = 1*1 = 1. Total = 25 + 100 + 1 = 126.",
+    "source": "Cesgranrio - Transpetro 2018 (Q19)",
+    "reference": "Transpetro 2018 - Análise Combinatória",
+    "verified": true,
+    "difficulty": "difícil"
+  },
+  {
+    "id": "transpetro-2018-q20",
+    "subjectId": "matematica",
+    "topic": "Sistemas Lineares",
+    "weight": 1.0,
+    "statement": "Sistemas lineares homogêneos possuem, pelo menos, uma solução. O sistema formado por: x + y + z = 0; x + ay + z = 0; ax + ay + 2z = 0 possui infinitas soluções. Qual o maior valor possível para a?",
+    "alternatives": [
+      { "id": "A", "text": "0" },
+      { "id": "B", "text": "1" },
+      { "id": "C", "text": "2" },
+      { "id": "D", "text": "3" },
+      { "id": "E", "text": "4" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Gabarito Oficial C. Para ter infinitas soluções, o determinante da matriz dos coeficientes deve ser nulo. Det = 1(2a - a) - 1(2 - a) + 1(a - a²) = a - 2 + a + a - a² = -a² + 3a - 2 = 0. Raízes: a = 1 ou a = 2. O maior valor possível para 'a' é 2.",
+    "source": "Cesgranrio - Transpetro 2018 (Q20)",
+    "reference": "Transpetro 2018 - Sistemas Lineares",
+    "verified": true,
+    "difficulty": "médio"
   }
 ]
