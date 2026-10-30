@@ -229,23 +229,22 @@ export const useExamStore = create<ExamState>((set, get) => ({
       return false;
     }
 
-    // Sorteia a cota de cada matéria (definida pelo edital) e reúne tudo em um
-    // único pool. O pool final passa por um novo Fisher-Yates para que questões
-    // de matérias e anos diferentes fiquem profundamente misturadas, sem blocos
-    // por ordem de cadastro.
-    const selectedQuestions: Question[] = [];
-    for (const subjectId of subjectsToUse) {
-      const subjectConfig = config.subjects.find((subject) => subject.id === subjectId);
+    // Mantém a ordem oficial da prova (Português -> Matemática -> Específicos),
+    // mas embaralha as questões dentro de cada matéria com Fisher-Yates. Assim
+    // questões antigas e de 2018 são misturadas sem criar blocos por ano ou por
+    // ordem de cadastro.
+    const orderedQuestions: Question[] = [];
+    for (const subjectConfig of config.subjects) {
+      if (!subjectsToUse.includes(subjectConfig.id)) continue;
+
       const available = allQuestionsBank.filter(
-        (question) => question.subjectId === subjectId,
+        (question) => question.subjectId === subjectConfig.id,
       );
-      if (!subjectConfig || available.length === 0) continue;
+      if (available.length === 0) continue;
 
       const count = Math.min(subjectConfig.questionCount, available.length);
-      selectedQuestions.push(...shuffle(available).slice(0, count));
+      orderedQuestions.push(...shuffle(available).slice(0, count));
     }
-
-    const orderedQuestions = shuffle(selectedQuestions);
 
     if (orderedQuestions.length === 0) {
       set({ startError: 'Não há questões disponíveis para as matérias selecionadas.' });

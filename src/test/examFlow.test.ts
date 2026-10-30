@@ -128,9 +128,10 @@ afterEach(() => {
 });
 
 describe('Sessão do simulado', () => {
-  it('inicia o simulado com questões de todas as matérias profundamente embaralhadas', () => {
+  it('segue a ordem oficial das matérias e embaralha dentro de cada uma', () => {
     // Com o gerador fixo em 0, o Fisher-Yates produz uma ordem determinística.
-    // O importante é que a ordem final não fique agrupada por matéria.
+    // As matérias seguem a ordem da prova (Português -> Matemática -> Específicos),
+    // mas as questões de cada bloco são embaralhadas.
     vi.spyOn(Math, 'random').mockReturnValue(0);
 
     const attempt = startExam();
@@ -139,13 +140,22 @@ describe('Sessão do simulado', () => {
     expect(state.view).toBe('exam');
     expect(state.questions).toHaveLength(7);
     expect(state.questions.map((question) => question.id)).toEqual([
+      'pt_2',
       'pt_1',
       'mt_2',
       'mt_1',
       'es_2',
       'es_3',
       'es_1',
-      'pt_2',
+    ]);
+    expect(state.questions.map((question) => question.subjectId)).toEqual([
+      'portugues',
+      'portugues',
+      'matematica',
+      'matematica',
+      'conhecimentos_especificos',
+      'conhecimentos_especificos',
+      'conhecimentos_especificos',
     ]);
     expect(state.questions.filter((q) => q.subjectId === 'portugues')).toHaveLength(2);
     expect(state.questions.filter((q) => q.subjectId === 'matematica')).toHaveLength(2);
@@ -197,7 +207,7 @@ describe('Sessão do simulado', () => {
     expect(started).toBe(true);
     expect(state.questions).toHaveLength(2);
     expect(state.questions.every((q) => q.subjectId === 'portugues')).toBe(true);
-    expect(state.questions.map((q) => q.id)).toEqual(['pt_1', 'pt_2']);
+    expect(state.questions.map((q) => q.id)).toEqual(['pt_2', 'pt_1']);
   });
 
   it('recusa iniciar outro simulado enquanto um está em andamento', () => {
