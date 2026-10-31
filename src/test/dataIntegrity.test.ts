@@ -52,6 +52,22 @@ describe('Integridade do banco de questões', () => {
     expect(config.passingCriteria.allowZeroInAnySubject).toBe(false);
   });
 
+  it('mantém o texto de apoio nas questões que dependem dele', () => {
+    const dependentQuestions = banks.portugues.filter((question) =>
+      /(de acordo com|segundo|conforme|no|do)\s+o\s+texto|texto acima|texto a seguir|texto-base/i.test(
+        question.statement,
+      ),
+    );
+
+    expect(dependentQuestions.length).toBeGreaterThan(0);
+    for (const question of dependentQuestions) {
+      expect(
+        question.supportText?.trim().length ?? 0,
+        `texto de apoio de ${question.id}`,
+      ).toBeGreaterThan(0);
+    }
+  });
+
   it('não possui IDs de questão duplicados entre as matérias', () => {
     const allIds = Object.values(banks).flatMap((bank) => bank.map((question) => question.id));
     expect(new Set(allIds).size).toBe(allIds.length);

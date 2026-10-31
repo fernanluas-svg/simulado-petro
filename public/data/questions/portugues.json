@@ -2,8 +2,8 @@
   {
     "id": "pt-01",
     "subjectId": "portugues",
-    "topic": "Compreensão e interpretação de textos",
-    "statement": "No fragmento de texto extraído de um documento oficial da Transpetro, a coesão textual é mantida por meio de recursos linguísticos que evitam repetições desnecessárias. Assinale a opção em que o termo destacado entre colchetes substitui corretamente o elemento anterior sem alteração de sentido ou incorreção gramatical.",
+    "topic": "Coesão textual",
+    "statement": "Assinale a opção em que o termo destacado entre colchetes substitui corretamente o elemento anterior, sem alteração de sentido ou incorreção gramatical.",
     "alternatives": [
       { "id": "A", "text": "Os relatórios de desempenho foram analisados; [o qual] apresentou inconsistências." },
       { "id": "B", "text": "A equipe revisou os procedimentos de segurança; [cujo] auditoria apontou melhorias." },
