@@ -8,6 +8,8 @@ export interface Question {
   subjectId: string; // 'portugues' | 'matematica' | 'conhecimentos_especificos'
   topic: string;
   statement: string;
+  /** Texto-base exibido antes do enunciado (ex.: interpretação de texto). */
+  supportText?: string;
   alternatives: Alternative[];
   correctAnswer: string; // 'A' | 'B' | 'C' | 'D' | 'E'
   explanation: string;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { Search, ShieldCheck, ArrowLeft } from 'lucide-react';
+import { SupportText } from '../components/SupportText';
 
 export const QuestionBankScreen: React.FC = () => {
   const { allQuestionsBank, setView, config } = useExamStore();
@@ -15,7 +16,8 @@ export const QuestionBankScreen: React.FC = () => {
       const term = searchTerm.toLowerCase();
       const matchStmt = q.statement.toLowerCase().includes(term);
       const matchTopic = q.topic.toLowerCase().includes(term);
-      if (!matchStmt && !matchTopic) return false;
+      const matchSupportText = q.supportText?.toLowerCase().includes(term) ?? false;
+      if (!matchStmt && !matchTopic && !matchSupportText) return false;
     }
     return true;
   });
@@ -103,6 +105,8 @@ export const QuestionBankScreen: React.FC = () => {
                 )}
               </div>
             </div>
+
+            <SupportText text={q.supportText} />
 
             <div className="text-ink text-base leading-relaxed font-medium">
               {q.statement}

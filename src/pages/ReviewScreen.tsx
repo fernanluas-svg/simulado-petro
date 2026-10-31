@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
+import { SupportText } from '../components/SupportText';
 
 export const ReviewScreen: React.FC = () => {
   const { questions, currentAttempt, config, setView } = useExamStore();
@@ -144,6 +145,8 @@ export const ReviewScreen: React.FC = () => {
                   )}
                 </div>
               </div>
+
+              <SupportText text={question.supportText} />
 
               <div className="text-ink text-base leading-relaxed font-medium">
                 {question.statement}

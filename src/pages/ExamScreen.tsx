@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { formatSeconds, getRemainingSeconds } from '../services/timer';
 import { getPaletteStatus } from '../services/palette';
+import { SupportText } from '../components/SupportText';
 
 export const ExamScreen: React.FC = () => {
   const {
@@ -221,6 +222,8 @@ export const ExamScreen: React.FC = () => {
                 <span>{isMarked ? 'Marcado para Revisão' : 'Marcar para Revisão'}</span>
               </button>
             </div>
+
+            <SupportText text={currentQ.supportText} />
 
             <div className="text-ink text-base sm:text-lg leading-relaxed whitespace-pre-line font-medium">
               {currentQ.statement}
