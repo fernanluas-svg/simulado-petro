@@ -513,6 +513,10 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
     set((state) => {
       const isCurrent = state.currentAttempt?.id === targetId;
+      // Ao apagar pelo histórico, permanece na tela; só volta ao início quando
+      // a tentativa removida é a que está aberta no simulado/resultado.
+      const shouldLeaveView =
+        isCurrent && (state.view === 'exam' || state.view === 'result');
       return {
         history: state.history.filter((item) => item.id !== targetId),
         ...(isCurrent
@@ -520,7 +524,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
               currentAttempt: null,
               questions: [],
               currentQuestionIndex: 0,
-              view: 'home' as const,
+              ...(shouldLeaveView ? { view: 'home' as const } : {}),
             }
           : {}),
         startError: null,

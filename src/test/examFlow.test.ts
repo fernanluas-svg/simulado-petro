@@ -347,6 +347,24 @@ describe('Sessão do simulado', () => {
     expect(state.view).toBe('home');
   });
 
+  it('remove um simulado concluído do histórico sem sair da tela', async () => {
+    const completed = expiredAttemptFixture('history_delete', baseTime - 15_000);
+    useExamStore.setState({
+      history: [completed],
+      currentAttempt: completed,
+      view: 'history',
+    });
+
+    await useExamStore.getState().discardAttempt(completed.id);
+
+    const state = useExamStore.getState();
+    expect(storageMock.deleteAttempt).toHaveBeenCalledWith(completed.id);
+    expect(state.history).toHaveLength(0);
+    expect(state.currentAttempt).toBeNull();
+    expect(state.questions).toHaveLength(0);
+    expect(state.view).toBe('history');
+  });
+
   it('abre o resultado de tentativa concluída mesmo sem questões salvas', () => {
     const legacyCompleted = {
       ...expiredAttemptFixture('legacy_completed', baseTime - 30_000),

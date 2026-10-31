@@ -260,9 +260,27 @@ export const HistoryScreen: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="bg-surface/60 border border-line/50 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl"
+                className="relative bg-surface/60 border border-line/50 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl"
               >
-                <div className="space-y-2">
+                <button
+                  type="button"
+                  onClick={async () => {
+                    if (
+                      window.confirm(
+                        'Apagar este simulado do histórico? Esta ação não pode ser desfeita.',
+                      )
+                    ) {
+                      await discardAttempt(item.id);
+                    }
+                  }}
+                  className="absolute top-3 right-3 flex items-center justify-center w-8 h-8 rounded-lg text-ink-muted hover:text-danger hover:bg-rose-500/10 transition-colors"
+                  aria-label={`Apagar simulado de ${formatDate(item.startTime)} do histórico`}
+                  title="Apagar do histórico"
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+
+                <div className="space-y-2 pr-10">
                   <div className="flex flex-wrap items-center gap-3">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide flex items-center gap-1 ${
