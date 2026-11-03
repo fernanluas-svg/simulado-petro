@@ -191,6 +191,12 @@ export const ExamSetupScreen: React.FC = () => {
           )}
         </div>
 
+        <p className="text-xs text-ink-muted bg-cyan-500/5 border border-cyan-500/15 rounded-xl px-4 py-3">
+          O sorteio dá <strong className="text-ink">3x mais chance</strong> às questões do
+          simulado oficial de 2018, mantendo a ordem das matérias e o embaralhamento
+          dentro de cada uma.
+        </p>
+
         {/* Options */}
         <div className="space-y-4 pt-2">
           <div className="flex items-center justify-between gap-4 p-4 bg-base/60 rounded-xl border border-line/30">

@@ -28,7 +28,7 @@ import {
   type RegradeSummary,
 } from '../services/scoring';
 import { recalculateHistoricalExams } from '../services/migration';
-import { shuffle } from '../services/shuffle';
+import { selectQuestionsForSubject } from '../services/questionSelection';
 
 export type ExamView =
   | 'home'
@@ -230,9 +230,8 @@ export const useExamStore = create<ExamState>((set, get) => ({
     }
 
     // Mantém a ordem oficial da prova (Português -> Matemática -> Específicos),
-    // mas embaralha as questões dentro de cada matéria com Fisher-Yates. Assim
-    // questões antigas e de 2018 são misturadas sem criar blocos por ano ou por
-    // ordem de cadastro.
+    // mas sorteia as questões dentro de cada matéria com peso 3x para as questões
+    // da prova oficial de 2018 e embaralha o bloco antes de montar o simulado.
     const orderedQuestions: Question[] = [];
     for (const subjectConfig of config.subjects) {
       if (!subjectsToUse.includes(subjectConfig.id)) continue;
@@ -243,7 +242,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       if (available.length === 0) continue;
 
       const count = Math.min(subjectConfig.questionCount, available.length);
-      orderedQuestions.push(...shuffle(available).slice(0, count));
+      orderedQuestions.push(...selectQuestionsForSubject(available, count));
     }
 
     if (orderedQuestions.length === 0) {
