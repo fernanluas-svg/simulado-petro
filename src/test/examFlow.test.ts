@@ -169,6 +169,72 @@ describe('Sessão do simulado', () => {
     expect(storageMock.saveAttempt).toHaveBeenCalled();
   });
 
+  it('embaralha as alternativas e mantém o gabarito no texto correto', () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const attempt = startExam();
+    const state = useExamStore.getState();
+
+    expect(attempt.alternativeOrder).toBeDefined();
+    expect(Object.keys(attempt.alternativeOrder ?? {})).toHaveLength(7);
+
+    for (const presented of state.questions) {
+      const original = bank.find((question) => question.id === presented.id);
+      expect(original).toBeDefined();
+
+      const order = attempt.alternativeOrder?.[presented.id];
+      expect(order).toHaveLength(original!.alternatives.length);
+      expect(new Set(order)).toEqual(
+        new Set(original!.alternatives.map((alternative) => alternative.id)),
+      );
+
+      // Os textos são os mesmos; só a ordem e os rótulos mudam.
+      expect(new Set(presented.alternatives.map((alternative) => alternative.text))).toEqual(
+        new Set(original!.alternatives.map((alternative) => alternative.text)),
+      );
+
+      // O gabarito continua apontando para o mesmo texto.
+      const presentedCorrect = presented.alternatives.find(
+        (alternative) => alternative.id === presented.correctAnswer,
+      );
+      const originalCorrect = original!.alternatives.find(
+        (alternative) => alternative.id === original!.correctAnswer,
+      );
+      expect(presentedCorrect?.text).toBe(originalCorrect?.text);
+    }
+  });
+
+  it('restaura a mesma ordem de alternativas ao retomar uma tentativa', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    startExam();
+    const before = useExamStore.getState().questions.map((question) => ({
+      id: question.id,
+      correctAnswer: question.correctAnswer,
+      alternatives: question.alternatives,
+    }));
+
+    const savedCalls = storageMock.saveAttempt.mock.calls as unknown as Array<
+      [ExamAttempt]
+    >;
+    const persisted = savedCalls.at(-1)?.[0] as ExamAttempt;
+    expect(persisted.alternativeOrder).toBeDefined();
+
+    // Simula um recarregamento: o store nasce vazio e reidrata do storage.
+    resetStore();
+    useExamStore.setState({ config, allQuestionsBank: bank });
+    storageMock.getAttempts.mockResolvedValue([persisted]);
+    await useExamStore.getState().initApp();
+
+    const after = useExamStore.getState().questions.map((question) => ({
+      id: question.id,
+      correctAnswer: question.correctAnswer,
+      alternatives: question.alternatives,
+    }));
+
+    expect(after).toEqual(before);
+  });
+
   it('sorteia um subconjunto aleatório quando o banco tem mais questões que o edital', () => {
     const largerBank: Question[] = [
       ...bank,

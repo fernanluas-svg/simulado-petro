@@ -6,6 +6,7 @@ import type {
   Question,
   SubjectBreakdown,
 } from '../types';
+import { applyAlternativeOrder } from './alternatives';
 
 /** Versão atual do formato de resultado salvo nas tentativas. */
 export const CURRENT_SCHEMA_VERSION = 2;
@@ -87,13 +88,20 @@ export function getMinSubjectScorePercent(config: ExamConfig): number {
 /**
  * Restaura as questões de uma tentativa a partir dos IDs salvos.
  * Tentativas antigas, criadas antes de `questionIds` existir, retornam [].
+ *
+ * Quando a tentativa guardou `alternativeOrder`, a mesma ordem de alternativas
+ * (e o mesmo gabarito rotulado) é reconstruída, mantendo as respostas salvas
+ * coerentes com o que o candidato viu.
  */
 export function restoreQuestions(attempt: ExamAttempt, bank: Question[]): Question[] {
   if (!attempt.questionIds?.length) return [];
   const byId = new Map(bank.map((question) => [question.id, question]));
   return attempt.questionIds
     .map((id) => byId.get(id))
-    .filter((question): question is Question => Boolean(question));
+    .filter((question): question is Question => Boolean(question))
+    .map((question) =>
+      applyAlternativeOrder(question, attempt.alternativeOrder?.[question.id]),
+    );
 }
 
 /**

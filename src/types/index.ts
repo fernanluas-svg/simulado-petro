@@ -83,6 +83,12 @@ export interface ExamAttempt {
 
   // Sessão persistida (campos opcionais para compatibilidade com tentativas antigas)
   questionIds?: string[]; // ordem exata das questões sorteadas
+  /**
+   * Ordem original das alternativas de cada questão, por ID da questão.
+   * Permite restaurar a mesma apresentação (rótulos A-E e gabarito) depois de
+   * recarregar a página ou ao abrir o resultado/revisão.
+   */
+  alternativeOrder?: Record<string, string[]>;
   durationMinutes?: number; // tempo limite escolhido
   timeRemainingSeconds?: number; // saldo congelado no início/pausa
   lastResumedAt?: number; // timestamp em que o relógio voltou a correr

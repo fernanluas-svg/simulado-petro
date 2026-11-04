@@ -29,6 +29,7 @@ import {
 } from '../services/scoring';
 import { recalculateHistoricalExams } from '../services/migration';
 import { selectQuestionsForSubject } from '../services/questionSelection';
+import { shuffleQuestionAlternatives } from '../services/alternatives';
 
 export type ExamView =
   | 'home'
@@ -260,6 +261,16 @@ export const useExamStore = create<ExamState>((set, get) => ({
       return false;
     }
 
+    // Embaralha as alternativas de cada questão e guarda a ordem usada. Assim o
+    // gabarito não fica preso a uma letra fixa e a mesma apresentação pode ser
+    // restaurada ao recarregar, no resultado e na revisão.
+    const alternativeOrder: Record<string, string[]> = {};
+    const presentedQuestions = orderedQuestions.map((question) => {
+      const { question: presented, order } = shuffleQuestionAlternatives(question);
+      alternativeOrder[question.id] = order;
+      return presented;
+    });
+
     const totalMinutes = clampDurationMinutes(
       durationMinutes ?? config.durationMinutes,
     );
@@ -275,6 +286,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       isCompleted: false,
       isPaused: false,
       questionIds: orderedQuestions.map((question) => question.id),
+      alternativeOrder,
       durationMinutes: totalMinutes,
       timeRemainingSeconds: totalMinutes * 60,
       lastResumedAt: now,
@@ -284,7 +296,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
     persistAttempt(newAttempt);
 
     set((state) => ({
-      questions: orderedQuestions,
+      questions: presentedQuestions,
       currentAttempt: newAttempt,
       currentQuestionIndex: 0,
       history: [newAttempt, ...state.history.filter((item) => item.id !== newAttempt.id)],
