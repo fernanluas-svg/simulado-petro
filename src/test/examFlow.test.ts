@@ -322,6 +322,59 @@ describe('Sessão do simulado', () => {
     expect(useExamStore.getState().currentAttempt?.answers[questionId]).toBe('B');
   });
 
+  it('remove uma questão da revisão da tentativa atual e do histórico', () => {
+    const attempt = startExam();
+    const [firstQuestion, secondQuestion] = useExamStore.getState().questions;
+
+    useExamStore.getState().toggleMarkReview(firstQuestion.id);
+    useExamStore.getState().toggleMarkReview(secondQuestion.id);
+
+    const completed: ExamAttempt = {
+      ...expiredAttemptFixture('old_review', baseTime - 60_000),
+      markedForReview: {
+        [firstQuestion.id]: true,
+        [secondQuestion.id]: true,
+      },
+    };
+
+    useExamStore.setState({
+      history: [completed, useExamStore.getState().currentAttempt as ExamAttempt],
+    });
+    storageMock.saveAttempt.mockClear();
+
+    useExamStore.getState().removeQuestionFromReview(firstQuestion.id);
+
+    const state = useExamStore.getState();
+    expect(state.currentAttempt?.markedForReview[firstQuestion.id]).toBeUndefined();
+    expect(state.currentAttempt?.markedForReview[secondQuestion.id]).toBe(true);
+    expect(
+      state.history.find((item) => item.id === completed.id)?.markedForReview[
+        firstQuestion.id
+      ],
+    ).toBeUndefined();
+    expect(
+      state.history.find((item) => item.id === attempt.id)?.markedForReview[firstQuestion.id],
+    ).toBeUndefined();
+
+    const savedAttempts = storageMock.saveAttempt.mock.calls as unknown as Array<
+      [ExamAttempt]
+    >;
+    expect(
+      savedAttempts.some(
+        ([savedAttempt]) =>
+          savedAttempt.id === attempt.id &&
+          !savedAttempt.markedForReview[firstQuestion.id],
+      ),
+    ).toBe(true);
+    expect(
+      savedAttempts.some(
+        ([savedAttempt]) =>
+          savedAttempt.id === completed.id &&
+          !savedAttempt.markedForReview[firstQuestion.id],
+      ),
+    ).toBe(true);
+  });
+
   it('persiste o índice da questão navegada', () => {
     startExam();
     useExamStore.getState().setCurrentQuestionIndex(4);

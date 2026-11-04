@@ -1,15 +1,75 @@
-import React, { useState } from 'react';
-import { useExamStore } from '../store/useExamStore';
-import { ArrowLeft, Check, CheckSquare, Clock, Info, Palette, Trash2, X } from 'lucide-react';
+import React, { useMemo, useState } from 'react';
+import { getSubjectName, useExamStore } from '../store/useExamStore';
+import {
+  ArrowLeft,
+  Check,
+  CheckSquare,
+  Clock,
+  Flag,
+  Info,
+  Palette,
+  Trash2,
+  X,
+} from 'lucide-react';
 import { clearAllData } from '../services/storage';
 import { THEME_OPTIONS } from '../services/theme';
+import { SupportText } from '../components/SupportText';
+import type { ExamAttempt, Question } from '../types';
 
 const DURATION_OPTIONS = [60, 120, 180, 240, 300];
 
+function formatDateTime(timestamp: number): string {
+  return new Date(timestamp).toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+}
+
 export const SettingsScreen: React.FC = () => {
-  const { settings, updateSettings, setView, config } = useExamStore();
+  const {
+    settings,
+    updateSettings,
+    setView,
+    config,
+    history,
+    currentAttempt,
+    allQuestionsBank,
+    removeQuestionFromReview,
+  } = useExamStore();
   const [isClearing, setIsClearing] = useState(false);
   const [showApprovalInfo, setShowApprovalInfo] = useState(false);
+
+  const reviewItems = useMemo(() => {
+    const attempts = new Map<string, ExamAttempt>();
+    for (const attempt of history) attempts.set(attempt.id, attempt);
+    // A tentativa em andamento pode ter marcações mais novas que a cópia
+    // guardada em `history`, então ela prevalece.
+    if (currentAttempt) attempts.set(currentAttempt.id, currentAttempt);
+
+    const questionsById = new Map(allQuestionsBank.map((question) => [question.id, question]));
+    const byQuestion = new Map<string, { question: Question; attempt: ExamAttempt }>();
+
+    for (const attempt of attempts.values()) {
+      for (const [questionId, marked] of Object.entries(attempt.markedForReview)) {
+        if (!marked) continue;
+
+        const question = questionsById.get(questionId);
+        if (!question) continue;
+
+        const existing = byQuestion.get(questionId);
+        if (!existing || attempt.startTime > existing.attempt.startTime) {
+          byQuestion.set(questionId, { question, attempt });
+        }
+      }
+    }
+
+    return [...byQuestion.values()].sort(
+      (a, b) => b.attempt.startTime - a.attempt.startTime,
+    );
+  }, [history, currentAttempt, allQuestionsBank]);
 
   const handleResetData = async () => {
     if (
@@ -183,6 +243,101 @@ export const SettingsScreen: React.FC = () => {
               <Info className="w-4 h-4" />
               <span>Ver explicação</span>
             </button>
+          </div>
+
+          <div className="p-4 bg-base/60 rounded-xl border border-line/30 space-y-3">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                <Flag className="w-4 h-4 text-accent" />
+                <span className="text-sm font-medium text-ink">
+                  Questões para Revisão
+                </span>
+              </div>
+              <span className="text-xs font-bold text-accent bg-cyan-500/10 px-2.5 py-1 rounded-lg border border-cyan-500/20">
+                {reviewItems.length}
+              </span>
+            </div>
+            <p className="text-xs text-ink-muted">
+              Questões marcadas com a bandeira durante os simulados. Você pode
+              retirá-las da revisão quando quiser.
+            </p>
+
+            {reviewItems.length === 0 ? (
+              <p className="text-xs text-ink-muted bg-surface/40 border border-line/30 rounded-lg px-3 py-3">
+                Nenhuma questão marcada. Durante o simulado, use o botão “Marcar
+                para revisão”.
+              </p>
+            ) : (
+              <ul className="space-y-2">
+                {reviewItems.map(({ question, attempt }) => (
+                  <li
+                    key={question.id}
+                    className="bg-surface/50 border border-line/40 rounded-xl p-3 space-y-2"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="text-[11px] font-bold uppercase tracking-wide text-accent">
+                        {getSubjectName(config, question.subjectId)} • {question.topic}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => removeQuestionFromReview(question.id)}
+                        className="flex items-center gap-1.5 min-h-9 px-2.5 py-1.5 rounded-lg text-xs font-medium text-danger hover:bg-rose-500/10 border border-transparent hover:border-rose-500/20 transition-colors"
+                        aria-label={`Retirar questão ${question.id} da revisão`}
+                        title="Retirar da revisão"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                        <span>Remover</span>
+                      </button>
+                    </div>
+
+                    <p className="text-sm text-ink leading-relaxed">
+                      {question.statement}
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] text-ink-muted">
+                      <span>
+                        {attempt.isCompleted
+                          ? 'Simulado concluído'
+                          : 'Simulado em andamento'}
+                      </span>
+                      <span aria-hidden="true">•</span>
+                      <span>{formatDateTime(attempt.startTime)}</span>
+                    </div>
+
+                    <details className="rounded-lg border border-line/40 bg-base/40">
+                      <summary className="cursor-pointer select-none px-3 py-2 text-xs font-semibold text-accent">
+                        Ver questão completa
+                      </summary>
+                      <div className="px-3 pb-3 space-y-3">
+                        <SupportText text={question.supportText} />
+                        <ul className="space-y-1.5 text-sm text-ink-soft">
+                          {question.alternatives.map((alternative) => (
+                            <li
+                              key={alternative.id}
+                              className={
+                                alternative.id === question.correctAnswer
+                                  ? 'text-success font-medium'
+                                  : undefined
+                              }
+                            >
+                              <strong>{alternative.id})</strong> {alternative.text}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-xs text-ink-soft">
+                          <strong className="text-ink">Gabarito:</strong>{' '}
+                          {question.correctAnswer}
+                        </p>
+                        <p className="text-xs text-ink-soft">
+                          <strong className="text-ink">Explicação:</strong>{' '}
+                          {question.explanation}
+                        </p>
+                      </div>
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="pt-4 border-t border-line/40 flex items-center justify-between gap-4">

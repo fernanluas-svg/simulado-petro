@@ -75,6 +75,15 @@ function persistAttempt(attempt: ExamAttempt): void {
   });
 }
 
+/** Remove a marcação de revisão de uma questão em uma tentativa. */
+function clearReviewMark(attempt: ExamAttempt, questionId: string): ExamAttempt {
+  if (!attempt.markedForReview[questionId]) return attempt;
+
+  const markedForReview = { ...attempt.markedForReview };
+  delete markedForReview[questionId];
+  return { ...attempt, markedForReview };
+}
+
 interface ExamState {
   config: ExamConfig | null;
   questions: Question[];
@@ -100,6 +109,7 @@ interface ExamState {
   }) => boolean;
   setAnswer: (questionId: string, alternativeId: string) => void;
   toggleMarkReview: (questionId: string) => void;
+  removeQuestionFromReview: (questionId: string) => void;
   setCurrentQuestionIndex: (index: number) => void;
   setImmediateCorrection: (enabled: boolean) => void;
   pauseExam: () => Promise<void>;
@@ -311,6 +321,35 @@ export const useExamStore = create<ExamState>((set, get) => ({
     };
     persistAttempt(updatedAttempt);
     set({ currentAttempt: updatedAttempt });
+  },
+
+  removeQuestionFromReview: (questionId) => {
+    const { currentAttempt, history } = get();
+    const updatedCurrent = currentAttempt
+      ? clearReviewMark(currentAttempt, questionId)
+      : null;
+    const currentId = updatedCurrent?.id;
+
+    // A tentativa atual pode ter marcações mais recentes que a cópia em
+    // `history`; por isso ela prevalece ao montar o histórico atualizado.
+    const updatedHistory = history.map((attempt) =>
+      attempt.id === currentId
+        ? (updatedCurrent as ExamAttempt)
+        : clearReviewMark(attempt, questionId),
+    );
+
+    if (updatedCurrent && updatedCurrent !== currentAttempt) {
+      persistAttempt(updatedCurrent);
+    }
+
+    history.forEach((attempt, index) => {
+      const updated = updatedHistory[index];
+      if (updated !== attempt && updated.id !== currentId) {
+        persistAttempt(updated);
+      }
+    });
+
+    set({ currentAttempt: updatedCurrent, history: updatedHistory });
   },
 
   setCurrentQuestionIndex: (index) => {
