@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { formatSeconds, getRemainingSeconds } from '../services/timer';
 import { getPaletteStatus } from '../services/palette';
+import { getAcceptedAnswers } from '../services/answers';
 import { SupportText } from '../components/SupportText';
 
 export const ExamScreen: React.FC = () => {
@@ -120,6 +121,7 @@ export const ExamScreen: React.FC = () => {
   );
   const totalQCount = questions.length;
   const selectedAlt = currentAttempt.answers[currentQ.id];
+  const acceptedAnswers = getAcceptedAnswers(currentQ);
   const isMarked = currentAttempt.markedForReview[currentQ.id] || false;
 
   const handlePause = async () => {
@@ -242,10 +244,10 @@ export const ExamScreen: React.FC = () => {
                 }
 
                 if (currentAttempt.immediateCorrection && selectedAlt) {
-                  if (alt.id === currentQ.correctAnswer) {
+                  if (acceptedAnswers.includes(alt.id)) {
                     altStyle =
                       'border-emerald-500 bg-emerald-500/20 text-success font-semibold';
-                  } else if (isSelected && alt.id !== currentQ.correctAnswer) {
+                  } else if (isSelected) {
                     altStyle = 'border-rose-500 bg-rose-500/20 text-danger';
                   }
                 }
@@ -279,14 +281,14 @@ export const ExamScreen: React.FC = () => {
             {currentAttempt.immediateCorrection && selectedAlt && (
               <div className="mt-4 p-4 rounded-xl bg-base/90 border border-line/60 space-y-2">
                 <div className="flex items-center gap-2">
-                  {selectedAlt === currentQ.correctAnswer ? (
+                  {acceptedAnswers.includes(selectedAlt) ? (
                     <span className="text-success font-bold flex items-center gap-1 text-sm">
                       <CheckCircle className="w-4 h-4" /> Resposta Correta!
                     </span>
                   ) : (
                     <span className="text-danger font-bold flex items-center gap-1 text-sm">
                       <XCircle className="w-4 h-4" /> Resposta Incorreta. O gabarito é (
-                      {currentQ.correctAnswer}).
+                      {acceptedAnswers.join(' ou ')}).
                     </span>
                   )}
                 </div>
@@ -335,7 +337,7 @@ export const ExamScreen: React.FC = () => {
                 const answer = currentAttempt.answers[question.id];
                 const status = getPaletteStatus(
                   answer,
-                  question.correctAnswer,
+                  getAcceptedAnswers(question),
                   currentAttempt.immediateCorrection,
                 );
                 const isMarkedReview = !!currentAttempt.markedForReview[question.id];

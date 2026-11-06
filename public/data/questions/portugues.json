@@ -274,11 +274,12 @@
       { "id": "A", "text": "Micro-ondas" },
       { "id": "B", "text": "Auto-estrada" },
       { "id": "C", "text": "Anti-inflamatório" },
-      { "id": "D", "text": "Ambas A e C estão corretas" },
-      { "id": "E", "text": "Nenhuma das alternativas acima" }
+      { "id": "D", "text": "Vôo" },
+      { "id": "E", "text": "Enjôo" }
     ],
-    "correctAnswer": "D",
-    "explanation": "A regra geral do hífen diz que letras iguais se separam (Micro-ondas, Anti-inflamatório). Letras diferentes se unem (Autoestrada). Portanto, A e C estão corretas.",
+    "correctAnswer": "A",
+    "acceptedAnswers": ["A", "C"],
+    "explanation": "Micro-ondas e Anti-inflamatório estão corretos: o hífen é mantido quando as letras são iguais. Auto-estrada está errado (o correto é Autoestrada, pois letras diferentes se unem). Vôo e Enjôo perderam o acento circunflexo com o Novo Acordo Ortográfico (Voo, Enjoo).",
     "source": "Autor / Estilo Cesgranrio",
     "reference": "Edital Transpetro 2026 - Ortografia",
     "verified": false,
@@ -307,16 +308,17 @@
     "id": "pt-17",
     "subjectId": "portugues",
     "topic": "Sintaxe da oração e do período",
-    "statement": "Assinale a alternativa em que o termo sublinhado é um complemento nominal.",
+    "statement": "Assinale a alternativa em que há um complemento nominal.",
     "alternatives": [
       { "id": "A", "text": "A construção do porto durou três anos." },
       { "id": "B", "text": "A leitura do livro foi prazerosa." },
       { "id": "C", "text": "Ele tem medo de altura." },
       { "id": "D", "text": "O amor de mãe é infinito." },
-      { "id": "E", "text": "As alternativas A, B e C apresentam complementos nominais." }
+      { "id": "E", "text": "Ele saiu de casa cedo." }
     ],
-    "correctAnswer": "E",
-    "explanation": "Complemento nominal completa o sentido de substantivos abstratos, adjetivos ou advérbios, sempre com preposição e valor passivo. Em A, 'do porto' (o porto foi construído); em B, 'do livro' (o livro foi lido); em C, 'de altura' (completa o substantivo medo). Em D, 'de mãe' é adjunto adnominal (valor ativo, a mãe ama).",
+    "correctAnswer": "A",
+    "acceptedAnswers": ["A", "B", "C"],
+    "explanation": "Complemento nominal completa o sentido de substantivos abstratos, adjetivos ou advérbios, sempre com preposição e valor passivo. Em A, 'do porto' (o porto foi construído); em B, 'do livro' (o livro foi lido); em C, 'de altura' (completa o substantivo medo). Em D, 'de mãe' é adjunto adnominal (valor ativo, a mãe ama). Em E, 'de casa' é adjunto adverbial de lugar.",
     "source": "Autor / Estilo Cesgranrio",
     "reference": "Edital Transpetro 2026 - Sintaxe",
     "verified": false,

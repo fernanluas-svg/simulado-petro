@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { Search, ShieldCheck, ArrowLeft } from 'lucide-react';
 import { SupportText } from '../components/SupportText';
+import { getAcceptedAnswers } from '../services/answers';
 
 export const QuestionBankScreen: React.FC = () => {
   const { allQuestionsBank, setView, config } = useExamStore();
@@ -114,7 +115,7 @@ export const QuestionBankScreen: React.FC = () => {
 
             <div className="space-y-2 pt-2">
               {q.alternatives.map((alt) => {
-                const isCorrect = alt.id === q.correctAnswer;
+                const isCorrect = getAcceptedAnswers(q).includes(alt.id);
                 return (
                   <div
                     key={alt.id}
@@ -135,7 +136,7 @@ export const QuestionBankScreen: React.FC = () => {
 
             <div className="mt-4 p-5 rounded-xl bg-base/90 border border-line/60 space-y-2">
               <div className="flex items-center justify-between text-xs font-semibold text-accent">
-                <span>Gabarito: ({q.correctAnswer})</span>
+                <span>Gabarito: ({getAcceptedAnswers(q).join(' ou ')})</span>
                 <span>{q.source}</span>
               </div>
               <p className="text-sm text-ink-soft leading-relaxed pt-1">

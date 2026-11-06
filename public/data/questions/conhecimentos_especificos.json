@@ -182,10 +182,11 @@
       { "id": "B", "text": "Gêneros perecíveis em caso de emergência com prazo de 30 dias." },
       { "id": "C", "text": "Obras de engenharia de pequeno valor até R$ 100.000,00." },
       { "id": "D", "text": "Bens fornecidos por único produtor sem similares no mercado (exclusividade)." },
-      { "id": "E", "text": "Ambas as alternativas A e D." }
+      { "id": "E", "text": "Serviços de manutenção predial comum, sem exclusividade de fornecedor." }
     ],
-    "correctAnswer": "E",
-    "explanation": "A Lei 14.133/2021 prevê a inexigibilidade de licitação nos casos de inviabilidade de competição, destacando expressamente a contratação de serviços técnicos especializados com profissionais de notória especialização (art. 74, III) e aquisição de materiais, equipamentos ou gêneros que só possam ser fornecidos por produtor, empresa ou representante comercial exclusivo (art. 74, I).",
+    "correctAnswer": "A",
+    "acceptedAnswers": ["A", "D"],
+    "explanation": "A Lei 14.133/2021 prevê a inexigibilidade de licitação nos casos de inviabilidade de competição, como a contratação de serviços técnicos especializados com profissionais de notória especialização (art. 74, III) e a aquisição de bens que só possam ser fornecidos por produtor ou representante comercial exclusivo (art. 74, I). Por isso, as alternativas A e D são exemplos válidos. As demais não configuram inexigibilidade: gêneros perecíveis em emergência e obras de pequeno valor são hipóteses de dispensa, e a manutenção predial comum admite competição.",
     "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
     "reference": "Edital Transpetro 2026 - Inexigibilidade Lei 14.133",
     "verified": true,

@@ -7,10 +7,11 @@ export type PaletteStatus = 'blank' | 'answered' | 'correct' | 'incorrect';
  */
 export function getPaletteStatus(
   answer: string | undefined,
-  correctAnswer: string,
+  correctAnswer: string | readonly string[],
   immediateCorrection: boolean,
 ): PaletteStatus {
   if (!answer) return 'blank';
   if (!immediateCorrection) return 'answered';
-  return answer === correctAnswer ? 'correct' : 'incorrect';
+  const accepted = typeof correctAnswer === 'string' ? [correctAnswer] : correctAnswer;
+  return accepted.includes(answer) ? 'correct' : 'incorrect';
 }

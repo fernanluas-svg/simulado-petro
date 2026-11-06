@@ -109,6 +109,39 @@ describe('embaralhamento das alternativas', () => {
     expect(restored.correctAnswer).toBe('B');
   });
 
+  it('remapeia as respostas aceitas junto com os rótulos', () => {
+    const question = { ...makeQuestion('q1', 'A'), acceptedAnswers: ['A', 'C'] };
+    const restored = applyAlternativeOrder(question, ['C', 'A', 'E', 'B', 'D']);
+
+    expect(restored.correctAnswer).toBe('B');
+    expect(restored.acceptedAnswers).toEqual(['B', 'A']);
+    expect(
+      restored.alternatives
+        .filter((alternative) => restored.acceptedAnswers?.includes(alternative.id))
+        .map((alternative) => alternative.text)
+        .sort(),
+    ).toEqual(['Alternativa A', 'Alternativa C']);
+  });
+
+  it('mantém as respostas aceitas apontando para os mesmos textos após embaralhar', () => {
+    const question = { ...makeQuestion('q1', 'A'), acceptedAnswers: ['A', 'D'] };
+    const { question: presented } = shuffleQuestionAlternatives(
+      question,
+      seededRandom(11),
+    );
+
+    const presentedAccepted = presented.alternatives
+      .filter((alternative) => presented.acceptedAnswers?.includes(alternative.id))
+      .map((alternative) => alternative.text)
+      .sort();
+    const originalAccepted = question.alternatives
+      .filter((alternative) => question.acceptedAnswers?.includes(alternative.id))
+      .map((alternative) => alternative.text)
+      .sort();
+
+    expect(presentedAccepted).toEqual(originalAccepted);
+  });
+
   it('mantém a questão original quando não há ordem salva', () => {
     const question = makeQuestion();
 

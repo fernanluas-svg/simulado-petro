@@ -64,5 +64,18 @@ export function applyAlternativeOrder(
   const correctAnswer =
     correctIndex >= 0 ? (LETTERS[correctIndex] ?? question.correctAnswer) : question.correctAnswer;
 
-  return { ...question, alternatives, correctAnswer };
+  // As respostas aceitas também precisam acompanhar os novos rótulos.
+  const acceptedAnswers = question.acceptedAnswers
+    ?.map((answer) => {
+      const index = order.indexOf(answer);
+      return index >= 0 ? LETTERS[index] : undefined;
+    })
+    .filter((answer): answer is string => Boolean(answer));
+
+  return {
+    ...question,
+    alternatives,
+    correctAnswer,
+    acceptedAnswers: acceptedAnswers?.length ? acceptedAnswers : undefined,
+  };
 }

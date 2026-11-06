@@ -14,6 +14,7 @@ import {
 import { clearAllData } from '../services/storage';
 import { THEME_OPTIONS } from '../services/theme';
 import { SupportText } from '../components/SupportText';
+import { getAcceptedAnswers } from '../services/answers';
 import type { ExamAttempt, Question } from '../types';
 
 const DURATION_OPTIONS = [60, 120, 180, 240, 300];
@@ -269,7 +270,9 @@ export const SettingsScreen: React.FC = () => {
               </p>
             ) : (
               <ul className="space-y-2">
-                {reviewItems.map(({ question, attempt }) => (
+                {reviewItems.map(({ question, attempt }) => {
+                  const acceptedAnswers = getAcceptedAnswers(question);
+                  return (
                   <li
                     key={question.id}
                     className="bg-surface/50 border border-line/40 rounded-xl p-3 space-y-2"
@@ -315,7 +318,7 @@ export const SettingsScreen: React.FC = () => {
                             <li
                               key={alternative.id}
                               className={
-                                alternative.id === question.correctAnswer
+                                acceptedAnswers.includes(alternative.id)
                                   ? 'text-success font-medium'
                                   : undefined
                               }
@@ -326,7 +329,7 @@ export const SettingsScreen: React.FC = () => {
                         </ul>
                         <p className="text-xs text-ink-soft">
                           <strong className="text-ink">Gabarito:</strong>{' '}
-                          {question.correctAnswer}
+                          {acceptedAnswers.join(' ou ')}
                         </p>
                         <p className="text-xs text-ink-soft">
                           <strong className="text-ink">Explicação:</strong>{' '}
@@ -335,7 +338,8 @@ export const SettingsScreen: React.FC = () => {
                       </div>
                     </details>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             )}
           </div>

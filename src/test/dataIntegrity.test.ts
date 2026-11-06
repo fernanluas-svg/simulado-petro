@@ -88,11 +88,41 @@ describe('Integridade do banco de questões', () => {
       expect(letters, `alternativas de ${question.id}`).toEqual(['A', 'B', 'C', 'D', 'E']);
       expect(letters, `gabarito de ${question.id}`).toContain(question.correctAnswer);
 
+      if (question.acceptedAnswers) {
+        expect(
+          question.acceptedAnswers.length,
+          `respostas aceitas de ${question.id}`,
+        ).toBeGreaterThan(0);
+        expect(
+          new Set(question.acceptedAnswers).size,
+          `respostas aceitas duplicadas em ${question.id}`,
+        ).toBe(question.acceptedAnswers.length);
+        for (const answer of question.acceptedAnswers) {
+          expect(
+            letters,
+            `resposta aceita ${question.id}/${answer}`,
+          ).toContain(answer);
+        }
+        expect(
+          question.acceptedAnswers,
+          `respostas aceitas de ${question.id} devem incluir o gabarito`,
+        ).toContain(question.correctAnswer);
+      }
+
       for (const alternative of question.alternatives) {
         expect(
           alternative.text.trim().length,
           `texto da alternativa ${question.id}/${alternative.id}`,
         ).toBeGreaterThan(0);
+
+        // O embaralhamento reatribui as letras A-E. Alternativas que citam
+        // letras ou "alternativas acima/abaixo" deixariam de fazer sentido.
+        expect(
+          alternative.text,
+          `alternativa ${question.id}/${alternative.id} não pode referenciar letras`,
+        ).not.toMatch(
+          /\b(alternativas?|opç(?:ão|ões))\s+(A|B|C|D|E)\b|\b[A-E]\s+e\s+[A-E]\b|\b(alternativas?|opç(?:ão|ões))\s+(acima|abaixo)\b/i,
+        );
       }
     }
   });

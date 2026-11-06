@@ -429,3 +429,38 @@ describe('Migração para o schema 2', () => {
     expect(outcome.source).toBe('already-migrated');
   });
 });
+
+describe('Respostas aceitas', () => {
+  const acceptedBank: Question[] = questions.map((question) =>
+    question.id === 'es_1'
+      ? { ...question, correctAnswer: 'A', acceptedAnswers: ['A', 'D'] }
+      : question,
+  );
+
+  it('conta como acerto qualquer uma das respostas aceitas', () => {
+    const result = calculateExamResult(
+      makeAttempt({ es_1: 'D' }),
+      acceptedBank,
+      config,
+      0,
+    );
+
+    expect(result.correctCount).toBe(1);
+    expect(result.incorrectCount).toBe(0);
+    expect(result.blankCount).toBe(5);
+    expect(result.specificCorrect).toBe(1);
+  });
+
+  it('continua contando como erro uma resposta fora das aceitas', () => {
+    const result = calculateExamResult(
+      makeAttempt({ es_1: 'B' }),
+      acceptedBank,
+      config,
+      0,
+    );
+
+    expect(result.correctCount).toBe(0);
+    expect(result.incorrectCount).toBe(1);
+    expect(result.specificCorrect).toBe(0);
+  });
+});

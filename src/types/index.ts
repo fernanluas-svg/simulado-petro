@@ -12,6 +12,12 @@ export interface Question {
   supportText?: string;
   alternatives: Alternative[];
   correctAnswer: string; // 'A' | 'B' | 'C' | 'D' | 'E'
+  /**
+   * Respostas aceitas quando a questão admite mais de uma alternativa correta.
+   * Quando ausente, apenas `correctAnswer` é aceita. O embaralhamento das
+   * alternativas reatribui os rótulos e atualiza esta lista junto.
+   */
+  acceptedAnswers?: string[];
   explanation: string;
   source: string;
   reference: string;

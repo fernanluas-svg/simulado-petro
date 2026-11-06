@@ -7,6 +7,7 @@ import type {
   SubjectBreakdown,
 } from '../types';
 import { applyAlternativeOrder } from './alternatives';
+import { isAcceptedAnswer } from './answers';
 
 /** Versão atual do formato de resultado salvo nas tentativas. */
 export const CURRENT_SCHEMA_VERSION = 2;
@@ -282,7 +283,7 @@ export function calculateExamResult(
 
     if (!userAnswer) {
       blankCount += 1;
-    } else if (userAnswer === question.correctAnswer) {
+    } else if (isAcceptedAnswer(question, userAnswer)) {
       correctCount += 1;
       accumulator.correct += 1;
       accumulator.scoreTotal += weight;

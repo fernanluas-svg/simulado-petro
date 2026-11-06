@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
 import { SupportText } from '../components/SupportText';
+import { getAcceptedAnswers, isAcceptedAnswer } from '../services/answers';
 
 export const ReviewScreen: React.FC = () => {
   const { questions, currentAttempt, config, setView } = useExamStore();
@@ -28,18 +29,22 @@ export const ReviewScreen: React.FC = () => {
 
   const filteredQuestions = questions.filter((question) => {
     const userAnswer = currentAttempt.answers[question.id];
-    if (filter === 'correct') return userAnswer === question.correctAnswer;
-    if (filter === 'incorrect') return Boolean(userAnswer) && userAnswer !== question.correctAnswer;
+    if (filter === 'correct') return isAcceptedAnswer(question, userAnswer);
+    if (filter === 'incorrect') {
+      return Boolean(userAnswer) && !isAcceptedAnswer(question, userAnswer);
+    }
     if (filter === 'blank') return !userAnswer;
     return true;
   });
 
   const counts = {
     all: questions.length,
-    correct: questions.filter((q) => currentAttempt.answers[q.id] === q.correctAnswer).length,
+    correct: questions.filter((q) =>
+      isAcceptedAnswer(q, currentAttempt.answers[q.id]),
+    ).length,
     incorrect: questions.filter((q) => {
       const answer = currentAttempt.answers[q.id];
-      return Boolean(answer) && answer !== q.correctAnswer;
+      return Boolean(answer) && !isAcceptedAnswer(q, answer);
     }).length,
     blank: questions.filter((q) => !currentAttempt.answers[q.id]).length,
   };
@@ -116,7 +121,8 @@ export const ReviewScreen: React.FC = () => {
 
         {filteredQuestions.map((question) => {
           const userAnswer = currentAttempt.answers[question.id];
-          const isCorrect = userAnswer === question.correctAnswer;
+          const acceptedAnswers = getAcceptedAnswers(question);
+          const isCorrect = isAcceptedAnswer(question, userAnswer);
 
           return (
             <div
@@ -155,7 +161,7 @@ export const ReviewScreen: React.FC = () => {
               <div className="space-y-2 pt-2">
                 {question.alternatives.map((alternative) => {
                   const isUserSelection = userAnswer === alternative.id;
-                  const isTheCorrect = alternative.id === question.correctAnswer;
+                  const isTheCorrect = acceptedAnswers.includes(alternative.id);
 
                   let style = 'bg-base/60 border-line/40 text-ink-soft';
                   if (isTheCorrect) {
@@ -182,7 +188,7 @@ export const ReviewScreen: React.FC = () => {
               {/* Explanation Box */}
               <div className="mt-4 p-5 rounded-xl bg-base/90 border border-line/60 space-y-2">
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-accent">
-                  <span>Gabarito Oficial: ({question.correctAnswer})</span>
+                  <span>Gabarito Oficial: ({acceptedAnswers.join(' ou ')})</span>
                   <span>{question.source}</span>
                 </div>
                 <p className="text-sm text-ink-soft leading-relaxed pt-1">
