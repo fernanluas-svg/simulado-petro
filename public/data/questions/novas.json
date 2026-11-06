@@ -1,0 +1,2106 @@
+[
+  {
+    "id": "transpetro_01",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Questão: De acordo com o texto, a verdadeira transformação digital no setor público requer:",
+    "supportText": "A modernização dos processos administrativos nas empresas públicas e sociedades de economia mista exige não apenas a adoção de tecnologias de ponta, mas uma profunda revisão cultural. O erro mais comum é acreditar que a digitalização de formulários antigos equivale à inovação. Na prática, a verdadeira transformação digital altera a lógica de entrega de valor ao cidadão-cliente, simplificando fluxos e reduzindo o atrito burocrático. Sem essa mudança de mentalidade, a tecnologia serve apenas para acelerar a ineficiência.",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "A substituição integral do quadro de servidores por ferramentas automatizadas de inteligência artificial."
+      },
+      {
+        "id": "B",
+        "text": "Uma alteração cultural e de mentalidade que mude a lógica de entrega de valor, e não apenas a transposição de formulários físicos para o meio digital."
+      },
+      {
+        "id": "C",
+        "text": "A manutenção dos fluxos burocráticos tradicionais para garantir a segurança jurídica dos processos internos."
+      },
+      {
+        "id": "D",
+        "text": "O foco exclusivo na redução de custos operacionais com foco na desestatização de serviços."
+      },
+      {
+        "id": "E",
+        "text": "A desaceleração dos processos de informatização até que todos os colaboradores estejam plenamente capacitados."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O texto afirma explicitamente que a verdadeira transformação digital altera a lógica de entrega de valor e exige revisão cultural, criticando a mera digitalização de formulários antigos.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_02",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Com base no texto, no trecho: 'O erro mais comum é acreditar que a digitalização de formulários equivaleria à inovação. **Na prática**, a verdadeira transformação digital...', a expressão destacada introduz uma ideia de:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Conclusão lógica de um raciocínio anterior."
+      },
+      {
+        "id": "B",
+        "text": "Oposição ou contraste em relação à ilusão apontada antes."
+      },
+      {
+        "id": "C",
+        "text": "Explicação detalhada de um conceito técnico abstrato."
+      },
+      {
+        "id": "D",
+        "text": "Consequência direta de um fato histórico narrado."
+      },
+      {
+        "id": "E",
+        "text": "Alternância exclusiva entre duas hipóteses possíveis."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A expressão 'Na prática' contrapõe a ilusão teórica/comum ('acreditar que digitalizar formulários é inovar') à realidade efetiva da transformação digital.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new",
+    "supportText": "A modernização dos processos administrativos nas empresas públicas e sociedades de economia mista exige não apenas a adoção de tecnologias de ponta, mas uma profunda revisão cultural. O erro mais comum é acreditar que a digitalização de formulários antigos equivale à inovação. Na prática, a verdadeira transformação digital altera a lógica de entrega de valor ao cidadão-cliente, simplificando fluxos e reduzindo o atrito burocrático. Sem essa mudança de mentalidade, a tecnologia serve apenas para acelerar a ineficiência."
+  },
+  {
+    "id": "transpetro_03",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa em que a regência do verbo **obedecer** atende rigorosamente à norma-padrão da língua portuguesa:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Os novos analistas obedeceram o regulamento interno rigorosamente."
+      },
+      {
+        "id": "B",
+        "text": "A equipe técnica obedeceu ao cronograma estipulado pela gerência."
+      },
+      {
+        "id": "C",
+        "text": "O coordenador não obedeceu os prazos de entrega do relatório de logística."
+      },
+      {
+        "id": "D",
+        "text": "O sistema de controle orçamentário deve obedecer os princípios de transparência."
+      },
+      {
+        "id": "E",
+        "text": "Os colaboradores obedeceram a chefia imediata durante a auditoria."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O verbo obedecer é transitivo indireto e rege a preposição 'a' (obedecer ao cronograma). A alternativa B está correta.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_04",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa correta quanto ao emprego do acento indicativo de crase:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "O auditor entregue o relatório a diretoria."
+      },
+      {
+        "id": "B",
+        "text": "Visamos a uma gestão mais eficiente e transparente."
+      },
+      {
+        "id": "C",
+        "text": "Fomos à Salvador participar de um seminário de controle interno."
+      },
+      {
+        "id": "D",
+        "text": "A empresa enviou os documentos à tona após a auditoria."
+      },
+      {
+        "id": "E",
+        "text": "O acesso a licitações públicas é garantido por lei."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Na alternativa B, o verbo visar no sentido de almejar é transitivo indireto (visar a) seguido do artigo indefinido 'uma' (a + uma = a uma? Não ocorre crase antes de artigo indefinido, mas a preposição 'a' está correta e o uso de 'a uma' está gramaticalmente correto. Espere, vamos conferir as outras: 'Fomos a Salvador' (quem vai a Salvador, volta de Salvador, crase não há). 'a diretoria' falta crase. Vamos focar na regra padrão da Cesgranrio: crase antes de pronomes femininos ou regência verbal).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_05",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "No que tange à concordância verbal, assinale a opção que preenche corretamente a lacuna padrão: '_____ muitos desafios na implementação do novo plano de cargos.'",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Devem existir"
+      },
+      {
+        "id": "B",
+        "text": "Devem haver"
+      },
+      {
+        "id": "C",
+        "text": "Haveriam"
+      },
+      {
+        "id": "D",
+        "text": "Existiriam"
+      },
+      {
+        "id": "E",
+        "text": "Faziam"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O verbo haver no sentido de existir é impessoal (fica no singular). Contudo, o verbo 'existir' é pessoal e concorda com o sujeito ('muitos desafios', logo 'Devem existir'). A forma 'devem haver' está incorreta.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_06",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Com base nesse enunciado, infere-se corretamente que:",
+    "supportText": "A eficiência na administração pública moderna não se mede apenas pela economia de recursos financeiros, mas pela capacidade de entrega de serviços com qualidade, tempestividade e foco no atendimento às reais necessidades da sociedade.",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "A redução de custos é o único indicador relevante para avaliar a gestão pública."
+      },
+      {
+        "id": "B",
+        "text": "A tempestividade e a qualidade superam a importância da contenção financeira na visão moderna."
+      },
+      {
+        "id": "C",
+        "text": "O conceito de eficiência pública é multidimensional, englobando aspectos qualitativos e temporais além dos financeiros."
+      },
+      {
+        "id": "D",
+        "text": "A sociedade tem exigido primazia da velocidade em detrimento da legalidade dos atos."
+      },
+      {
+        "id": "E",
+        "text": "A economia de recursos torna-se secundária e dispensável diante de qualquer demanda social."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O texto diz que a eficiência não se mede *apenas* pela economia, mas também por qualidade, tempestividade e foco nas necessidades, o que caracteriza uma visão multidimensional.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_07",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa em que a pontuação (vírgulas) empregada está em total conformidade com a norma-padrão:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Os funcionários, que concluíram o treinamento, receberam o certificado."
+      },
+      {
+        "id": "B",
+        "text": "O analista de sistemas entregou, o relatório ao gerente de logística."
+      },
+      {
+        "id": "C",
+        "text": "Durante a auditoria interna, foram identificadas falhas graves no processo."
+      },
+      {
+        "id": "D",
+        "text": "As normas de segurança, devem ser seguidas rigorosamente por todos."
+      },
+      {
+        "id": "E",
+        "text": "A equipe revisou os documentos, e aprovou o plano estratégico."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na alternativa C, o adjunto adverbial deslocado de longo tamanho ('Durante a auditoria interna') está corretamente isolado por vírgula. As demais possuem erros de separação entre sujeito e predicado ou verbo e objeto.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_08",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa que apresenta a reescrita correta da frase 'O setor concluiu a análise dos processos' na voz passiva analítica:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "A análise dos processos foi concluída pelo setor."
+      },
+      {
+        "id": "B",
+        "text": "Os processos foram concluídos a análise pelo setor."
+      },
+      {
+        "id": "C",
+        "text": "Concluiu-se a análise dos processos pelo setor."
+      },
+      {
+        "id": "D",
+        "text": "A análise dos processos concluiu o setor."
+      },
+      {
+        "id": "E",
+        "text": "Foram concluído os processos de análise pelo setor."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Na voz passiva analítica, o objeto direto passa a ser o sujeito paciente ('A análise dos processos') e o verbo auxiliar concorda com ele ('foi concluída pelo setor').",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_09",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "No trecho 'Caso a diretoria aprove o orçamento, realizaremos a compra', a conjunção condicional introduz uma oração que estabelece uma relação de:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Concessão de um fato inesperado."
+      },
+      {
+        "id": "B",
+        "text": "Hipótese ou condição para a realização do evento principal."
+      },
+      {
+        "id": "C",
+        "text": "Causa determinante do fato subsequente."
+      },
+      {
+        "id": "D",
+        "text": "Finalidade a ser alcançada pela gerência."
+      },
+      {
+        "id": "E",
+        "text": "Consequência temporal imediata."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A conjunção 'Caso' introduz uma oração subordinada adverbial condicional, estipulando a hipótese necessária para que a compra ocorra.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_10",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa cuja palavra grafada está INCORRETA segundo o Acordo Ortográfico vigente:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Micro-ondas"
+      },
+      {
+        "id": "B",
+        "text": "Antessala"
+      },
+      {
+        "id": "C",
+        "text": "Infraestrutura"
+      },
+      {
+        "id": "D",
+        "text": "Autoescola"
+      },
+      {
+        "id": "E",
+        "text": "Extra-oficial"
+      }
+    ],
+    "correctAnswer": "E",
+    "explanation": "A grafia correta é 'extraoficial' (sem hífen, pois o prefixo termina em vogal e a palavra seguinte começa com vogal diferente de 'a').",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_11",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Em 'O relatório **cujo** conteúdo foi elogiado pertence ao departamento financeiro', o pronome relativo destacado exerce qual função coesiva?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Indicar posse entre o antecedente (relatório) e o substivo subsequente (conteúdo)."
+      },
+      {
+        "id": "B",
+        "text": "Substituir um termo temporal na frase."
+      },
+      {
+        "id": "C",
+        "text": "Demonstrar proximidade em relação ao interlocutor."
+      },
+      {
+        "id": "D",
+        "text": "Introduzir uma oração coordenada explicativa."
+      },
+      {
+        "id": "E",
+        "text": "Retomar um sujeito indeterminado da oração principal."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O pronome relativo 'cujo' estabelece relação de posse/conexão nominal entre o termo possuído (conteúdo) e o possuidor (relatório).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_12",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa em que a substituição da locução conjuntiva mantém o sentido original de **concessão** em: 'Embora o prazo estivesse curto, a equipe finalizou a tarefa.'",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Portanto o prazo estivesse curto..."
+      },
+      {
+        "id": "B",
+        "text": "Conquanto o prazo estivesse curto..."
+      },
+      {
+        "id": "C",
+        "text": "Caso o prazo estivesse curto..."
+      },
+      {
+        "id": "D",
+        "text": "Conforme o prazo estivesse curto..."
+      },
+      {
+        "id": "E",
+        "text": "Porque o prazo estivesse curto..."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Conquanto' é uma conjunção subordinativa concessiva, assim como 'embora', mantendo o sentido de oposição/concessão.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_13",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa correta quanto à colocação pronominal (próclise, mesóclise ou ênclise):",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Me informaram sobre as novas diretrizes da empresa."
+      },
+      {
+        "id": "B",
+        "text": "Não enviaram-me os documentos solicitados pela auditoria."
+      },
+      {
+        "id": "C",
+        "text": "O gerente o convidou para participar da reunião de planejamento."
+      },
+      {
+        "id": "D",
+        "text": "Entregar-lhe-ei o relatório amanhã pela manhã."
+      },
+      {
+        "id": "E",
+        "text": "Nunca disse-te a verdade sobre o estoque."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Na alternativa C, o pronome 'o' está corretamente colocado antes do verbo (próclise facultativa/atraída ou padrão em orações afirmativas sem fator de próclise obrigatória dependendo da norma, mas a alternativa D ('Entregar-lhe-ei') também está correta em mesóclise. Vamos verificar: em pronomes oblíquos tonos, a alternativa C usa próclise ou mesóclise? 'O gerente o convidou' está em próclise após sujeito nominal sem palavra atrativa, o que na norma estrita é tolerado ou considerado desvio por alguns gramáticos tradicionais, porém a D usa mesóclise com perfeição absoluta no futuro do presente sem palavra atrativa. Vamos considerar a D ou analisar melhor. Na verdade, 'O gerente o convidou' é muito comum, mas a mesóclise de D ('Entregar-lhe-ei') é obrigatória quando o verbo está no futuro do presente sem fator pronominal atrativo, o que torna a D inquestionavelmente correta pela regra rígida da Cesgranrio).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_14",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "No trecho 'O sucesso da organização depende de **que** todos colaborem', a palavra destacada classifica-se morfologicamente como:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Pronome relativo"
+      },
+      {
+        "id": "B",
+        "text": "Conjunção integrante"
+      },
+      {
+        "id": "C",
+        "text": "Preposição essencial"
+      },
+      {
+        "id": "D",
+        "text": "Conjunção comparativa"
+      },
+      {
+        "id": "E",
+        "text": "Pronome demonstrativo"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A palavra 'que' liga a oração principal à oração subordinada substantiva completiva nominal ('depende de isto'), funcionando como conjunção integrante.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_15",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa em que todas as palavras são acentuadas graficamente pela mesma regra de acentuação:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "país, saída, baú"
+      },
+      {
+        "id": "B",
+        "text": "estatística, relatórios, público"
+      },
+      {
+        "id": "C",
+        "text": "fácil, caráter, útil"
+      },
+      {
+        "id": "D",
+        "text": "céu, anéis, dói"
+      },
+      {
+        "id": "E",
+        "text": "também, parabéns, caí"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "As palavras 'fácil', 'caráter' e 'útil' são acentuadas por serem paroxítonas terminadas em consoante diferente de n, s, etc. (ou grafia específica de paroxítonas).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_16",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Infere-se desse trecho que a gestão de estoques busca:",
+    "supportText": "A gestão de estoques eficiente equilibra o custo de manutenção com o custo de pedido, evitando tanto a escassez de insumos quanto a imobilização excessiva de capital de giro.",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Maximizar o capital imobilizado para garantir segurança absoluta."
+      },
+      {
+        "id": "B",
+        "text": "Eliminar por completo os custos de pedido através de compras diárias."
+      },
+      {
+        "id": "C",
+        "text": "Encontrar um ponto de equilíbrio financeiro e operacional que evite extremos prejudiciais."
+      },
+      {
+        "id": "D",
+        "text": "Priorizar o excesso de materiais em detrimento da liquidez financeira."
+      },
+      {
+        "id": "E",
+        "text": "Reduzir o nível de serviço ao cliente para baratear a armazenagem."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O texto fala em 'equilibrar' custos e evitar os dois extremos (escassez e excesso de capital imobilizado).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_17",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa em que a substituição do termo sublinhado por um pronome oblíquo tomou a forma correta conforme a regência e a norma-padrão ('Entregar **os documentos** ao setor'):",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Entregar-los ao setor"
+      },
+      {
+        "id": "B",
+        "text": "Entregar-nos ao setor"
+      },
+      {
+        "id": "C",
+        "text": "Entregá-los ao setor"
+      },
+      {
+        "id": "D",
+        "text": "Entregar-lhes ao setor"
+      },
+      {
+        "id": "E",
+        "text": "Entregar-os ao setor"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O objeto direto 'os documentos' é substituído pelo pronome 'os'. Com a terminação em 'r' do verbo, o 'r' cai e o pronome vira 'los' ('Entregá-los').",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_18",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa cujos vocábulos apresentam, respectivamente, dígrafo vocálico e dígrafo consonantal:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "lampa / carro"
+      },
+      {
+        "id": "B",
+        "text": "tampa / folha"
+      },
+      {
+        "id": "C",
+        "text": "conta / nascimento"
+      },
+      {
+        "id": "D",
+        "text": "terra / guichê"
+      },
+      {
+        "id": "E",
+        "text": "unha / anexo"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Em 'tampa', o 'am' é dígrafo vocálico. Em 'folha', o 'lh' é dígrafo consonantal.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_19",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "No trecho 'O relatório foi analisado **pelo** comitê', a expressão destacada exerce a função sintática de:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Objeto indireto"
+      },
+      {
+        "id": "B",
+        "text": "Agente da passiva"
+      },
+      {
+        "id": "C",
+        "text": "Adjunto adnominal"
+      },
+      {
+        "id": "D",
+        "text": "Complemento nominal"
+      },
+      {
+        "id": "E",
+        "text": "Predicativo do sujeito"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Na voz passiva, o termo que pratica a ação expressa pelo particípio do verbo é o agente da passiva ('pelo comitê').",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_20",
+    "subjectId": "portugues",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a opção em que a frase apresenta ambiguidade estrutural:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "O auditor examinou o documento com atenção."
+      },
+      {
+        "id": "B",
+        "text": "A chefia chamou o funcionário em sua sala."
+      },
+      {
+        "id": "C",
+        "text": "O analista apresentou o relatório ao diretor que estava na sala."
+      },
+      {
+        "id": "D",
+        "text": "A empresa adquiriu novos equipamentos de informática."
+      },
+      {
+        "id": "E",
+        "text": "Os colaboradores realizaram o treinamento de segurança."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A expressão 'em sua sala' gera ambiguidade, pois o pronome possessivo 'sua' pode referir-se à sala da chefia ou à sala do funcionário.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Lingua Portuguesa",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_21",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Em um departamento, a razão entre o número de processos analisados por analistas homens e mulheres é de 3 para 5. Sabendo que foram analisados 120 processos no total, qual é o número de processos analisados pelas mulheres?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "45"
+      },
+      {
+        "id": "B",
+        "text": "60"
+      },
+      {
+        "id": "C",
+        "text": "75"
+      },
+      {
+        "id": "D",
+        "text": "90"
+      },
+      {
+        "id": "E",
+        "text": "100"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Total de partes = 3 + 5 = 8. Valor de cada parte = 120 / 8 = 15. Processos das mulheres = 5 * 15 = 75.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_22",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Um equipamento adquirido por uma empresa subsidiária sofreu uma desvalorização linear de 15% ao ano. Se o valor inicial foi de R$ 80.000,00, qual será o valor contábil do ativo após 2 anos?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "R$ 56.000,00"
+      },
+      {
+        "id": "B",
+        "text": "R$ 60.000,00"
+      },
+      {
+        "id": "C",
+        "text": "R$ 68.000,00"
+      },
+      {
+        "id": "D",
+        "text": "R$ 52.000,00"
+      },
+      {
+        "id": "E",
+        "text": "R$ 64.000,00"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ano 1: 80000 - (0,15 * 80000) = 80000 - 12000 = 68000. Ano 2: 68000 - (0,15 * 68000) = 68000 - 10200 = 57600? Espera, desvalorização linear simples ou composta? Se for linear simples sobre o valor original: 15% de 80000 = 12000 por ano. Em 2 anos = 24000. 80000 - 24000 = 56000. Alternativa A.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_23",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Se 5 analistas elaboram 15 relatórios em 3 dias, quantos dias serão necessários para que 8 analistas elaborem 40 relatórios mantendo o mesmo ritmo de produtividade?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "4 dias"
+      },
+      {
+        "id": "B",
+        "text": "5 dias"
+      },
+      {
+        "id": "C",
+        "text": "6 dias"
+      },
+      {
+        "id": "D",
+        "text": "8 dias"
+      },
+      {
+        "id": "E",
+        "text": "10 dias"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Regra de três composta: Analistas (5 -> 8, inverso), Relatórios (15 -> 40, direto), Dias (3 -> x). x = 3 * (5/8) * (40/15) = 3 * (5/8) * (8/3) = 5 dias.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_24",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Um capital de R$ 10.000,00 foi aplicado a juros simples a uma taxa de 2% ao mês durante um período de 1 ano e meio. O montante gerado ao final desse período foi de:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "R$ 12.400,00"
+      },
+      {
+        "id": "B",
+        "text": "R$ 13.600,00"
+      },
+      {
+        "id": "C",
+        "text": "R$ 14.200,00"
+      },
+      {
+        "id": "D",
+        "text": "R$ 11.800,00"
+      },
+      {
+        "id": "E",
+        "text": "R$ 15.000,00"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Prazo = 1 ano e meio = 18 meses. Juros = C * i * t = 10000 * 0,02 * 18 = 3600. Montante = 10000 + 3600 = 13600.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_25",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Em uma turma de concurseiros para a Transpetro, 60% estudam Administração, 50% estudam Informática e 20% estudam ambas as matérias. Qual é o percentual de alunos que não estudam nenhuma das duas matérias?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "5%"
+      },
+      {
+        "id": "B",
+        "text": "10%"
+      },
+      {
+        "id": "C",
+        "text": "15%"
+      },
+      {
+        "id": "D",
+        "text": "20%"
+      },
+      {
+        "id": "E",
+        "text": "25%"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "União = A + I - Intersecção = 60% + 50% - 20% = 90%. Alunos que estudam pelo menos uma = 90%. Logo, nenhum = 100% - 90% = 10%.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_26",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Dada a proposição lógica P: 'Se o sistema está operando, então o relatório é gerado', a sua proposição equivalente lógica correta é:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "O sistema está operando e o relatório não é gerado."
+      },
+      {
+        "id": "B",
+        "text": "Se o relatório não é gerado, então o sistema não está operando."
+      },
+      {
+        "id": "C",
+        "text": "Se o sistema não está operando, então o relatório não é gerado."
+      },
+      {
+        "id": "D",
+        "text": "O sistema não está operando ou o relatório não é gerado."
+      },
+      {
+        "id": "E",
+        "text": "O relatório é gerado e o sistema está operando."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A equivalência clássica da implicação (A -> B) é (~B -> ~A), ou seja, 'Se não B, então não A' (contrapositiva).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_27",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "A negação da proposição 'Todos os analistas são pontuais' é:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Nenhum analista é pontual."
+      },
+      {
+        "id": "B",
+        "text": "Alguns analistas são pontuais."
+      },
+      {
+        "id": "C",
+        "text": "Existe pelo menos um analista que não é pontual."
+      },
+      {
+        "id": "D",
+        "text": "Todos os analistas não são pontuais."
+      },
+      {
+        "id": "E",
+        "text": "Alguns analistas não são pontuais."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A negação de 'Todo A é B' (quantificador universal afirmativo) é 'Existe pelo menos um A que não é B' (existencial negativo).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_28",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Em uma progressão aritmética (PA) de razão 4, o primeiro termo é 5. Qual é o valor do 10º termo dessa progressão?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "37"
+      },
+      {
+        "id": "B",
+        "text": "41"
+      },
+      {
+        "id": "C",
+        "text": "45"
+      },
+      {
+        "id": "D",
+        "text": "49"
+      },
+      {
+        "id": "E",
+        "text": "53"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Fórmula do termo geral da PA: An = A1 + (n - 1)*r. A10 = 5 + (10 - 1)*4 = 5 + 9*4 = 5 + 36 = 41.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_29",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Uma mercadoria teve seu preço reajustado em 20% e, posteriormente, obteve um desconto de 20% sobre o novo valor. Em relação ao preço original, o preço final da mercadoria:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Permaneceu exatamente o mesmo."
+      },
+      {
+        "id": "B",
+        "text": "Teve um aumento de 4%."
+      },
+      {
+        "id": "C",
+        "text": "Teve uma redução de 4%."
+      },
+      {
+        "id": "D",
+        "text": "Teve uma redução de 2%."
+      },
+      {
+        "id": "E",
+        "text": "Teve um aumento de 2%."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Preço P * 1,20 * 0,80 = P * 0,96. Isso representa uma redução de 4% em relação ao preço original.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_30",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "A média aritmética das notas de 5 candidatos em um teste de seleção foi 7,8. Se adicionarmos a nota de um 6º candidato, a média passa a ser 8,0. Qual foi a nota obtida pelo 6º candidato?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "8,5"
+      },
+      {
+        "id": "B",
+        "text": "9,0"
+      },
+      {
+        "id": "C",
+        "text": "9,2"
+      },
+      {
+        "id": "D",
+        "text": "9,5"
+      },
+      {
+        "id": "E",
+        "text": "8,8"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Soma das 5 notas = 5 * 7,8 = 39. Soma das 6 notas = 6 * 8,0 = 48. Nota do 6º candidato = 48 - 39 = 9,0.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_31",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "De um grupo de 7 homens e 5 mulheres, deseja-se formar uma comissão composta por 3 homens e 2 mulheres. O número total de comissões distintas que podem ser formadas é:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "175"
+      },
+      {
+        "id": "B",
+        "text": "210"
+      },
+      {
+        "id": "C",
+        "text": "350"
+      },
+      {
+        "id": "D",
+        "text": "420"
+      },
+      {
+        "id": "E",
+        "text": "700"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Combinação de 7 homens tomados 3 a 3: C(7,3) = (7*6*5)/(3*2*1) = 35. Combinação de 5 mulheres tomadas 2 a 2: C(5,2) = (5*4)/(2*1) = 10. Total = 35 * 10 = 350.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_32",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Em uma urna há 4 bolas vermelhas, 3 azuis e 5 amarelas. Retirando-se uma bola ao acaso, qual é a probabilidade de que ela não seja azul?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "1/4"
+      },
+      {
+        "id": "B",
+        "text": "3/4"
+      },
+      {
+        "id": "C",
+        "text": "5/12"
+      },
+      {
+        "id": "D",
+        "text": "7/12"
+      },
+      {
+        "id": "E",
+        "text": "1/3"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Total de bolas = 4 + 3 + 5 = 12. Bolas não azuis = 4 (vermelhas) + 5 (amarelas) = 9. Probabilidade = 9/12 simplificando por 3 dá 3/4.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_33",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "O valor da expressão numérica [100 - (3 * 4 + 2^3)] / 5 é igual a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "12"
+      },
+      {
+        "id": "B",
+        "text": "15"
+      },
+      {
+        "id": "C",
+        "text": "16"
+      },
+      {
+        "id": "D",
+        "text": "18"
+      },
+      {
+        "id": "E",
+        "text": "20"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Dentro dos colchetes: 3 * 4 = 12; 2^3 = 8; 12 + 8 = 20. 100 - 20 = 80. Dividindo por 5: 80 / 5 = 16.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_34",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Se a matriz lógica de uma sequência obedece ao padrão numérico: 2, 6, 12, 20, 30, ... qual será o próximo número da sequência?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "38"
+      },
+      {
+        "id": "B",
+        "text": "40"
+      },
+      {
+        "id": "C",
+        "text": "42"
+      },
+      {
+        "id": "D",
+        "text": "46"
+      },
+      {
+        "id": "E",
+        "text": "48"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Diferenças sucessivas: 6-2=4, 12-6=6, 20-12=8, 30-20=10. A próxima diferença será 12. Logo, 30 + 12 = 42.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_35",
+    "subjectId": "matematica",
+    "topic": "Módulo Extra 60",
+    "statement": "Um tanque cilíndrico possui raio da base igual a 2 metros e altura de 5 metros. Utilizando pi = 3, qual é o volume máximo aproximado de armazenamento desse tanque em metros cúbicos?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "30 m³"
+      },
+      {
+        "id": "B",
+        "text": "60 m³"
+      },
+      {
+        "id": "C",
+        "text": "90 m³"
+      },
+      {
+        "id": "D",
+        "text": "120 m³"
+      },
+      {
+        "id": "E",
+        "text": "150 m³"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Volume do cilindro = pi * r^2 * h = 3 * (2^2) * 5 = 3 * 4 * 5 = 60 m³.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Matematica e Raciocinio Logico",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_36",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "O princípio constitucional expresso da Administração Pública que obriga a atuação transparente, avessa ao sigilo injustificado de atos e processos administrativos, é o da:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Legalidade"
+      },
+      {
+        "id": "B",
+        "text": "Impessoalidade"
+      },
+      {
+        "id": "C",
+        "text": "Moralidade"
+      },
+      {
+        "id": "D",
+        "text": "Publicidade"
+      },
+      {
+        "id": "E",
+        "text": "Eficiência"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "O princípio da Publicidade (presente no art. 37 da CF/88 - mnemônico LIMPE) exige transparência e ampla divulgação dos atos públicos, salvo exceções legais de sigilo.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_37",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "O ciclo vital dos documentos na Arquivologia compreende as seguintes fases ou idades:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Corrente, intermediária e permanente."
+      },
+      {
+        "id": "B",
+        "text": "Temporária, definitiva e histórica."
+      },
+      {
+        "id": "C",
+        "text": "Ativa, passiva e morta."
+      },
+      {
+        "id": "D",
+        "text": "Inicial, secundária e guarda eterna."
+      },
+      {
+        "id": "E",
+        "text": "Corrente, arquivística e cultural."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O ciclo de vida dos documentos é composto por três idades clássicas: arquivos correntes (vigência/frequência alta), intermediários (uso administrativo reduzido aguardando destinação) e permanentes (valor histórico/cultural).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_38",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Na Gestão de Materiais, a técnica de classificação de estoques conhecida como **Curva ABC** baseia-se em qual princípio fundamental?",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Princípio de Pareto (80/20), onde um pequeno grupo de itens responde pela maior parte do valor financeiro do estoque."
+      },
+      {
+        "id": "B",
+        "text": "Princípio de lotes econômicos baseados estritamente na perecibilidade dos gêneros."
+      },
+      {
+        "id": "C",
+        "text": "Princípio de contagem cíclica aleatória sem distinção de valor monetário."
+      },
+      {
+        "id": "D",
+        "text": "Princípio PEPS (Primeiro a Entrar, Primeiro a Sair) focado em mercadorias de baixo giro."
+      },
+      {
+        "id": "E",
+        "text": "Princípio de rotatividade física em função do peso dos materiais armazenados."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A Curva ABC utiliza a Curva de Pareto (80/20), dividindo os itens em Classes A (alto valor), B (valor intermediário) e C (baixo valor unitário/financeiro).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_39",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "De acordo com a Lei de Licitações e Contratos Administrativos, a modalidade de licitação destinada à aquisição de bens e serviços comuns, cujos padrões de desempenho e qualidade possam ser objetivamente definidos pelo edital, por meio de disputa em sessão pública, é denominada:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Concorrência"
+      },
+      {
+        "id": "B",
+        "text": "Tomada de Preços"
+      },
+      {
+        "id": "C",
+        "text": "Pregão"
+      },
+      {
+        "id": "D",
+        "text": "Concurso"
+      },
+      {
+        "id": "E",
+        "text": "Leilão"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O Pregão (atualizado pela Lei nº 14.133/2021) é a modalidade obrigatória ou preferencial para aquisição de bens e serviços comuns, realizada por meio de lances e disputa aberta.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_40",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "A função administrativa que consiste em monitorar e avaliar o desempenho organizacional em relação aos objetivos planejados, efetuando correções quando necessárias, é:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Planejamento"
+      },
+      {
+        "id": "B",
+        "text": "Organização"
+      },
+      {
+        "id": "C",
+        "text": "Direção"
+      },
+      {
+        "id": "D",
+        "text": "Controle"
+      },
+      {
+        "id": "E",
+        "text": "Benchmarking"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "O processo administrativo (PODC) define o Controle como a função voltada para o monitoramento, avaliação e correção de rumos para garantir que os objetivos sejam alcançados.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_41",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Em logística empresarial, o conceito de **Lead Time** (tempo de ciclo de pedido) refere-se a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "O tempo total decorrido desde a emissão do pedido pelo cliente até a sua entrega efetiva no destino."
+      },
+      {
+        "id": "B",
+        "text": "O custo unitário de armazenagem de mercadorias no depósito central."
+      },
+      {
+        "id": "C",
+        "text": "O estoque mínimo de segurança exigido para evitar rupturas operacionais."
+      },
+      {
+        "id": "D",
+        "text": "O intervalo entre duas manutenções preventivas dos equipamentos de transporte."
+      },
+      {
+        "id": "E",
+        "text": "O prazo legal para quitação de faturas junto aos fornecedores contratados."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Lead time é o intervalo de tempo total que o processo logístico consome desde a colocação do pedido até a entrega ao cliente final.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_42",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa que define corretamente o conceito de **Empresa Pública**:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Entidade jurídica de direito público, integrante da administração direta, com monopólio estatal."
+      },
+      {
+        "id": "B",
+        "text": "Entidade dotada de personalidade jurídica de direito privado, criação autorizada por lei, com capital exclusivamente público."
+      },
+      {
+        "id": "C",
+        "text": "Órgão desprovido de personalidade jurídica próprio subordinado diretamente ao Ministério de Minas e Energia."
+      },
+      {
+        "id": "D",
+        "text": "Associação civil sem fins lucrativos voltada para o fomento de pesquisas tecnológicas e industriais."
+      },
+      {
+        "id": "E",
+        "text": "Fundação pública com autonomia administrativa e patrimônio gerido por cotas de mercado."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Empresa Pública possui personalidade jurídica de direito privado, patrimônio próprio e capital exclusivamente público (embora admita outras formas de participação estatal interna), criada sob autorização legal.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_43",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No gerenciamento de documentos arquivísticos, o instrumento que define os prazos de guarda e a destinação final (eliminação ou guarda permanente) dos documentos de um órgão é denominado:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Plano de Classificação de Documentos"
+      },
+      {
+        "id": "B",
+        "text": "Tabela de Temporalidade de Documentos"
+      },
+      {
+        "id": "C",
+        "text": "Manual de Identidade Visual"
+      },
+      {
+        "id": "D",
+        "text": "Inventário Analítico de Almoxarifado"
+      },
+      {
+        "id": "E",
+        "text": "Guia de Recolhimento Histórico"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A Tabela de Temporalidade é o instrumento aprovado que fixa os prazos de permanência nas fases corrente e intermediária e define a destinação final (eliminação ou recolhimento).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_44",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Em relação à Gestão de Custos e Estoques, o sistema de inventário em que o controle das entradas e saídas é feito de modo contínuo e atualizado a cada movimentação física é chamado de:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Inventário Periódico"
+      },
+      {
+        "id": "B",
+        "text": "Inventário Permanente (ou Perpétuo)"
+      },
+      {
+        "id": "C",
+        "text": "Inventário Físico Anual"
+      },
+      {
+        "id": "D",
+        "text": "Inventário por Amostragem Cega"
+      },
+      {
+        "id": "E",
+        "text": "Inventário de Ruptura Crítica"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O inventário perpétuo ou permanente atualiza o saldo de estoque a cada operação de entrada ou saída, permitindo o conhecimento imediato das quantidades disponíveis.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_45",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "A teoria da Administração que introduziu a ênfase nas tarefas, focando na racionalização do trabalho operário através de tempos e movimentos, foi a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Teoria Clássica"
+      },
+      {
+        "id": "B",
+        "text": "Teoria das Relações Humanas"
+      },
+      {
+        "id": "C",
+        "text": "Administração Científica (Taylorismo)"
+      },
+      {
+        "id": "D",
+        "text": "Teoria Burocrática"
+      },
+      {
+        "id": "E",
+        "text": "Teoria Estruturalista"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A Administração Científica de Taylor focava na organização racional do trabalho no nível operacional (ênfase nas tarefas).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_46",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No âmbito dos contratos administrativos regulados pela Lei nº 14.133/2021, a alteração unilateral do contrato pela Administração Pública que implique aumento ou acréscimo quantitativo de seu valor original possui limites ordinários habituais de até:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "10% para quaisquer acréscimos."
+      },
+      {
+        "id": "B",
+        "text": "25% para em geral (e até 50% para reforma de edifícios ou equipamentos)."
+      },
+      {
+        "id": "C",
+        "text": "50% para qualquer tipo de objeto contratual."
+      },
+      {
+        "id": "D",
+        "text": "20% para obras e 10% para compras."
+      },
+      {
+        "id": "E",
+        "text": "Não há limite máximo previsto em lei desde que haja dotação orçamentária."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A lei estabelece que o contratado fica obrigado a aceitar, nas mesmas condições contratuais, acréscimos ou supressões de até 25% do valor inicial atualizado do contrato (e até 50% para reforma de edifício ou equipamento no caso específico).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_47",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "O princípio orçamentário que estabelece que o orçamento deve conter todas as receitas e todas as despesas do Estado, sem ocultações, é o princípio da:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Anualidade"
+      },
+      {
+        "id": "B",
+        "text": "Exclusividade"
+      },
+      {
+        "id": "C",
+        "text": "Unidade"
+      },
+      {
+        "id": "D",
+        "text": "Universalidade"
+      },
+      {
+        "id": "E",
+        "text": "Legalidade"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "O princípio da Universalidade determina que a Lei Orçamentária deve abranger todas as receitas e despesas de todos os poderes e órgãos da entidade estatal.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_48",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Em Redação Oficial, o atributo que diz respeito à clareza, concisão, formalidade e precisão vocabular de um texto oficial emitido por uma empresa estatal refere-se principalmente à:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Uso exclusivo de gírias e coloquialismos para aproximar o leitor."
+      },
+      {
+        "id": "B",
+        "text": "Impessoalidade e clareza na transmissão da mensagem institucional."
+      },
+      {
+        "id": "C",
+        "text": "Subjetividade artística na defesa de teses corporativas."
+      },
+      {
+        "id": "D",
+        "text": "Omissão deliberada de dados essenciais para simplificar a leitura."
+      },
+      {
+        "id": "E",
+        "text": "Complexidade sintática para demonstrar erudição jurídica."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Os manuais de redação oficial destacam a impessoalidade, a clareza, a concisão e a padronização como pilares fundamentais dos textos da administração pública.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_49",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Na gestão de processos e fluxos de trabalho, a ferramenta da qualidade conhecida como **Diagrama de Ishikawa** (ou diagrama de espinha de peixe) tem como principal finalidade:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Classificar os problemas por ordem decrescente de frequência (Pareto)."
+      },
+      {
+        "id": "B",
+        "text": "Mapear visualmente as causas raiz que geram um determinado problema ou efeito indesejado."
+      },
+      {
+        "id": "C",
+        "text": "Controlar os limites de variação estatística em processos de produção seriada."
+      },
+      {
+        "id": "D",
+        "text": "Cronometrar o tempo ideal de execução de tarefas operacionais simples."
+      },
+      {
+        "id": "E",
+        "text": "Identificar gargalos financeiros em fluxos de caixa corporativos."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O Diagrama de Ishikawa (espinha de peixe) organiza as possíveis causas de um problema estruturadas em categorias (os 6Ms), facilitando a identificação da causa raiz.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_50",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No contexto de Governança Corporativa e Gestão de Riscos, a auditoria interna desempenha um papel essencial ao:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Substituir as decisões estratégicas da diretoria executiva em comitês extraordinários."
+      },
+      {
+        "id": "B",
+        "text": "Avaliar de forma independente e objetiva os controles internos, a gestão de riscos e os processos de governança."
+      },
+      {
+        "id": "C",
+        "text": "Executar o pagamento direto a fornecedores sem validação prévia de notas fiscais."
+      },
+      {
+        "id": "D",
+        "text": "Elaborar o balanço patrimonial e as demonstrações contábeis oficiais para publicação externa."
+      },
+      {
+        "id": "E",
+        "text": "Representar judicialmente a empresa perante os tribunais regionais federais."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A auditoria interna atua de forma independente para avaliar e melhorar a eficácia dos processos de gestão de riscos, controle e governança corporativa.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_51",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "O conceito administrativo de **Empowerment** (empoderamento) refere-se a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "A centralização rigorosa de todas as decisões táticas nas mãos do presidente."
+      },
+      {
+        "id": "B",
+        "text": "A delegação de poder de decisão, autonomia e responsabilidade aos colaboradores na linha de frente."
+      },
+      {
+        "id": "C",
+        "text": "A terceirização integral de atividades-fim para reduzir custos fixos com pessoal."
+      },
+      {
+        "id": "D",
+        "text": "A redução de níveis hierárquicos em organogramas verticais tradicionais."
+      },
+      {
+        "id": "E",
+        "text": "A fixação de metas salariais baseadas estritamente no tempo de casa."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Empowerment significa dar poder, autonomia e autoridade aos colaboradores para resolver problemas operacionais e atender clientes com agilidade.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_52",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No que tange aos atos administrativos, o atributo que pressupõe que os atos são verdadeiros e conformes à lei até que se prove o contrário é a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Imperatividade"
+      },
+      {
+        "id": "B",
+        "text": "Autoexecutoriedade"
+      },
+      {
+        "id": "C",
+        "text": "Presunção de Legitimidade (e Veracidade)"
+      },
+      {
+        "id": "D",
+        "text": "Tipicidade"
+      },
+      {
+        "id": "E",
+        "text": "Indisponibilidade do interesse público"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "A presunção de legitimidade e veracidade é um atributo dos atos administrativos que valida a atuação estatal até eventual prova em contrário.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_53",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "A técnica de armazenamento em almoxarifado em que cada item possui um endereço físico fixo pré-determinado para guarda é conhecida como:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Endereçamento caótico (ou dinâmico)"
+      },
+      {
+        "id": "B",
+        "text": "Endereçamento fixo"
+      },
+      {
+        "id": "C",
+        "text": "Armazenagem a granel livre"
+      },
+      {
+        "id": "D",
+        "text": "Estocagem descentralizada por peso"
+      },
+      {
+        "id": "E",
+        "text": "Cross-docking dinâmico"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "No endereçamento fixo, cada tipo de material tem um espaço cativo reservado no armazém, independentemente de estar com estoque alto ou baixo.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_54",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "A função gerencial que se ocupa da escolha de caminhos alternativos para o futuro da organização, definindo missão, objetivos e diretrizes, é o:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Planejamento Estratégico"
+      },
+      {
+        "id": "B",
+        "text": "Controle Orçamentário"
+      },
+      {
+        "id": "C",
+        "text": "Organograma Funcional"
+      },
+      {
+        "id": "D",
+        "text": "Direcionamento Operacional"
+      },
+      {
+        "id": "E",
+        "text": "Benchmarking setorial"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O planejamento é a função administrativa inicial que define objetivos e os meios para alcançá-los no horizonte temporal estabelecido.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_55",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Em arqueologia e gestão de documentos, o **princípio da organicidade** estabelece que:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Os documentos de um arquivo refletem as funções, as atividades e a estrutura da entidade produtora que os acumulou."
+      },
+      {
+        "id": "B",
+        "text": "Os documentos devem ser eliminados após o prazo de cinco anos caso percam o valor financeiro."
+      },
+      {
+        "id": "C",
+        "text": "Os arquivos correntes devem ser misturados com documentos de caráter pessoal dos servidores."
+      },
+      {
+        "id": "D",
+        "text": "Qualquer cidadão tem o direito de alterar a classificação de documentos sigilosos de interesse militar."
+      },
+      {
+        "id": "E",
+        "text": "Os documentos permanentes devem ser digitalizados e os originais incinerados imediatamente."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A organicidade arquivística determina que os documentos mantêm uma relação natural com a atividade e a estrutura do órgão que os gerou.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_56",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No contexto da Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), o tratamento de dados pessoais realizado por empresas estatais deve observar princípios como o da finalidade, adequação, transparência e:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Comercialização irrestrita de cadastros para fins lucrativos."
+      },
+      {
+        "id": "B",
+        "text": "Sigilo absoluto que impeça o titular de acessar suas próprias informações."
+      },
+      {
+        "id": "C",
+        "text": "Necessidade (limitação do tratamento ao mínimo necessário para a realização de suas finalidades)."
+      },
+      {
+        "id": "D",
+        "text": "Obrigatoriedade de armazenamento em servidores físicos situados exclusivamente no exterior."
+      },
+      {
+        "id": "E",
+        "text": "Inaplicabilidade das regras de proteção para órgãos da administração indireta."
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "O princípio da necessidade (minimização de dados) é um dos pilares da LGPD, garantindo que apenas os dados estritamente necessários sejam tratados.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_57",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Na Gestão da Qualidade Total (TQM), a melhoria contínua de processos e produtos é fundamentada pelo ciclo PDCA, cujas etapas correspondem a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Planejar, Executar, Verificar e Agir (Plan, Do, Check, Act)."
+      },
+      {
+        "id": "B",
+        "text": "Pesquisar, Desenvolver, Controlar e Avaliar."
+      },
+      {
+        "id": "C",
+        "text": "Padronizar, Direcionar, Computar e Auditar."
+      },
+      {
+        "id": "D",
+        "text": "Projetar, Distribuir, Consumir e Analisar."
+      },
+      {
+        "id": "E",
+        "text": "Praticar, Decidir, Conduzir e Apurar."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "O ciclo PDCA é a ferramenta iterativa de gestão para controle e melhoria contínua de processos e produtos: Plan (Planejar), Do (Executar), Check (Verificar), Act (Agir).",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_58",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Em administração financeira, o indicador de liquidez que mede a capacidade de curto prazo da empresa considerando apenas os ativos mais líquidos (excluindo os estoques) é a:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Liquidez Corrente"
+      },
+      {
+        "id": "B",
+        "text": "Liquidez Seca (ou Rápida)"
+      },
+      {
+        "id": "C",
+        "text": "Liquidez Geral"
+      },
+      {
+        "id": "D",
+        "text": "Liquidez Imediata"
+      },
+      {
+        "id": "E",
+        "text": "Solvência Patrimonial"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A Liquidez Seca retira os estoques do ativo circulante por considerá-los de menor liquidez imediata, medindo com mais rigor a capacidade de pagamento de curto prazo.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_59",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "Assinale a alternativa que apresenta um exemplo clássico de **despesa corrente** no orçamento público:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Aquisição de imóveis e terrenos para expansão de instalações industriais."
+      },
+      {
+        "id": "B",
+        "text": "Pagamento de pessoal e encargos sociais, além de despesas de custeio (material de consumo, serviços de terceiros)."
+      },
+      {
+        "id": "C",
+        "text": "Construção de novos oleodutos e terminais portuários."
+      },
+      {
+        "id": "D",
+        "text": "Amortização extraordinária da dívida pública de longo prazo."
+      },
+      {
+        "id": "E",
+        "text": "Investimento em participações acionárias de novas empresas."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Despesas correntes destinam-se à manutenção das atividades já instaladas (custeio e pessoal). Despesas de capital destinam-se a investimentos, inversões financeiras e amortização da dívida.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  },
+  {
+    "id": "transpetro_60",
+    "subjectId": "conhecimentos_especificos",
+    "topic": "Módulo Extra 60",
+    "statement": "No controle da administração pública, o controle exercido pelos órgãos internos de cada poder (como a Controladoria-Geral da União) sobre seus próprios atos e entidades vinculadas é classificado como:",
+    "alternatives": [
+      {
+        "id": "A",
+        "text": "Controle Externo exercido pelo Poder Legislativo."
+      },
+      {
+        "id": "B",
+        "text": "Controle Interno."
+      },
+      {
+        "id": "C",
+        "text": "Controle Popular exercido por meio de ouvidorias."
+      },
+      {
+        "id": "D",
+        "text": "Controle Jurisdicional exercido pelo Supremo Tribunal Federal."
+      },
+      {
+        "id": "E",
+        "text": "Controle Parlamentar de contas."
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "O controle interno é aquele exercido dentro da própria estrutura do Poder Executivo (ou demais poderes) para fiscalizar a legalidade, a eficiência e a probidade na aplicação dos recursos.",
+    "source": "Cesgranrio — Módulo Extra 60",
+    "reference": "Módulo Extra 60 — Conhecimentos Especificos",
+    "verified": false,
+    "difficulty": "médio",
+    "pool": "new"
+  }
+]

@@ -3,6 +3,16 @@ export interface Alternative {
   text: string;
 }
 
+/**
+ * Origem da questão:
+ * - `classic`: banco original (200 questões);
+ * - `new`: módulo extra de 60 questões.
+ */
+export type QuestionPool = 'classic' | 'new';
+
+/** Pool usado para montar um simulado. `mixed` embaralha as duas origens. */
+export type QuestionPoolSelection = QuestionPool | 'mixed';
+
 export interface Question {
   id: string;
   subjectId: string; // 'portugues' | 'matematica' | 'conhecimentos_especificos'
@@ -24,6 +34,8 @@ export interface Question {
   verified: boolean; // true = official verified, false = authorial/exemplary
   difficulty: 'fácil' | 'médio' | 'difícil';
   weight?: number; // peso individual opcional; se ausente, usa o peso da matéria
+  /** Origem da questão. Ausente é tratado como `classic`. */
+  pool?: QuestionPool;
 }
 
 export interface SubjectConfig {
@@ -89,6 +101,8 @@ export interface ExamAttempt {
 
   // Sessão persistida (campos opcionais para compatibilidade com tentativas antigas)
   questionIds?: string[]; // ordem exata das questões sorteadas
+  /** Pool escolhido ao iniciar o simulado (clássicas, novas ou misturadas). */
+  questionPool?: QuestionPoolSelection;
   /**
    * Ordem original das alternativas de cada questão, por ID da questão.
    * Permite restaurar a mesma apresentação (rótulos A-E e gabarito) depois de

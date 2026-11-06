@@ -5,6 +5,7 @@ import type {
   ExamAttempt,
   UserSettings,
   SubjectConfig,
+  QuestionPoolSelection,
 } from '../types';
 import {
   loadExamConfig,
@@ -28,7 +29,10 @@ import {
   type RegradeSummary,
 } from '../services/scoring';
 import { recalculateHistoricalExams } from '../services/migration';
-import { selectQuestionsForSubject } from '../services/questionSelection';
+import {
+  filterQuestionsByPool,
+  selectQuestionsForSubject,
+} from '../services/questionSelection';
 import { shuffleQuestionAlternatives } from '../services/alternatives';
 
 export type ExamView =
@@ -107,6 +111,7 @@ interface ExamState {
     immediateCorrection: boolean;
     durationMinutes?: number;
     selectedSubjectIds?: string[];
+    questionPool?: QuestionPoolSelection;
   }) => boolean;
   setAnswer: (questionId: string, alternativeId: string) => void;
   toggleMarkReview: (questionId: string) => void;
@@ -213,7 +218,12 @@ export const useExamStore = create<ExamState>((set, get) => ({
 
   setView: (view) => set({ view }),
 
-  startExam: ({ immediateCorrection, durationMinutes, selectedSubjectIds }) => {
+  startExam: ({
+    immediateCorrection,
+    durationMinutes,
+    selectedSubjectIds,
+    questionPool = 'classic',
+  }) => {
     const { config, allQuestionsBank, currentAttempt } = get();
 
     if (!config) {
@@ -243,16 +253,35 @@ export const useExamStore = create<ExamState>((set, get) => ({
     // Mantém a ordem oficial da prova (Português -> Matemática -> Específicos),
     // mas sorteia as questões dentro de cada matéria com peso 3x para as questões
     // da prova oficial de 2018 e embaralha o bloco antes de montar o simulado.
+    //
+    // A origem escolhida filtra o banco antes do sorteio:
+    // - classic: apenas as 200 questões originais;
+    // - new: apenas o módulo extra de 60 (usa todas);
+    // - mixed: as duas origens juntas, mantendo o padrão 10/12/38.
+    const poolBank = filterQuestionsByPool(allQuestionsBank, questionPool);
+    if (poolBank.length === 0) {
+      set({
+        startError:
+          questionPool === 'new'
+            ? 'O módulo extra de questões ainda não está disponível.'
+            : 'Não há questões disponíveis para o banco selecionado.',
+      });
+      return false;
+    }
+
     const orderedQuestions: Question[] = [];
     for (const subjectConfig of config.subjects) {
       if (!subjectsToUse.includes(subjectConfig.id)) continue;
 
-      const available = allQuestionsBank.filter(
+      const available = poolBank.filter(
         (question) => question.subjectId === subjectConfig.id,
       );
       if (available.length === 0) continue;
 
-      const count = Math.min(subjectConfig.questionCount, available.length);
+      const count =
+        questionPool === 'new'
+          ? available.length
+          : Math.min(subjectConfig.questionCount, available.length);
       orderedQuestions.push(...selectQuestionsForSubject(available, count));
     }
 
@@ -286,6 +315,7 @@ export const useExamStore = create<ExamState>((set, get) => ({
       isCompleted: false,
       isPaused: false,
       questionIds: orderedQuestions.map((question) => question.id),
+      questionPool,
       alternativeOrder,
       durationMinutes: totalMinutes,
       timeRemainingSeconds: totalMinutes * 60,

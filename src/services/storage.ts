@@ -11,6 +11,8 @@ const LOCAL_SETTINGS_KEY = 'transpetro_settings';
 const SETTINGS_RECORD_KEY = 'user';
 
 const QUESTION_SUBJECT_IDS = ['portugues', 'matematica', 'conhecimentos_especificos'] as const;
+/** Arquivo opcional com o módulo extra de questões. */
+const EXTRA_QUESTIONS_FILE = 'novas';
 
 function closeDB(db: IDBDatabase): void {
   try {
@@ -294,17 +296,44 @@ export async function loadQuestions(subjectId: string): Promise<Question[]> {
   return data as Question[];
 }
 
-export async function loadAllQuestions(): Promise<Question[]> {
-  const banks = await Promise.all(
-    QUESTION_SUBJECT_IDS.map(async (subjectId) => {
-      try {
-        return await loadQuestions(subjectId);
-      } catch (error) {
-        const detail = error instanceof Error ? ` ${error.message}` : '';
-        throw new Error(`Não foi possível carregar o banco de ${subjectId}.${detail}`);
-      }
-    }),
-  );
+/**
+ * Carrega o módulo extra de questões. O arquivo é opcional: se ainda não
+ * existir, o app continua funcionando apenas com o banco clássico.
+ */
+async function loadExtraQuestions(): Promise<Question[]> {
+  const res = await fetch(dataUrl(`/data/questions/${EXTRA_QUESTIONS_FILE}.json`));
+  if (res.status === 404) return [];
+  if (!res.ok) throw new Error('Falha ao carregar o módulo extra de questões.');
 
-  return banks.flat();
+  const data = (await res.json()) as unknown;
+  if (!Array.isArray(data)) {
+    throw new Error('O módulo extra não contém uma lista de questões válida.');
+  }
+  return data as Question[];
+}
+
+export async function loadAllQuestions(): Promise<Question[]> {
+  const [banks, extra] = await Promise.all([
+    Promise.all(
+      QUESTION_SUBJECT_IDS.map(async (subjectId) => {
+        try {
+          return await loadQuestions(subjectId);
+        } catch (error) {
+          const detail = error instanceof Error ? ` ${error.message}` : '';
+          throw new Error(`Não foi possível carregar o banco de ${subjectId}.${detail}`);
+        }
+      }),
+    ),
+    loadExtraQuestions(),
+  ]);
+
+  const classic = banks
+    .flat()
+    .map((question) => ({ ...question, pool: question.pool ?? ('classic' as const) }));
+  const newQuestions = extra.map((question) => ({
+    ...question,
+    pool: 'new' as const,
+  }));
+
+  return [...classic, ...newQuestions];
 }

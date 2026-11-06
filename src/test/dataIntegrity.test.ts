@@ -17,6 +17,57 @@ const banks = Object.fromEntries(
     readJson<Question[]>(`questions/${subjectId}.json`),
   ]),
 ) as Record<(typeof subjectIds)[number], Question[]>;
+const extraBank = readJson<Question[]>('questions/novas.json');
+
+function assertValidQuestion(question: Question, expectedSubjectId?: string): void {
+  expect(question.id, 'id obrigatório').toBeTruthy();
+  if (expectedSubjectId) {
+    expect(question.subjectId, `matéria de ${question.id}`).toBe(expectedSubjectId);
+  } else {
+    expect(subjectIds, `matéria de ${question.id}`).toContain(question.subjectId);
+  }
+  expect(question.statement.trim().length, `enunciado de ${question.id}`).toBeGreaterThan(0);
+  expect(question.explanation.trim().length, `explicação de ${question.id}`).toBeGreaterThan(0);
+  expect(question.alternatives, `alternativas de ${question.id}`).toHaveLength(5);
+
+  const letters = question.alternatives.map((alternative) => alternative.id);
+  expect(letters, `alternativas de ${question.id}`).toEqual(['A', 'B', 'C', 'D', 'E']);
+  expect(letters, `gabarito de ${question.id}`).toContain(question.correctAnswer);
+
+  if (question.acceptedAnswers) {
+    expect(
+      question.acceptedAnswers.length,
+      `respostas aceitas de ${question.id}`,
+    ).toBeGreaterThan(0);
+    expect(
+      new Set(question.acceptedAnswers).size,
+      `respostas aceitas duplicadas em ${question.id}`,
+    ).toBe(question.acceptedAnswers.length);
+    for (const answer of question.acceptedAnswers) {
+      expect(letters, `resposta aceita ${question.id}/${answer}`).toContain(answer);
+    }
+    expect(
+      question.acceptedAnswers,
+      `respostas aceitas de ${question.id} devem incluir o gabarito`,
+    ).toContain(question.correctAnswer);
+  }
+
+  for (const alternative of question.alternatives) {
+    expect(
+      alternative.text.trim().length,
+      `texto da alternativa ${question.id}/${alternative.id}`,
+    ).toBeGreaterThan(0);
+
+    // O embaralhamento reatribui as letras A-E. Alternativas que citam
+    // letras ou "alternativas acima/abaixo" deixariam de fazer sentido.
+    expect(
+      alternative.text,
+      `alternativa ${question.id}/${alternative.id} não pode referenciar letras`,
+    ).not.toMatch(
+      /\b(alternativas?|opç(?:ão|ões))\s+(A|B|C|D|E)\b|\b[A-E]\s+e\s+[A-E]\b|\b(alternativas?|opç(?:ão|ões))\s+(acima|abaixo)\b/i,
+    );
+  }
+}
 
 describe('Integridade do banco de questões', () => {
   it('possui questões suficientes para a configuração do edital', () => {
@@ -68,8 +119,29 @@ describe('Integridade do banco de questões', () => {
     }
   });
 
+  it('possui 200 questões clássicas e 60 no módulo extra', () => {
+    const classic = Object.values(banks).flat();
+    expect(classic).toHaveLength(200);
+    expect(extraBank).toHaveLength(60);
+
+    const extraBySubject = extraBank.reduce<Record<string, number>>(
+      (total, question) => {
+        total[question.subjectId] = (total[question.subjectId] ?? 0) + 1;
+        return total;
+      },
+      {},
+    );
+    expect(extraBySubject).toEqual({
+      portugues: 20,
+      matematica: 15,
+      conhecimentos_especificos: 25,
+    });
+  });
+
   it('não possui IDs de questão duplicados entre as matérias', () => {
-    const allIds = Object.values(banks).flatMap((bank) => bank.map((question) => question.id));
+    const allIds = [...Object.values(banks).flat(), ...extraBank].map(
+      (question) => question.id,
+    );
     expect(new Set(allIds).size).toBe(allIds.length);
   });
 
@@ -78,52 +150,30 @@ describe('Integridade do banco de questões', () => {
     expect(bank.length).toBeGreaterThan(0);
 
     for (const question of bank) {
-      expect(question.id, 'id obrigatório').toBeTruthy();
-      expect(question.subjectId, `matéria de ${question.id}`).toBe(subjectId);
-      expect(question.statement.trim().length, `enunciado de ${question.id}`).toBeGreaterThan(0);
-      expect(question.explanation.trim().length, `explicação de ${question.id}`).toBeGreaterThan(0);
-      expect(question.alternatives, `alternativas de ${question.id}`).toHaveLength(5);
+      assertValidQuestion(question, subjectId);
+    }
+  });
 
-      const letters = question.alternatives.map((alternative) => alternative.id);
-      expect(letters, `alternativas de ${question.id}`).toEqual(['A', 'B', 'C', 'D', 'E']);
-      expect(letters, `gabarito de ${question.id}`).toContain(question.correctAnswer);
+  it('valida todas as questões do módulo extra', () => {
+    for (const question of extraBank) {
+      assertValidQuestion(question);
+      expect(question.pool, `pool de ${question.id}`).toBe('new');
+    }
+  });
 
-      if (question.acceptedAnswers) {
-        expect(
-          question.acceptedAnswers.length,
-          `respostas aceitas de ${question.id}`,
-        ).toBeGreaterThan(0);
-        expect(
-          new Set(question.acceptedAnswers).size,
-          `respostas aceitas duplicadas em ${question.id}`,
-        ).toBe(question.acceptedAnswers.length);
-        for (const answer of question.acceptedAnswers) {
-          expect(
-            letters,
-            `resposta aceita ${question.id}/${answer}`,
-          ).toContain(answer);
-        }
-        expect(
-          question.acceptedAnswers,
-          `respostas aceitas de ${question.id} devem incluir o gabarito`,
-        ).toContain(question.correctAnswer);
-      }
+  it('mantém texto de apoio nas questões extras que dependem dele', () => {
+    const dependent = extraBank.filter((question) =>
+      /com base no texto|de acordo com o texto|texto acima|texto a seguir|texto-base/i.test(
+        question.statement,
+      ),
+    );
 
-      for (const alternative of question.alternatives) {
-        expect(
-          alternative.text.trim().length,
-          `texto da alternativa ${question.id}/${alternative.id}`,
-        ).toBeGreaterThan(0);
-
-        // O embaralhamento reatribui as letras A-E. Alternativas que citam
-        // letras ou "alternativas acima/abaixo" deixariam de fazer sentido.
-        expect(
-          alternative.text,
-          `alternativa ${question.id}/${alternative.id} não pode referenciar letras`,
-        ).not.toMatch(
-          /\b(alternativas?|opç(?:ão|ões))\s+(A|B|C|D|E)\b|\b[A-E]\s+e\s+[A-E]\b|\b(alternativas?|opç(?:ão|ões))\s+(acima|abaixo)\b/i,
-        );
-      }
+    expect(dependent.length).toBeGreaterThan(0);
+    for (const question of dependent) {
+      expect(
+        question.supportText?.trim().length ?? 0,
+        `texto de apoio de ${question.id}`,
+      ).toBeGreaterThan(0);
     }
   });
 });

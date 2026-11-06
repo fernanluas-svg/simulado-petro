@@ -1,4 +1,4 @@
-import type { Question } from '../types';
+import type { Question, QuestionPoolSelection } from '../types';
 import { weightedSample } from './shuffle';
 
 /** Prefixo dos IDs das questões da prova oficial Transpetro 2018. */
@@ -12,6 +12,20 @@ export const OFFICIAL_2018_WEIGHT = 3;
 
 export function isOfficial2018Question(question: Question): boolean {
   return question.id.startsWith(OFFICIAL_2018_PREFIX);
+}
+
+/**
+ * Filtra o banco conforme a origem escolhida:
+ * - `classic`: apenas as 200 questões originais;
+ * - `new`: apenas o módulo extra de 60;
+ * - `mixed`: as duas origens juntas.
+ */
+export function filterQuestionsByPool(
+  questions: readonly Question[],
+  pool: QuestionPoolSelection = 'classic',
+): Question[] {
+  if (pool === 'mixed') return [...questions];
+  return questions.filter((question) => (question.pool ?? 'classic') === pool);
 }
 
 /**

@@ -235,6 +235,74 @@ describe('Sessão do simulado', () => {
     expect(after).toEqual(before);
   });
 
+  it('usa apenas o banco clássico no modo classic', () => {
+    const extra = [
+      { ...makeQuestion('new_pt_1', 'portugues'), pool: 'new' as const },
+      { ...makeQuestion('new_mt_1', 'matematica'), pool: 'new' as const },
+      { ...makeQuestion('new_es_1', 'conhecimentos_especificos'), pool: 'new' as const },
+    ];
+    useExamStore.setState({ allQuestionsBank: [...bank, ...extra] });
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const attempt = startExam();
+
+    expect(attempt.questionPool).toBe('classic');
+    expect(
+      useExamStore
+        .getState()
+        .questions.every((question) => !question.id.startsWith('new_')),
+    ).toBe(true);
+  });
+
+  it('usa todas as questões novas no modo new', () => {
+    const extra = [
+      { ...makeQuestion('new_pt_1', 'portugues'), pool: 'new' as const },
+      { ...makeQuestion('new_mt_1', 'matematica'), pool: 'new' as const },
+      { ...makeQuestion('new_es_1', 'conhecimentos_especificos'), pool: 'new' as const },
+      { ...makeQuestion('new_es_2', 'conhecimentos_especificos'), pool: 'new' as const },
+    ];
+    useExamStore.setState({ allQuestionsBank: [...bank, ...extra] });
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const started = useExamStore.getState().startExam({
+      immediateCorrection: false,
+      durationMinutes: 30,
+      questionPool: 'new',
+    });
+
+    expect(started).toBe(true);
+    const state = useExamStore.getState();
+    expect(state.currentAttempt?.questionPool).toBe('new');
+    expect(state.questions.map((question) => question.id).sort()).toEqual([
+      'new_es_1',
+      'new_es_2',
+      'new_mt_1',
+      'new_pt_1',
+    ]);
+  });
+
+  it('mistura as origens no modo mixed', () => {
+    const extra = [
+      { ...makeQuestion('new_pt_1', 'portugues'), pool: 'new' as const },
+      { ...makeQuestion('new_mt_1', 'matematica'), pool: 'new' as const },
+      { ...makeQuestion('new_es_1', 'conhecimentos_especificos'), pool: 'new' as const },
+    ];
+    useExamStore.setState({ allQuestionsBank: [...bank, ...extra] });
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const started = useExamStore.getState().startExam({
+      immediateCorrection: false,
+      durationMinutes: 30,
+      questionPool: 'mixed',
+    });
+
+    expect(started).toBe(true);
+    const state = useExamStore.getState();
+    expect(state.currentAttempt?.questionPool).toBe('mixed');
+    // O padrão do edital é 2/2/3 no fixture; o modo misto mantém esse total.
+    expect(state.questions).toHaveLength(7);
+  });
+
   it('sorteia um subconjunto aleatório quando o banco tem mais questões que o edital', () => {
     const largerBank: Question[] = [
       ...bank,

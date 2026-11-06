@@ -6,9 +6,13 @@ import {
   ArrowLeft,
   CheckSquare,
   Clock,
+  Layers,
   Play,
+  Shuffle,
+  Sparkles,
   Square,
 } from 'lucide-react';
+import type { QuestionPoolSelection } from '../types';
 
 const DURATION_OPTIONS = [60, 120, 180, 240, 300];
 
@@ -27,12 +31,62 @@ export const ExamSetupScreen: React.FC = () => {
 
   const allSubjectIds = config?.subjects.map((subject) => subject.id) || [];
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>(allSubjectIds);
+  const [questionPool, setQuestionPool] =
+    useState<QuestionPoolSelection>('classic');
   const [immediateCorrection, setImmediateCorrection] = useState(
     settings.defaultImmediateCorrection,
   );
   const [durationMinutes, setDurationMinutes] = useState(
     settings.defaultDurationMinutes,
   );
+
+  const classicCount = allQuestionsBank.filter(
+    (question) => (question.pool ?? 'classic') === 'classic',
+  ).length;
+  const newCount = allQuestionsBank.filter(
+    (question) => question.pool === 'new',
+  ).length;
+  const mixedCount = allQuestionsBank.length;
+
+  const poolQuestions = allQuestionsBank.filter((question) =>
+    questionPool === 'mixed'
+      ? true
+      : (question.pool ?? 'classic') === questionPool,
+  );
+
+  const poolOptions: Array<{
+    id: QuestionPoolSelection;
+    label: string;
+    description: string;
+    count: number;
+    icon: typeof Layers;
+    disabled: boolean;
+  }> = [
+    {
+      id: 'classic',
+      label: 'Clássicas',
+      description: 'Banco original do edital',
+      count: classicCount,
+      icon: Layers,
+      disabled: classicCount === 0,
+    },
+    {
+      id: 'new',
+      label: 'Novas 60',
+      description: 'Somente o módulo extra',
+      count: newCount,
+      icon: Sparkles,
+      disabled: newCount === 0,
+    },
+    {
+      id: 'mixed',
+      label: 'Misturar',
+      description: 'Novas + clássicas',
+      count: mixedCount,
+      icon: Shuffle,
+      disabled: newCount === 0 || classicCount === 0,
+    },
+  ];
 
   const isAllSelected =
     allSubjectIds.length > 0 && selectedSubjects.length === allSubjectIds.length;
@@ -53,10 +107,15 @@ export const ExamSetupScreen: React.FC = () => {
     config?.subjects
       .filter((subject) => selectedSubjects.includes(subject.id))
       .reduce((total, subject) => {
-        const available = allQuestionsBank.filter(
+        const available = poolQuestions.filter(
           (question) => question.subjectId === subject.id,
         ).length;
-        return total + Math.min(subject.questionCount, available);
+        return (
+          total +
+          (questionPool === 'new'
+            ? available
+            : Math.min(subject.questionCount, available))
+        );
       }, 0) || 0;
 
   const handleStart = async () => {
@@ -74,6 +133,7 @@ export const ExamSetupScreen: React.FC = () => {
       immediateCorrection,
       durationMinutes,
       selectedSubjectIds: selectedSubjects,
+      questionPool,
     });
   };
 
@@ -112,6 +172,60 @@ export const ExamSetupScreen: React.FC = () => {
       )}
 
       <div className="bg-surface/60 border border-line/50 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
+        <div className="space-y-3">
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-ink">Banco de Questões</h3>
+            <p className="text-sm text-ink-soft">
+              Escolha se o simulado usa as 200 questões clássicas, apenas as 60
+              novas ou uma mistura embaralhada das duas.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {poolOptions.map((option) => {
+              const isActive = questionPool === option.id;
+              const Icon = option.icon;
+
+              return (
+                <button
+                  type="button"
+                  key={option.id}
+                  onClick={() => !option.disabled && setQuestionPool(option.id)}
+                  disabled={option.disabled}
+                  aria-pressed={isActive}
+                  className={`flex flex-col items-start gap-2 rounded-xl border p-4 text-left transition-all ${
+                    isActive
+                      ? 'bg-cyan-600/15 border-cyan-500/60 text-ink shadow-lg shadow-cyan-500/10'
+                      : option.disabled
+                        ? 'bg-surface/30 border-line/20 text-ink-muted opacity-50 cursor-not-allowed'
+                        : 'bg-base/60 border-line/40 text-ink-soft hover:border-cyan-500/40 hover:text-ink'
+                  }`}
+                >
+                  <span className="flex w-full items-center justify-between">
+                    <Icon
+                      className={`w-5 h-5 ${isActive ? 'text-accent' : 'text-ink-muted'}`}
+                    />
+                    <span className="text-xs font-bold text-accent bg-cyan-500/10 px-2 py-0.5 rounded-lg border border-cyan-500/20">
+                      {option.count}
+                    </span>
+                  </span>
+                  <span className="text-sm font-semibold">{option.label}</span>
+                  <span className="text-xs text-ink-muted">
+                    {option.description}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {newCount === 0 && (
+            <p className="text-xs text-ink-muted flex items-center gap-1.5">
+              <AlertCircle className="w-4 h-4" /> O módulo de 60 novas questões
+              ainda não foi carregado.
+            </p>
+          )}
+        </div>
+
         <div className="space-y-2">
           <h3 className="text-lg font-semibold text-ink">Seleção de Matérias</h3>
           <p className="text-sm text-ink-soft">
@@ -144,7 +258,7 @@ export const ExamSetupScreen: React.FC = () => {
           <div className="space-y-2 pt-2">
             {config?.subjects.map((subject) => {
               const isChecked = selectedSubjects.includes(subject.id);
-              const availableCount = allQuestionsBank.filter(
+              const availableCount = poolQuestions.filter(
                 (question) => question.subjectId === subject.id,
               ).length;
 
@@ -171,7 +285,10 @@ export const ExamSetupScreen: React.FC = () => {
                         {subject.name}
                       </p>
                       <p className="text-xs text-ink-muted">
-                        Peso: {subject.weight} • Padrão: {subject.questionCount} questões
+                        Peso: {subject.weight} •{' '}
+                        {questionPool === 'new'
+                          ? `Todas as ${availableCount} do módulo`
+                          : `Padrão: ${subject.questionCount} questões`}
                       </p>
                     </div>
                   </div>
@@ -194,9 +311,11 @@ export const ExamSetupScreen: React.FC = () => {
         <p className="text-xs text-ink-muted bg-cyan-500/5 border border-cyan-500/15 rounded-xl px-4 py-3">
           O sorteio dá <strong className="text-ink">3x mais chance</strong> às questões do
           simulado oficial de 2018, mantendo a ordem das matérias e o embaralhamento
-          dentro de cada uma. As <strong className="text-ink">alternativas também são
-          embaralhadas</strong> a cada simulado, então o gabarito não fica preso a uma
-          letra fixa.
+          dentro de cada uma. No modo <strong className="text-ink">Novas 60</strong>, todas
+          as questões do módulo extra são usadas. No modo{' '}
+          <strong className="text-ink">Misturar</strong>, as duas origens entram no mesmo
+          sorteio. As <strong className="text-ink">alternativas também são embaralhadas</strong>{' '}
+          a cada simulado, então o gabarito não fica preso a uma letra fixa.
         </p>
 
         {/* Options */}

@@ -2,11 +2,12 @@ import { describe, expect, it } from 'vitest';
 import type { Question } from '../types';
 import {
   OFFICIAL_2018_WEIGHT,
+  filterQuestionsByPool,
   isOfficial2018Question,
   selectQuestionsForSubject,
 } from '../services/questionSelection';
 
-function makeQuestion(id: string): Question {
+function makeQuestion(id: string, pool?: 'classic' | 'new'): Question {
   return {
     id,
     subjectId: 'portugues',
@@ -22,6 +23,7 @@ function makeQuestion(id: string): Question {
     reference: 'Referência',
     verified: false,
     difficulty: 'médio',
+    ...(pool ? { pool } : {}),
   };
 }
 
@@ -66,5 +68,47 @@ describe('seleção de questões do simulado', () => {
     expect(selected.map((question) => question.id)).not.toEqual(
       officialQuestions.map((question) => question.id),
     );
+  });
+});
+
+const poolBank = [
+  makeQuestion('classic_1', 'classic'),
+  makeQuestion('classic_sem_pool'),
+  makeQuestion('new_1', 'new'),
+  makeQuestion('new_2', 'new'),
+];
+
+describe('filtro por origem das questões', () => {
+  it('mantém apenas as clássicas (e as sem pool) no modo classic', () => {
+    const result = filterQuestionsByPool(poolBank, 'classic');
+
+    expect(result.map((question) => question.id)).toEqual([
+      'classic_1',
+      'classic_sem_pool',
+    ]);
+  });
+
+  it('mantém apenas as novas no modo new', () => {
+    const result = filterQuestionsByPool(poolBank, 'new');
+
+    expect(result.map((question) => question.id)).toEqual(['new_1', 'new_2']);
+  });
+
+  it('mantém as duas origens no modo mixed', () => {
+    const result = filterQuestionsByPool(poolBank, 'mixed');
+
+    expect(result.map((question) => question.id)).toEqual([
+      'classic_1',
+      'classic_sem_pool',
+      'new_1',
+      'new_2',
+    ]);
+  });
+
+  it('usa classic como padrão', () => {
+    expect(filterQuestionsByPool(poolBank).map((question) => question.id)).toEqual([
+      'classic_1',
+      'classic_sem_pool',
+    ]);
   });
 });
