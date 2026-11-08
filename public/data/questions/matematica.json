@@ -818,6 +818,7 @@
   },
   {
     "id": "transpetro-2018-q11",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Progressão Aritmética (PA)",
     "weight": 1.0,
@@ -838,6 +839,7 @@
   },
   {
     "id": "transpetro-2018-q12",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Raciocínio Lógico / Contagem de Tempo",
     "weight": 1.0,
@@ -858,6 +860,7 @@
   },
   {
     "id": "transpetro-2018-q13",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Probabilidade",
     "weight": 1.0,
@@ -878,6 +881,7 @@
   },
   {
     "id": "transpetro-2018-q14",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Análise de Gráficos / Porcentagem",
     "weight": 1.0,
@@ -898,6 +902,7 @@
   },
   {
     "id": "transpetro-2018-q15",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Geometria Espacial",
     "weight": 1.0,
@@ -918,6 +923,7 @@
   },
   {
     "id": "transpetro-2018-q16",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Matemática Financeira / Porcentagem",
     "weight": 1.0,
@@ -938,6 +944,7 @@
   },
   {
     "id": "transpetro-2018-q17",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Função Quadrática",
     "weight": 1.0,
@@ -958,6 +965,7 @@
   },
   {
     "id": "transpetro-2018-q18",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Geometria Plana / Áreas",
     "weight": 1.0,
@@ -978,6 +986,7 @@
   },
   {
     "id": "transpetro-2018-q19",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Análise Combinatória",
     "weight": 1.0,
@@ -998,6 +1007,7 @@
   },
   {
     "id": "transpetro-2018-q20",
+    "pool": "official2018",
     "subjectId": "matematica",
     "topic": "Sistemas Lineares",
     "weight": 1.0,

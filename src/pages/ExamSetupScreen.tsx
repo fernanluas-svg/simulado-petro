@@ -4,6 +4,7 @@ import {
   AlertCircle,
   AlertTriangle,
   ArrowLeft,
+  Award,
   CheckSquare,
   Clock,
   Layers,
@@ -13,6 +14,7 @@ import {
   Square,
 } from 'lucide-react';
 import type { QuestionPoolSelection } from '../types';
+import { getQuestionPool, usesFullPool } from '../services/questionSelection';
 
 const DURATION_OPTIONS = [60, 120, 180, 240, 300];
 
@@ -41,17 +43,20 @@ export const ExamSetupScreen: React.FC = () => {
   );
 
   const classicCount = allQuestionsBank.filter(
-    (question) => (question.pool ?? 'classic') === 'classic',
+    (question) => getQuestionPool(question) === 'classic',
+  ).length;
+  const official2018Count = allQuestionsBank.filter(
+    (question) => getQuestionPool(question) === 'official2018',
   ).length;
   const newCount = allQuestionsBank.filter(
-    (question) => question.pool === 'new',
+    (question) => getQuestionPool(question) === 'new',
   ).length;
   const mixedCount = allQuestionsBank.length;
 
   const poolQuestions = allQuestionsBank.filter((question) =>
     questionPool === 'mixed'
       ? true
-      : (question.pool ?? 'classic') === questionPool,
+      : getQuestionPool(question) === questionPool,
   );
 
   const poolOptions: Array<{
@@ -65,10 +70,18 @@ export const ExamSetupScreen: React.FC = () => {
     {
       id: 'classic',
       label: 'Clássicas',
-      description: 'Banco original do edital',
+      description: 'Banco original, sem a prova de 2018',
       count: classicCount,
       icon: Layers,
       disabled: classicCount === 0,
+    },
+    {
+      id: 'official2018',
+      label: 'Prova Oficial de 2018',
+      description: '60 questões da Cesgranrio',
+      count: official2018Count,
+      icon: Award,
+      disabled: official2018Count === 0,
     },
     {
       id: 'new',
@@ -81,10 +94,10 @@ export const ExamSetupScreen: React.FC = () => {
     {
       id: 'mixed',
       label: 'Misturar',
-      description: 'Novas + clássicas',
+      description: 'Todas as origens juntas',
       count: mixedCount,
       icon: Shuffle,
-      disabled: newCount === 0 || classicCount === 0,
+      disabled: mixedCount === 0,
     },
   ];
 
@@ -112,7 +125,7 @@ export const ExamSetupScreen: React.FC = () => {
         ).length;
         return (
           total +
-          (questionPool === 'new'
+          (usesFullPool(questionPool)
             ? available
             : Math.min(subject.questionCount, available))
         );
@@ -176,12 +189,12 @@ export const ExamSetupScreen: React.FC = () => {
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-ink">Banco de Questões</h3>
             <p className="text-sm text-ink-soft">
-              Escolha se o simulado usa as 200 questões clássicas, apenas as 60
-              novas ou uma mistura embaralhada das duas.
+              Escolha a origem das questões: banco clássico, prova oficial de
+              2018, módulo das 60 novas ou uma mistura embaralhada de todas.
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {poolOptions.map((option) => {
               const isActive = questionPool === option.id;
               const Icon = option.icon;
@@ -217,6 +230,13 @@ export const ExamSetupScreen: React.FC = () => {
               );
             })}
           </div>
+
+          {official2018Count === 0 && (
+            <p className="text-xs text-ink-muted flex items-center gap-1.5">
+              <AlertCircle className="w-4 h-4" /> A prova oficial de 2018 ainda
+              não foi carregada.
+            </p>
+          )}
 
           {newCount === 0 && (
             <p className="text-xs text-ink-muted flex items-center gap-1.5">
@@ -286,8 +306,8 @@ export const ExamSetupScreen: React.FC = () => {
                       </p>
                       <p className="text-xs text-ink-muted">
                         Peso: {subject.weight} •{' '}
-                        {questionPool === 'new'
-                          ? `Todas as ${availableCount} do módulo`
+                        {usesFullPool(questionPool)
+                          ? `Todas as ${availableCount} da origem`
                           : `Padrão: ${subject.questionCount} questões`}
                       </p>
                     </div>
@@ -309,13 +329,15 @@ export const ExamSetupScreen: React.FC = () => {
         </div>
 
         <p className="text-xs text-ink-muted bg-cyan-500/5 border border-cyan-500/15 rounded-xl px-4 py-3">
-          O sorteio dá <strong className="text-ink">3x mais chance</strong> às questões do
-          simulado oficial de 2018, mantendo a ordem das matérias e o embaralhamento
-          dentro de cada uma. No modo <strong className="text-ink">Novas 60</strong>, todas
-          as questões do módulo extra são usadas. No modo{' '}
-          <strong className="text-ink">Misturar</strong>, as duas origens entram no mesmo
-          sorteio. As <strong className="text-ink">alternativas também são embaralhadas</strong>{' '}
-          a cada simulado, então o gabarito não fica preso a uma letra fixa.
+          O sorteio dá <strong className="text-ink">3x mais chance</strong> às questões da
+          prova oficial de 2018, mantendo a ordem das matérias e o embaralhamento
+          dentro de cada uma. Nos modos{' '}
+          <strong className="text-ink">Prova Oficial de 2018</strong> e{' '}
+          <strong className="text-ink">Novas 60</strong>, todas as questões da origem são
+          usadas. No modo <strong className="text-ink">Misturar</strong>, as três origens
+          entram no mesmo sorteio. As{' '}
+          <strong className="text-ink">alternativas também são embaralhadas</strong> a cada
+          simulado, então o gabarito não fica preso a uma letra fixa.
         </p>
 
         {/* Options */}

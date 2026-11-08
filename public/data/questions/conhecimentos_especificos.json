@@ -1068,6 +1068,7 @@
   },
   {
     "id": "transpetro-2018-q21",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Sistemas de Informação e ERP",
     "weight": 2.0,
@@ -1088,6 +1089,7 @@
   },
   {
     "id": "transpetro-2018-q22",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão da Manutenção",
     "weight": 2.0,
@@ -1108,6 +1110,7 @@
   },
   {
     "id": "transpetro-2018-q23",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Indicadores de Desempenho (KPIs)",
     "weight": 2.0,
@@ -1128,6 +1131,7 @@
   },
   {
     "id": "transpetro-2018-q24",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Logística e Administração Pública",
     "weight": 2.0,
@@ -1148,6 +1152,7 @@
   },
   {
     "id": "transpetro-2018-q25",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Licitações Públicas",
     "weight": 2.0,
@@ -1168,6 +1173,7 @@
   },
   {
     "id": "transpetro-2018-q26",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Indicadores",
     "weight": 2.0,
@@ -1188,6 +1194,7 @@
   },
   {
     "id": "transpetro-2018-q27",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Compras",
     "weight": 2.0,
@@ -1208,6 +1215,7 @@
   },
   {
     "id": "transpetro-2018-q28",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Logística e Cadeia de Suprimentos",
     "weight": 2.0,
@@ -1228,6 +1236,7 @@
   },
   {
     "id": "transpetro-2018-q29",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Suprimentos",
     "weight": 2.0,
@@ -1248,6 +1257,7 @@
   },
   {
     "id": "transpetro-2018-q30",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Pessoas / Integração",
     "weight": 2.0,
@@ -1268,6 +1278,7 @@
   },
   {
     "id": "transpetro-2018-q31",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Comportamento Organizacional",
     "weight": 2.0,
@@ -1288,6 +1299,7 @@
   },
   {
     "id": "transpetro-2018-q32",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Pessoas / Carreiras",
     "weight": 2.0,
@@ -1308,6 +1320,7 @@
   },
   {
     "id": "transpetro-2018-q33",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Fornecedores",
     "weight": 2.0,
@@ -1328,6 +1341,7 @@
   },
   {
     "id": "transpetro-2018-q34",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Comunicação e Feedback",
     "weight": 2.0,
@@ -1348,6 +1362,7 @@
   },
   {
     "id": "transpetro-2018-q35",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Avaliação de Desempenho",
     "weight": 2.0,
@@ -1368,6 +1383,7 @@
   },
   {
     "id": "transpetro-2018-q36",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão por Competências",
     "weight": 2.0,
@@ -1388,6 +1404,7 @@
   },
   {
     "id": "transpetro-2018-q37",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Relações de Trabalho / Assédio Moral",
     "weight": 2.0,
@@ -1408,6 +1425,7 @@
   },
   {
     "id": "transpetro-2018-q38",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Redação Oficial",
     "weight": 2.0,
@@ -1428,6 +1446,7 @@
   },
   {
     "id": "transpetro-2018-q39",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Redação Oficial / Impessoalidade",
     "weight": 2.0,
@@ -1448,6 +1467,7 @@
   },
   {
     "id": "transpetro-2018-q40",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Projeto de Rede Logística",
     "weight": 2.0,
@@ -1468,6 +1488,7 @@
   },
   {
     "id": "transpetro-2018-q41",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Gestão de Estoques",
     "weight": 2.0,
@@ -1488,6 +1509,7 @@
   },
   {
     "id": "transpetro-2018-q42",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / Hardware",
     "weight": 2.0,
@@ -1508,6 +1530,7 @@
   },
   {
     "id": "transpetro-2018-q43",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Contabilidade Geral / Patrimônio Líquido",
     "weight": 2.0,
@@ -1528,6 +1551,7 @@
   },
   {
     "id": "transpetro-2018-q44",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Contabilidade Geral / Livro Diário",
     "weight": 2.0,
@@ -1548,6 +1572,7 @@
   },
   {
     "id": "transpetro-2018-q45",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Contabilidade / DFC",
     "weight": 2.0,
@@ -1568,6 +1593,7 @@
   },
   {
     "id": "transpetro-2018-q46",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Contabilidade / DFC Método Direto",
     "weight": 2.0,
@@ -1588,6 +1614,7 @@
   },
   {
     "id": "transpetro-2018-q47",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Legislação / Lei das Estatais (13.303/16)",
     "weight": 2.0,
@@ -1608,6 +1635,7 @@
   },
   {
     "id": "transpetro-2018-q48",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / Hardware e Proteção",
     "weight": 2.0,
@@ -1628,6 +1656,7 @@
   },
   {
     "id": "transpetro-2018-q49",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / MS Word 2016",
     "weight": 2.0,
@@ -1648,6 +1677,7 @@
   },
   {
     "id": "transpetro-2018-q50",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / MS Word 2016",
     "weight": 2.0,
@@ -1668,6 +1698,7 @@
   },
   {
     "id": "transpetro-2018-q51",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / Sistema Operacional Windows",
     "weight": 2.0,
@@ -1688,6 +1719,7 @@
   },
   {
     "id": "transpetro-2018-q52",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / MS PowerPoint 2016",
     "weight": 2.0,
@@ -1708,6 +1740,7 @@
   },
   {
     "id": "transpetro-2018-q53",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / Windows 10 Atalhos",
     "weight": 2.0,
@@ -1728,6 +1761,7 @@
   },
   {
     "id": "transpetro-2018-q54",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Matemática Financeira / Capitalização Composta",
     "weight": 2.0,
@@ -1748,6 +1782,7 @@
   },
   {
     "id": "transpetro-2018-q55",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Matemática Financeira / Desconto Composto Racional",
     "weight": 2.0,
@@ -1768,6 +1803,7 @@
   },
   {
     "id": "transpetro-2018-q56",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Análise de Gráficos / Variação Percentual",
     "weight": 2.0,
@@ -1788,6 +1824,7 @@
   },
   {
     "id": "transpetro-2018-q57",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / Navegadores de Internet",
     "weight": 2.0,
@@ -1808,6 +1845,7 @@
   },
   {
     "id": "transpetro-2018-q58",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática e Redes / Segurança",
     "weight": 2.0,
@@ -1828,6 +1866,7 @@
   },
   {
     "id": "transpetro-2018-q59",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / MS Excel (Fórmulas Busca)",
     "weight": 2.0,
@@ -1848,6 +1887,7 @@
   },
   {
     "id": "transpetro-2018-q60",
+    "pool": "official2018",
     "subjectId": "conhecimentos_especificos",
     "topic": "Informática / MS Excel (PROCV)",
     "weight": 2.0,

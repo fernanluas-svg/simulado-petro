@@ -161,6 +161,36 @@ describe('Integridade do banco de questões', () => {
     }
   });
 
+  it('separa a prova oficial de 2018 do restante do banco', () => {
+    const allQuestions = [...Object.values(banks).flat(), ...extraBank];
+    const official = allQuestions.filter((question) =>
+      question.id.startsWith('transpetro-2018-'),
+    );
+    const classic = allQuestions.filter(
+      (question) => !question.pool || question.pool === 'classic',
+    );
+
+    expect(allQuestions).toHaveLength(260);
+    expect(official).toHaveLength(60);
+    expect(official.every((question) => question.pool === 'official2018')).toBe(true);
+    expect(official.filter((question) => question.subjectId === 'portugues')).toHaveLength(
+      10,
+    );
+    expect(official.filter((question) => question.subjectId === 'matematica')).toHaveLength(
+      10,
+    );
+    expect(
+      official.filter(
+        (question) => question.subjectId === 'conhecimentos_especificos',
+      ),
+    ).toHaveLength(40);
+
+    expect(classic).toHaveLength(140);
+    expect(classic.some((question) => question.id.startsWith('transpetro-2018-'))).toBe(
+      false,
+    );
+  });
+
   it('mantém texto de apoio nas questões extras que dependem dele', () => {
     const dependent = extraBank.filter((question) =>
       /com base no texto|de acordo com o texto|texto acima|texto a seguir|texto-base/i.test(

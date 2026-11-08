@@ -38,7 +38,7 @@ O simulado completo padrão possui exatamente **60 questões objetivas** distrib
 
 ## ✨ Funcionalidades
 
-- Simulado completo ou por matérias selecionadas, com correção imediata opcional.
+- Simulado completo ou por matérias selecionadas, com escolha da origem das questões (**banco clássico**, **prova oficial de 2018**, módulo **Novas 60** ou **mistura de todas**) e correção imediata opcional.
 - **Cronômetro real baseado em tempo de parede** (não depende de ticks do navegador).
 - **Pausa real**: congela o tempo restante, as respostas e a navegação; ao retomar, o relógio continua exatamente de onde parou.
 - **Sessão persistida**: fechar ou recarregar a página não perde o simulado. Ao reabrir, o app restaura questões, respostas, marcações, tempo restante e a última questão aberta.
@@ -126,6 +126,9 @@ Os dados estão completamente desacoplados da interface nos seguintes arquivos e
 - `public/data/questions/portugues.json`: Banco de questões de Língua Portuguesa.
 - `public/data/questions/matematica.json`: Banco de questões de Matemática.
 - `public/data/questions/conhecimentos_especificos.json`: Banco de questões de Conhecimentos Específicos.
+- `public/data/questions/novas.json`: Módulo extra de 60 questões, separado no modo **Novas 60**.
+
+As 60 questões da **prova oficial de 2018** ficam identificadas pelo prefixo de ID `transpetro-2018-` e pelo campo `pool: "official2018"` dentro dos três bancos por matéria.
 
 Para adicionar ou atualizar questões, basta editar os arquivos JSON respectivos. O sistema carrega os dados dinamicamente e valida a estrutura durante os testes (`npm run test`).
 

@@ -32,6 +32,7 @@ import { recalculateHistoricalExams } from '../services/migration';
 import {
   filterQuestionsByPool,
   selectQuestionsForSubject,
+  usesFullPool,
 } from '../services/questionSelection';
 import { shuffleQuestionAlternatives } from '../services/alternatives';
 
@@ -255,16 +256,19 @@ export const useExamStore = create<ExamState>((set, get) => ({
     // da prova oficial de 2018 e embaralha o bloco antes de montar o simulado.
     //
     // A origem escolhida filtra o banco antes do sorteio:
-    // - classic: apenas as 200 questões originais;
+    // - classic: banco original, sem a prova oficial de 2018;
+    // - official2018: apenas a prova oficial de 2018 (usa todas);
     // - new: apenas o módulo extra de 60 (usa todas);
-    // - mixed: as duas origens juntas, mantendo o padrão 10/12/38.
+    // - mixed: as três origens juntas, mantendo o padrão 10/12/38.
     const poolBank = filterQuestionsByPool(allQuestionsBank, questionPool);
     if (poolBank.length === 0) {
       set({
         startError:
           questionPool === 'new'
             ? 'O módulo extra de questões ainda não está disponível.'
-            : 'Não há questões disponíveis para o banco selecionado.',
+            : questionPool === 'official2018'
+              ? 'A prova oficial de 2018 ainda não está disponível.'
+              : 'Não há questões disponíveis para o banco selecionado.',
       });
       return false;
     }
@@ -278,10 +282,9 @@ export const useExamStore = create<ExamState>((set, get) => ({
       );
       if (available.length === 0) continue;
 
-      const count =
-        questionPool === 'new'
-          ? available.length
-          : Math.min(subjectConfig.questionCount, available.length);
+      const count = usesFullPool(questionPool)
+        ? available.length
+        : Math.min(subjectConfig.questionCount, available.length);
       orderedQuestions.push(...selectQuestionsForSubject(available, count));
     }
 

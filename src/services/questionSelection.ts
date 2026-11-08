@@ -1,4 +1,4 @@
-import type { Question, QuestionPoolSelection } from '../types';
+import type { Question, QuestionPool, QuestionPoolSelection } from '../types';
 import { weightedSample } from './shuffle';
 
 /** Prefixo dos IDs das questões da prova oficial Transpetro 2018. */
@@ -15,17 +15,33 @@ export function isOfficial2018Question(question: Question): boolean {
 }
 
 /**
+ * Origem efetiva da questão. O campo `pool` é a fonte principal; quando ele
+ * não existe (bancos antigos ou cache), a prova oficial de 2018 é reconhecida
+ * pelo prefixo do ID.
+ */
+export function getQuestionPool(question: Question): QuestionPool {
+  if (question.pool) return question.pool;
+  return isOfficial2018Question(question) ? 'official2018' : 'classic';
+}
+
+/** Modos que usam todas as questões da origem, sem o recorte do edital. */
+export function usesFullPool(pool: QuestionPoolSelection): boolean {
+  return pool === 'new' || pool === 'official2018';
+}
+
+/**
  * Filtra o banco conforme a origem escolhida:
- * - `classic`: apenas as 200 questões originais;
+ * - `classic`: banco original, sem a prova de 2018;
+ * - `official2018`: apenas a prova oficial de 2018;
  * - `new`: apenas o módulo extra de 60;
- * - `mixed`: as duas origens juntas.
+ * - `mixed`: todas as origens juntas.
  */
 export function filterQuestionsByPool(
   questions: readonly Question[],
   pool: QuestionPoolSelection = 'classic',
 ): Question[] {
   if (pool === 'mixed') return [...questions];
-  return questions.filter((question) => (question.pool ?? 'classic') === pool);
+  return questions.filter((question) => getQuestionPool(question) === pool);
 }
 
 /**

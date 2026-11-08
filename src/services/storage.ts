@@ -1,5 +1,6 @@
 import type { ExamConfig, SubjectConfig, Question, ExamAttempt, UserSettings } from '../types';
 import { THEME_STORAGE_KEY } from './theme';
+import { getQuestionPool } from './questionSelection';
 
 const DB_NAME = 'TranspetroSimuladosDB';
 const DB_VERSION = 1;
@@ -329,7 +330,7 @@ export async function loadAllQuestions(): Promise<Question[]> {
 
   const classic = banks
     .flat()
-    .map((question) => ({ ...question, pool: question.pool ?? ('classic' as const) }));
+    .map((question) => ({ ...question, pool: getQuestionPool(question) }));
   const newQuestions = extra.map((question) => ({
     ...question,
     pool: 'new' as const,

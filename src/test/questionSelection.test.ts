@@ -1,13 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import type { Question } from '../types';
+import type { Question, QuestionPool } from '../types';
 import {
   OFFICIAL_2018_WEIGHT,
   filterQuestionsByPool,
+  getQuestionPool,
   isOfficial2018Question,
   selectQuestionsForSubject,
+  usesFullPool,
 } from '../services/questionSelection';
 
-function makeQuestion(id: string, pool?: 'classic' | 'new'): Question {
+function makeQuestion(id: string, pool?: QuestionPool): Question {
   return {
     id,
     subjectId: 'portugues',
@@ -110,5 +112,56 @@ describe('filtro por origem das questões', () => {
       'classic_1',
       'classic_sem_pool',
     ]);
+  });
+});
+
+describe('origem da prova oficial de 2018', () => {
+  const bankWithOfficial = [
+    makeQuestion('classic_1', 'classic'),
+    makeQuestion('classic_sem_pool'),
+    // Sem `pool`: o prefixo do ID ainda identifica a prova de 2018.
+    makeQuestion('transpetro-2018-q01'),
+    makeQuestion('transpetro-2018-q11', 'official2018'),
+    makeQuestion('new_1', 'new'),
+  ];
+
+  it('identifica a origem efetiva de cada questão', () => {
+    expect(getQuestionPool(makeQuestion('transpetro-2018-q01'))).toBe('official2018');
+    expect(getQuestionPool(makeQuestion('transpetro-2018-q01', 'classic'))).toBe(
+      'classic',
+    );
+    expect(getQuestionPool(makeQuestion('classic_1'))).toBe('classic');
+    expect(getQuestionPool(makeQuestion('new_1', 'new'))).toBe('new');
+  });
+
+  it('separa as questões de 2018 mesmo sem o campo pool', () => {
+    const result = filterQuestionsByPool(bankWithOfficial, 'official2018');
+
+    expect(result.map((question) => question.id)).toEqual([
+      'transpetro-2018-q01',
+      'transpetro-2018-q11',
+    ]);
+  });
+
+  it('não inclui as questões de 2018 no modo classic', () => {
+    const result = filterQuestionsByPool(bankWithOfficial, 'classic');
+
+    expect(result.map((question) => question.id)).toEqual([
+      'classic_1',
+      'classic_sem_pool',
+    ]);
+  });
+
+  it('mantém todas as origens no modo mixed', () => {
+    const result = filterQuestionsByPool(bankWithOfficial, 'mixed');
+
+    expect(result).toHaveLength(5);
+  });
+
+  it('usa todas as questões nos modos 2018 e novas', () => {
+    expect(usesFullPool('official2018')).toBe(true);
+    expect(usesFullPool('new')).toBe(true);
+    expect(usesFullPool('classic')).toBe(false);
+    expect(usesFullPool('mixed')).toBe(false);
   });
 });

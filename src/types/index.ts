@@ -5,12 +5,13 @@ export interface Alternative {
 
 /**
  * Origem da questão:
- * - `classic`: banco original (200 questões);
+ * - `classic`: banco original, sem a prova oficial de 2018 (140 questões);
+ * - `official2018`: prova oficial Cesgranrio 2018 (60 questões);
  * - `new`: módulo extra de 60 questões.
  */
-export type QuestionPool = 'classic' | 'new';
+export type QuestionPool = 'classic' | 'official2018' | 'new';
 
-/** Pool usado para montar um simulado. `mixed` embaralha as duas origens. */
+/** Pool usado para montar um simulado. `mixed` combina todas as origens. */
 export type QuestionPoolSelection = QuestionPool | 'mixed';
 
 export interface Question {

@@ -240,6 +240,10 @@ describe('Sessão do simulado', () => {
       { ...makeQuestion('new_pt_1', 'portugues'), pool: 'new' as const },
       { ...makeQuestion('new_mt_1', 'matematica'), pool: 'new' as const },
       { ...makeQuestion('new_es_1', 'conhecimentos_especificos'), pool: 'new' as const },
+      {
+        ...makeQuestion('transpetro-2018-q01', 'portugues'),
+        pool: 'official2018' as const,
+      },
     ];
     useExamStore.setState({ allQuestionsBank: [...bank, ...extra] });
     vi.spyOn(Math, 'random').mockReturnValue(0);
@@ -250,7 +254,11 @@ describe('Sessão do simulado', () => {
     expect(
       useExamStore
         .getState()
-        .questions.every((question) => !question.id.startsWith('new_')),
+        .questions.every(
+          (question) =>
+            !question.id.startsWith('new_') &&
+            !question.id.startsWith('transpetro-2018-'),
+        ),
     ).toBe(true);
   });
 
@@ -278,6 +286,31 @@ describe('Sessão do simulado', () => {
       'new_es_2',
       'new_mt_1',
       'new_pt_1',
+    ]);
+  });
+
+  it('usa todas as questões oficiais de 2018 no modo official2018', () => {
+    const official = [
+      makeQuestion('transpetro-2018-q01', 'portugues'),
+      makeQuestion('transpetro-2018-q11', 'matematica'),
+      makeQuestion('transpetro-2018-q21', 'conhecimentos_especificos'),
+    ];
+    useExamStore.setState({ allQuestionsBank: [...bank, ...official] });
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    const started = useExamStore.getState().startExam({
+      immediateCorrection: false,
+      durationMinutes: 30,
+      questionPool: 'official2018',
+    });
+
+    expect(started).toBe(true);
+    const state = useExamStore.getState();
+    expect(state.currentAttempt?.questionPool).toBe('official2018');
+    expect(state.questions.map((question) => question.id).sort()).toEqual([
+      'transpetro-2018-q01',
+      'transpetro-2018-q11',
+      'transpetro-2018-q21',
     ]);
   });
 
