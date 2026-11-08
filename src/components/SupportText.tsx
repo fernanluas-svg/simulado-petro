@@ -19,8 +19,8 @@ export const SupportText: React.FC<SupportTextProps> = ({ text }) => {
         <BookOpen className="w-3.5 h-3.5 shrink-0" />
         <span>Texto de apoio</span>
       </summary>
-      <div className="overflow-x-auto px-4 pb-4">
-        <pre className="max-h-80 overflow-y-auto whitespace-pre font-sans text-sm leading-relaxed text-ink-soft">
+      <div className="px-4 pb-4">
+        <pre className="max-h-80 overflow-y-auto whitespace-pre-wrap break-words font-sans text-sm leading-relaxed text-ink-soft">
           {text}
         </pre>
       </div>
