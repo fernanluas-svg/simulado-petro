@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { Search, ShieldCheck, ArrowLeft } from 'lucide-react';
 import { SupportText } from '../components/SupportText';
+import { HighlightedText } from '../components/HighlightedText';
+import { stripHighlightMarkers } from '../services/highlight';
 import { getAcceptedAnswers } from '../services/answers';
 
 export const QuestionBankScreen: React.FC = () => {
@@ -15,10 +17,19 @@ export const QuestionBankScreen: React.FC = () => {
     if (difficultyFilter !== 'all' && q.difficulty !== difficultyFilter) return false;
     if (searchTerm.trim() !== '') {
       const term = searchTerm.toLowerCase();
-      const matchStmt = q.statement.toLowerCase().includes(term);
+      const matchStmt = stripHighlightMarkers(q.statement)
+        .toLowerCase()
+        .includes(term);
       const matchTopic = q.topic.toLowerCase().includes(term);
-      const matchSupportText = q.supportText?.toLowerCase().includes(term) ?? false;
-      if (!matchStmt && !matchTopic && !matchSupportText) return false;
+      const matchSupportText = stripHighlightMarkers(q.supportText ?? '')
+        .toLowerCase()
+        .includes(term);
+      const matchAlternatives = q.alternatives.some((alt) =>
+        stripHighlightMarkers(alt.text).toLowerCase().includes(term),
+      );
+      if (!matchStmt && !matchTopic && !matchSupportText && !matchAlternatives) {
+        return false;
+      }
     }
     return true;
   });
@@ -110,7 +121,7 @@ export const QuestionBankScreen: React.FC = () => {
             <SupportText text={q.supportText} />
 
             <div className="text-ink text-base leading-relaxed font-medium">
-              {q.statement}
+              <HighlightedText text={q.statement} />
             </div>
 
             <div className="space-y-2 pt-2">
@@ -128,7 +139,9 @@ export const QuestionBankScreen: React.FC = () => {
                     }`}>
                       {alt.id}
                     </span>
-                    <span className="text-sm leading-relaxed">{alt.text}</span>
+                    <span className="text-sm leading-relaxed">
+                      <HighlightedText text={alt.text} />
+                    </span>
                   </div>
                 );
               })}
@@ -140,7 +153,8 @@ export const QuestionBankScreen: React.FC = () => {
                 <span>{q.source}</span>
               </div>
               <p className="text-sm text-ink-soft leading-relaxed pt-1">
-                <strong>Explicação:</strong> {q.explanation}
+                <strong>Explicação:</strong>{' '}
+                <HighlightedText text={q.explanation} />
               </p>
             </div>
           </div>

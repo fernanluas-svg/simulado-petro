@@ -20,6 +20,7 @@ import { formatSeconds, getRemainingSeconds } from '../services/timer';
 import { getPaletteStatus } from '../services/palette';
 import { getAcceptedAnswers } from '../services/answers';
 import { SupportText } from '../components/SupportText';
+import { HighlightedText } from '../components/HighlightedText';
 
 export const ExamScreen: React.FC = () => {
   const {
@@ -228,7 +229,7 @@ export const ExamScreen: React.FC = () => {
             <SupportText text={currentQ.supportText} />
 
             <div className="text-ink text-base sm:text-lg leading-relaxed whitespace-pre-line font-medium">
-              {currentQ.statement}
+              <HighlightedText text={currentQ.statement} />
             </div>
 
             {/* Alternatives */}
@@ -270,7 +271,7 @@ export const ExamScreen: React.FC = () => {
                       {alt.id}
                     </span>
                     <span className="text-sm sm:text-base leading-relaxed pt-1">
-                      {alt.text}
+                      <HighlightedText text={alt.text} />
                     </span>
                   </button>
                 );
@@ -293,7 +294,8 @@ export const ExamScreen: React.FC = () => {
                   )}
                 </div>
                 <p className="text-xs sm:text-sm text-ink-soft leading-relaxed">
-                  <strong>Explicação:</strong> {currentQ.explanation}
+                  <strong>Explicação:</strong>{' '}
+                  <HighlightedText text={currentQ.explanation} />
                 </p>
               </div>
             )}

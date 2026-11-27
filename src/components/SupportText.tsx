@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { HighlightedText } from './HighlightedText';
 
 interface SupportTextProps {
   text?: string;
@@ -21,7 +22,7 @@ export const SupportText: React.FC<SupportTextProps> = ({ text }) => {
       </summary>
       <div className="px-4 pb-4">
         <pre className="max-h-80 overflow-y-auto whitespace-pre-wrap break-words font-sans text-sm leading-relaxed text-ink-soft">
-          {text}
+          <HighlightedText text={text} />
         </pre>
       </div>
     </details>

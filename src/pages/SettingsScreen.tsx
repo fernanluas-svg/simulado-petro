@@ -14,6 +14,7 @@ import {
 import { clearAllData } from '../services/storage';
 import { THEME_OPTIONS } from '../services/theme';
 import { SupportText } from '../components/SupportText';
+import { HighlightedText } from '../components/HighlightedText';
 import { getAcceptedAnswers } from '../services/answers';
 import type { ExamAttempt, Question } from '../types';
 
@@ -294,7 +295,7 @@ export const SettingsScreen: React.FC = () => {
                     </div>
 
                     <p className="text-sm text-ink leading-relaxed">
-                      {question.statement}
+                      <HighlightedText text={question.statement} />
                     </p>
 
                     <div className="flex flex-wrap items-center gap-2 text-[11px] text-ink-muted">
@@ -323,7 +324,8 @@ export const SettingsScreen: React.FC = () => {
                                   : undefined
                               }
                             >
-                              <strong>{alternative.id})</strong> {alternative.text}
+                              <strong>{alternative.id})</strong>{' '}
+                              <HighlightedText text={alternative.text} />
                             </li>
                           ))}
                         </ul>
@@ -333,7 +335,7 @@ export const SettingsScreen: React.FC = () => {
                         </p>
                         <p className="text-xs text-ink-soft">
                           <strong className="text-ink">Explicação:</strong>{' '}
-                          {question.explanation}
+                          <HighlightedText text={question.explanation} />
                         </p>
                       </div>
                     </details>

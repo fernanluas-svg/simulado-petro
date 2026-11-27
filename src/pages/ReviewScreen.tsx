@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getSubjectName, useExamStore } from '../store/useExamStore';
 import { ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
 import { SupportText } from '../components/SupportText';
+import { HighlightedText } from '../components/HighlightedText';
 import { getAcceptedAnswers, isAcceptedAnswer } from '../services/answers';
 
 export const ReviewScreen: React.FC = () => {
@@ -155,7 +156,7 @@ export const ReviewScreen: React.FC = () => {
               <SupportText text={question.supportText} />
 
               <div className="text-ink text-base leading-relaxed font-medium">
-                {question.statement}
+                <HighlightedText text={question.statement} />
               </div>
 
               <div className="space-y-2 pt-2">
@@ -179,7 +180,9 @@ export const ReviewScreen: React.FC = () => {
                       <span className="w-6 h-6 rounded bg-surface flex items-center justify-center font-bold text-xs shrink-0">
                         {alternative.id}
                       </span>
-                      <span className="text-sm leading-relaxed">{alternative.text}</span>
+                      <span className="text-sm leading-relaxed">
+                        <HighlightedText text={alternative.text} />
+                      </span>
                     </div>
                   );
                 })}
@@ -192,7 +195,8 @@ export const ReviewScreen: React.FC = () => {
                   <span>{question.source}</span>
                 </div>
                 <p className="text-sm text-ink-soft leading-relaxed pt-1">
-                  <strong>Explicação Comentada:</strong> {question.explanation}
+                  <strong>Explicação Comentada:</strong>{' '}
+                  <HighlightedText text={question.explanation} />
                 </p>
               </div>
             </div>

@@ -3,13 +3,13 @@
     "id": "pt-01",
     "subjectId": "portugues",
     "topic": "Coesão textual",
-    "statement": "Assinale a opção em que o termo destacado entre colchetes substitui corretamente o elemento anterior, sem alteração de sentido ou incorreção gramatical.",
+    "statement": "Assinale a opção em que o termo destacado substitui corretamente o elemento anterior, sem alteração de sentido ou incorreção gramatical.",
     "alternatives": [
-      { "id": "A", "text": "Os relatórios de desempenho foram analisados; [o qual] apresentou inconsistências." },
-      { "id": "B", "text": "A equipe revisou os procedimentos de segurança; [cujo] auditoria apontou melhorias." },
-      { "id": "C", "text": "Os operadores cumpriram as normas; [o qual] foram elogiados pela gerência." },
-      { "id": "D", "text": "A diretoria aprovou o plano; [onde] otimizou a distribuição de cargas." },
-      { "id": "E", "text": "O terminal marítimo recebeu novos equipamentos, [o que] modernizou a operação." }
+      { "id": "A", "text": "Os relatórios de desempenho foram analisados; **o qual** apresentou inconsistências." },
+      { "id": "B", "text": "A equipe revisou os procedimentos de segurança; **cujo** auditoria apontou melhorias." },
+      { "id": "C", "text": "Os operadores cumpriram as normas; **o qual** foram elogiados pela gerência." },
+      { "id": "D", "text": "A diretoria aprovou o plano; **onde** otimizou a distribuição de cargas." },
+      { "id": "E", "text": "O terminal marítimo recebeu novos equipamentos, **o que** modernizou a operação." }
     ],
     "correctAnswer": "E",
     "explanation": "O pronome 'o que' (equivalente a 'o qual') retoma toda a oração anterior ('O terminal marítimo recebeu novos equipamentos'), exprimindo consequência. Em A, 'o qual' está no singular e não concorda com 'relatórios'; em B, 'cujo' está no masculino e não concorda com 'auditoria'; em C, 'o qual' está no singular e não concorda com 'operadores'; em D, 'onde' só pode retomar lugar físico. Por isso, apenas E está correta.",
@@ -60,7 +60,7 @@
     "id": "pt-04",
     "subjectId": "portugues",
     "topic": "Emprego das classes de palavras",
-    "statement": "Em 'Conforme determinam as diretrizes da companhia, [caso] ocorram falhas no sistema, os operadores deverão acionar o suporte'. A conjunção destacada estabelece relação semântica de:",
+    "statement": "Em 'Conforme determinam as diretrizes da companhia, **caso** ocorram falhas no sistema, os operadores deverão acionar o suporte'. A conjunção destacada estabelece relação semântica de:",
     "alternatives": [
       { "id": "A", "text": "Concessão" },
       { "id": "B", "text": "Condição" },
@@ -155,7 +155,7 @@
     "id": "pt-09",
     "subjectId": "portugues",
     "topic": "Sintaxe da oração e do período",
-    "statement": "Na oração 'Os resultados da auditoria foram divulgados [pelo gerente]', o termo destacado exerce a função sintática de:",
+    "statement": "Na oração 'Os resultados da auditoria foram divulgados **pelo gerente**', o termo destacado exerce a função sintática de:",
     "alternatives": [
       { "id": "A", "text": "Sujeito paciente" },
       { "id": "B", "text": "Objeto indireto" },
@@ -214,11 +214,11 @@
     "topic": "Sintaxe da oração e do período",
     "statement": "Identifique a alternativa em que a oração destacada exerce a função de objeto direto.",
     "alternatives": [
-      { "id": "A", "text": "É necessário [que todos colaborem com a segurança]." },
-      { "id": "B", "text": "O gerente confirmou [que o navio atracará amanhã]." },
-      { "id": "C", "text": "Temos esperança [de que os lucros aumentem]." },
-      { "id": "D", "text": "A verdade é [que o prazo expirou]." },
-      { "id": "E", "text": "Não gosto [de que me interrompam]." }
+      { "id": "A", "text": "É necessário **que todos colaborem com a segurança**." },
+      { "id": "B", "text": "O gerente confirmou **que o navio atracará amanhã**." },
+      { "id": "C", "text": "Temos esperança **de que os lucros aumentem**." },
+      { "id": "D", "text": "A verdade é **que o prazo expirou**." },
+      { "id": "E", "text": "Não gosto **de que me interrompam**." }
     ],
     "correctAnswer": "B",
     "explanation": "Em B, o verbo 'confirmar' é transitivo direto; a oração iniciada por 'que' completa o seu sentido (quem confirma, confirma algo). A é subjetiva; C é completiva nominal; D é predicativa; E é objetiva indireta.",
@@ -406,14 +406,14 @@
     "topic": "Ortografia oficial e Acentuação gráfica",
     "statement": "Assinale a opção em que a palavra destacada NÃO deve receber acento.",
     "alternatives": [
-      { "id": "A", "text": "Eles mantêm o controle dos navios." },
-      { "id": "B", "text": "Eu peço que ele dê o aviso." },
-      { "id": "C", "text": "Os técnicos leem o manual diariamente." },
-      { "id": "D", "text": "A saída do terminal está bloqueada." },
-      { "id": "E", "text": "É necessário por o capacete." }
+      { "id": "A", "text": "Eles **mantêm** o controle dos navios." },
+      { "id": "B", "text": "Eu peço que ele **dê** o aviso." },
+      { "id": "C", "text": "Os técnicos **leem** o manual diariamente." },
+      { "id": "D", "text": "A **saída** do terminal está bloqueada." },
+      { "id": "E", "text": "É necessário **pôr** o capacete." }
     ],
     "correctAnswer": "C",
-    "explanation": "Com o Novo Acordo Ortográfico, o acento circunflexo nos hiatos 'ee' (leem, veem, creem) e 'oo' (voo, enjoo) foi abolido. Em A, o acento é diferencial de plural; em B, é acento no monossílabo tônico 'dê'; em D, é regra do hiato tônico 'i'; em E, 'pôr' (verbo) mantém o acento diferencial de 'por' (preposição) - note que a alternativa escreveu 'por' sem acento, o que a tornaria incorreta gramaticalmente, mas a pergunta foca em qual NÃO deve receber acento segundo a norma, e 'leem' é o caso clássico de abolição.",
+    "explanation": "Com o Novo Acordo Ortográfico, o acento circunflexo nos hiatos 'ee' (leem, veem, creem) e 'oo' (voo, enjoo) foi abolido. Em A, 'mantêm' tem acento diferencial de plural; em B, 'dê' é monossílabo tônico; em D, 'saída' é paroxítona com hiato tônico; em E, 'pôr' (verbo) mantém o acento diferencial que o distingue da preposição 'por'. Portanto, apenas 'leem' não deve receber acento.",
     "source": "Fundação Cesgranrio (Estilo Oficial Transpetro)",
     "reference": "Edital Transpetro 2026 - Acentuação",
     "verified": true,
@@ -480,7 +480,7 @@
     "id": "pt-26",
     "subjectId": "portugues",
     "topic": "Coesão textual",
-    "statement": "No trecho 'Os operadores revisaram os dutos; no entanto, eles não encontraram vazamentos', a conjunção destacada introduz uma relação de:",
+    "statement": "No trecho 'Os operadores revisaram os dutos; **no entanto**, eles não encontraram vazamentos', a conjunção destacada introduz uma relação de:",
     "alternatives": [
       { "id": "A", "text": "Adição" },
       { "id": "B", "text": "Adversidade" },
@@ -853,11 +853,11 @@
     "weight": 1.0,
     "statement": "A forma verbal destacada atende às exigências da norma-padrão da língua portuguesa em:",
     "alternatives": [
-      { "id": "A", "text": "Ao digitar as senhas em público, é necessário que confiremos se há pessoas estranhas nos observando para garantir a segurança virtual." },
-      { "id": "B", "text": "As informações pessoais deveriam ser digitadas de forma condensada para que cabessem todas no espaço próprio do questionário socioeconômico." },
-      { "id": "C", "text": "Os meios eletrônicos contribuem para que os estudantes retenham a maior parte das informações necessárias ao bom desempenho escolar." },
-      { "id": "D", "text": "Para evitar a espionagem virtual é preciso que nós não consintemos na utilização dos nossos dados pessoais ao instalar novos aplicativos no celular." },
-      { "id": "E", "text": "Quando algum consumidor querer comprar o último modelo de smartphone, pode agredir outros componentes da fila para tomar seu lugar." }
+      { "id": "A", "text": "Ao digitar as senhas em público, é necessário que **confiremos** se há pessoas estranhas nos observando para garantir a segurança virtual." },
+      { "id": "B", "text": "As informações pessoais deveriam ser digitadas de forma condensada para que **cabessem** todas no espaço próprio do questionário socioeconômico." },
+      { "id": "C", "text": "Os meios eletrônicos contribuem para que os estudantes **retenham** a maior parte das informações necessárias ao bom desempenho escolar." },
+      { "id": "D", "text": "Para evitar a espionagem virtual é preciso que nós não **consintemos** na utilização dos nossos dados pessoais ao instalar novos aplicativos no celular." },
+      { "id": "E", "text": "Quando algum consumidor **querer** comprar o último modelo de smartphone, pode agredir outros componentes da fila para tomar seu lugar." }
     ],
     "correctAnswer": "C",
     "explanation": "Gabarito Oficial C. O verbo 'reter' flexiona-se corretamente como 'retenham' no presente do subjuntivo (3ª pessoa do plural). As outras contêm erros (conferirmos, coubessem, consintamos, quiser).",
@@ -895,11 +895,11 @@
     "weight": 1.0,
     "statement": "A concordância do adjetivo destacado foi realizada de acordo com as exigências da norma-padrão da língua portuguesa em:",
     "alternatives": [
-      { "id": "A", "text": "A espionagem virtual e a ausência de punição dos responsáveis são corriqueiros na batalha virtual entre as grandes potências mundiais." },
-      { "id": "B", "text": "A guerra cibernética entre os países e o manejo de grandes quantidades de dados são básicas para determinar as relações de poder no futuro." },
-      { "id": "C", "text": "O acolhimento dos refugiados e a redução das desigualdades são necessárias para diminuir os conflitos de interesse entre países ricos e pobres." },
-      { "id": "D", "text": "Os e-mails e as conversas virtuais são monitorados permanentemente em todo o mundo para revelar importantes segredos de estado." },
-      { "id": "E", "text": "Os softwares contra vírus e a atualização regular dos aplicativos são obrigatórias para a manutenção dos celulares em bom funcionamento." }
+      { "id": "A", "text": "A espionagem virtual e a ausência de punição dos responsáveis são **corriqueiros** na batalha virtual entre as grandes potências mundiais." },
+      { "id": "B", "text": "A guerra cibernética entre os países e o manejo de grandes quantidades de dados são **básicas** para determinar as relações de poder no futuro." },
+      { "id": "C", "text": "O acolhimento dos refugiados e a redução das desigualdades são **necessárias** para diminuir os conflitos de interesse entre países ricos e pobres." },
+      { "id": "D", "text": "Os e-mails e as conversas virtuais são **monitorados** permanentemente em todo o mundo para revelar importantes segredos de estado." },
+      { "id": "E", "text": "Os softwares contra vírus e a atualização regular dos aplicativos são **obrigatórias** para a manutenção dos celulares em bom funcionamento." }
     ],
     "correctAnswer": "D",
     "explanation": "Gabarito Oficial D. Quando há substantivos de gêneros diferentes ('e-mails' - masc. e 'conversas' - fem.), o adjetivo concorda no masculino plural ('monitorados').",
@@ -916,11 +916,11 @@
     "weight": 1.0,
     "statement": "A concordância da forma verbal destacada foi realizada de acordo com as exigências da norma-padrão da língua portuguesa em:",
     "alternatives": [
-      { "id": "A", "text": "Com o crescimento da espionagem virtual, é necessário que se promova novos estudos sobre mecanismos de proteção mais eficazes." },
-      { "id": "B", "text": "O rastreamento permanente das invasões cibernéticas de grande porte permite que se suspeitem dos hackers responsáveis." },
-      { "id": "C", "text": "Para atender às demandas dos usuários de celulares, é preciso que se destinem à pesquisa tecnológica muitos milhões de dólares." },
-      { "id": "D", "text": "Para detectar as consequências mais prejudiciais da guerra virtual pela informação, necessitam-se de estudos mais aprofundados." },
-      { "id": "E", "text": "Se o crescimento das redes sociais assumir uma proporção incontrolável, é aconselhável que se estabeleça novas restrições de utilização pelos jovens." }
+      { "id": "A", "text": "Com o crescimento da espionagem virtual, é necessário que se **promova** novos estudos sobre mecanismos de proteção mais eficazes." },
+      { "id": "B", "text": "O rastreamento permanente das invasões cibernéticas de grande porte permite que se **suspeitem** dos hackers responsáveis." },
+      { "id": "C", "text": "Para atender às demandas dos usuários de celulares, é preciso que se **destinem** à pesquisa tecnológica muitos milhões de dólares." },
+      { "id": "D", "text": "Para detectar as consequências mais prejudiciais da guerra virtual pela informação, **necessitam-se** de estudos mais aprofundados." },
+      { "id": "E", "text": "Se o crescimento das redes sociais assumir uma proporção incontrolável, é aconselhável que se **estabeleça** novas restrições de utilização pelos jovens." }
     ],
     "correctAnswer": "C",
     "explanation": "Gabarito Oficial C. O verbo 'destinar' apassivado por 'se' concorda com o sujeito paciente plural 'muitos milhões de dólares' -> 'se destinem'.",
@@ -958,11 +958,11 @@
     "weight": 1.0,
     "statement": "De acordo com a norma-padrão da língua portuguesa, o uso do sinal indicativo da crase é obrigatório na palavra destacada em:",
     "alternatives": [
-      { "id": "A", "text": "A solução para o analfabetismo tecnológico é a garantia de acesso de todas as crianças à utilização efetiva de meios digitais de comunicação." },
-      { "id": "B", "text": "A utilização de celulares com recursos de navegação na internet vem facilitando a alfabetização tecnológica de idosos e moradores de zonas rurais." },
-      { "id": "C", "text": "As escolas precisam possibilitar a crianças de todas as origens socioculturais a utilização plena dos recursos computacionais no processo de aprendizagem." },
-      { "id": "D", "text": "O analfabetismo tecnológico corresponde a uma efetiva exclusão digital, já que impede as pessoas de usufruírem dos benefícios da tecnologia." },
-      { "id": "E", "text": "Os países desenvolvidos atingiram a meta de universalizar a utilização de meios digitais para garantir a ampliação do processo de conhecimento." }
+      { "id": "A", "text": "A solução para o analfabetismo tecnológico é a garantia de acesso de todas as crianças **à** utilização efetiva de meios digitais de comunicação." },
+      { "id": "B", "text": "A utilização de celulares com recursos de navegação na internet vem facilitando **a** alfabetização tecnológica de idosos e moradores de zonas rurais." },
+      { "id": "C", "text": "As escolas precisam possibilitar a crianças de todas as origens socioculturais **a** utilização plena dos recursos computacionais no processo de aprendizagem." },
+      { "id": "D", "text": "O analfabetismo tecnológico corresponde **a** uma efetiva exclusão digital, já que impede as pessoas de usufruírem dos benefícios da tecnologia." },
+      { "id": "E", "text": "Os países desenvolvidos atingiram **a** meta de universalizar a utilização de meios digitais para garantir a ampliação do processo de conhecimento." }
     ],
     "correctAnswer": "A",
     "explanation": "Gabarito Oficial A. O substantivo 'acesso' exige a preposição 'a', e o substantivo feminino 'utilização' aceita o artigo 'a', resultando na crase obrigatória: 'acesso à utilização'.",

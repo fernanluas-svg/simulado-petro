@@ -206,4 +206,26 @@ describe('Integridade do banco de questões', () => {
       ).toBeGreaterThan(0);
     }
   });
+
+  it('marca o termo citado como destacado/sublinhado no enunciado', () => {
+    const allQuestions = [...Object.values(banks).flat(), ...extraBank];
+    const withHighlightReference = allQuestions.filter((question) =>
+      /(destacad[oa]s?|sublinhad[oa]s?|grifad[oa]s?)/i.test(question.statement),
+    );
+
+    expect(withHighlightReference.length).toBeGreaterThan(0);
+
+    for (const question of withHighlightReference) {
+      const searchableText = [
+        question.statement,
+        question.supportText ?? '',
+        ...question.alternatives.map((alternative) => alternative.text),
+      ].join('\n');
+
+      expect(
+        searchableText.includes('**'),
+        `questão ${question.id} cita destaque sem marcar o termo`,
+      ).toBe(true);
+    }
+  });
 });
